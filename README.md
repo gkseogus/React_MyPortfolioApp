@@ -1,3 +1,2 @@
-### `my blog URL`
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Open [my blog](http://localhost:3000) to view it in the browser.
 
