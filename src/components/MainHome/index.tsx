@@ -47,7 +47,7 @@ const MainHome = () => {
             <IntroText>
                 Welcome to the portfolio blog
                 <br/>
-                of front engineer Han Dae-hyun
+                of front engineer Han Dae-hyeon
             </IntroText>
             <Hide below='md'>
                 <Box boxSize='sm'> 
