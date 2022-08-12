@@ -59,7 +59,7 @@ export default function MainNavBar(_children: any) {
 
   return (
     <div>
-      <Box bg={useColorModeValue('#64B5F6', '#64B5F6')} px={4}>
+      <Box bg={useColorModeValue('#64B5F6', '#64B5F6')} px={4} fontSize={'20px'} fontWeight={600} color="#1d73bd">
         <Flex h={32} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
