@@ -13,15 +13,16 @@ const IntroContain= styled.div`
 const IntroText= styled.h2`
     position: relative;
     z-index: 1;
-    text-align: center;
-    font-size: 72px;
-    font-weight: 600;
-    line-height: 1.17;
-    letter-spacing: -4px;
-    margin-block-start: 2.4em;
-    margin-block-end: 2.4em;
-    margin-inline-start: 250px;
-    margin-inline-end: 250px;
+    text-align: left;
+    font-size: 64px;
+    font-weight: 600px;
+    font-family: 'Silkscreen', cursive;
+    line-height: 1.27;
+    letter-spacing: -10px;
+    margin-block-start: 2.5em;
+    margin-block-end: 2.5em;
+    margin-inline-start: 150px;
+    margin-inline-end: 150px;
     display: flex;
 `
 
@@ -40,15 +41,13 @@ const IntroImg = styled.img`
 
 
 
-
-
 const MainHome = () => {
     return (
         <IntroContain>
             <IntroText>
-                프론트 개발자 한대현의
+                Welcome to the portfolio blog
                 <br/>
-                포트폴리오 블로그 입니다
+                of front engineer Han Dae-hyun
             </IntroText>
             <Hide below='md'>
                 <Box boxSize='sm'> 
