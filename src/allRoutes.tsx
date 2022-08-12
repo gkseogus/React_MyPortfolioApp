@@ -1,15 +1,38 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainNavBar from './components/MainNavBar';
-
+import MainHome from './components/MainHome';
 
 const AllRoutesApp = () => (
   <Router>
     <Routes>
+      {
+        ['/Home', '/'].map(path => {
+          return (
+            <Route 
+              key={path}
+              path={path}
+              element={
+                <div>
+                  <MainHome />
+                </div>
+              }
+            />
+          );  
+        })
+      };
       <Route 
-        path='/'
+        path='/Projects'
         element={
           <div>
-            <MainNavBar/>
+            
+          </div>
+        }
+      />
+      <Route 
+        path='/Careers'
+        element={
+          <div>
+                  
           </div>
         }
       />
@@ -17,4 +40,4 @@ const AllRoutesApp = () => (
   </Router>
 );
 
-export default AllRoutesApp;
+export default React.memo(AllRoutesApp);
