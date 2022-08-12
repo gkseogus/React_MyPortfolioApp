@@ -40,7 +40,7 @@ const AvatarMenuListLogo = styled.img`
 
 const Links = ['Home', 'Projects', 'Careers'];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
   <Link
     px={2}
     py={1}
@@ -49,12 +49,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('#00afff', '#00afff'),
     }}
-    href={'/'}>
+    href={href}>
     {children}
   </Link>
 );
 
-export default function MainNavBar() {
+export default function MainNavBar(_children: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -75,7 +75,7 @@ export default function MainNavBar() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} href={link}>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -124,7 +124,7 @@ export default function MainNavBar() {
           <Box pb={4} display={{ md: 'none' }} >
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} href={link}>{link}</NavLink>
               ))}
             </Stack>
           </Box>
