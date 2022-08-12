@@ -130,8 +130,6 @@ export default function MainNavBar(_children: any) {
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </div>
   );
 }
