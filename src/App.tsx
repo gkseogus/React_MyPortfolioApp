@@ -1,11 +1,13 @@
 import AllRoutesApp from './allRoutes';
 import { ChakraProvider } from '@chakra-ui/react'
+import MainNavBar from './components/MainNavBar';
 
 const App = () => {
   return (
     <div className="App">
       <ChakraProvider>
-        <AllRoutesApp/>
+        <MainNavBar />
+        <AllRoutesApp />
       </ChakraProvider>
     </div>
   );
