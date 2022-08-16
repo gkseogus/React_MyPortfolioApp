@@ -84,6 +84,7 @@ const ProjectCaptionCarousel = () => {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
+        _hover={{color : 'red'}}
         onClick={() => slider?.slickPrev()}>
         <BiLeftArrowAlt size="40px" />
       </IconButton>
@@ -96,6 +97,7 @@ const ProjectCaptionCarousel = () => {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
+        _hover={{color : 'red'}}
         onClick={() => slider?.slickNext()}>
         <BiRightArrowAlt size="40px" />
       </IconButton>
