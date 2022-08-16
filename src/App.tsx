@@ -1,4 +1,4 @@
-import AllRoutesApp from './AllRoutes';
+import AllRoutesApp from './routesAll';
 import { ChakraProvider } from '@chakra-ui/react'
 import MainNavBar from './components/MainNavBar';
 
