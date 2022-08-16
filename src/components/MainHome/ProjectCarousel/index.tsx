@@ -6,8 +6,7 @@ import {
   Stack,
   Heading,
   Text,
-  Container,
-  Button
+  Container
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import Slider from 'react-slick';
