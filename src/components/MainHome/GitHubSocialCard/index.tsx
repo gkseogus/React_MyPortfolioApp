@@ -25,7 +25,7 @@ const GitHubSocialCard = () => {
     const { name, bio, followers, following } = user;
 
     const getData = async () => {
-        const token = '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'
+        const token = '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'
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`
