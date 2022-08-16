@@ -47,7 +47,7 @@ const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('#00afff', '#00afff'),
+      bg: useColorModeValue('white', 'white'),
     }}
     href={href}>
     {children}
@@ -59,7 +59,7 @@ export default function MainNavBar(_children: any) {
 
   return (
     <div>
-      <Box bg={useColorModeValue('#64B5F6', '#64B5F6')} px={4} fontSize={'20px'} fontWeight={600} color="#1d73bd">
+      <Box bg={useColorModeValue('black', 'black')} px={4} fontSize={'20px'} fontWeight={600} color="#1d73bd">
         <Flex h={32} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -90,7 +90,7 @@ export default function MainNavBar(_children: any) {
                 <Avatar
                   size={'md'}
                   src={AvatarImg}
-                  bg='#64B5F6'
+                  bg='black'
                 />
               </MenuButton>
               <MenuList>
@@ -98,23 +98,23 @@ export default function MainNavBar(_children: any) {
                 as="a"
                 href="https://www.instagram.com/dae_hyeon00/"
                 >
-                    <AvatarMenuListLogo src= {InstartgramLogo} />
-                    Instargram
+                  <AvatarMenuListLogo src= {InstartgramLogo} />
+                  Instargram
                 </MenuItem>
                 <MenuItem    
                 as="a"
                 href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
                 >
-                    <AvatarMenuListLogo src= {CareerlyLogo} />
-                    Careerly
+                  <AvatarMenuListLogo src= {CareerlyLogo} />
+                  Careerly
                 </MenuItem>
                 <MenuDivider />
                 <MenuItem    
                 as="a"
                 href="https://github.com/gkseogus"
                 >
-                    <AvatarMenuListLogo src= {GithubLogo} />
-                    Github
+                  <AvatarMenuListLogo src= {GithubLogo} />
+                  Github
                 </MenuItem>
               </MenuList>
             </Menu>
