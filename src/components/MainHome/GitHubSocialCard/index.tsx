@@ -25,7 +25,7 @@ const GitHubSocialCard = () => {
     const { name, bio, followers, following } = user;
 
     const getData = async () => {
-        const token = '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'
+        const token = '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'
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -41,7 +41,7 @@ const GitHubSocialCard = () => {
                 followers: response.data.followers,
                 following: response.data.following
             });
-            console.log(response.data)
+
         } catch (error) {
             //Failed to respond
             alert(error);
