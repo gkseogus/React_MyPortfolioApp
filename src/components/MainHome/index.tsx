@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
     Hide,
     Box
@@ -6,20 +7,13 @@ import {
 import styled from 'styled-components';
 import FirstIntroImg from '../MainHome/IMG/FirstIntroImg.png';
 import GitHubSocialCard from '../MainHome/GitHubSocialCard/index';
+import ProjectCaptionCarousel from './ProjectCarousel';
 
-const IntroContain= styled.div`
-
-`
-
-const IntroFirstContain = styled.div`
+const IntroContain = styled.div`
 
 `
 
-const IntroSecondContain = styled.div`
-
-`
-
-const IntroText= styled.h2`
+const IntroText = styled.h2`
     position: relative;
     z-index: 1;
     text-align: left;
@@ -30,12 +24,12 @@ const IntroText= styled.h2`
     letter-spacing: 0px;
     margin-block-start: 2.5em;
     margin-block-end: 2.5em;
-    margin-inline-start: 150px;
-    margin-inline-end: 150px;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
     display: flex;
 `
 
-const ContentsText= styled.h2`
+const ContentsText = styled.h2`
     position: relative;
     z-index: 1;
     text-align: left;
@@ -45,9 +39,42 @@ const ContentsText= styled.h2`
     line-height: 1.27;
     letter-spacing: 0px;
     top: 250px;
-    margin-inline-start: 150px;
-    margin-inline-end: 150px;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
     display: flex;
+`
+
+const ReverseContentsText = styled.h2`
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    font-size: 64px;
+    font-weight: 600px;
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.27;
+    letter-spacing: 0px;
+    top: 250px;
+    margin-inline-start: 68%;
+    margin-inline-end: 10%;
+    display: flex;
+`
+
+const ReverseContentsBtn = styled(Link)`
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    font-size: 32px;
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.27;
+    letter-spacing: 0px;
+    top: 300px;
+    margin-inline-start: 73%;
+    margin-inline-end: 10%;
+    display: flex;
+    &:hover{  
+        background-color : white;
+        color : red
+    }
 `
 
 const IntroImg = styled.img`
@@ -66,11 +93,16 @@ const GitHubLinkContain = styled.div`
     margin-inline-start: 50%;
 `
 
+const ProjectCarouselsContain = styled.div`
+    margin-right: 50%;
+    margin-bottom: 20%;
+    margin-inline-start: 10%;
+`
 
 const MainHome = () => {
     return (
         <IntroContain>
-            <IntroFirstContain>
+            <div>
                 <IntroText>
                     Welcome to the portfolio blog
                     <br/>
@@ -81,13 +113,20 @@ const MainHome = () => {
                         </Box>
                     </Hide>
                 </IntroText>
-            </IntroFirstContain>
-            <IntroSecondContain>
+            </div>
+            <div>
                 <ContentsText>My Git Hub</ContentsText>
                 <GitHubLinkContain>
                     <GitHubSocialCard />
                 </GitHubLinkContain>
-            </IntroSecondContain>
+            </div>
+            <div>
+                <ReverseContentsText>My Project</ReverseContentsText>
+                <ReverseContentsBtn to={'/projects'}>Project</ReverseContentsBtn>
+                <ProjectCarouselsContain>
+                    <ProjectCaptionCarousel/>
+                </ProjectCarouselsContain>
+            </div>
         </IntroContain>
     );
 };
