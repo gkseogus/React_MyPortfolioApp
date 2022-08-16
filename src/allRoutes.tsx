@@ -40,4 +40,5 @@ const AllRoutesApp = () => (
   </Router>
 );
 
+
 export default React.memo(AllRoutesApp);
