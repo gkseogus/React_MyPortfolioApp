@@ -47,7 +47,8 @@ const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('white', 'white'),
+      background: 'black',
+      color :'red'
     }}
     href={href}>
     {children}
@@ -59,7 +60,7 @@ export default function MainNavBar(_children: any) {
 
   return (
     <div>
-      <Box bg={useColorModeValue('black', 'black')} px={4} fontSize={'20px'} fontWeight={600} color="#1d73bd">
+      <Box bg={useColorModeValue('black', 'black')} px={4} fontSize={'20px'} fontWeight={600}>
         <Flex h={32} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -73,7 +74,8 @@ export default function MainNavBar(_children: any) {
             <HStack
               as={'nav'}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
+              display={{ base: 'none', md: 'flex' }}
+              color="white">
               {Links.map((link) => (
                 <NavLink key={link} href={link}>{link}</NavLink>
               ))}
@@ -93,15 +95,23 @@ export default function MainNavBar(_children: any) {
                   bg='black'
                 />
               </MenuButton>
-              <MenuList>
-                <MenuItem    
+              <MenuList color='black'>
+                <MenuItem 
+                _hover={{
+                  background: 'white',
+                  color :'red'
+                }}   
                 as="a"
                 href="https://www.instagram.com/dae_hyeon00/"
                 >
                   <AvatarMenuListLogo src= {InstartgramLogo} />
                   Instargram
                 </MenuItem>
-                <MenuItem    
+                <MenuItem 
+                _hover={{
+                  background: 'white',
+                  color :'red'
+                }}   
                 as="a"
                 href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
                 >
@@ -109,7 +119,11 @@ export default function MainNavBar(_children: any) {
                   Careerly
                 </MenuItem>
                 <MenuDivider />
-                <MenuItem    
+                <MenuItem 
+                _hover={{
+                  background: 'white',
+                  color :'red'
+                }}   
                 as="a"
                 href="https://github.com/gkseogus"
                 >
