@@ -9,12 +9,14 @@ import {
     Stack,
     Button,
     useColorModeValue,
+    useToast
   } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import GithubCardbackGround from '../GitHubSocialCard/GithubCardbackGround.png';
 
 const GitHubSocialCard = () => {
+    const toast = useToast()
     const [user, setUser] = useState({
         name: '',
         bio: '',
@@ -41,12 +43,16 @@ const GitHubSocialCard = () => {
                 followers: response.data.followers,
                 following: response.data.following
             });
-
         } catch (error) {
             //Failed to respond
-            alert(error);
+            toast({
+                title: '깃허브 데이터를 가져오지 못 했습니다!',
+                position: 'top',
+                status: 'error',
+                isClosable: true,
+            });
         }
-    }
+    };
 
     const githubAddress = () => {
         window.open('https://github.com/gkseogus');
