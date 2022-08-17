@@ -124,7 +124,7 @@ const ProjectCaptionCarousel = () => {
                 <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="white">
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: '3xl', lg: 'lg' }} color="white" font-weight='bolder'>
+                <Text fontSize={{ base: '3xl', lg: 'lg' }} color="white" fontWeight='bolder'>
                   {card.text} 
                   <br/> 
                   {card.TechnologyStackText}
