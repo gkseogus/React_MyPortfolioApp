@@ -19,7 +19,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import styled from 'styled-components';
 
-import HdhLogo from '../MainNavBar/IMG/navBarLogo.png';
+import HdhLogo from '../MainNavBar/IMG/mainLogo.png';
 import AvatarImg from '../MainNavBar/IMG/AvatarLogo.png';
 import InstartgramLogo from '../MainNavBar/IMG/InstargramLogo.png';
 import CareerlyLogo from '../MainNavBar/IMG/CareerlyLogo.png';
