@@ -13,7 +13,6 @@ import {
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import GithubCardbackGround from '../GitHubSocialCard/GithubCardbackGround.png';
-import TOKEN_VALUE from './token';
 
 const GitHubSocialCard = () => {
     const [user, setUser] = useState({
@@ -26,7 +25,7 @@ const GitHubSocialCard = () => {
     const { name, bio, followers, following } = user;
 
     const getData = async () => {
-        const token = TOKEN_VALUE
+        const token = ''
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`
