@@ -8,14 +8,15 @@ import styled from 'styled-components';
 import FirstIntroImg from '../MainHome/IMG/FirstIntroImg.png';
 import GitHubSocialCard from '../MainHome/GitHubSocialCard/index';
 import ProjectCaptionCarousel from './ProjectCarousel';
+import IntroCareers from './CareersCard';
 
 const IntroContain = styled.div`
 
 `
 
 const IntroText = styled.h2`
+    z-index: 7;
     position: relative;
-    z-index: 1;
     text-align: left;
     font-size: 64px;
     font-weight: 600px;
@@ -29,9 +30,20 @@ const IntroText = styled.h2`
     display: flex;
 `
 
+const IntroImg = styled.img`
+    position: absolute;
+    left: 65%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 35%;
+    min-height: 500px;
+    min-width: 1000px;
+    opacity: 0.4;
+`
+
 const ContentsText = styled.h2`
     position: relative;
-    z-index: 1;
     text-align: left;
     font-size: 64px;
     font-weight: 600px;
@@ -44,9 +56,12 @@ const ContentsText = styled.h2`
     display: flex;
 `
 
+const GitHubLinkContain = styled.div`
+    margin-inline-start: 50%;
+`
+
 const ReverseContentsText = styled.h2`
     position: relative;
-    z-index: 1;
     text-align: left;
     font-size: 64px;
     font-weight: 600px;
@@ -61,7 +76,6 @@ const ReverseContentsText = styled.h2`
 
 const ReverseContentsBtn = styled(Link)`
     position: relative;
-    z-index: 1;
     text-align: left;
     font-size: 32px;
     font-family: 'Kanit', sans-serif;
@@ -77,26 +91,30 @@ const ReverseContentsBtn = styled(Link)`
     }
 `
 
-const IntroImg = styled.img`
-    position: absolute;
-    left: 65%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    width: 40%;
-    height: 35%;
-    min-height: 500px;
-    min-width: 1000px;
-    opacity: 0.4;
-`
-
-const GitHubLinkContain = styled.div`
-    margin-inline-start: 50%;
-`
-
 const ProjectCarouselsContain = styled.div`
     margin-right: 50%;
     margin-bottom: 20%;
     margin-inline-start: 10%;
+`
+
+const CenterContentsText = styled.h2`
+    text-align: center;
+    font-size: 64px;
+    font-weight: 600px;
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.27;
+    letter-spacing: 0px;
+    padding: 10px;
+`
+
+const IntroCareersContain = styled.div`
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.27;
+    letter-spacing: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30%;
 `
 
 const MainHome = () => {
@@ -126,6 +144,12 @@ const MainHome = () => {
                 <ProjectCarouselsContain>
                     <ProjectCaptionCarousel/>
                 </ProjectCarouselsContain>
+            </div>
+            <div>
+                <CenterContentsText>My Career</CenterContentsText>
+                <IntroCareersContain>
+                    <IntroCareers />
+                </IntroCareersContain>
             </div>
         </IntroContain>
     );
