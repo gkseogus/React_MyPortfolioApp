@@ -25,7 +25,7 @@ const GitHubSocialCard = () => {
     const { name, bio, followers, following } = user;
 
     const getData = async () => {
-        const token = ''
+        const token = process.env.REACT_APP_TOKEN_VALUE
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`
