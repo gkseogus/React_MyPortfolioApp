@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
+import ProjectCarousel from './ProjectCarousel';
 
 const ProjectPageContain = styled.div`
 
@@ -100,6 +101,10 @@ const Message = styled.div`
     animation: ${Openclose} 5s ease-in-out infinite;
 `
 
+const FirstContentsItem = styled.div`
+    padding-bottom: 10%;
+`
+
 const ProjectPage = () => {
     return (
         <ProjectPageContain>
@@ -111,6 +116,9 @@ const ProjectPage = () => {
                     <div>creating</div>
                 </Message>
             </FirstContentsText>
+            <FirstContentsItem>
+                <ProjectCarousel />
+            </FirstContentsItem>
         </ProjectPageContain>
     );
 };
