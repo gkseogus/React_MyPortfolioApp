@@ -21,7 +21,7 @@ const AllRoutesApp = () => (
         })
       };
       <Route 
-        path='/Projects'
+        path='/Project'
         element={
           <div>
             
@@ -29,7 +29,7 @@ const AllRoutesApp = () => (
         }
       />
       <Route 
-        path='/Careers'
+        path='/Career'
         element={
           <div>
                   
