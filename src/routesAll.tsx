@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainHome from './components/MainHome';
+import ProjectPage from './components/ProjectPage';
 
 const AllRoutesApp = () => (
   <Router>
@@ -24,7 +25,7 @@ const AllRoutesApp = () => (
         path='/Project'
         element={
           <div>
-            
+            <ProjectPage />
           </div>
         }
       />
