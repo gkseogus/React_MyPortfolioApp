@@ -38,7 +38,7 @@ const AvatarMenuListLogo = styled.img`
     margin: 20px;
 `
 
-const Links = ['Home', 'Projects', 'Careers'];
+const Links = ['Home', 'Project', 'Career'];
 
 const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
   <Link
