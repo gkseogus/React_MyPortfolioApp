@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   IconButton,
@@ -6,13 +6,13 @@ import {
   Stack,
   Heading,
   Text,
-  Container
-} from '@chakra-ui/react';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import Slider from 'react-slick';
-import commuteImg from '../MainProjectCarousel/IMG/commuteImg.png';
-import exerciseImg from '../MainProjectCarousel/IMG/exerciseImg.png';
-import deepLearningImg from '../MainProjectCarousel/IMG/deepLearningImg.png';
+  Container,
+} from "@chakra-ui/react";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import Slider from "react-slick";
+import commuteImg from "../MainProjectCarousel/IMG/commuteImg.png";
+import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.png";
+import deepLearningImg from "../MainProjectCarousel/IMG/deepLearningImg.png";
 
 // Settings for the slider
 const settings = {
@@ -32,37 +32,38 @@ const ProjectCaptionCarousel = () => {
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '40px' });
+  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  const side = useBreakpointValue({ base: "30%", md: "40px" });
 
   // This list contains all the data for carousels
   const cards = [
     {
-      title: 'Commute App',
-      text: '재택 출퇴근을 위한 출퇴근 앱 입니다.',
-      TechnologyStackText: '기술 스택: TypeScript & React & Redux',
+      title: "Commute App",
+      text: "재택 출퇴근을 위한 출퇴근 앱 입니다.",
+      TechnologyStackText: "기술 스택: TypeScript & React & Redux",
       image: commuteImg,
     },
     {
-      title: 'Exercise App',
-      text: '나만의 운동 사이트 앱 입니다.',
-      TechnologyStackText: '기술 스택: TypeScript & React & Redux',
-      image: exerciseImg
+      title: "Exercise App",
+      text: "나만의 운동 사이트 앱 입니다.",
+      TechnologyStackText: "기술 스택: TypeScript & React & Redux",
+      image: exerciseImg,
     },
     {
-      title: 'Creack Detection',
-      text: '딥러닝 기반 실시간 이동수단 주행 보조 시스템 모델',
-      TechnologyStackText: '기술 스택: Pyhton & Tensorflow & Keras',
-      image: deepLearningImg
+      title: "Creack Detection",
+      text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템 모델",
+      TechnologyStackText: "기술 스택: Pyhton & Tensorflow & Keras",
+      image: deepLearningImg,
     },
   ];
 
   return (
     <Box
-      position={'relative'}
-      height={'600px'}
-      width={'full'}
-      overflow={'hidden'}>
+      position={"relative"}
+      height={"600px"}
+      width={"full"}
+      overflow={"hidden"}
+    >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -82,10 +83,11 @@ const ProjectCaptionCarousel = () => {
         position="absolute"
         left={side}
         top={top}
-        transform={'translate(0%, -50%)'}
+        transform={"translate(0%, -50%)"}
         zIndex={2}
-        _hover={{color : 'red'}}
-        onClick={() => slider?.slickPrev()}>
+        _hover={{ color: "red" }}
+        onClick={() => slider?.slickPrev()}
+      >
         <BiLeftArrowAlt size="40px" />
       </IconButton>
       {/* Right Icon */}
@@ -95,10 +97,11 @@ const ProjectCaptionCarousel = () => {
         position="absolute"
         right={side}
         top={top}
-        transform={'translate(0%, -50%)'}
+        transform={"translate(0%, -50%)"}
         zIndex={2}
-        _hover={{color : 'red'}}
-        onClick={() => slider?.slickNext()}>
+        _hover={{ color: "red" }}
+        onClick={() => slider?.slickNext()}
+      >
         <BiRightArrowAlt size="40px" />
       </IconButton>
       {/* Slider */}
@@ -106,29 +109,38 @@ const ProjectCaptionCarousel = () => {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={"6xl"}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
+            backgroundImage={`url(${card.image})`}
+          >
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}
-                w={'full'}
-                maxW={'lg'}
+                w={"full"}
+                maxW={"lg"}
                 position="absolute"
                 top="50%"
-                transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color="white">
+                transform="translate(0, -50%)"
+              >
+                <Heading
+                  fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+                  color="white"
+                >
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: '3xl', lg: 'lg' }} color="white" fontWeight='bolder'>
-                  {card.text} 
-                  <br/> 
+                <Text
+                  fontSize={{ base: "3xl", lg: "lg" }}
+                  color="white"
+                  fontWeight="bolder"
+                >
+                  {card.text}
+                  <br />
                   {card.TechnologyStackText}
-                  <br/>
+                  <br />
                 </Text>
               </Stack>
             </Container>
@@ -137,6 +149,6 @@ const ProjectCaptionCarousel = () => {
       </Slider>
     </Box>
   );
-}
+};
 
 export default ProjectCaptionCarousel;
