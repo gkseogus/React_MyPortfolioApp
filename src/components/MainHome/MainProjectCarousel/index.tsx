@@ -10,9 +10,9 @@ import {
 } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import Slider from 'react-slick';
-import commuteImg from '../ProjectCarousel/IMG/commuteImg.png';
-import exerciseImg from '../ProjectCarousel/IMG/exerciseImg.png';
-import deepLearningImg from '../ProjectCarousel/IMG/deepLearningImg.png';
+import commuteImg from '../MainProjectCarousel/IMG/commuteImg.png';
+import exerciseImg from '../MainProjectCarousel/IMG/exerciseImg.png';
+import deepLearningImg from '../MainProjectCarousel/IMG/deepLearningImg.png';
 
 // Settings for the slider
 const settings = {

@@ -7,7 +7,7 @@ import {
 import styled, {keyframes} from 'styled-components';
 import FirstIntroImg from '../MainHome/IMG/FirstIntroImg.png';
 import GitHubSocialCard from '../MainHome/GitHubSocialCard/index';
-import ProjectCaptionCarousel from './ProjectCarousel';
+import MainProjectCarousel from './MainProjectCarousel';
 import IntroCareers from './CareersCard';
 
 const circleAni = keyframes`
@@ -133,7 +133,7 @@ const ReverseContentsBtn = styled(Link)`
     }
 `
 
-const ProjectCarouselsContain = styled.div`
+const MainProjectCarouselsContain = styled.div`
     margin-right: 50%;
     margin-bottom: 20%;
     margin-inline-start: 10%;
@@ -200,9 +200,9 @@ const MainHome = () => {
             <div>
                 <ReverseContentsText>My Project</ReverseContentsText>
                 <ReverseContentsBtn to={'/Project'}>Project</ReverseContentsBtn>
-                <ProjectCarouselsContain>
-                    <ProjectCaptionCarousel/>
-                </ProjectCarouselsContain>
+                <MainProjectCarouselsContain>
+                    <MainProjectCarousel/>
+                </MainProjectCarouselsContain>
             </div>
             <div>
                 <CenterContentsText>My Career</CenterContentsText>
