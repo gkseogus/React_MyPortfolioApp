@@ -13,6 +13,9 @@ import Slider from "react-slick";
 import commuteImg from "../ProjectCarousel/IMG/commuteImg.png";
 import exerciseImg from "../ProjectCarousel/IMG/exerciseImg.png";
 import deepLearningImg from "../ProjectCarousel/IMG/deepLearningImg.png";
+import exerciseBlogImg from "../ProjectCarousel/IMG/exerciseBlogImg.png";
+import commuteResultImg from "../ProjectCarousel/IMG/commuteResultImg.png";
+import crackResultImg from "../ProjectCarousel/IMG/crackResultImg.png";
 
 const settings = {
   dots: true,
@@ -38,21 +41,21 @@ const ProjectCarousel = () => {
       text: "재택 출퇴근을 위한 출퇴근 앱 입니다.",
       TechnologyStackText: "기술 스택: TypeScript & React & Redux",
       image: commuteImg,
-      resultImage: commuteImg,
+      resultImage: commuteResultImg,
     },
     {
       title: "Exercise App",
       text: "나만의 운동 사이트 앱 입니다.",
       TechnologyStackText: "기술 스택: TypeScript & React & Redux",
       image: exerciseImg,
-      resultImage: commuteImg,
+      resultImage: exerciseBlogImg,
     },
     {
       title: "Creack Detection",
       text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템 모델",
       TechnologyStackText: "기술 스택: Pyhton & Tensorflow & Keras",
       image: deepLearningImg,
-      resultImage: commuteImg,
+      resultImage: crackResultImg,
     },
   ];
 
@@ -135,9 +138,13 @@ const ProjectCarousel = () => {
                   <br />
                   {card.TechnologyStackText}
                   <br />
+                  <br />
+                  Result
+                  <br />
                 </Text>
                 <Box
-                  height={"300px"}
+                  height={300}
+                  width={600}
                   backgroundPosition="center"
                   backgroundImage={`url(${card.resultImage})`}
                 />
