@@ -21,7 +21,6 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import styled from "styled-components";
-
 import HdhLogo from "../MainNavBar/IMG/mainLogo.png";
 import AvatarImg from "../MainNavBar/IMG/AvatarLogo.png";
 import InstartgramLogo from "../MainNavBar/IMG/InstargramLogo.png";
@@ -68,6 +67,10 @@ const ColorModeToggle = (props: ButtonProps) => {
         onClick={toggleColorMode}
         _focus={{ boxShadow: "none" }}
         w="fit-content"
+        style={{
+          background: "none",
+          color: "white",
+        }}
         {...props}
       >
         {colorMode === "light" ? <BsMoonStarsFill /> : <BsSun />}
