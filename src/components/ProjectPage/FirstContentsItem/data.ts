@@ -1,4 +1,4 @@
-import te from "./IMG/commuteImg.png";
+// import te from "./IMG/commuteImg.png";
 
 const data = [
   {
@@ -6,7 +6,7 @@ const data = [
     description: "#a8edea → #fed6e3",
     css: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
     height: 200,
-    langthImg: te,
+    langthImg: "ttt",
   },
   {
     name: "Saint Petersburg",
