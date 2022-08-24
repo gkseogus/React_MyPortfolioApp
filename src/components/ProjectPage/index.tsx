@@ -96,7 +96,6 @@ const Openclose = keyframes`
     width: 0;
     text-indent: 0;
   }
-}
 `;
 
 const SecondContentsText = styled.h1`
