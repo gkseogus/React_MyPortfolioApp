@@ -40,6 +40,7 @@ const gradientContents = keyframes`
 const IntroContain = styled.div``;
 
 const IntroText = styled.h2`
+  padding-top: 8%;
   z-index: 7;
   position: relative;
   text-align: left;
@@ -58,7 +59,7 @@ const IntroText = styled.h2`
 
 const IntroImg = styled.img`
   position: absolute;
-  bottom: 5%;
+  top: 1px;
   right: 5%;
   transform: translate(-50%, -50%);
   width: 40%;
