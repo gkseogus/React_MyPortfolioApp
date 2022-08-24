@@ -83,6 +83,7 @@ const ContentsText = styled.h2`
   display: flex;
   background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
   animation: ${gradientContents} 4s ease-in-out infinite;
@@ -106,6 +107,7 @@ const ReverseContentsText = styled.h2`
   display: flex;
   background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
   animation: ${gradientContents} 4s ease-in-out infinite;
@@ -144,6 +146,7 @@ const CenterContentsText = styled.h2`
   padding: 10px;
   background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
   animation: ${gradientContents} 4s ease-in-out infinite;

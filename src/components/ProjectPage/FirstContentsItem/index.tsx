@@ -35,6 +35,7 @@ const AnimateCharcter = styled.h3`
   color: #fff;
   background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: ${TextClip} 2s linear infinite;
   display: inline-block;
@@ -57,6 +58,7 @@ const AnimateBoxText = styled.h2`
   background-repeat: no-repeat;
   background-size: 80%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 `;
 

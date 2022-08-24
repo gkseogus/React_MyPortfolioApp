@@ -30,6 +30,7 @@ const FirstContentsText = styled.h2`
   background-size: 80%;
   animation: ${animate} 4.5s linear infinite;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 `;
 
