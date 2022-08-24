@@ -88,6 +88,11 @@ const MainNavBar = (_children: any) => {
       px={4}
       fontSize={"20px"}
       fontWeight={600}
+      position={"fixed"}
+      top={0}
+      left={0}
+      right={0}
+      zIndex={10}
     >
       <Flex h={32} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
