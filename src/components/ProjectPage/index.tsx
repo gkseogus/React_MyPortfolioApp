@@ -128,7 +128,7 @@ const Message = styled.div`
 `;
 
 const SecondContentsItem = styled.div`
-  padding-bottom: 10%;
+  padding-bottom: 30%;
 `;
 
 const ProjectPage = () => {
