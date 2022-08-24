@@ -1,33 +1,36 @@
-// import te from "./IMG/commuteImg.png";
+import JavaScriptLogo from "./IMG/JavaScriptLogo.png";
+import TypeScriptLogo from "./IMG/TypeScriptLogo.png";
+import ReactLogo from "./IMG/ReactLogo.png";
+import PythonLogo from "./IMG/PythonLogo.png";
 
 const data = [
   {
-    name: "Rare Wind",
+    name: "JS",
     description: "#a8edea → #fed6e3",
-    css: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+    css: "white",
     height: 200,
-    langthImg: "ttt",
+    langthImg: JavaScriptLogo,
   },
   {
-    name: "Saint Petersburg",
+    name: "TS",
     description: "#f5f7fa → #c3cfe2",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    css: "white",
     height: 400,
-    langthImg: "ttt",
+    langthImg: TypeScriptLogo,
   },
   {
-    name: "Saint Petersburg",
+    name: "React",
     description: "#f5f7fa → #c3cfe2",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    css: "white",
     height: 400,
-    langthImg: "ttt",
+    langthImg: ReactLogo,
   },
   {
-    name: "Saint Petersburg",
+    name: "Python",
     description: "#f5f7fa → #c3cfe2",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    css: "white",
     height: 400,
-    langthImg: "ttt",
+    langthImg: PythonLogo,
   },
 ];
 
