@@ -40,6 +40,7 @@ const gradientContents = keyframes`
 const IntroContain = styled.div``;
 
 const IntroText = styled.h2`
+  padding-top: 8%;
   z-index: 7;
   position: relative;
   text-align: left;
@@ -58,7 +59,7 @@ const IntroText = styled.h2`
 
 const IntroImg = styled.img`
   position: absolute;
-  bottom: 5%;
+  top: 1px;
   right: 5%;
   transform: translate(-50%, -50%);
   width: 40%;
@@ -174,6 +175,10 @@ const IntroCareersContain = styled.div`
 // };
 
 const MainHome = () => {
+  const ResetScroll = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <IntroContain>
       <div>
@@ -196,7 +201,9 @@ const MainHome = () => {
       </div>
       <div>
         <ReverseContentsText>My Project</ReverseContentsText>
-        <ReverseContentsBtn to={"/Project"}>Project</ReverseContentsBtn>
+        <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
+          Project
+        </ReverseContentsBtn>
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
         </MainProjectCarouselsContain>
