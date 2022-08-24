@@ -28,7 +28,7 @@ const FirstContentsText = styled.h2`
   background: linear-gradient(90deg, #000, #fff, #000);
   background-repeat: no-repeat;
   background-size: 80%;
-  animation: ${animate} 6s linear infinite;
+  animation: ${animate} 4.5s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 `;
