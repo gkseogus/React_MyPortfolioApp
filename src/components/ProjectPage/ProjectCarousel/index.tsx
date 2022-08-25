@@ -62,7 +62,7 @@ const ProjectCarousel = () => {
   return (
     <Box
       position={"relative"}
-      height={"600px"}
+      height={"800px"}
       width={"full"}
       overflow={"hidden"}
     >
@@ -114,7 +114,7 @@ const ProjectCarousel = () => {
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
           >
-            <Container size="container.lg" height="600px" position="relative">
+            <Container size="container.lg" height="800px" position="relative">
               <Stack
                 spacing={6}
                 w={"full"}
