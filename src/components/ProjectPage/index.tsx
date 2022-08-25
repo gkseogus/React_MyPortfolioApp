@@ -136,7 +136,7 @@ const ProjectPage = () => {
   return (
     <ProjectPageContain>
       <FirstContentsText>
-        저의 기술 스택이 궁금하지 않으시나요?
+        저의 프로젝트와 기술 스택이 궁금하지 않으시나요?
       </FirstContentsText>
       <FirstContentsItem />
       <SecondContentsText>
