@@ -122,7 +122,7 @@ const ReverseContentsBtn = styled(Link)`
   line-height: 1.27;
   letter-spacing: 0px;
   top: 300px;
-  margin-inline-start: 73%;
+  margin-inline-start: 74%;
   margin-inline-end: 10%;
   display: flex;
   &:hover {
