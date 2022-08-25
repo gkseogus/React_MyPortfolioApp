@@ -6,6 +6,7 @@ import FirstIntroImg from "../MainHome/IMG/FirstIntroImg.png";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
 import IntroCareers from "./CareersCard";
+import MainAboutCarousel from "./MainAboutCarousel";
 
 const circleAni = keyframes`
   0%{
@@ -163,17 +164,6 @@ const IntroCareersContain = styled.div`
   padding-bottom: 30%;
 `;
 
-// scroll custom hook
-// export const useWindowScrollEvent = (listener: (this: Window, ev: Event) => any) => {
-//     useEffect(() => {
-//         window.addEventListener('scroll', listener);
-
-//         return () => {
-//         window.removeEventListener('scroll', listener);
-//         };
-//     }, []);
-// };
-
 const MainHome = () => {
   const ResetScroll = () => {
     window.scrollTo(0, 0);
@@ -192,6 +182,10 @@ const MainHome = () => {
             </Box>
           </Hide>
         </IntroText>
+      </div>
+      <div>
+        <CenterContentsText>About Me</CenterContentsText>
+        <MainAboutCarousel />
       </div>
       <div>
         <ContentsText>My Git Hub</ContentsText>
