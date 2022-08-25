@@ -9,91 +9,113 @@ const TimeLine = () => {
     <VerticalTimeline>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-        date="2011 - present"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        contentStyle={{ background: "#fff", color: "black" }}
+        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        date="2014 - 2016"
+        iconStyle={{ background: "#fff", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+        <h3 className="vertical-timeline-element-title">학교명: 장안중학교</h3>
         <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
+          프로그래밍에 대해 잘 알지 못했던 시절.
+          <br /> 프로게이머를 존경했다.
         </p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="2010 - 2011"
+        contentStyle={{ background: "#fff", color: "black" }}
+        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        date="2017 - 2019"
         iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">Art Director</h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          San Francisco, CA
-        </h4>
+        <h3 className="vertical-timeline-element-title">
+          학교명: 중화고등학교
+        </h3>
+        <h4 className="vertical-timeline-element-subtitle">전공: 이과</h4>
         <p>
-          Creative Direction, User Experience, Visual Design, SEO, Online
-          Marketing
+          외삼촌이 프로게이머 이셨다가 프로그래머로 전향하셨는데 이 이유 때문에
+          프로그래밍에 흥미를 느끼게 되었다.
+          <br />
+          <br />
+          아두이노를 사용해 드론 자동화 조종 프로그램을 간단히 구현하였다.
+          <br />
+          <br />
+          기능: 조이스틱의 버튼을 사용할 필요 없이 이착륙이 가능한 기능.
         </p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="2008 - 2010"
+        contentStyle={{ background: "#fff", color: "black" }}
+        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        date="2019 - 2022"
         iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-        <p>User Experience, Visual Design</p>
+        <h3 className="vertical-timeline-element-title">학교명: 한림대학교</h3>
+        <h4 className="vertical-timeline-element-subtitle">
+          주전공: 빅데이터 <br />
+          부전공: 스마트iot
+        </h4>
+        <p>
+          <br /> 1학년 : 본격적으로 프로그래밍에 대해 이론을 배우기 시작한
+          단계였으며 이론을 중점으로 간단한 코드를 작성하였다.
+          <br />
+          <br />
+          2학년: 세미 프로젝트를 진행 해 '코로나 확진자 정보 사이트'를
+          구축하였다.
+          <br />
+          <br />
+          3학년: 동아리 회장을 진행함 으로써 학우들을 모아 팀을 만들었고
+          '추계종합학술대회'에 나가 인공지능 분야로 우수논문합격 및 장려상을
+          받았다.
+          <br />
+          <br />
+          4학년: 인턴쉽 및 취업활동을 진행
+        </p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="2006 - 2008"
+        contentStyle={{ background: "#fff", color: "black" }}
+        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        date="2022.01.03 - 2022.06.31"
         iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">Web Designer</h3>
+        <h3 className="vertical-timeline-element-title">회사: 에이치나인</h3>
         <h4 className="vertical-timeline-element-subtitle">
-          San Francisco, CA
+          부서명: R & D (인턴쉽)
         </h4>
-        <p>User Experience, Visual Design</p>
+        <p>
+          학교를 다니면서 한 학기 동안 인턴쉽을 진행하였다.
+          <br />
+          <br />
+          1월 ~ 2월: js,ts,react의 세미나를 진행하였다.
+          <br />
+          <br />
+          3월 ~ 3월 중순: 자사 출퇴근 시스템의 ui 문서를 받아 문서 토대로
+          시스템을 React, Redux로 클론 코딩 하였다.
+          <br />
+          <br />
+          4월 ~ 5월: LG 경영연구원 홈페이지의 QA를 진행하였다.
+          <br />
+          <br />
+          6월 ~ 7월: LG 리서치 인프라 홈페이지의 QA를 진행하였다.
+        </p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        date="April 2013"
+        contentStyle={{ background: "#fff", color: "black" }}
+        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        date="2022.08.07 ~"
         iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
         // icon={<SchoolIcon />}
       >
-        <h3 className="vertical-timeline-element-title">
-          Content Marketing for Web, Mobile and Social Media
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-        <p>Strategy, Social Media</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        date="November 2012"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        // icon={<SchoolIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Agile Development Scrum Master
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-        <p>Creative Direction, User Experience, Visual Design</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        date="2002 - 2006"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        // icon={<SchoolIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Bachelor of Science in Interactive Digital Media Visual Imaging
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-        <p>Creative Direction, Visual Design</p>
+        <h3 className="vertical-timeline-element-title">회사명: 진진시스템</h3>
+        <h4 className="vertical-timeline-element-subtitle">
+          부서명: 시스템개발부 (정직원)
+        </h4>
+        <p>현재진행형</p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
