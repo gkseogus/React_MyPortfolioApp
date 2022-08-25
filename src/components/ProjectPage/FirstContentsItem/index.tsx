@@ -7,10 +7,12 @@ import {
   animated,
   useSpringRef,
 } from "@react-spring/web";
-import data from "./data";
 import styles from "./styles.module.css";
 import styled, { keyframes } from "styled-components";
 import { Box } from "@chakra-ui/react";
+import frontData from "./frontData";
+import backData from "./backData";
+import verData from "./verData";
 
 const TextClip = keyframes`
   to {
@@ -21,7 +23,6 @@ const TextClip = keyframes`
 const AnimateCharcter = styled.h3`
   text-transform: uppercase;
   padding-top: 15%;
-  padding-left: 38.5%;
   background-image: linear-gradient(
     -225deg,
     #120907 0%,
@@ -40,6 +41,30 @@ const AnimateCharcter = styled.h3`
   animation: ${TextClip} 2s linear infinite;
   display: inline-block;
   font-size: 100px;
+  font-family: "Kanit", sans-serif;
+`;
+
+const SubAnimateCharcter = styled.h4`
+  text-transform: uppercase;
+  padding-top: 5%;
+  background-image: linear-gradient(
+    -225deg,
+    #120907 0%,
+    red 29%,
+    #120907 67%,
+    #f9f9f9 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${TextClip} 2s linear infinite;
+  display: inline-block;
+  font-size: 50px;
   font-family: "Kanit", sans-serif;
 `;
 
@@ -81,9 +106,25 @@ const FirstContentsItem = () => {
   });
 
   const transApi = useSpringRef();
-  const transition = useTransition(open ? data : [], {
+  const frontTransition = useTransition(open ? frontData : [], {
     ref: transApi,
-    trail: 400 / data.length,
+    trail: 400 / frontData.length,
+    from: { opacity: 0, scale: 0 },
+    enter: { opacity: 1, scale: 1 },
+    leave: { opacity: 0, scale: 0 },
+  });
+
+  const backTransition = useTransition(open ? backData : [], {
+    ref: transApi,
+    trail: 400 / frontData.length,
+    from: { opacity: 0, scale: 0 },
+    enter: { opacity: 1, scale: 1 },
+    leave: { opacity: 0, scale: 0 },
+  });
+
+  const verTransition = useTransition(open ? verData : [], {
+    ref: transApi,
+    trail: 400 / verData.length,
     from: { opacity: 0, scale: 0 },
     enter: { opacity: 1, scale: 1 },
     leave: { opacity: 0, scale: 0 },
@@ -96,14 +137,73 @@ const FirstContentsItem = () => {
 
   return (
     <div>
-      <AnimateCharcter>My Skill</AnimateCharcter>
+      <div style={{ textAlign: "center" }}>
+        <AnimateCharcter>My Skill</AnimateCharcter>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <SubAnimateCharcter>Front</SubAnimateCharcter>
+      </div>
       <div className={styles.wrapper}>
         <animated.div
           style={{ ...rest, width: size, height: size }}
           className={styles.container}
           onClick={onclickBox}
         >
-          {transition((style, item) => (
+          {frontTransition((style, item) => (
+            <animated.div
+              className={styles.item}
+              style={{ ...style, background: item.css }}
+            >
+              <AnimateBoxText>{item.name}</AnimateBoxText>
+              <Box
+                style={{
+                  width: "300px",
+                  height: "50%",
+                  margin: "auto",
+                }}
+                backgroundImage={`url(${item.langthImg})`}
+              ></Box>
+            </animated.div>
+          ))}
+        </animated.div>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <SubAnimateCharcter>Back</SubAnimateCharcter>
+      </div>
+      <div className={styles.wrapper}>
+        <animated.div
+          style={{ ...rest, width: size, height: size }}
+          className={styles.container}
+          onClick={onclickBox}
+        >
+          {backTransition((style, item) => (
+            <animated.div
+              className={styles.item}
+              style={{ ...style, background: item.css }}
+            >
+              <AnimateBoxText>{item.name}</AnimateBoxText>
+              <Box
+                style={{
+                  width: "300px",
+                  height: "50%",
+                  margin: "auto",
+                }}
+                backgroundImage={`url(${item.langthImg})`}
+              ></Box>
+            </animated.div>
+          ))}
+        </animated.div>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <SubAnimateCharcter>Version Control</SubAnimateCharcter>
+      </div>
+      <div className={styles.wrapper}>
+        <animated.div
+          style={{ ...rest, width: size, height: size }}
+          className={styles.container}
+          onClick={onclickBox}
+        >
+          {verTransition((style, item) => (
             <animated.div
               className={styles.item}
               style={{ ...style, background: item.css }}
