@@ -1,10 +1,14 @@
 import TimeLine from "./TimeLine";
+import styled from "styled-components";
 
+const Contain = styled.div`
+  padding: 20%;
+`;
 const CareerPage = () => {
   return (
-    <div>
+    <Contain>
       <TimeLine />
-    </div>
+    </Contain>
   );
 };
 
