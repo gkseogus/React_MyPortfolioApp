@@ -1,9 +1,9 @@
 import JavaScriptLogo from "./IMG/JavaScriptLogo.png";
 import TypeScriptLogo from "./IMG/TypeScriptLogo.png";
 import ReactLogo from "./IMG/ReactLogo.png";
-import PythonLogo from "./IMG/PythonLogo.png";
+import ReduxLogo from "./IMG/ReduxLogo.png";
 
-const data = [
+const frontData = [
   {
     name: "JS",
     description: "#a8edea → #fed6e3",
@@ -26,12 +26,12 @@ const data = [
     langthImg: ReactLogo,
   },
   {
-    name: "Python",
+    name: "Redux",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: PythonLogo,
+    langthImg: ReduxLogo,
   },
 ];
 
-export default data;
+export default frontData;
