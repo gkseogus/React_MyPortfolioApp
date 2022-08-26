@@ -6,13 +6,13 @@ import "react-vertical-timeline-component/style.min.css";
 
 const TimeLine = () => {
   return (
-    <VerticalTimeline>
+    <VerticalTimeline lineColor="red">
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#fff", color: "black" }}
         contentArrowStyle={{ borderRight: "7px solid  black" }}
         date="2014 - 2016"
-        iconStyle={{ background: "#fff", color: "#fff" }}
+        iconStyle={{ background: "black", color: "#fff" }}
         // icon={<WorkIcon />}
       >
         <h3 className="vertical-timeline-element-title">학교명: 장안중학교</h3>
@@ -26,7 +26,7 @@ const TimeLine = () => {
         contentStyle={{ background: "#fff", color: "black" }}
         contentArrowStyle={{ borderRight: "7px solid  black" }}
         date="2017 - 2019"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: "black", color: "#fff" }}
         // icon={<WorkIcon />}
       >
         <h3 className="vertical-timeline-element-title">
@@ -49,7 +49,7 @@ const TimeLine = () => {
         contentStyle={{ background: "#fff", color: "black" }}
         contentArrowStyle={{ borderRight: "7px solid  black" }}
         date="2019 - 2022"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: "black", color: "#fff" }}
         // icon={<WorkIcon />}
       >
         <h3 className="vertical-timeline-element-title">학교명: 한림대학교</h3>
@@ -79,7 +79,7 @@ const TimeLine = () => {
         contentStyle={{ background: "#fff", color: "black" }}
         contentArrowStyle={{ borderRight: "7px solid  black" }}
         date="2022.01.03 - 2022.06.31"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: "red", color: "#fff" }}
         // icon={<WorkIcon />}
       >
         <h3 className="vertical-timeline-element-title">회사: 에이치나인</h3>
@@ -108,7 +108,7 @@ const TimeLine = () => {
         contentStyle={{ background: "#fff", color: "black" }}
         contentArrowStyle={{ borderRight: "7px solid  black" }}
         date="2022.08.07 ~"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+        iconStyle={{ background: "red", color: "#fff" }}
         // icon={<SchoolIcon />}
       >
         <h3 className="vertical-timeline-element-title">회사명: 진진시스템</h3>
@@ -118,7 +118,7 @@ const TimeLine = () => {
         <p>현재진행형</p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
-        iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+        iconStyle={{ background: "black", color: "#fff" }}
         // icon={<StarIcon />}
       />
     </VerticalTimeline>
