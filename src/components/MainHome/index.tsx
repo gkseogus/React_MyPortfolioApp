@@ -209,7 +209,7 @@ const MainHome = () => {
   const ResetScroll = () => {
     window.scrollTo(0, 0);
   };
-
+  ///
   return (
     <IntroContain>
       <div>
