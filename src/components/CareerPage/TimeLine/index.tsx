@@ -117,10 +117,6 @@ const TimeLine = () => {
         </h4>
         <p>현재진행형</p>
       </VerticalTimelineElement>
-      <VerticalTimelineElement
-        iconStyle={{ background: "black", color: "#fff" }}
-        // icon={<StarIcon />}
-      />
     </VerticalTimeline>
   );
 };

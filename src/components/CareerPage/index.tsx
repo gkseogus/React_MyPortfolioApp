@@ -1,12 +1,38 @@
 import TimeLine from "./TimeLine";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const gradientContents = keyframes`
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+`;
+
+const CenterContentsText = styled.h2`
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600px;
+  font-family: "Kanit", sans-serif;
+  line-height: 1.27;
+  letter-spacing: 0px;
+  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+  animation: ${gradientContents} 4s ease-in-out infinite;
+`;
 
 const Contain = styled.div`
   padding: 20%;
 `;
+
 const CareerPage = () => {
   return (
     <Contain>
+      <CenterContentsText>My Career Time Line</CenterContentsText>
       <TimeLine />
     </Contain>
   );
