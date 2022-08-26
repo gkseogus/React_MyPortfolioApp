@@ -5,6 +5,11 @@ import awardsIcon from "../CareersCard/IMG/awardsIcon.png";
 import awardsIcon2 from "../CareersCard/IMG/awardsIcon2.png";
 import companyIcon from "../CareersCard/IMG/companyIcon.png";
 
+const Contain = styled.div`
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+  }
+`;
 const CareerBtn = styled.button`
   font-size: 32px;
   font-family: "Kanit", sans-serif;
@@ -15,6 +20,10 @@ const CareerBtn = styled.button`
     background-color: none;
     color: red;
   }
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    display: inline-block;
+  }
 `;
 
 const CareerItemsTitle = styled.h2`
@@ -24,12 +33,22 @@ const CareerItemsTitle = styled.h2`
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto;
+  }
 `;
 
 const CareerItemsAward = styled.img`
   width: 300px;
   height: 200px;
   margin-left: 20%;
+  @media screen and (max-width: 500px) {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
 `;
 
 const CareerItemsData = styled.h3`
@@ -42,6 +61,15 @@ const CareerItemsData = styled.h3`
     background-color: white;
     color: red;
   }
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    font-weight: 500;
+    width: 250px;
+    color: red;
+    padding: 0;
+    margin: auto;
+    margin-left: 0%;
+  }
 `;
 
 const CareerItemsText = styled.h3`
@@ -51,6 +79,12 @@ const CareerItemsText = styled.h3`
   line-height: 1.45;
   letter-spacing: 2px;
   padding: 5%;
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto;
+    margin-top: 10px;
+  }
 `;
 
 const careerItemsContents = [
@@ -94,23 +128,25 @@ const IntroCareers = () => {
       <CareerBtn onClick={onToggle}>Career</CareerBtn>
       <Collapse in={isOpen} animateOpacity>
         <Box p="10px" color="black" mt="1" rounded="md">
-          <Grid templateColumns="repeat(3, 1fr)" gap="100px">
-            {careerItemsContents.map((item, index) => (
-              <GridItem w="100%" h="100%" bg="white" rounded="md" key={index}>
-                <CareerItemsTitle>
-                  {item.title}
+          <Contain>
+            <Grid templateColumns="repeat(3, 1fr)" gap="100px">
+              {careerItemsContents.map((item, index) => (
+                <GridItem w="100%" h="100%" bg="white" rounded="md" key={index}>
+                  <CareerItemsTitle>
+                    {item.title}
+                    <br />
+                  </CareerItemsTitle>
+                  <CareerItemsAward alt="award" src={item.awardImg} />
                   <br />
-                </CareerItemsTitle>
-                <CareerItemsAward alt="award" src={item.awardImg} />
-                <br />
-                <CareerItemsData>
-                  {item.data}
-                  <br />
-                </CareerItemsData>
-                <CareerItemsText>{item.text}</CareerItemsText>
-              </GridItem>
-            ))}
-          </Grid>
+                  <CareerItemsData>
+                    {item.data}
+                    <br />
+                  </CareerItemsData>
+                  <CareerItemsText>{item.text}</CareerItemsText>
+                </GridItem>
+              ))}
+            </Grid>
+          </Contain>
         </Box>
       </Collapse>
     </div>

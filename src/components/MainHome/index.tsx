@@ -38,7 +38,11 @@ const gradientContents = keyframes`
     }
 `;
 
-const IntroContain = styled.div``;
+const IntroContain = styled.div`
+  @media screen and (max-width: 500px) {
+    text-align: center;
+  }
+`;
 
 const IntroText = styled.h2`
   padding-top: 8%;
@@ -56,6 +60,11 @@ const IntroText = styled.h2`
   margin-inline-end: 10%;
   display: flex;
   animation: ${gradientIntro} 6s ease-in-out none;
+  @media screen and (max-width: 500px) {
+    padding-top: 35%;
+    font-size: 20px;
+    display: inline-block;
+  }
 `;
 
 const IntroImg = styled.img`
@@ -63,12 +72,32 @@ const IntroImg = styled.img`
   top: 1px;
   right: 5%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 20%;
   height: 35%;
   min-height: 500px;
   min-width: 700px;
   opacity: 0.4;
   animation: ${circleAni} 10s linear infinite;
+`;
+
+const CenterContentsText = styled.h2`
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600px;
+  font-family: "Kanit", sans-serif;
+  line-height: 1.27;
+  letter-spacing: 0px;
+  padding: 10px;
+  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+  animation: ${gradientContents} 4s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    padding-top: 10%;
+    font-size: 20px;
+  }
 `;
 
 const ContentsText = styled.h2`
@@ -89,6 +118,10 @@ const ContentsText = styled.h2`
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
   animation: ${gradientContents} 4s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    padding-top: 10%;
+    font-size: 20px;
+  }
 `;
 
 const GitHubLinkContain = styled.div`
@@ -113,6 +146,13 @@ const ReverseContentsText = styled.h2`
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
   animation: ${gradientContents} 4s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    padding-top: 20%;
+    text-align: center;
+    font-size: 20px;
+    top: 0;
+    margin-inline-start: 38%;
+  }
 `;
 
 const ReverseContentsBtn = styled(Link)`
@@ -130,28 +170,25 @@ const ReverseContentsBtn = styled(Link)`
     background-color: none;
     color: red;
   }
+  @media screen and (max-width: 500px) {
+    padding-top: 5%;
+    padding-bottom: 10%;
+    text-align: center;
+    font-size: 20px;
+    top: 0;
+    margin-inline-start: 42%;
+  }
 `;
 
 const MainProjectCarouselsContain = styled.div`
   margin-right: 50%;
   margin-bottom: 20%;
   margin-inline-start: 10%;
-`;
-
-const CenterContentsText = styled.h2`
-  text-align: center;
-  font-size: 64px;
-  font-weight: 600px;
-  font-family: "Kanit", sans-serif;
-  line-height: 1.27;
-  letter-spacing: 0px;
-  padding: 10px;
-  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
-  animation: ${gradientContents} 4s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: auto;
+  }
 `;
 
 const IntroCareersContain = styled.div`
@@ -162,6 +199,10 @@ const IntroCareersContain = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 30%;
+  @media screen and (max-width: 500px) {
+    padding-left: 14%;
+    padding-right: 14%;
+  }
 `;
 
 const MainHome = () => {
