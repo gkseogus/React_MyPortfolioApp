@@ -13,7 +13,14 @@ import Slider from "react-slick";
 import commuteImg from "../MainProjectCarousel/IMG/commuteImg.png";
 import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.png";
 import deepLearningImg from "../MainProjectCarousel/IMG/deepLearningImg.png";
+import styled from "styled-components";
 
+const Contain = styled.p`
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+    padding-right: 10%;
+  }
+`;
 // Settings for the slider
 const settings = {
   dots: true,
@@ -130,17 +137,19 @@ const ProjectCaptionCarousel = () => {
                   fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                   color="white"
                 >
-                  {card.title}
+                  <Contain>{card.title}</Contain>
                 </Heading>
                 <Text
                   fontSize={{ base: "3xl", lg: "lg" }}
                   color="white"
                   fontWeight="bolder"
                 >
-                  {card.text}
-                  <br />
-                  {card.TechnologyStackText}
-                  <br />
+                  <Contain>
+                    {card.text}
+                    <br />
+                    {card.TechnologyStackText}
+                    <br />
+                  </Contain>
                 </Text>
               </Stack>
             </Container>
