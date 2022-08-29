@@ -15,7 +15,7 @@ import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.png";
 import deepLearningImg from "../MainProjectCarousel/IMG/deepLearningImg.png";
 import styled from "styled-components";
 
-const Contain = styled.p`
+const Contain = styled.div`
   @media screen and (max-width: 500px) {
     font-size: 18px;
     padding-right: 10%;
