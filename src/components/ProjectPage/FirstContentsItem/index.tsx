@@ -20,7 +20,7 @@ const TextClip = keyframes`
   }
 `;
 
-const AnimateCharcter = styled.h3`
+const AnimateTitleText = styled.h3`
   text-transform: uppercase;
   padding-top: 15%;
   background-image: linear-gradient(
@@ -42,9 +42,13 @@ const AnimateCharcter = styled.h3`
   display: inline-block;
   font-size: 100px;
   font-family: "Kanit", sans-serif;
+  @media screen and (max-width: 500px) {
+    font-size: 40px;
+    padding-bottom: 10%;
+  }
 `;
 
-const SubAnimateCharcter = styled.h4`
+const SubAnimatContentsText = styled.h4`
   text-transform: uppercase;
   padding-top: 5%;
   background-image: linear-gradient(
@@ -66,6 +70,10 @@ const SubAnimateCharcter = styled.h4`
   display: inline-block;
   font-size: 50px;
   font-family: "Kanit", sans-serif;
+  @media screen and (max-width: 500px) {
+    font-size: 25px;
+    padding-bottom: 10%;
+  }
 `;
 
 const AnimateBoxText = styled.h2`
@@ -85,6 +93,9 @@ const AnimateBoxText = styled.h2`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  @media screen and (max-width: 500px) {
+    font-size: 25px;
+  }
 `;
 
 const FirstContentsItem = () => {
@@ -138,10 +149,10 @@ const FirstContentsItem = () => {
   return (
     <div>
       <div style={{ textAlign: "center" }}>
-        <AnimateCharcter>My Skill</AnimateCharcter>
+        <AnimateTitleText>My Skill</AnimateTitleText>
       </div>
       <div style={{ textAlign: "center" }}>
-        <SubAnimateCharcter>Front</SubAnimateCharcter>
+        <SubAnimatContentsText>Front</SubAnimatContentsText>
       </div>
       <div className={styles.wrapper}>
         <animated.div
@@ -168,7 +179,7 @@ const FirstContentsItem = () => {
         </animated.div>
       </div>
       <div style={{ textAlign: "center" }}>
-        <SubAnimateCharcter>Back</SubAnimateCharcter>
+        <SubAnimatContentsText>Back</SubAnimatContentsText>
       </div>
       <div className={styles.wrapper}>
         <animated.div
@@ -195,7 +206,7 @@ const FirstContentsItem = () => {
         </animated.div>
       </div>
       <div style={{ textAlign: "center" }}>
-        <SubAnimateCharcter>Version Control</SubAnimateCharcter>
+        <SubAnimatContentsText>Version Control</SubAnimatContentsText>
       </div>
       <div className={styles.wrapper}>
         <animated.div
