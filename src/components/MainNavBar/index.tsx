@@ -101,6 +101,8 @@ const MainNavBar = (_children: any) => {
           aria-label={"Open Menu"}
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
+          bg={useColorModeValue("black", "black")}
+          color="red"
         />
         <HStack spacing={8} alignItems={"center"}>
           <NavBarLogo src={HdhLogo} />
@@ -169,7 +171,7 @@ const MainNavBar = (_children: any) => {
         </Flex>
       </Flex>
       {isOpen ? (
-        <Box pb={4} display={{ md: "none" }}>
+        <Box pb={4} display={{ md: "none" }} color="white">
           <Stack as={"nav"} spacing={4}>
             {Links.map((link) => (
               <NavLink key={link} href={link}>

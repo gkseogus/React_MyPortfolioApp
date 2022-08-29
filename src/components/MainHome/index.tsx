@@ -59,11 +59,12 @@ const IntroText = styled.h2`
   margin-inline-start: 10%;
   margin-inline-end: 10%;
   display: flex;
-  animation: ${gradientIntro} 6s ease-in-out none;
+  animation: ${gradientIntro} 3.5s ease-in-out none;
   @media screen and (max-width: 500px) {
     padding-top: 35%;
     font-size: 20px;
     display: inline-block;
+    text-align: center;
   }
 `;
 
