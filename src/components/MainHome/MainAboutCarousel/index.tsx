@@ -7,9 +7,6 @@ import SetBackGroundImg from "../MainAboutCarousel/IMG/SetBackGroundImg.png";
 const SettingImgContain = styled.div`
   padding-left: auto;
   padding-top: 20px;
-  @media screen and (max-width: 500px) {
-    width: 100vw;
-  }
 `;
 
 const SettingImg = styled.img`
@@ -19,9 +16,6 @@ const SettingImg = styled.img`
 const Contain = styled.div`
   padding-top: auto;
   padding-bottom: 15%;
-  @media screen and (max-width: 500px) {
-    width: 100vw;
-  }
 `;
 
 const ImgContain = styled.div`

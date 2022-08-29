@@ -139,18 +139,18 @@ const ProjectCaptionCarousel = () => {
                 >
                   <Contain>{card.title}</Contain>
                 </Heading>
-                <Text
-                  fontSize={{ base: "3xl", lg: "lg" }}
-                  color="white"
-                  fontWeight="bolder"
-                >
-                  <Contain>
+                <Contain>
+                  <Text
+                    fontSize={{ base: "3xl", lg: "lg" }}
+                    color="white"
+                    fontWeight="bolder"
+                  >
                     {card.text}
                     <br />
                     {card.TechnologyStackText}
                     <br />
-                  </Contain>
-                </Text>
+                  </Text>
+                </Contain>
               </Stack>
             </Container>
           </Box>
