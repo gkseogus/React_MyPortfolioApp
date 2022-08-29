@@ -23,6 +23,12 @@ const CenterContentsText = styled.h2`
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 10s infinite linear;
   animation: ${gradientContents} 4s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    padding-top: 50%;
+    padding-bottom: 20%;
+    font-size: 20px;
+    text-align: center;
+  }
 `;
 
 const Contain = styled.div`
