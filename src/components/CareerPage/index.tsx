@@ -10,6 +10,10 @@ const gradientContents = keyframes`
     }
 `;
 
+const Contain = styled.div`
+  padding: 20%;
+`;
+
 const CenterContentsText = styled.h2`
   text-align: center;
   font-size: 64px;
@@ -29,10 +33,6 @@ const CenterContentsText = styled.h2`
     font-size: 20px;
     text-align: center;
   }
-`;
-
-const Contain = styled.div`
-  padding: 20%;
 `;
 
 const CareerPage = () => {
