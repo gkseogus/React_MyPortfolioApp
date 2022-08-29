@@ -32,17 +32,28 @@ const FirstContentsText = styled.h2`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    padding-top: 50%;
+    padding-bottom: 10%;
+  }
 `;
 
+/**
+ * top: 숫자가 낮을 수록 텍스트는 올라간다
+ * width:폭의 길이
+ */
 const Openclose = keyframes`
-0% {
+  0% {
     top: 0.2rem;
     width: 0;
   }
   5% {
+    top: 0.2rem;
     width: 0;
   }
   15% {
+    top: 0.2rem;
     width: 50%;
   }
   30% {
@@ -99,6 +110,71 @@ const Openclose = keyframes`
   }
 `;
 
+const MediaOpenclose = keyframes`
+  0% {
+    top: 0rem;
+    width: 0;
+  }
+  5% {
+    top: 0rem;
+    width: 0;
+  }
+  15% {
+    top: 0rem;
+    width: 45%;
+  }
+  30% {
+    top: 0rem;
+    width: 45%;
+  }
+  33% {
+    top: 0rem;
+    width: 0;
+  }
+  35% {
+    top: 0rem;
+    width: 0;
+  }
+  38% {
+    top: -1.9rem;
+    width: 0;
+  }
+  48% {
+    top: -1.9rem;
+    width: 50%;
+  }
+  62% {
+    top: -1.9rem;
+    width: 50%;
+  }
+  66% {
+    top: -1.9rem;
+    width: 0;
+  }
+  71% {
+    top: -3.7rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -3.7rem;
+    width: 50%;
+  }
+  95% {
+    top: -3.7rem;
+    width: 50%;
+  }
+  98% {
+    top: -3.7rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
+  }
+`;
 const SecondContentsText = styled.h1`
   color: black;
   font-family: tahoma;
@@ -112,6 +188,11 @@ const SecondContentsText = styled.h1`
   width: 550px;
   left: 10%;
   margin: 25%;
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+    width: 250px;
+    left: 0%;
+  }
 `;
 
 const Message = styled.div`
@@ -126,10 +207,19 @@ const Message = styled.div`
   top: 0.2rem;
   left: 200px;
   animation: ${Openclose} 5s ease-in-out infinite;
+  @media screen and (max-width: 500px) {
+    animation: ${MediaOpenclose} 5s ease-in-out infinite;
+    left: 100px;
+  }
 `;
 
 const SecondContentsItem = styled.div`
   padding-bottom: 30%;
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: auto;
+  }
 `;
 
 const ProjectPage = () => {
