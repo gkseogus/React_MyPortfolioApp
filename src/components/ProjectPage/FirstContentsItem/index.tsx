@@ -98,6 +98,11 @@ const AnimateBoxText = styled.h2`
   }
 `;
 
+const ImaContain = styled.div`
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
 const FirstContentsItem = () => {
   const [open, setOpen] = useState(false);
 
@@ -166,14 +171,16 @@ const FirstContentsItem = () => {
               style={{ ...style, background: item.css }}
             >
               <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
+              <ImaContain>
+                <Box
+                  style={{
+                    width: "300px",
+                    height: "50%",
+                    margin: "auto",
+                  }}
+                  backgroundImage={`url(${item.langthImg})`}
+                ></Box>
+              </ImaContain>
             </animated.div>
           ))}
         </animated.div>
@@ -193,14 +200,16 @@ const FirstContentsItem = () => {
               style={{ ...style, background: item.css }}
             >
               <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
+              <ImaContain>
+                <Box
+                  style={{
+                    width: "300px",
+                    height: "50%",
+                    margin: "auto",
+                  }}
+                  backgroundImage={`url(${item.langthImg})`}
+                ></Box>
+              </ImaContain>
             </animated.div>
           ))}
         </animated.div>
@@ -220,14 +229,16 @@ const FirstContentsItem = () => {
               style={{ ...style, background: item.css }}
             >
               <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
+              <ImaContain>
+                <Box
+                  style={{
+                    width: "300px",
+                    height: "50%",
+                    margin: "auto",
+                  }}
+                  backgroundImage={`url(${item.langthImg})`}
+                ></Box>
+              </ImaContain>
             </animated.div>
           ))}
         </animated.div>

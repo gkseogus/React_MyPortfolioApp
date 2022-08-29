@@ -9,6 +9,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import styled from "styled-components";
 import Slider from "react-slick";
 import commuteImg from "../ProjectCarousel/IMG/commuteImg.png";
 import exerciseImg from "../ProjectCarousel/IMG/exerciseImg.png";
@@ -16,6 +17,19 @@ import deepLearningImg from "../ProjectCarousel/IMG/deepLearningImg.png";
 import exerciseBlogImg from "../ProjectCarousel/IMG/exerciseBlogImg.png";
 import commuteResultImg from "../ProjectCarousel/IMG/commuteResultImg.png";
 import crackResultImg from "../ProjectCarousel/IMG/crackResultImg.png";
+
+const TextContain = styled.h2`
+  @media screen and (max-width: 500px) {
+    text-align: center;
+    font-size: 15px;
+  }
+`;
+
+const ImaContain = styled.div`
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
 
 const settings = {
   dots: true,
@@ -127,27 +141,31 @@ const ProjectCarousel = () => {
                   fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                   color="white"
                 >
-                  {card.title}
+                  <TextContain>{card.title}</TextContain>
                 </Heading>
                 <Text
                   fontSize={{ base: "3xl", lg: "lg" }}
                   color="white"
                   fontWeight="bolder"
                 >
-                  {card.text}
-                  <br />
-                  {card.TechnologyStackText}
-                  <br />
-                  <br />
-                  Result
-                  <br />
+                  <TextContain>
+                    {card.text}
+                    <br />
+                    {card.TechnologyStackText}
+                    <br />
+                    <br />
+                    Result
+                    <br />
+                  </TextContain>
                 </Text>
-                <Box
-                  height={300}
-                  width={600}
-                  backgroundPosition="center"
-                  backgroundImage={`url(${card.resultImage})`}
-                />
+                <ImaContain>
+                  <Box
+                    height={300}
+                    width={600}
+                    backgroundPosition="center"
+                    backgroundImage={`url(${card.resultImage})`}
+                  />
+                </ImaContain>
               </Stack>
             </Container>
           </Box>
