@@ -64,6 +64,7 @@ const IntroText = styled.h2`
     padding-top: 35%;
     font-size: 20px;
     display: inline-block;
+    text-align: center;
   }
 `;
 
