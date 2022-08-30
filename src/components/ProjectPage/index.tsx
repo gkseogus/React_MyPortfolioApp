@@ -192,7 +192,7 @@ const SecondContentsText = styled.h1`
     font-size: 20px;
     font-weight: 600;
     width: 250px;
-    left: 0%;
+    left: -4%;
   }
 `;
 
