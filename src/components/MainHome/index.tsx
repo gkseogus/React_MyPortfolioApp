@@ -201,7 +201,7 @@ const IntroCareersContain = styled.div`
   padding-right: 100px;
   padding-bottom: 30%;
   @media screen and (max-width: 500px) {
-    padding-left: 14%;
+    padding-left: 16%;
     padding-right: 14%;
   }
 `;
