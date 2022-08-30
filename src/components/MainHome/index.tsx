@@ -153,10 +153,12 @@ const ReverseContentsText = styled.h2`
   animation: ${gradientContents} 4s ease-in-out infinite;
   @media screen and (max-width: 500px) {
     padding-top: 20%;
+    padding-left: 36.5%;
     text-align: center;
     font-size: 20px;
+    margin-inline-start: 0%;
+    margin-inline-end: 0%;
     top: 0;
-    margin-inline-start: 38%;
   }
 `;
 
@@ -178,10 +180,11 @@ const ReverseContentsBtn = styled(Link)`
   @media screen and (max-width: 500px) {
     padding-top: 5%;
     padding-bottom: 10%;
+    padding-left: 40.5%;
     text-align: center;
     font-size: 20px;
     top: 0;
-    margin-inline-start: 42%;
+    margin-inline-start: 0%;
   }
 `;
 
