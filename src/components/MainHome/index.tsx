@@ -127,6 +127,10 @@ const ContentsText = styled.h2`
 
 const GitHubLinkContain = styled.div`
   margin-inline-start: 50%;
+  @media screen and (max-width: 500px) {
+    margin-inline-start: 45%;
+    padding-right: 5%;
+  }
 `;
 
 const ReverseContentsText = styled.h2`
