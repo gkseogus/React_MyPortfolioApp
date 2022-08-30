@@ -190,6 +190,7 @@ const SecondContentsText = styled.h1`
   margin: 25%;
   @media screen and (max-width: 500px) {
     font-size: 20px;
+    font-weight: 600;
     width: 250px;
     left: 0%;
   }

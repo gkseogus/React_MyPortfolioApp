@@ -20,6 +20,23 @@ const TextClip = keyframes`
   }
 `;
 
+const Contain = styled.div`
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const TextContain = styled.div`
+  display: inline-block;
+  margin: 15px;
+  padding-bottom: 50px;
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+  @media screen and (min-width: 500px) {
+    display: none;
+  }
+`;
+
 const AnimateTitleText = styled.h3`
   text-transform: uppercase;
   padding-top: 15%;
@@ -98,11 +115,6 @@ const AnimateBoxText = styled.h2`
   }
 `;
 
-const ImaContain = styled.div`
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-`;
 const FirstContentsItem = () => {
   const [open, setOpen] = useState(false);
 
@@ -159,7 +171,7 @@ const FirstContentsItem = () => {
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Front</SubAnimatContentsText>
       </div>
-      <div className={styles.wrapper}>
+      <Contain className={styles.wrapper}>
         <animated.div
           style={{ ...rest, width: size, height: size }}
           className={styles.container}
@@ -171,24 +183,27 @@ const FirstContentsItem = () => {
               style={{ ...style, background: item.css }}
             >
               <AnimateBoxText>{item.name}</AnimateBoxText>
-              <ImaContain>
-                <Box
-                  style={{
-                    width: "300px",
-                    height: "50%",
-                    margin: "auto",
-                  }}
-                  backgroundImage={`url(${item.langthImg})`}
-                ></Box>
-              </ImaContain>
+              <Box
+                style={{
+                  width: "300px",
+                  height: "50%",
+                  margin: "auto",
+                }}
+                backgroundImage={`url(${item.langthImg})`}
+              ></Box>
             </animated.div>
           ))}
         </animated.div>
+      </Contain>
+      <div style={{ textAlign: "center" }}>
+        {frontData.map((item, index) => (
+          <TextContain key={index}>{item.name}</TextContain>
+        ))}
       </div>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Back</SubAnimatContentsText>
       </div>
-      <div className={styles.wrapper}>
+      <Contain className={styles.wrapper}>
         <animated.div
           style={{ ...rest, width: size, height: size }}
           className={styles.container}
@@ -200,24 +215,27 @@ const FirstContentsItem = () => {
               style={{ ...style, background: item.css }}
             >
               <AnimateBoxText>{item.name}</AnimateBoxText>
-              <ImaContain>
-                <Box
-                  style={{
-                    width: "300px",
-                    height: "50%",
-                    margin: "auto",
-                  }}
-                  backgroundImage={`url(${item.langthImg})`}
-                ></Box>
-              </ImaContain>
+              <Box
+                style={{
+                  width: "300px",
+                  height: "50%",
+                  margin: "auto",
+                }}
+                backgroundImage={`url(${item.langthImg})`}
+              ></Box>
             </animated.div>
           ))}
         </animated.div>
+      </Contain>
+      <div style={{ textAlign: "center" }}>
+        {backData.map((item, index) => (
+          <TextContain key={index}>{item.name}</TextContain>
+        ))}
       </div>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Version Control</SubAnimatContentsText>
       </div>
-      <div className={styles.wrapper}>
+      <Contain className={styles.wrapper}>
         <animated.div
           style={{ ...rest, width: size, height: size }}
           className={styles.container}
@@ -229,19 +247,22 @@ const FirstContentsItem = () => {
               style={{ ...style, background: item.css }}
             >
               <AnimateBoxText>{item.name}</AnimateBoxText>
-              <ImaContain>
-                <Box
-                  style={{
-                    width: "300px",
-                    height: "50%",
-                    margin: "auto",
-                  }}
-                  backgroundImage={`url(${item.langthImg})`}
-                ></Box>
-              </ImaContain>
+              <Box
+                style={{
+                  width: "300px",
+                  height: "50%",
+                  margin: "auto",
+                }}
+                backgroundImage={`url(${item.langthImg})`}
+              ></Box>
             </animated.div>
           ))}
         </animated.div>
+      </Contain>
+      <div style={{ textAlign: "center" }}>
+        {verData.map((item, index) => (
+          <TextContain key={index}>{item.name}</TextContain>
+        ))}
       </div>
     </div>
   );
