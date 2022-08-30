@@ -154,7 +154,7 @@ const ProjectCarousel = () => {
                     {card.TechnologyStackText}
                     <br />
                     <br />
-                    Result
+                    <ImaContain>Result</ImaContain>
                     <br />
                   </TextContain>
                 </Text>
