@@ -16,6 +16,7 @@ const CareerBtn = styled.button`
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
+  padding-right: 10%;
   &:hover {
     background-color: none;
     color: red;
