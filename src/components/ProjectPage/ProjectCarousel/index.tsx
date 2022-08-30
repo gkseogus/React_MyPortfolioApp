@@ -5,7 +5,6 @@ import {
   useBreakpointValue,
   Stack,
   Heading,
-  Text,
   Container,
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -28,7 +27,7 @@ const BtnContain = styled.div`
   }
 `;
 
-const TextContain = styled.h2`
+const TextContain = styled.div`
   @media screen and (max-width: 500px) {
     text-align: center;
     font-size: 15px;
@@ -197,7 +196,7 @@ const ProjectCarousel = () => {
                 >
                   <TextContain>{card.title}</TextContain>
                 </Heading>
-                <Text
+                <Box
                   fontSize={{ base: "3xl", lg: "lg" }}
                   color="white"
                   fontWeight="bolder"
@@ -215,7 +214,7 @@ const ProjectCarousel = () => {
                     <ImaContain>Result</ImaContain>
                     <br />
                   </TextContain>
-                </Text>
+                </Box>
                 <ImaContain>
                   <Box
                     height={300}
