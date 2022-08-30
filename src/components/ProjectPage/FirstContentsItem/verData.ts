@@ -1,7 +1,7 @@
-import GitLogo from "./IMG/GitLogo.png";
-import GitHubLogo from "./IMG/GitHubLogo.png";
-import ForkLogo from "./IMG/ForkLogo.png";
-import JiraLogo from "./IMG/JiraLogo.png";
+import gitLogo from "./IMG/gitLogo.png";
+import gitHubLogo from "./IMG/gitHubLogo.png";
+import forkLogo from "./IMG/forkLogo.png";
+import jiraLogo from "./IMG/jiraLogo.png";
 
 const verData = [
   {
@@ -9,28 +9,28 @@ const verData = [
     description: "#a8edea → #fed6e3",
     css: "white",
     height: 200,
-    langthImg: GitLogo,
+    langthImg: gitLogo,
   },
   {
     name: "Git hub",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: GitHubLogo,
+    langthImg: gitHubLogo,
   },
   {
     name: "Fork",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: ForkLogo,
+    langthImg: forkLogo,
   },
   {
     name: "Jira",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: JiraLogo,
+    langthImg: jiraLogo,
   },
 ];
 

@@ -1,7 +1,7 @@
-import JavaScriptLogo from "./IMG/JavaScriptLogo.png";
-import TypeScriptLogo from "./IMG/TypeScriptLogo.png";
-import ReactLogo from "./IMG/ReactLogo.png";
-import ReduxLogo from "./IMG/ReduxLogo.png";
+import javaScriptLogo from "./IMG/javaScriptLogo.png";
+import typeScriptLogo from "./IMG/typeScriptLogo.png";
+import reactLogo from "./IMG/reactLogo.png";
+import reduxLogo from "./IMG/reduxLogo.png";
 
 const frontData = [
   {
@@ -9,28 +9,28 @@ const frontData = [
     description: "#a8edea → #fed6e3",
     css: "white",
     height: 200,
-    langthImg: JavaScriptLogo,
+    langthImg: javaScriptLogo,
   },
   {
     name: "TS",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: TypeScriptLogo,
+    langthImg: typeScriptLogo,
   },
   {
     name: "React",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: ReactLogo,
+    langthImg: reactLogo,
   },
   {
     name: "Redux",
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: ReduxLogo,
+    langthImg: reduxLogo,
   },
 ];
 
