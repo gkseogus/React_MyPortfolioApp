@@ -18,9 +18,16 @@ import styled from "styled-components";
 const Contain = styled.div`
   @media screen and (max-width: 500px) {
     font-size: 18px;
-    padding-right: 10%;
+    padding-right: 9.5%;
   }
 `;
+
+const BtnContain = styled.div`
+  @media screen and (max-width: 500px) {
+    color: red;
+  }
+`;
+
 // Settings for the slider
 const settings = {
   dots: true,
@@ -83,34 +90,36 @@ const ProjectCaptionCarousel = () => {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      {/* Left Icon */}
-      <IconButton
-        aria-label="left-arrow"
-        variant="unstyled"
-        position="absolute"
-        left={side}
-        top={top}
-        transform={"translate(0%, -50%)"}
-        zIndex={2}
-        _hover={{ color: "red" }}
-        onClick={() => slider?.slickPrev()}
-      >
-        <BiLeftArrowAlt size="40px" />
-      </IconButton>
-      {/* Right Icon */}
-      <IconButton
-        aria-label="right-arrow"
-        variant="unstyled"
-        position="absolute"
-        right={side}
-        top={top}
-        transform={"translate(0%, -50%)"}
-        zIndex={2}
-        _hover={{ color: "red" }}
-        onClick={() => slider?.slickNext()}
-      >
-        <BiRightArrowAlt size="40px" />
-      </IconButton>
+      <BtnContain>
+        {/* Left Icon */}
+        <IconButton
+          aria-label="left-arrow"
+          variant="unstyled"
+          position="absolute"
+          left={side}
+          top={top}
+          transform={"translate(0%, -50%)"}
+          zIndex={2}
+          _hover={{ color: "red" }}
+          onClick={() => slider?.slickPrev()}
+        >
+          <BiLeftArrowAlt size="40px" />
+        </IconButton>
+        {/* Right Icon */}
+        <IconButton
+          aria-label="right-arrow"
+          variant="unstyled"
+          position="absolute"
+          right={side}
+          top={top}
+          transform={"translate(0%, -50%)"}
+          zIndex={2}
+          _hover={{ color: "red" }}
+          onClick={() => slider?.slickNext()}
+        >
+          <BiRightArrowAlt size="40px" />
+        </IconButton>
+      </BtnContain>
       {/* Slider */}
       <Slider {...settings} ref={(slider: any) => setSlider(slider)}>
         {cards.map((card, index) => (
