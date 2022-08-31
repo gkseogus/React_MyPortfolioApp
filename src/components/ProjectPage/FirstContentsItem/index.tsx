@@ -116,6 +116,19 @@ const AnimateBoxText = styled.h2`
   }
 `;
 
+const MoContain = styled.div`
+  display: inline-block;
+`;
+
+const MoImgBox = styled.img`
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  position: flex;
+  @media screen and (min-width: 500px) {
+    display: none;
+  }
+`;
 const FirstContentsItem = () => {
   const [open, setOpen] = useState(false);
 
@@ -198,7 +211,10 @@ const FirstContentsItem = () => {
       </Contain>
       <div style={{ textAlign: "center" }}>
         {frontData.map((item, index) => (
-          <TextContain key={index}>{item.name}</TextContain>
+          <MoContain>
+            <MoImgBox src={item.moLangthImg} alt="moimg" />
+            <TextContain key={index}>{item.name}</TextContain>
+          </MoContain>
         ))}
       </div>
       <div style={{ textAlign: "center" }}>
@@ -230,7 +246,10 @@ const FirstContentsItem = () => {
       </Contain>
       <div style={{ textAlign: "center" }}>
         {backData.map((item, index) => (
-          <TextContain key={index}>{item.name}</TextContain>
+          <MoContain>
+            <MoImgBox src={item.moLangthImg} alt="moimg" />
+            <TextContain key={index}>{item.name}</TextContain>
+          </MoContain>
         ))}
       </div>
       <div style={{ textAlign: "center" }}>
@@ -262,7 +281,10 @@ const FirstContentsItem = () => {
       </Contain>
       <div style={{ textAlign: "center" }}>
         {verData.map((item, index) => (
-          <TextContain key={index}>{item.name}</TextContain>
+          <MoContain>
+            <MoImgBox src={item.moLangthImg} alt="moimg" />
+            <TextContain key={index}>{item.name}</TextContain>
+          </MoContain>
         ))}
       </div>
     </div>
