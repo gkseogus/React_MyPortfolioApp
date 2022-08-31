@@ -40,7 +40,7 @@ const TextContain = styled.div`
 
 const AnimateTitleText = styled.h3`
   text-transform: uppercase;
-  padding-top: 15%;
+  padding-top: 10%;
   background-image: linear-gradient(
     -225deg,
     #120907 0%,
