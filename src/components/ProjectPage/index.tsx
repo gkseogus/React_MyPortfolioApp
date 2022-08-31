@@ -16,7 +16,7 @@ const animate = keyframes`
 
 const FirstContentsText = styled.h2`
   position: relative;
-  padding: 20%;
+  padding: 15%;
   text-align: center;
   font-family: sans-serif;
   text-transform: uppercase;
@@ -33,7 +33,7 @@ const FirstContentsText = styled.h2`
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
   @media screen and (max-width: 500px) {
-    font-size: 20px;
+    font-size: 15px;
     padding-top: 50%;
     padding-bottom: 10%;
   }
@@ -227,7 +227,8 @@ const ProjectPage = () => {
   return (
     <ProjectPageContain>
       <FirstContentsText>
-        저의 프로젝트와 기술 스택이 궁금하지 않으시나요?
+        저의 프로젝트와 기술 스택이 <br />
+        궁금하지 않으시나요?
       </FirstContentsText>
       <FirstContentsItem />
       <SecondContentsText>
