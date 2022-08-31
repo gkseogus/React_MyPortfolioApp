@@ -53,19 +53,19 @@ const ProjectCaptionCarousel = () => {
   const cards = [
     {
       title: "Commute App",
-      text: "재택 출퇴근을 위한 출퇴근 앱 입니다.",
+      text: "재택 출퇴근을 위한 출퇴근 앱",
       TechnologyStackText: "기술 스택: TypeScript & React & Redux",
       image: commuteImg,
     },
     {
       title: "Exercise App",
-      text: "나만의 운동 사이트 앱 입니다.",
+      text: "나만의 운동 사이트 앱",
       TechnologyStackText: "기술 스택: TypeScript & React & Redux",
       image: exerciseImg,
     },
     {
       title: "Creack Detection",
-      text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템 모델",
+      text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템",
       TechnologyStackText: "기술 스택: Pyhton & Tensorflow & Keras",
       image: deepLearningImg,
     },
