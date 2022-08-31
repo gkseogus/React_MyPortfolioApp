@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Hide, Box } from "@chakra-ui/react";
+import { Hide, Box, useToast } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
 import FirstIntroImg from "../MainHome/IMG/FirstIntroImg.png";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
@@ -98,6 +98,12 @@ const CenterContentsText = styled.h2`
   @media screen and (max-width: 500px) {
     padding-top: 10%;
     font-size: 20px;
+  }
+`;
+
+const AboutContain = styled.div`
+  @media screen and (max-width: 500px) {
+    display: none;
   }
 `;
 
@@ -214,9 +220,20 @@ const IntroCareersContain = styled.div`
 `;
 
 const MainHome = () => {
+  const toast = useToast();
+
   const ResetScroll = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    toast({
+      title: "환영합니다.",
+      position: "top",
+      status: "success",
+      isClosable: true,
+    });
+  }, [toast]);
 
   return (
     <IntroContain>
@@ -234,7 +251,9 @@ const MainHome = () => {
       </div>
       <div>
         <CenterContentsText>About Me</CenterContentsText>
-        <MainAboutCarousel />
+        <AboutContain>
+          <MainAboutCarousel />
+        </AboutContain>
       </div>
       <div>
         <ContentsText>My Git Hub</ContentsText>
