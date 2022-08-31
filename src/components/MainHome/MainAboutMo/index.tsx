@@ -6,7 +6,14 @@ const TransitionsButton = styled.button`
   background-color: none;
 `;
 
-const InputText = styled.div`
+const InputTitle = styled.div`
+  color: red;
+  position: absolute;
+  font-family: "Kanit", sans-serif;
+  font-size: 15px;
+`;
+
+const InputText = styled.article`
   text-align: center;
   font-family: "Kanit", sans-serif;
   font-size: 15px;
@@ -23,10 +30,12 @@ const MainAboutMo = () => {
       <Collapse in={isOpen} animateOpacity>
         <Box p="40px" color="white" mt="4" bg="black" rounded="md" shadow="md">
           <InputText>
-            Name: Han Dae Hyeon <br /> Jop: Front Dev <br /> Skill: React &
-            Redux ...
+            <InputTitle>Name:</InputTitle> Han Dae Hyeon <br />
+            <InputTitle>Jop:</InputTitle> Front Dev <br />
+            <InputTitle>Skill:</InputTitle> React & Redux ...
             <br />
-            call: 010-2246-6787 <br /> e-mail: fbznffldj998@naver.com
+            <InputTitle>Call:</InputTitle> 010-2246-6787 <br />
+            <InputTitle>e-mail:</InputTitle> fbznffldj998@naver.com
           </InputText>
         </Box>
       </Collapse>
