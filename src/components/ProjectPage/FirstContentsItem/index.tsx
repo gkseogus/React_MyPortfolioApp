@@ -68,7 +68,6 @@ const AnimateTitleText = styled.h3`
 
 const SubAnimatContentsText = styled.h4`
   text-transform: uppercase;
-  padding-top: 5%;
   background-image: linear-gradient(
     -225deg,
     #120907 0%,
