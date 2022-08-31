@@ -39,7 +39,7 @@ const gradientContents = keyframes`
     }
 `;
 
-const IntroContain = styled.div`
+const IntroContain = styled.section`
   @media screen and (max-width: 500px) {
     text-align: center;
   }
@@ -245,7 +245,7 @@ const MainHome = () => {
 
   return (
     <IntroContain>
-      <div>
+      <article>
         <IntroText>
           Welcome to the portfolio blog
           <br />
@@ -256,8 +256,8 @@ const MainHome = () => {
             </Box>
           </Hide>
         </IntroText>
-      </div>
-      <div>
+      </article>
+      <article>
         <CenterContentsText>About Me</CenterContentsText>
         <AboutContain>
           <MainAboutCarousel />
@@ -265,14 +265,14 @@ const MainHome = () => {
         <AboutMoContain>
           <MainAboutMo />
         </AboutMoContain>
-      </div>
-      <div>
+      </article>
+      <article>
         <ContentsText>My Git Hub</ContentsText>
         <GitHubLinkContain>
           <GitHubSocialCard />
         </GitHubLinkContain>
-      </div>
-      <div>
+      </article>
+      <article>
         <ReverseContentsText>My Project</ReverseContentsText>
         <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
           Project
@@ -280,13 +280,13 @@ const MainHome = () => {
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
         </MainProjectCarouselsContain>
-      </div>
-      <div>
+      </article>
+      <article>
         <CenterContentsText>My Career</CenterContentsText>
         <IntroCareersContain>
           <IntroCareers />
         </IntroCareersContain>
-      </div>
+      </article>
     </IntroContain>
   );
 };

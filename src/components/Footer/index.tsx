@@ -39,141 +39,143 @@ const Footer = () => {
   };
 
   return (
-    <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
-    >
-      <Container as={Stack} maxW={"6xl"} py={10}>
-        <SimpleGrid
-          columns={{ base: 1, sm: 2, md: 5 }}
-          spacing={5}
-          style={{ textAlign: "center" }}
-        >
-          <Stack align={"flex-start"}>
-            <ListHeader>Product</ListHeader>
-            <Link href={"Home"}>Home</Link>
-            <Stack direction={"row"} align={"center"} spacing={2}>
-              <Link href={"Project"}>Project</Link>
-              <Tag
-                size={"sm"}
-                bg={useColorModeValue("black", "black")}
-                ml={2}
-                color={"white"}
-              >
-                New
-              </Tag>
+    <footer>
+      <Box
+        bg={useColorModeValue("gray.50", "gray.900")}
+        color={useColorModeValue("gray.700", "gray.200")}
+      >
+        <Container as={Stack} maxW={"6xl"} py={10}>
+          <SimpleGrid
+            columns={{ base: 1, sm: 2, md: 5 }}
+            spacing={5}
+            style={{ textAlign: "center" }}
+          >
+            <Stack align={"flex-start"}>
+              <ListHeader>Product</ListHeader>
+              <Link href={"Home"}>Home</Link>
+              <Stack direction={"row"} align={"center"} spacing={2}>
+                <Link href={"Project"}>Project</Link>
+                <Tag
+                  size={"sm"}
+                  bg={useColorModeValue("black", "black")}
+                  ml={2}
+                  color={"white"}
+                >
+                  New
+                </Tag>
+              </Stack>
+              <Stack direction={"row"} align={"center"} spacing={2}>
+                <Link href={"Career"}>Career</Link>
+                <Tag
+                  size={"sm"}
+                  bg={useColorModeValue("black", "black")}
+                  ml={2}
+                  color={"white"}
+                >
+                  New
+                </Tag>
+              </Stack>
             </Stack>
-            <Stack direction={"row"} align={"center"} spacing={2}>
-              <Link href={"Career"}>Career</Link>
-              <Tag
-                size={"sm"}
-                bg={useColorModeValue("black", "black")}
-                ml={2}
-                color={"white"}
+            <Stack align={"flex-start"}>
+              <ListHeader>Company</ListHeader>
+              <Link
+                onClick={() => {
+                  getDomain("https://www.hnine.com/");
+                }}
               >
-                New
-              </Tag>
+                Hnine
+              </Link>
+              <Link
+                onClick={() => {
+                  getDomain("https://jinjin.co.kr/main.do");
+                }}
+              >
+                JinJin System
+              </Link>
             </Stack>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Company</ListHeader>
-            <Link
-              onClick={() => {
-                getDomain("https://www.hnine.com/");
-              }}
-            >
-              Hnine
-            </Link>
-            <Link
-              onClick={() => {
-                getDomain("https://jinjin.co.kr/main.do");
-              }}
-            >
-              JinJin System
-            </Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Job</ListHeader>
-            <Link
-              onClick={() => {
-                getDomain("https://www.jobkorea.co.kr/");
-              }}
-            >
-              Jop Korea
-            </Link>
-            <Link
-              onClick={() => {
-                getDomain("https://www.saramin.co.kr/zf_user/");
-              }}
-            >
-              Saramin
-            </Link>
-            <Link
-              onClick={() => {
-                getDomain("https://www.wanted.co.kr/");
-              }}
-            >
-              Wanted
-            </Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Follow Us</ListHeader>
-            <Link
-              onClick={() => {
-                getDomain(
-                  "https://www.linkedin.com/in/dae-hyeon-han-468005249/"
-                );
-              }}
-            >
-              LinkedIn
-            </Link>
-            <Link
-              onClick={() => {
-                getDomain(
-                  "https://careerly.co.kr/profiles/496283?from=%2Fmessenger&location=gnb/"
-                );
-              }}
-            >
-              Careerly
-            </Link>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Univ</ListHeader>
-            <Link
-              onClick={() => {
-                getDomain("https://www.hallym.ac.kr/hallym_univ/");
-              }}
-            >
-              Hallym University
-            </Link>
-          </Stack>
-        </SimpleGrid>
-      </Container>
-      <Box py={10}>
-        <Flex
-          align={"center"}
-          _before={{
-            content: '""',
-            borderBottom: "1px solid",
-            borderColor: useColorModeValue("gray.200", "gray.700"),
-            flexGrow: 1,
-            mr: 8,
-          }}
-          _after={{
-            content: '""',
-            borderBottom: "1px solid",
-            borderColor: useColorModeValue("gray.200", "gray.700"),
-            flexGrow: 1,
-            ml: 8,
-          }}
-        >
-          <Logo />
-        </Flex>
-        <Text pt={0} fontSize={"sm"} textAlign={"center"}>
-          © 2022.8.11 부터 구축된 블로그입니다.
-        </Text>
+            <Stack align={"flex-start"}>
+              <ListHeader>Job</ListHeader>
+              <Link
+                onClick={() => {
+                  getDomain("https://www.jobkorea.co.kr/");
+                }}
+              >
+                Jop Korea
+              </Link>
+              <Link
+                onClick={() => {
+                  getDomain("https://www.saramin.co.kr/zf_user/");
+                }}
+              >
+                Saramin
+              </Link>
+              <Link
+                onClick={() => {
+                  getDomain("https://www.wanted.co.kr/");
+                }}
+              >
+                Wanted
+              </Link>
+            </Stack>
+            <Stack align={"flex-start"}>
+              <ListHeader>Follow Us</ListHeader>
+              <Link
+                onClick={() => {
+                  getDomain(
+                    "https://www.linkedin.com/in/dae-hyeon-han-468005249/"
+                  );
+                }}
+              >
+                LinkedIn
+              </Link>
+              <Link
+                onClick={() => {
+                  getDomain(
+                    "https://careerly.co.kr/profiles/496283?from=%2Fmessenger&location=gnb/"
+                  );
+                }}
+              >
+                Careerly
+              </Link>
+            </Stack>
+            <Stack align={"flex-start"}>
+              <ListHeader>Univ</ListHeader>
+              <Link
+                onClick={() => {
+                  getDomain("https://www.hallym.ac.kr/hallym_univ/");
+                }}
+              >
+                Hallym University
+              </Link>
+            </Stack>
+          </SimpleGrid>
+        </Container>
+        <Box py={10}>
+          <Flex
+            align={"center"}
+            _before={{
+              content: '""',
+              borderBottom: "1px solid",
+              borderColor: useColorModeValue("gray.200", "gray.700"),
+              flexGrow: 1,
+              mr: 8,
+            }}
+            _after={{
+              content: '""',
+              borderBottom: "1px solid",
+              borderColor: useColorModeValue("gray.200", "gray.700"),
+              flexGrow: 1,
+              ml: 8,
+            }}
+          >
+            <Logo />
+          </Flex>
+          <Text pt={0} fontSize={"sm"} textAlign={"center"}>
+            © 2022.8.11 부터 구축된 블로그입니다.
+          </Text>
+        </Box>
       </Box>
-    </Box>
+    </footer>
   );
 };
 export default Footer;

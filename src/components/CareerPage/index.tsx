@@ -10,11 +10,11 @@ const gradientContents = keyframes`
     }
 `;
 
-const Contain = styled.div`
+const Contain = styled.section`
   padding: 20%;
 `;
 
-const CenterContentsText = styled.h2`
+const CenterContentsText = styled.article`
   text-align: center;
   font-size: 64px;
   font-weight: 600px;

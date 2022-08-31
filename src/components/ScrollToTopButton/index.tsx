@@ -37,12 +37,14 @@ const ScrollToTopButton = () => {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <ScrollToTop>
-      <VscChevronUp
-        onClick={scrollToTop}
-        style={{ display: visible ? "inline" : "none" }}
-      ></VscChevronUp>
-    </ScrollToTop>
+    <aside>
+      <ScrollToTop>
+        <VscChevronUp
+          onClick={scrollToTop}
+          style={{ display: visible ? "inline" : "none" }}
+        ></VscChevronUp>
+      </ScrollToTop>
+    </aside>
   );
 };
 

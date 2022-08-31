@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import FirstContentsItem from "./FirstContentsItem";
 import ProjectCarousel from "./ProjectCarousel";
 
-const ProjectPageContain = styled.div``;
+const ProjectPageContain = styled.section``;
 
 const animate = keyframes`
 0% {
@@ -175,7 +175,7 @@ const MediaOpenclose = keyframes`
     text-indent: 0;
   }
 `;
-const SecondContentsText = styled.h1`
+const SecondContentsText = styled.article`
   color: black;
   font-family: tahoma;
   font-size: 3rem;

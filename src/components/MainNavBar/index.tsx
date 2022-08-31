@@ -83,105 +83,107 @@ const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box
-      bg={useColorModeValue("black", "black")}
-      px={4}
-      fontSize={"20px"}
-      fontWeight={600}
-      position={"fixed"}
-      top={0}
-      left={0}
-      right={0}
-      zIndex={10}
-    >
-      <Flex h={32} alignItems={"center"} justifyContent={"space-between"}>
-        <IconButton
-          size={"md"}
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={"Open Menu"}
-          display={{ md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-          bg={useColorModeValue("black", "black")}
-          color="red"
-        />
-        <HStack spacing={8} alignItems={"center"}>
-          <NavBarLogo src={HdhLogo} />
-          <HStack
-            as={"nav"}
-            spacing={4}
-            display={{ base: "none", md: "flex" }}
-            color="white"
-          >
-            {Links.map((link) => (
-              <NavLink key={link} href={link}>
-                {link}
-              </NavLink>
-            ))}
-          </HStack>
-        </HStack>
-        <Flex alignItems={"center"}>
-          <ColorModeToggle />
-          <Menu>
-            <MenuButton
-              as={Button}
-              rounded={"full"}
-              variant={"link"}
-              cursor={"pointer"}
-              minW={0}
+    <header>
+      <Box
+        bg={useColorModeValue("black", "black")}
+        px={4}
+        fontSize={"20px"}
+        fontWeight={600}
+        position={"fixed"}
+        top={0}
+        left={0}
+        right={0}
+        zIndex={10}
+      >
+        <Flex h={32} alignItems={"center"} justifyContent={"space-between"}>
+          <IconButton
+            size={"md"}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+            bg={useColorModeValue("black", "black")}
+            color="red"
+          />
+          <HStack spacing={8} alignItems={"center"}>
+            <NavBarLogo src={HdhLogo} />
+            <HStack
+              as={"nav"}
+              spacing={4}
+              display={{ base: "none", md: "flex" }}
+              color="white"
             >
-              <Avatar size={"md"} src={AvatarImg} bg="black" />
-            </MenuButton>
-            <MenuList color="black">
-              <MenuItem
-                _hover={{
-                  background: "white",
-                  color: "red",
-                }}
-                as="a"
-                href="https://www.instagram.com/dae_hyeon00/"
+              {Links.map((link) => (
+                <NavLink key={link} href={link}>
+                  {link}
+                </NavLink>
+              ))}
+            </HStack>
+          </HStack>
+          <Flex alignItems={"center"}>
+            <ColorModeToggle />
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={"full"}
+                variant={"link"}
+                cursor={"pointer"}
+                minW={0}
               >
-                <AvatarMenuListLogo src={InstartgramLogo} />
-                Instargram
-              </MenuItem>
-              <MenuItem
-                _hover={{
-                  background: "white",
-                  color: "red",
-                }}
-                as="a"
-                href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
-              >
-                <AvatarMenuListLogo src={CareerlyLogo} />
-                Careerly
-              </MenuItem>
-              <MenuDivider />
-              <MenuItem
-                _hover={{
-                  background: "white",
-                  color: "red",
-                }}
-                as="a"
-                href="https://github.com/gkseogus"
-              >
-                <AvatarMenuListLogo src={GithubLogo} />
-                Github
-              </MenuItem>
-            </MenuList>
-          </Menu>
+                <Avatar size={"md"} src={AvatarImg} bg="black" />
+              </MenuButton>
+              <MenuList color="black">
+                <MenuItem
+                  _hover={{
+                    background: "white",
+                    color: "red",
+                  }}
+                  as="a"
+                  href="https://www.instagram.com/dae_hyeon00/"
+                >
+                  <AvatarMenuListLogo src={InstartgramLogo} />
+                  Instargram
+                </MenuItem>
+                <MenuItem
+                  _hover={{
+                    background: "white",
+                    color: "red",
+                  }}
+                  as="a"
+                  href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
+                >
+                  <AvatarMenuListLogo src={CareerlyLogo} />
+                  Careerly
+                </MenuItem>
+                <MenuDivider />
+                <MenuItem
+                  _hover={{
+                    background: "white",
+                    color: "red",
+                  }}
+                  as="a"
+                  href="https://github.com/gkseogus"
+                >
+                  <AvatarMenuListLogo src={GithubLogo} />
+                  Github
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
         </Flex>
-      </Flex>
-      {isOpen ? (
-        <Box pb={4} display={{ md: "none" }} color="white">
-          <Stack as={"nav"} spacing={4}>
-            {Links.map((link) => (
-              <NavLink key={link} href={link}>
-                {link}
-              </NavLink>
-            ))}
-          </Stack>
-        </Box>
-      ) : null}
-    </Box>
+        {isOpen ? (
+          <Box pb={4} display={{ md: "none" }} color="white">
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link} href={link}>
+                  {link}
+                </NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
+      </Box>
+    </header>
   );
 };
 
