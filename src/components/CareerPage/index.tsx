@@ -1,32 +1,18 @@
 import TimeLine from "./TimeLine";
-import styled, { keyframes } from "styled-components";
-
-const gradientContents = keyframes`
-    from {
-        -webkit-filter: hue-rotate(0deg);
-    }
-    to {
-        -webkit-filter: hue-rotate(-360deg);
-    }
-`;
+import styled from "styled-components";
 
 const Contain = styled.section`
-  padding: 20%;
+  padding: 15%;
 `;
 
 const CenterContentsText = styled.article`
+  padding-bottom: 10%;
   text-align: center;
   font-size: 64px;
   font-weight: 600px;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;
-  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
-  animation: ${gradientContents} 4s ease-in-out infinite;
   @media screen and (max-width: 500px) {
     padding-top: 50%;
     padding-bottom: 20%;
