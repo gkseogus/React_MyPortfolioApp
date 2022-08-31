@@ -62,8 +62,7 @@ const IntroText = styled.h2`
 
 const IntroImg = styled.img`
   position: absolute;
-  top: 1px;
-  right: 5%;
+  right: 20%;
   transform: translate(-50%, -50%);
   width: 20%;
   height: 35%;
@@ -93,6 +92,7 @@ const AboutContain = styled.div`
 `;
 
 const AboutMoContain = styled.div`
+  color: red;
   @media screen and (min-width: 500px) {
     display: none;
   }
