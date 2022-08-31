@@ -7,6 +7,7 @@ import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
 import IntroCareers from "./CareersCard";
 import MainAboutCarousel from "./MainAboutCarousel";
+import MainAboutMo from "./MainAboutMo";
 
 const circleAni = keyframes`
   0%{
@@ -103,6 +104,12 @@ const CenterContentsText = styled.h2`
 
 const AboutContain = styled.div`
   @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const AboutMoContain = styled.div`
+  @media screen and (min-width: 500px) {
     display: none;
   }
 `;
@@ -255,6 +262,9 @@ const MainHome = () => {
         <AboutContain>
           <MainAboutCarousel />
         </AboutContain>
+        <AboutMoContain>
+          <MainAboutMo />
+        </AboutMoContain>
       </div>
       <div>
         <ContentsText>My Git Hub</ContentsText>
