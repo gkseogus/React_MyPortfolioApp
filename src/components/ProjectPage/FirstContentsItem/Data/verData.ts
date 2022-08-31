@@ -2,10 +2,10 @@ import GitLogo from "../IMG/GitLogo.png";
 import GitHubLogo from "../IMG/GitHubLogo.png";
 import ForkLogo from "../IMG/ForkLogo.png";
 import JiraLogo from "../IMG/JiraLogo.png";
-import moGitLogo from "../MoIMG/moGitLogo.svg";
-import moGitHubLogo from "../MoIMG/moGitHubLogo.svg";
-import moForkLogo from "../MoIMG/moForkLogo.svg";
-import moJiraLogo from "../MoIMG/moJiraLogo.svg";
+import moGitLogo from "../MoIMG/moGitLogo.png";
+import moGitHubLogo from "../MoIMG/moGitHubLogo.png";
+import moForkLogo from "../MoIMG/moForkLogo.png";
+import moJiraLogo from "../MoIMG/moJiraLogo.png";
 
 const verData = [
   {

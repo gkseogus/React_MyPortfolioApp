@@ -1,9 +1,9 @@
 import PythonLogo from "../IMG/PythonLogo.png";
 import AwsLogo from "../IMG/AwsLogo.png";
 import GoogleApiLogo from "../IMG/GoogleApiLogo.png";
-import moPythonLogo from "../MoIMG/moPythonLogo.svg";
-import moAwsLogo from "../MoIMG/moAwsLogo.svg";
-import moGoogleApiLogo from "../MoIMG/moGoogleApiLogo.svg";
+import moPythonLogo from "../MoIMG/moPythonLogo.png";
+import moAwsLogo from "../MoIMG/moAwsLogo.png";
+import moGoogleApiLogo from "../MoIMG/moGoogleApiLogo.png";
 
 const backData = [
   {

@@ -4,8 +4,8 @@ import ReactLogo from "../IMG/ReactLogo.png";
 import ReduxLogo from "../IMG/ReduxLogo.png";
 import moJavaScriptLogo from "../MoIMG/moJavaScriptLogo.svg";
 import moTypeScriptLogo from "../MoIMG/moTypeScriptLogo.svg";
-import moReactLogo from "../MoIMG/moReactLogo.svg";
-import moReduxLogo from "../MoIMG/moReduxLogo.svg";
+import moReactLogo from "../MoIMG/moReactLogo.png";
+import moReduxLogo from "../MoIMG/moReduxLogo.png";
 
 const frontData = [
   {
