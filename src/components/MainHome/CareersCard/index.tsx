@@ -27,15 +27,15 @@ const CareerBtn = styled.button`
 `;
 
 const CareerItemsTitle = styled.h2`
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
   @media screen and (max-width: 500px) {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     margin: auto;
   }
 `;
@@ -62,7 +62,7 @@ const CareerItemsData = styled.h3`
     color: red;
   }
   @media screen and (max-width: 500px) {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     width: 250px;
     color: red;
@@ -75,13 +75,12 @@ const CareerItemsData = styled.h3`
 const CareerItemsText = styled.h3`
   font-size: 20px;
   font-weight: 600;
-  font-family: "Kanit", sans-serif;
   line-height: 1.45;
   letter-spacing: 2px;
   padding: 5%;
   @media screen and (max-width: 500px) {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     margin: auto;
     margin-top: 10px;
   }
