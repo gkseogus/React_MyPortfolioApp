@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import {
   useTransition,
@@ -10,9 +11,9 @@ import {
 import styles from "./styles.module.css";
 import styled, { keyframes } from "styled-components";
 import { Box } from "@chakra-ui/react";
-import frontData from "./frontData";
-import backData from "./backData";
-import verData from "./verData";
+import frontData from "./Data/frontData";
+import backData from "./Data/backData";
+import verData from "./Data/verData";
 
 const TextClip = keyframes`
   to {
@@ -268,4 +269,4 @@ const FirstContentsItem = () => {
   );
 };
 
-export default FirstContentsItem;
+export default React.memo(FirstContentsItem);

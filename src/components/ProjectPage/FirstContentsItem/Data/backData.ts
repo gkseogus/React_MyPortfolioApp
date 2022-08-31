@@ -1,6 +1,6 @@
-import PythonLogo from "./IMG/PythonLogo.png";
-import AwsLogo from "./IMG/AwsLogo.png";
-import GoogleApiLogo from "./IMG/GoogleApiLogo.png";
+import PythonLogo from "../IMG/PythonLogo.png";
+import AwsLogo from "../IMG/AwsLogo.png";
+import GoogleApiLogo from "../IMG/GoogleApiLogo.png";
 
 const backData = [
   {

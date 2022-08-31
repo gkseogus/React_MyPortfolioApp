@@ -1,7 +1,7 @@
-import GitLogo from "./IMG/GitLogo.png";
-import GitHubLogo from "./IMG/GitHubLogo.png";
-import ForkLogo from "./IMG/ForkLogo.png";
-import JiraLogo from "./IMG/JiraLogo.png";
+import GitLogo from "../IMG/GitLogo.png";
+import GitHubLogo from "../IMG/GitHubLogo.png";
+import ForkLogo from "../IMG/ForkLogo.png";
+import JiraLogo from "../IMG/JiraLogo.png";
 
 const verData = [
   {

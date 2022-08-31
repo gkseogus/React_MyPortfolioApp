@@ -1,7 +1,7 @@
-import JavaScriptLogo from "./IMG/JavaScriptLogo.png";
-import TypeScriptLogo from "./IMG/TypeScriptLogo.png";
-import ReactLogo from "./IMG/ReactLogo.png";
-import ReduxLogo from "./IMG/ReduxLogo.png";
+import JavaScriptLogo from "../IMG/JavaScriptLogo.png";
+import TypeScriptLogo from "../IMG/TypeScriptLogo.png";
+import ReactLogo from "../IMG/ReactLogo.png";
+import ReduxLogo from "../IMG/ReduxLogo.png";
 
 const frontData = [
   {
