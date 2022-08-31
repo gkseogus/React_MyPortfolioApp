@@ -16,15 +16,13 @@ const CareerBtn = styled.button`
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
-  &:hover {
-    background-color: none;
-    color: red;
-  }
+  color: red;
   @media screen and (max-width: 500px) {
     font-size: 20px;
     padding-left: 8%;
     padding-right: 10%;
     display: inline-block;
+    color: red;
   }
 `;
 

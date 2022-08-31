@@ -30,16 +30,7 @@ const gradientIntro = keyframes`
     }
 `;
 
-const gradientContents = keyframes`
-    from {
-        -webkit-filter: hue-rotate(0deg);
-    }
-    to {
-        -webkit-filter: hue-rotate(-360deg);
-    }
-`;
-
-const IntroContain = styled.section`
+const IntroContain = styled.div`
   @media screen and (max-width: 500px) {
     text-align: center;
   }
@@ -89,13 +80,6 @@ const CenterContentsText = styled.h2`
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;
-  padding: 10px;
-  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
-  animation: ${gradientContents} 4s ease-in-out infinite;
   @media screen and (max-width: 500px) {
     padding-top: 10%;
     font-size: 20px;
@@ -123,23 +107,19 @@ const ContentsText = styled.h2`
   line-height: 1.27;
   letter-spacing: 0px;
   top: 250px;
-  margin-inline-start: 10%;
-  margin-inline-end: 10%;
+  margin-inline-start: 20%;
+  margin-inline-end: 20%;
   display: flex;
-  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
-  animation: ${gradientContents} 4s ease-in-out infinite;
   @media screen and (max-width: 500px) {
     padding-top: 10%;
     font-size: 20px;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
   }
 `;
 
 const GitHubLinkContain = styled.div`
-  margin-inline-start: 50%;
+  margin-inline-start: 35%;
   @media screen and (max-width: 500px) {
     margin-inline-start: 45%;
     padding-right: 5%;
@@ -155,15 +135,9 @@ const ReverseContentsText = styled.h2`
   line-height: 1.27;
   letter-spacing: 0px;
   top: 250px;
-  margin-inline-start: 68%;
+  margin-inline-start: 60%;
   margin-inline-end: 10%;
   display: flex;
-  background-image: -webkit-linear-gradient(92deg, #eb5757, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
-  animation: ${gradientContents} 4s ease-in-out infinite;
   @media screen and (max-width: 500px) {
     padding-top: 20%;
     padding-left: 36.5%;
@@ -183,13 +157,10 @@ const ReverseContentsBtn = styled(Link)`
   line-height: 1.27;
   letter-spacing: 0px;
   top: 300px;
-  margin-inline-start: 74%;
+  margin-inline-start: 66%;
   margin-inline-end: 10%;
   display: flex;
-  &:hover {
-    background-color: none;
-    color: red;
-  }
+  color: red;
   @media screen and (max-width: 500px) {
     padding-top: 5%;
     padding-bottom: 10%;
@@ -203,7 +174,7 @@ const ReverseContentsBtn = styled(Link)`
 
 const MainProjectCarouselsContain = styled.div`
   margin-right: 50%;
-  margin-bottom: 20%;
+  margin-bottom: 10%;
   margin-inline-start: 10%;
   @media screen and (max-width: 500px) {
     width: 100vw;
@@ -219,7 +190,7 @@ const IntroCareersContain = styled.div`
   letter-spacing: 0px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 30%;
+  padding-bottom: 10%;
   @media screen and (max-width: 500px) {
     padding-left: 16%;
     padding-right: 14%;
