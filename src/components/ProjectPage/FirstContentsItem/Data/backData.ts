@@ -1,6 +1,9 @@
 import PythonLogo from "../IMG/PythonLogo.png";
 import AwsLogo from "../IMG/AwsLogo.png";
 import GoogleApiLogo from "../IMG/GoogleApiLogo.png";
+import moPythonLogo from "../MoIMG/moPythonLogo.svg";
+import moAwsLogo from "../MoIMG/moAwsLogo.svg";
+import moGoogleApiLogo from "../MoIMG/moGoogleApiLogo.svg";
 
 const backData = [
   {
@@ -9,6 +12,7 @@ const backData = [
     css: "white",
     height: 400,
     langthImg: PythonLogo,
+    moLangthImg: moPythonLogo,
   },
   {
     name: "AWS",
@@ -16,6 +20,7 @@ const backData = [
     css: "white",
     height: 400,
     langthImg: AwsLogo,
+    moLangthImg: moAwsLogo,
   },
   {
     name: "G - api",
@@ -23,6 +28,7 @@ const backData = [
     css: "white",
     height: 400,
     langthImg: GoogleApiLogo,
+    moLangthImg: moGoogleApiLogo,
   },
 ];
 

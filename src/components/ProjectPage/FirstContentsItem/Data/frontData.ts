@@ -2,6 +2,10 @@ import JavaScriptLogo from "../IMG/JavaScriptLogo.png";
 import TypeScriptLogo from "../IMG/TypeScriptLogo.png";
 import ReactLogo from "../IMG/ReactLogo.png";
 import ReduxLogo from "../IMG/ReduxLogo.png";
+import moJavaScriptLogo from "../MoIMG/moJavaScriptLogo.svg";
+import moTypeScriptLogo from "../MoIMG/moTypeScriptLogo.svg";
+import moReactLogo from "../MoIMG/moReactLogo.svg";
+import moReduxLogo from "../MoIMG/moReduxLogo.svg";
 
 const frontData = [
   {
@@ -10,6 +14,7 @@ const frontData = [
     css: "white",
     height: 200,
     langthImg: JavaScriptLogo,
+    moLangthImg: moJavaScriptLogo,
   },
   {
     name: "TS",
@@ -17,6 +22,7 @@ const frontData = [
     css: "white",
     height: 400,
     langthImg: TypeScriptLogo,
+    moLangthImg: moTypeScriptLogo,
   },
   {
     name: "React",
@@ -24,6 +30,7 @@ const frontData = [
     css: "white",
     height: 400,
     langthImg: ReactLogo,
+    moLangthImg: moReactLogo,
   },
   {
     name: "Redux",
@@ -31,6 +38,7 @@ const frontData = [
     css: "white",
     height: 400,
     langthImg: ReduxLogo,
+    moLangthImg: moReduxLogo,
   },
 ];
 
