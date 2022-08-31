@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AiOutlineArrowUp } from "react-icons/ai";
+import { VscChevronUp } from "react-icons/vsc";
 import styled from "styled-components";
 
 const ScrollToTop = styled.button`
@@ -38,10 +38,10 @@ const ScrollToTopButton = () => {
 
   return (
     <ScrollToTop>
-      <AiOutlineArrowUp
+      <VscChevronUp
         onClick={scrollToTop}
         style={{ display: visible ? "inline" : "none" }}
-      ></AiOutlineArrowUp>
+      ></VscChevronUp>
     </ScrollToTop>
   );
 };
