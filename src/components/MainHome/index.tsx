@@ -231,6 +231,7 @@ const MainHome = () => {
       title: "환영합니다.",
       position: "top",
       status: "success",
+      duration: 1500,
       isClosable: true,
     });
   }, [toast]);
