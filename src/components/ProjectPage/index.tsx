@@ -198,7 +198,7 @@ const SecondContentsText = styled.article`
 
 const Message = styled.div`
   background-color: red;
-  color: black;
+  color: white;
   display: block;
   font-weight: 900;
   font-family: "Kanit", sans-serif;
