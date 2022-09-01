@@ -151,21 +151,24 @@ const ReverseContentsText = styled.h2`
 
 const ReverseContentsBtn = styled(Link)`
   position: relative;
-  text-align: left;
+  text-align: center;
   font-size: 32px;
+  font-weight: 600;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;
   top: 300px;
-  margin-inline-start: 66%;
+  margin-inline-start: 67%;
   margin-inline-end: 10%;
   display: flex;
-  color: red;
+  color: black;
+  :hover {
+    color: red;
+  }
   @media screen and (max-width: 500px) {
     padding-top: 5%;
     padding-bottom: 10%;
-    padding-left: 40.5%;
-    text-align: center;
+    padding-left: 43%;
     font-size: 20px;
     top: 0;
     margin-inline-start: 0%;
@@ -246,7 +249,7 @@ const MainHome = () => {
       <article>
         <ReverseContentsText>My Project</ReverseContentsText>
         <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
-          Project
+          More
         </ReverseContentsBtn>
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
