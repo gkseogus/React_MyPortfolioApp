@@ -5,40 +5,6 @@ import ProjectCarousel from "./ProjectCarousel";
 
 const ProjectPageContain = styled.section``;
 
-const animate = keyframes`
-0% {
-  background-position: -500%;
-}
-100% {
-  background-position: 500%;
-}
-`;
-
-const FirstContentsText = styled.h2`
-  position: relative;
-  padding: 15%;
-  text-align: center;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 54px;
-  font-weight: 900;
-  font-family: "Kanit", sans-serif;
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #000, #fff, #000);
-  background-repeat: no-repeat;
-  background-size: 80%;
-  animation: ${animate} 4.5s linear infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  @media screen and (max-width: 500px) {
-    font-size: 15px;
-    padding-top: 50%;
-    padding-bottom: 10%;
-  }
-`;
-
 /**
  * top: 숫자가 낮을 수록 텍스트는 올라간다
  * width:폭의 길이
@@ -175,7 +141,13 @@ const MediaOpenclose = keyframes`
     text-indent: 0;
   }
 `;
-const SecondContentsText = styled.article`
+
+const Contain = styled.div`
+  @media screen and (max-width: 500px) {
+    padding-top: 40%;
+  }
+`;
+const FristContentsText = styled.article`
   color: black;
   font-family: tahoma;
   font-size: 3rem;
@@ -226,22 +198,20 @@ const SecondContentsItem = styled.div`
 const ProjectPage = () => {
   return (
     <ProjectPageContain>
-      <FirstContentsText>
-        저의 프로젝트와 기술 스택이 <br />
-        궁금하지 않으시나요?
-      </FirstContentsText>
-      <FirstContentsItem />
-      <SecondContentsText>
-        <span>My own</span>
-        <Message>
-          <div>thinking</div>
-          <div>planning</div>
-          <div>creating</div>
-        </Message>
-      </SecondContentsText>
+      <Contain>
+        <FristContentsText>
+          <span>My own</span>
+          <Message>
+            <div>thinking</div>
+            <div>planning</div>
+            <div>creating</div>
+          </Message>
+        </FristContentsText>
+      </Contain>
       <SecondContentsItem>
         <ProjectCarousel />
       </SecondContentsItem>
+      <FirstContentsItem />
     </ProjectPageContain>
   );
 };

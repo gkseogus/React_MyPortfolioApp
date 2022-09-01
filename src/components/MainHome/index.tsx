@@ -30,6 +30,15 @@ const gradientIntro = keyframes`
     }
 `;
 
+const animate = keyframes`
+0% {
+  background-position: -500%;
+}
+100% {
+  background-position: 500%;
+}
+`;
+
 const IntroContain = styled.div`
   @media screen and (max-width: 500px) {
     text-align: center;
@@ -123,6 +132,31 @@ const GitHubLinkContain = styled.div`
   @media screen and (max-width: 500px) {
     margin-inline-start: 45%;
     padding-right: 5%;
+  }
+`;
+
+const FirstContentsText = styled.h2`
+  position: relative;
+  padding: 15%;
+  text-align: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 54px;
+  font-weight: 900;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: ${animate} 4.5s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+    padding-top: 50%;
+    padding-bottom: 10%;
   }
 `;
 
@@ -247,6 +281,10 @@ const MainHome = () => {
         </GitHubLinkContain>
       </article>
       <article>
+        <FirstContentsText>
+          저의 프로젝트와 기술 스택이 <br />
+          궁금하지 않으시나요?
+        </FirstContentsText>
         <ReverseContentsText>My Project</ReverseContentsText>
         <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
           More
