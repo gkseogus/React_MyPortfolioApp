@@ -17,6 +17,7 @@ const LogoContain = styled.div`
   width: 130px;
   text-align: center;
 `;
+
 const Logo = (props: any) => {
   return (
     <LogoContain>
@@ -52,9 +53,13 @@ const Footer = () => {
           >
             <Stack align={"flex-start"}>
               <ListHeader>Product</ListHeader>
-              <Link href={"Home"}>Home</Link>
+              <Link href={"Home"} color={"gray"}>
+                Home
+              </Link>
               <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Project"}>Project</Link>
+                <Link href={"Project"} color={"gray"}>
+                  Project
+                </Link>
                 <Tag
                   size={"sm"}
                   bg={useColorModeValue("black", "black")}
@@ -65,7 +70,9 @@ const Footer = () => {
                 </Tag>
               </Stack>
               <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Career"}>Career</Link>
+                <Link href={"Career"} color={"gray"}>
+                  Career
+                </Link>
                 <Tag
                   size={"sm"}
                   bg={useColorModeValue("black", "black")}
@@ -79,6 +86,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Company</ListHeader>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain("https://www.hnine.com/");
                 }}
@@ -86,6 +94,7 @@ const Footer = () => {
                 Hnine
               </Link>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain("https://jinjin.co.kr/main.do");
                 }}
@@ -96,6 +105,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Job</ListHeader>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain("https://www.jobkorea.co.kr/");
                 }}
@@ -103,6 +113,7 @@ const Footer = () => {
                 Jop Korea
               </Link>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain("https://www.saramin.co.kr/zf_user/");
                 }}
@@ -110,6 +121,7 @@ const Footer = () => {
                 Saramin
               </Link>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain("https://www.wanted.co.kr/");
                 }}
@@ -120,6 +132,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Follow Us</ListHeader>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain(
                     "https://www.linkedin.com/in/dae-hyeon-han-468005249/"
@@ -129,6 +142,7 @@ const Footer = () => {
                 LinkedIn
               </Link>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain(
                     "https://careerly.co.kr/profiles/496283?from=%2Fmessenger&location=gnb/"
@@ -141,6 +155,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Univ</ListHeader>
               <Link
+                color={"gray"}
                 onClick={() => {
                   getDomain("https://www.hallym.ac.kr/hallym_univ/");
                 }}
