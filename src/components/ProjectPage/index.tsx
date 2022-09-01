@@ -188,7 +188,7 @@ const Message = styled.div`
 `;
 
 const FirstContentsItem = styled.div`
-  padding-bottom: 30%;
+  padding-bottom: 10%;
   @media screen and (max-width: 500px) {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
