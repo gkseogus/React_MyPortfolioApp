@@ -49,9 +49,7 @@ const CareerItemsAward = styled.img`
   height: 200px;
   margin-left: 20%;
   @media screen and (max-width: 500px) {
-    width: 100px;
-    height: 100px;
-    margin: auto;
+    display: none;
   }
 `;
 
@@ -71,7 +69,6 @@ const CareerItemsData = styled.h3`
     width: 250px;
     color: red;
     padding: 0;
-    margin: auto;
     margin-left: 0%;
   }
 `;
