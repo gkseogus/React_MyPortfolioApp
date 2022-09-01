@@ -71,7 +71,7 @@ const IntroText = styled.h2`
 
 const IntroImg = styled.img`
   position: absolute;
-  right: 20%;
+  right: 25%;
   transform: translate(-50%, -50%);
   width: 20%;
   height: 35%;
@@ -160,15 +160,6 @@ const SecondIntroText = styled.h2`
   }
 `;
 
-const ReverseContain = styled.div`
-  margin-inline-start: 60%;
-  margin-inline-end: 10%;
-  @media screen and (max-width: 500px) {
-    margin-inline-start: 0%;
-    margin-inline-end: 0%;
-  }
-`;
-
 const ReverseContentsText = styled.h2`
   position: relative;
   text-align: left;
@@ -179,12 +170,16 @@ const ReverseContentsText = styled.h2`
   letter-spacing: 0px;
   top: 250px;
   display: flex;
+  margin-inline-start: 60%;
+  margin-inline-end: 10%;
   @media screen and (max-width: 500px) {
     padding-top: 20%;
     padding-left: 36.5%;
     text-align: center;
     font-size: 20px;
     top: 0;
+    margin-inline-start: 0%;
+    margin-inline-end: 0%;
   }
 `;
 
@@ -200,6 +195,8 @@ const ReverseContentsBtn = styled(Link)`
   top: 300px;
   display: flex;
   color: black;
+  margin-inline-start: 33%;
+  margin-inline-end: 10%;
   :hover {
     color: red;
   }
@@ -210,6 +207,7 @@ const ReverseContentsBtn = styled(Link)`
     font-size: 20px;
     top: 0;
     margin-inline-start: 0%;
+    margin-inline-end: 0%;
   }
 `;
 
@@ -289,12 +287,10 @@ const MainHome = () => {
           저의 프로젝트와 기술 스택이 <br />
           궁금하지 않으시나요?
         </SecondIntroText>
-        <ReverseContain>
-          <ReverseContentsText>My Project</ReverseContentsText>
-          <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
-            More
-          </ReverseContentsBtn>
-        </ReverseContain>
+        <ReverseContentsText>My Project</ReverseContentsText>
+        <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
+          More
+        </ReverseContentsBtn>
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
         </MainProjectCarouselsContain>

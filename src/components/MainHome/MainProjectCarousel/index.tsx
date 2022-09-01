@@ -10,14 +10,16 @@ import {
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
+import styled from "styled-components";
 import commuteImg from "../MainProjectCarousel/IMG/commuteImg.png";
 import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.png";
 import deepLearningImg from "../MainProjectCarousel/IMG/deepLearningImg.png";
-import styled from "styled-components";
+import CarouselModal from "./CarouselModal";
 
 const Contain = styled.div`
+  color: red;
   @media screen and (max-width: 500px) {
-    font-size: 18px;
+    font-size: 32px;
     padding-right: 9.5%;
   }
 `;
@@ -27,6 +29,41 @@ const BtnContain = styled.div`
     color: red;
   }
 `;
+
+const ModalContain = styled.div`
+  padding-top: 15%;
+  text-align: center;
+  @media screen and (max-width: 500px) {
+    padding-right: 8%;
+  }
+`;
+
+// This list contains all the data for carousels
+const cards = [
+  {
+    title: "Commute App",
+    text: "재택 출퇴근을 위한 출퇴근 앱",
+    text2:
+      "teststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststests",
+    TechnologyStackText: "기술 스택: TypeScript & React & Redux",
+    image: commuteImg,
+  },
+  {
+    title: "Exercise App",
+    text: "나만의 운동 사이트 앱",
+    text2: "tests2",
+    TechnologyStackText: "기술 스택: TypeScript & React & Redux",
+    image: exerciseImg,
+  },
+  {
+    title: "Creack Detection",
+    text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템",
+    text2:
+      "teststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststests",
+    TechnologyStackText: "기술 스택: Pyhton & Tensorflow & Keras",
+    image: deepLearningImg,
+  },
+];
 
 // Settings for the slider
 const settings = {
@@ -41,35 +78,13 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const ProjectCaptionCarousel = () => {
+const ProjectCaptionCarousel = (props: any) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
-
-  // This list contains all the data for carousels
-  const cards = [
-    {
-      title: "Commute App",
-      text: "재택 출퇴근을 위한 출퇴근 앱",
-      TechnologyStackText: "기술 스택: TypeScript & React & Redux",
-      image: commuteImg,
-    },
-    {
-      title: "Exercise App",
-      text: "나만의 운동 사이트 앱",
-      TechnologyStackText: "기술 스택: TypeScript & React & Redux",
-      image: exerciseImg,
-    },
-    {
-      title: "Creack Detection",
-      text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템",
-      TechnologyStackText: "기술 스택: Pyhton & Tensorflow & Keras",
-      image: deepLearningImg,
-    },
-  ];
 
   return (
     <Box
@@ -150,7 +165,7 @@ const ProjectCaptionCarousel = () => {
                 </Heading>
                 <Contain>
                   <Text
-                    fontSize={{ base: "3xl", lg: "lg" }}
+                    fontSize={{ base: "15px", lg: "lg" }}
                     color="white"
                     fontWeight="bolder"
                   >
@@ -160,6 +175,9 @@ const ProjectCaptionCarousel = () => {
                     <br />
                   </Text>
                 </Contain>
+                <ModalContain>
+                  <CarouselModal moreText={card.text2} />
+                </ModalContain>
               </Stack>
             </Container>
           </Box>
