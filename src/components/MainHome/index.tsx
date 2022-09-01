@@ -135,7 +135,7 @@ const GitHubLinkContain = styled.div`
   }
 `;
 
-const FirstContentsText = styled.h2`
+const SecondIntroText = styled.h2`
   position: relative;
   padding: 15%;
   text-align: center;
@@ -160,6 +160,15 @@ const FirstContentsText = styled.h2`
   }
 `;
 
+const ReverseContain = styled.div`
+  margin-inline-start: 60%;
+  margin-inline-end: 10%;
+  @media screen and (max-width: 500px) {
+    margin-inline-start: 0%;
+    margin-inline-end: 0%;
+  }
+`;
+
 const ReverseContentsText = styled.h2`
   position: relative;
   text-align: left;
@@ -169,22 +178,19 @@ const ReverseContentsText = styled.h2`
   line-height: 1.27;
   letter-spacing: 0px;
   top: 250px;
-  margin-inline-start: 60%;
-  margin-inline-end: 10%;
   display: flex;
   @media screen and (max-width: 500px) {
     padding-top: 20%;
     padding-left: 36.5%;
     text-align: center;
     font-size: 20px;
-    margin-inline-start: 0%;
-    margin-inline-end: 0%;
     top: 0;
   }
 `;
 
 const ReverseContentsBtn = styled(Link)`
   position: relative;
+  padding-left: 34%;
   text-align: center;
   font-size: 32px;
   font-weight: 600;
@@ -192,8 +198,6 @@ const ReverseContentsBtn = styled(Link)`
   line-height: 1.27;
   letter-spacing: 0px;
   top: 300px;
-  margin-inline-start: 67%;
-  margin-inline-end: 10%;
   display: flex;
   color: black;
   :hover {
@@ -202,7 +206,7 @@ const ReverseContentsBtn = styled(Link)`
   @media screen and (max-width: 500px) {
     padding-top: 5%;
     padding-bottom: 10%;
-    padding-left: 43%;
+    padding-left: 44%;
     font-size: 20px;
     top: 0;
     margin-inline-start: 0%;
@@ -281,14 +285,16 @@ const MainHome = () => {
         </GitHubLinkContain>
       </article>
       <article>
-        <FirstContentsText>
+        <SecondIntroText>
           저의 프로젝트와 기술 스택이 <br />
           궁금하지 않으시나요?
-        </FirstContentsText>
-        <ReverseContentsText>My Project</ReverseContentsText>
-        <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
-          More
-        </ReverseContentsBtn>
+        </SecondIntroText>
+        <ReverseContain>
+          <ReverseContentsText>My Project</ReverseContentsText>
+          <ReverseContentsBtn to={"/Project"} onClick={ResetScroll}>
+            More
+          </ReverseContentsBtn>
+        </ReverseContain>
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
         </MainProjectCarouselsContain>
