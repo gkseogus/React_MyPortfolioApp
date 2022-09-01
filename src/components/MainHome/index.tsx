@@ -71,7 +71,7 @@ const IntroText = styled.h2`
 
 const IntroImg = styled.img`
   position: absolute;
-  right: 20%;
+  right: 25%;
   transform: translate(-50%, -50%);
   width: 20%;
   height: 35%;
