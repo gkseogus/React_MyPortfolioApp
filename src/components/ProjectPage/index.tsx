@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import FirstContentsItem from "./FirstContentsItem";
+import SkillCardsItem from "./SkillCardsItem";
 import ProjectCarousel from "./ProjectCarousel";
 
 const ProjectPageContain = styled.section``;
@@ -147,6 +147,7 @@ const Contain = styled.div`
     padding-top: 40%;
   }
 `;
+
 const FristContentsText = styled.article`
   color: black;
   font-family: tahoma;
@@ -186,7 +187,7 @@ const Message = styled.div`
   }
 `;
 
-const SecondContentsItem = styled.div`
+const FirstContentsItem = styled.div`
   padding-bottom: 30%;
   @media screen and (max-width: 500px) {
     width: 100vw;
@@ -208,10 +209,10 @@ const ProjectPage = () => {
           </Message>
         </FristContentsText>
       </Contain>
-      <SecondContentsItem>
+      <FirstContentsItem>
         <ProjectCarousel />
-      </SecondContentsItem>
-      <FirstContentsItem />
+      </FirstContentsItem>
+      <SkillCardsItem />
     </ProjectPageContain>
   );
 };

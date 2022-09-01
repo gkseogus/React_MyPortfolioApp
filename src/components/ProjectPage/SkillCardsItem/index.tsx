@@ -128,7 +128,7 @@ const MoImgBox = styled.img`
     display: none;
   }
 `;
-const FirstContentsItem = () => {
+const SkillCardsItem = () => {
   const [open, setOpen] = useState(false);
 
   const onclickBox = () => {
@@ -290,4 +290,4 @@ const FirstContentsItem = () => {
   );
 };
 
-export default React.memo(FirstContentsItem);
+export default React.memo(SkillCardsItem);
