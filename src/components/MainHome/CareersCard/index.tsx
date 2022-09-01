@@ -12,11 +12,15 @@ const Contain = styled.div`
 `;
 const CareerBtn = styled.button`
   font-size: 32px;
+  font-weight: 600;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
-  color: red;
+  color: black;
+  :hover {
+    color: red;
+  }
   @media screen and (max-width: 500px) {
     font-size: 20px;
     padding-left: 8%;
@@ -124,7 +128,7 @@ const IntroCareers = () => {
 
   return (
     <div>
-      <CareerBtn onClick={onToggle}>Career</CareerBtn>
+      <CareerBtn onClick={onToggle}>More</CareerBtn>
       <Collapse in={isOpen} animateOpacity>
         <Box p="10px" color="black" mt="1" rounded="md">
           <Contain>
