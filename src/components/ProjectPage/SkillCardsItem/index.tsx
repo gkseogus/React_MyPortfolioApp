@@ -210,9 +210,9 @@ const SkillCardsItem = () => {
       </Contain>
       <div style={{ textAlign: "center" }}>
         {frontData.map((item, index) => (
-          <MoContain>
+          <MoContain key={index}>
             <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain key={index}>{item.name}</TextContain>
+            <TextContain>{item.name}</TextContain>
           </MoContain>
         ))}
       </div>
@@ -245,9 +245,9 @@ const SkillCardsItem = () => {
       </Contain>
       <div style={{ textAlign: "center" }}>
         {backData.map((item, index) => (
-          <MoContain>
+          <MoContain key={index}>
             <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain key={index}>{item.name}</TextContain>
+            <TextContain>{item.name}</TextContain>
           </MoContain>
         ))}
       </div>
@@ -280,9 +280,9 @@ const SkillCardsItem = () => {
       </Contain>
       <div style={{ textAlign: "center" }}>
         {verData.map((item, index) => (
-          <MoContain>
+          <MoContain key={index}>
             <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain key={index}>{item.name}</TextContain>
+            <TextContain>{item.name}</TextContain>
           </MoContain>
         ))}
       </div>
