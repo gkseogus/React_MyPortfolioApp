@@ -1,40 +1,15 @@
 import React from "react";
-import { useState } from "react";
-import {
-  useTransition,
-  useSpring,
-  useChain,
-  config,
-  animated,
-  useSpringRef,
-} from "@react-spring/web";
-import styles from "./styles.module.css";
+import { Tooltip } from "@chakra-ui/react";
+import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import styled, { keyframes } from "styled-components";
-import { Box } from "@chakra-ui/react";
-import frontData from "./Data/frontData";
-import backData from "./Data/backData";
-import verData from "./Data/verData";
+import ProgressLine from "./ProgressBar";
+import frontLabelData from "./ProgressData/frontLabelData";
+import backLabelData from "./ProgressData/backLabelData";
+import verLabelData from "./ProgressData/verLabelData";
 
 const TextClip = keyframes`
   to {
     background-position: 200% center;
-  }
-`;
-
-const Contain = styled.div`
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-`;
-
-const TextContain = styled.div`
-  display: inline-block;
-  margin: 15px;
-  padding-bottom: 50px;
-  font-size: 20px;
-  font-family: "Kanit", sans-serif;
-  @media screen and (min-width: 500px) {
-    display: none;
   }
 `;
 
@@ -67,6 +42,7 @@ const AnimateTitleText = styled.h3`
 `;
 
 const SubAnimatContentsText = styled.h4`
+  padding-top: 5%;
   text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
@@ -89,93 +65,46 @@ const SubAnimatContentsText = styled.h4`
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 25px;
-    padding-bottom: 10%;
+    padding-top: 15%;
+    padding-bottom: 3%;
   }
 `;
 
-const AnimateBoxText = styled.h2`
-  position: relative;
-  padding: 20%;
-  text-align: center;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 53px;
-  font-weight: 900;
-  font-family: "Kanit", sans-serif;
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: black;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  @media screen and (max-width: 500px) {
-    font-size: 25px;
-  }
-`;
-
-const MoContain = styled.div`
-  display: inline-block;
-`;
-
-const MoImgBox = styled.img`
-  width: 20px;
-  height: 20px;
+const ProgressContain = styled.div`
+  width: 60%;
   margin: auto;
-  position: flex;
-  @media screen and (min-width: 500px) {
-    display: none;
-  }
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border: 2px solid #e5e5e5;
+  border-radius: 6px;
 `;
+
+const ToolTipContain = styled.div`
+  float: right;
+  padding-right: 3%;
+`;
+
+const tooltipLabel = [
+  "초급: 0% ~ 25% 간단한 디버깅이 가능하다",
+  <br />,
+  "중급: 25% ~ 50% 에러메세지가 친숙하다.",
+  <br />,
+  "고급: 50% ~ 75% 에러를 능숙하게 대처한다.",
+  <br />,
+  "전문: 75% ~ 100% 에러메세지가 그립다.",
+];
+
+const verTooltipLabel = [
+  "초급: 0% ~ 25% 간단한 상호작용이 가능하다.",
+  <br />,
+  "중급: 25% ~ 50% 동료랑 상호작용이 가능하다.",
+  <br />,
+  "고급: 50% ~ 75% 동료랑 상호작용이 능숙하다.",
+  <br />,
+  "전문: 75% ~ 100% 프로젝트 리더가 가능하다.",
+];
+
 const SkillCardsItem = () => {
-  const [open, setOpen] = useState(false);
-
-  const onclickBox = () => {
-    setOpen((open) => !open);
-  };
-
-  const springApi = useSpringRef();
-  const { size, ...rest } = useSpring({
-    ref: springApi,
-    config: config.stiff,
-    from: { size: "20%", background: "black" },
-    to: {
-      size: open ? "100%" : "20%",
-      background: "black",
-    },
-  });
-
-  const transApi = useSpringRef();
-  const frontTransition = useTransition(open ? frontData : [], {
-    ref: transApi,
-    trail: 400 / frontData.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
-
-  const backTransition = useTransition(open ? backData : [], {
-    ref: transApi,
-    trail: 400 / frontData.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
-
-  const verTransition = useTransition(open ? verData : [], {
-    ref: transApi,
-    trail: 400 / verData.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
-
-  useChain(open ? [springApi, transApi] : [transApi, springApi], [
-    0,
-    open ? 0.1 : 0.6,
-  ]);
-
   return (
     <div>
       <div style={{ textAlign: "center" }}>
@@ -183,108 +112,77 @@ const SkillCardsItem = () => {
       </div>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Front</SubAnimatContentsText>
-      </div>
-      <Contain className={styles.wrapper}>
-        <animated.div
-          style={{ ...rest, width: size, height: size }}
-          className={styles.container}
-          onClick={onclickBox}
-        >
-          {frontTransition((style, item) => (
-            <animated.div
-              className={styles.item}
-              style={{ ...style, background: item.css }}
-            >
-              <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
-            </animated.div>
+        <ProgressContain>
+          <ToolTipContain>
+            <Tooltip label={tooltipLabel} placement="top">
+              <QuestionOutlineIcon w={4} h={4} />
+            </Tooltip>
+          </ToolTipContain>
+          {frontLabelData.map((item, index) => (
+            <ProgressLine
+              key={index}
+              label={item.title}
+              logoImg={item.logoImg}
+              backgroundColor="lightblue"
+              visualParts={[
+                {
+                  percentage: item.persent,
+                  color: "red",
+                },
+              ]}
+            />
           ))}
-        </animated.div>
-      </Contain>
-      <div style={{ textAlign: "center" }}>
-        {frontData.map((item, index) => (
-          <MoContain key={index}>
-            <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain>{item.name}</TextContain>
-          </MoContain>
-        ))}
+        </ProgressContain>
       </div>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Back</SubAnimatContentsText>
       </div>
-      <Contain className={styles.wrapper}>
-        <animated.div
-          style={{ ...rest, width: size, height: size }}
-          className={styles.container}
-          onClick={onclickBox}
-        >
-          {backTransition((style, item) => (
-            <animated.div
-              className={styles.item}
-              style={{ ...style, background: item.css }}
-            >
-              <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
-            </animated.div>
-          ))}
-        </animated.div>
-      </Contain>
-      <div style={{ textAlign: "center" }}>
-        {backData.map((item, index) => (
-          <MoContain key={index}>
-            <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain>{item.name}</TextContain>
-          </MoContain>
+      <ProgressContain>
+        <ToolTipContain>
+          <Tooltip label={tooltipLabel} placement="top">
+            <QuestionOutlineIcon w={4} h={4} />
+          </Tooltip>
+        </ToolTipContain>
+        {backLabelData.map((item, index) => (
+          <ProgressLine
+            key={index}
+            label={item.title}
+            logoImg={item.logoImg}
+            backgroundColor="lightblue"
+            visualParts={[
+              {
+                percentage: item.persent,
+                color: "red",
+              },
+            ]}
+          />
         ))}
-      </div>
+      </ProgressContain>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Version Control</SubAnimatContentsText>
       </div>
-      <Contain className={styles.wrapper}>
-        <animated.div
-          style={{ ...rest, width: size, height: size }}
-          className={styles.container}
-          onClick={onclickBox}
-        >
-          {verTransition((style, item) => (
-            <animated.div
-              className={styles.item}
-              style={{ ...style, background: item.css }}
-            >
-              <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
-            </animated.div>
+      <div style={{ paddingBottom: "10%" }}>
+        <ProgressContain>
+          <ToolTipContain>
+            <Tooltip label={verTooltipLabel} placement="top">
+              <QuestionOutlineIcon w={4} h={4} />
+            </Tooltip>
+          </ToolTipContain>
+          {verLabelData.map((item, index) => (
+            <ProgressLine
+              key={index}
+              label={item.title}
+              logoImg={item.logoImg}
+              backgroundColor="lightblue"
+              visualParts={[
+                {
+                  percentage: item.persent,
+                  color: "red",
+                },
+              ]}
+            />
           ))}
-        </animated.div>
-      </Contain>
-      <div style={{ textAlign: "center" }}>
-        {verData.map((item, index) => (
-          <MoContain key={index}>
-            <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain>{item.name}</TextContain>
-          </MoContain>
-        ))}
+        </ProgressContain>
       </div>
     </div>
   );

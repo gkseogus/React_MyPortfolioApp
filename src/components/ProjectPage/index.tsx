@@ -2,8 +2,21 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import SkillCardsItem from "./SkillCardsItem";
 import ProjectCarousel from "./ProjectCarousel";
+import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 
 const ProjectPageContain = styled.section``;
+
+const BreadcrumbContain = styled.div`
+  padding-left: 90.5%;
+  padding-top: 10%;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const BreadcrumbItemText = styled.h2`
+  font-family: "Kanit", sans-serif;
+`;
 
 /**
  * top: 숫자가 낮을 수록 텍스트는 올라간다
@@ -199,6 +212,16 @@ const FirstContentsItem = styled.div`
 const ProjectPage = () => {
   return (
     <ProjectPageContain>
+      <BreadcrumbContain>
+        <Breadcrumb separator="/">
+          <BreadcrumbItem>
+            <BreadcrumbItemText>Home</BreadcrumbItemText>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbItemText>Project</BreadcrumbItemText>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </BreadcrumbContain>
       <Contain>
         <FristContentsText>
           <span>My own</span>
