@@ -1,4 +1,6 @@
 import React from "react";
+import { Tooltip } from "@chakra-ui/react";
+import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import styled, { keyframes } from "styled-components";
 import ProgressLine from "./ProgressBar";
 import frontLabelData from "./ProgressData/frontLabelData";
@@ -77,6 +79,31 @@ const ProgressContain = styled.div`
   border-radius: 6px;
 `;
 
+const ToolTipContain = styled.div`
+  float: right;
+  padding-right: 3%;
+`;
+
+const tooltipLabel = [
+  "초급: 0% ~ 25% 간단한 디버깅이 가능하다",
+  <br />,
+  "중급: 25% ~ 50% 에러메세지가 친숙하다.",
+  <br />,
+  "고급: 50% ~ 75% 에러를 능숙하게 대처한다.",
+  <br />,
+  "전문: 75% ~ 100% 에러메세지가 그립다.",
+];
+
+const verTooltipLabel = [
+  "초급: 0% ~ 25% 간단한 상호작용이 가능하다.",
+  <br />,
+  "중급: 25% ~ 50% 동료랑 상호작용이 가능하다.",
+  <br />,
+  "고급: 50% ~ 75% 동료랑 상호작용이 능숙하다.",
+  <br />,
+  "전문: 75% ~ 100% 프로젝트 리더가 가능하다.",
+];
+
 const SkillCardsItem = () => {
   return (
     <div>
@@ -86,6 +113,11 @@ const SkillCardsItem = () => {
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Front</SubAnimatContentsText>
         <ProgressContain>
+          <ToolTipContain>
+            <Tooltip label={tooltipLabel} placement="top">
+              <QuestionOutlineIcon w={4} h={4} />
+            </Tooltip>
+          </ToolTipContain>
           {frontLabelData.map((item, index) => (
             <ProgressLine
               key={index}
@@ -106,6 +138,11 @@ const SkillCardsItem = () => {
         <SubAnimatContentsText>Back</SubAnimatContentsText>
       </div>
       <ProgressContain>
+        <ToolTipContain>
+          <Tooltip label={tooltipLabel} placement="top">
+            <QuestionOutlineIcon w={4} h={4} />
+          </Tooltip>
+        </ToolTipContain>
         {backLabelData.map((item, index) => (
           <ProgressLine
             key={index}
@@ -126,6 +163,11 @@ const SkillCardsItem = () => {
       </div>
       <div style={{ paddingBottom: "10%" }}>
         <ProgressContain>
+          <ToolTipContain>
+            <Tooltip label={verTooltipLabel} placement="top">
+              <QuestionOutlineIcon w={4} h={4} />
+            </Tooltip>
+          </ToolTipContain>
           {verLabelData.map((item, index) => (
             <ProgressLine
               key={index}
