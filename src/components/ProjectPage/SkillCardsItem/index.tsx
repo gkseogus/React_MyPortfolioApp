@@ -1,9 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import ProgressLine from "./ProgressBar";
-import frontData from "./Data/frontData";
-import backData from "./Data/backData";
-import verData from "./Data/verData";
 import frontLabelData from "./ProgressData/frontLabelData";
 import backLabelData from "./ProgressData/backLabelData";
 import verLabelData from "./ProgressData/verLabelData";
@@ -11,17 +8,6 @@ import verLabelData from "./ProgressData/verLabelData";
 const TextClip = keyframes`
   to {
     background-position: 200% center;
-  }
-`;
-
-const TextContain = styled.div`
-  display: inline-block;
-  margin: 15px;
-  padding-bottom: 50px;
-  font-size: 20px;
-  font-family: "Kanit", sans-serif;
-  @media screen and (min-width: 500px) {
-    display: none;
   }
 `;
 
@@ -54,6 +40,7 @@ const AnimateTitleText = styled.h3`
 `;
 
 const SubAnimatContentsText = styled.h4`
+  padding-top: 5%;
   text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
@@ -76,7 +63,8 @@ const SubAnimatContentsText = styled.h4`
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 25px;
-    padding-bottom: 10%;
+    padding-top: 15%;
+    padding-bottom: 3%;
   }
 `;
 
@@ -87,23 +75,6 @@ const ProgressContain = styled.div`
   padding-bottom: 3%;
   border: 2px solid #e5e5e5;
   border-radius: 6px;
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-`;
-
-const MoContain = styled.div`
-  display: inline-block;
-`;
-
-const MoImgBox = styled.img`
-  width: 20px;
-  height: 20px;
-  margin: auto;
-  position: flex;
-  @media screen and (min-width: 500px) {
-    display: none;
-  }
 `;
 
 const SkillCardsItem = () => {
@@ -119,6 +90,7 @@ const SkillCardsItem = () => {
             <ProgressLine
               key={index}
               label={item.title}
+              logoImg={item.logoImg}
               backgroundColor="lightblue"
               visualParts={[
                 {
@@ -131,14 +103,6 @@ const SkillCardsItem = () => {
         </ProgressContain>
       </div>
       <div style={{ textAlign: "center" }}>
-        {frontData.map((item, index) => (
-          <MoContain key={index}>
-            <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain>{item.name}</TextContain>
-          </MoContain>
-        ))}
-      </div>
-      <div style={{ textAlign: "center", paddingTop: "6%" }}>
         <SubAnimatContentsText>Back</SubAnimatContentsText>
       </div>
       <ProgressContain>
@@ -146,6 +110,7 @@ const SkillCardsItem = () => {
           <ProgressLine
             key={index}
             label={item.title}
+            logoImg={item.logoImg}
             backgroundColor="lightblue"
             visualParts={[
               {
@@ -156,39 +121,26 @@ const SkillCardsItem = () => {
           />
         ))}
       </ProgressContain>
-      <div style={{ textAlign: "center", paddingTop: "6%" }}>
-        {backData.map((item, index) => (
-          <MoContain key={index}>
-            <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain>{item.name}</TextContain>
-          </MoContain>
-        ))}
-      </div>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Version Control</SubAnimatContentsText>
       </div>
-      <ProgressContain>
-        {verLabelData.map((item, index) => (
-          <ProgressLine
-            key={index}
-            label={item.title}
-            backgroundColor="lightblue"
-            visualParts={[
-              {
-                percentage: item.persent,
-                color: "red",
-              },
-            ]}
-          />
-        ))}
-      </ProgressContain>
-      <div style={{ textAlign: "center" }}>
-        {verData.map((item, index) => (
-          <MoContain key={index}>
-            <MoImgBox src={item.moLangthImg} alt="moimg" />
-            <TextContain>{item.name}</TextContain>
-          </MoContain>
-        ))}
+      <div style={{ paddingBottom: "10%" }}>
+        <ProgressContain>
+          {verLabelData.map((item, index) => (
+            <ProgressLine
+              key={index}
+              label={item.title}
+              logoImg={item.logoImg}
+              backgroundColor="lightblue"
+              visualParts={[
+                {
+                  percentage: item.persent,
+                  color: "red",
+                },
+              ]}
+            />
+          ))}
+        </ProgressContain>
       </div>
     </div>
   );
