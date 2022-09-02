@@ -11,7 +11,7 @@ const verLabelData = [
   },
   {
     title: "Git hub",
-    persent: "55%",
+    persent: "45%",
     logoImg: gitHubLogo,
   },
   {
