@@ -34,6 +34,18 @@ const NavBarLogo = styled.img`
   margin-left: 20px;
 `;
 
+const IconContain = styled.div`
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const MoIconContain = styled.div`
+  @media screen and (min-width: 500px) {
+    display: none;
+  }
+`;
+
 const AvatarMenuListLogo = styled.img`
   width: 20px;
   height: 20px;
@@ -122,53 +134,90 @@ const MainNavBar = (_children: any) => {
           </HStack>
           <Flex alignItems={"center"}>
             <ColorModeToggle />
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <Avatar size={"md"} src={AvatarImg} bg="black" />
-              </MenuButton>
-              <MenuList color="black">
-                <MenuItem
-                  _hover={{
-                    background: "white",
-                    color: "red",
-                  }}
-                  as="a"
-                  href="https://www.instagram.com/dae_hyeon00/"
+            <IconContain>
+              <AvatarMenuListLogo
+                src={InstartgramLogo}
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  window.open("https://www.instagram.com/dae_hyeon00/");
+                }}
+              />
+            </IconContain>
+            <IconContain>
+              <AvatarMenuListLogo
+                src={CareerlyLogo}
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  window.open(
+                    "https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
+                  );
+                }}
+              />
+            </IconContain>
+            <IconContain>
+              <AvatarMenuListLogo
+                src={GithubLogo}
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  window.open("https://github.com/gkseogus");
+                }}
+              />
+            </IconContain>
+            <MoIconContain>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={"full"}
+                  variant={"link"}
+                  cursor={"pointer"}
+                  minW={0}
                 >
-                  <AvatarMenuListLogo src={InstartgramLogo} />
-                  Instargram
-                </MenuItem>
-                <MenuItem
-                  _hover={{
-                    background: "white",
-                    color: "red",
-                  }}
-                  as="a"
-                  href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
-                >
-                  <AvatarMenuListLogo src={CareerlyLogo} />
-                  Careerly
-                </MenuItem>
-                <MenuDivider />
-                <MenuItem
-                  _hover={{
-                    background: "white",
-                    color: "red",
-                  }}
-                  as="a"
-                  href="https://github.com/gkseogus"
-                >
-                  <AvatarMenuListLogo src={GithubLogo} />
-                  Github
-                </MenuItem>
-              </MenuList>
-            </Menu>
+                  <Avatar size={"md"} src={AvatarImg} bg="black" />
+                </MenuButton>
+                <MenuList color="black">
+                  <MenuItem
+                    _hover={{
+                      background: "white",
+                      color: "red",
+                    }}
+                    as="a"
+                    href="https://www.instagram.com/dae_hyeon00/"
+                  >
+                    <AvatarMenuListLogo src={InstartgramLogo} />
+                    Instargram
+                  </MenuItem>
+                  <MenuItem
+                    _hover={{
+                      background: "white",
+                      color: "red",
+                    }}
+                    as="a"
+                    href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
+                  >
+                    <AvatarMenuListLogo src={CareerlyLogo} />
+                    Careerly
+                  </MenuItem>
+                  <MenuDivider />
+                  <MenuItem
+                    _hover={{
+                      background: "white",
+                      color: "red",
+                    }}
+                    as="a"
+                    href="https://github.com/gkseogus"
+                  >
+                    <AvatarMenuListLogo src={GithubLogo} />
+                    Github
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </MoIconContain>
           </Flex>
         </Flex>
         {isOpen ? (
