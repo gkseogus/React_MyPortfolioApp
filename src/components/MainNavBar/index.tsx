@@ -20,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import HdhLogo from "../MainNavBar/IMG/mainLogo.png";
 import AvatarImg from "../MainNavBar/IMG/AvatarLogo.png";
@@ -128,7 +129,7 @@ const MainNavBar = (_children: any) => {
               color="white"
             >
               {Links.map((link) => (
-                <NavLink key={link} href={link}>
+                <NavLink key={uuidv4()} href={link}>
                   {link}
                 </NavLink>
               ))}
@@ -226,7 +227,7 @@ const MainNavBar = (_children: any) => {
           <Box pb={4} display={{ md: "none" }} color="white">
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link} href={link}>
+                <NavLink key={uuidv4()} href={link}>
                   {link}
                 </NavLink>
               ))}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Collapse, useDisclosure, Grid, GridItem } from "@chakra-ui/react";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import awardsIcon from "../CareersCard/IMG/awardsIcon.png";
 import awardsIcon2 from "../CareersCard/IMG/awardsIcon2.png";
@@ -130,8 +131,14 @@ const IntroCareers = () => {
         <Box p="10px" color="black" mt="1" rounded="md">
           <Contain>
             <Grid templateColumns="repeat(3, 1fr)" gap="100px">
-              {careerItemsContents.map((item, index) => (
-                <GridItem w="100%" h="100%" bg="white" rounded="md" key={index}>
+              {careerItemsContents.map((item) => (
+                <GridItem
+                  w="100%"
+                  h="100%"
+                  bg="white"
+                  rounded="md"
+                  key={uuidv4()}
+                >
                   <CareerItemsTitle>
                     {item.title}
                     <br />

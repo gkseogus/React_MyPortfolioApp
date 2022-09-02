@@ -8,6 +8,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import Slider from "react-slick";
 import commuteImg from "../ProjectCarousel/IMG/commuteImg.png";
@@ -171,9 +172,9 @@ const ProjectCarousel = () => {
         </IconButton>
       </BtnContain>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {ProjectCards.map((card, index) => (
+        {ProjectCards.map((card) => (
           <Box
-            key={index}
+            key={uuidv4()}
             height={"6xl"}
             position="relative"
             backgroundPosition="center"

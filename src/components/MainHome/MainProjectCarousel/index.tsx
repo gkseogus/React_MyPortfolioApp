@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import commuteImg from "../MainProjectCarousel/IMG/commuteImg.png";
 import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.png";
@@ -41,6 +42,7 @@ const ModalContain = styled.div`
 // This list contains all the data for carousels
 const cards = [
   {
+    key: 1,
     title: "Commute App",
     text: "재택 출퇴근을 위한 출퇴근 앱",
     text2:
@@ -49,6 +51,7 @@ const cards = [
     image: commuteImg,
   },
   {
+    key: 2,
     title: "Exercise App",
     text: "나만의 운동 사이트 앱",
     text2: "tests2",
@@ -56,6 +59,7 @@ const cards = [
     image: exerciseImg,
   },
   {
+    key: 3,
     title: "Creack Detection",
     text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템",
     text2:
@@ -137,9 +141,9 @@ const ProjectCaptionCarousel = (props: any) => {
       </BtnContain>
       {/* Slider */}
       <Slider {...settings} ref={(slider: any) => setSlider(slider)}>
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <Box
-            key={index}
+            key={uuidv4()}
             height={"6xl"}
             position="relative"
             backgroundPosition="center"

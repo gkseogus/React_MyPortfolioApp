@@ -1,6 +1,7 @@
 import React from "react";
 import { Tooltip } from "@chakra-ui/react";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
+import { v4 as uuidv4 } from "uuid";
 import styled, { keyframes } from "styled-components";
 import ProgressLine from "./ProgressBar";
 import frontLabelData from "./ProgressData/frontLabelData";
@@ -118,9 +119,9 @@ const SkillCardsItem = () => {
               <QuestionOutlineIcon w={4} h={4} />
             </Tooltip>
           </ToolTipContain>
-          {frontLabelData.map((item, index) => (
+          {frontLabelData.map((item) => (
             <ProgressLine
-              key={index}
+              key={uuidv4()}
               label={item.title}
               logoImg={item.logoImg}
               backgroundColor="lightblue"
@@ -143,9 +144,9 @@ const SkillCardsItem = () => {
             <QuestionOutlineIcon w={4} h={4} />
           </Tooltip>
         </ToolTipContain>
-        {backLabelData.map((item, index) => (
+        {backLabelData.map((item) => (
           <ProgressLine
-            key={index}
+            key={uuidv4()}
             label={item.title}
             logoImg={item.logoImg}
             backgroundColor="lightblue"
@@ -168,9 +169,9 @@ const SkillCardsItem = () => {
               <QuestionOutlineIcon w={4} h={4} />
             </Tooltip>
           </ToolTipContain>
-          {verLabelData.map((item, index) => (
+          {verLabelData.map((item) => (
             <ProgressLine
-              key={index}
+              key={uuidv4()}
               label={item.title}
               logoImg={item.logoImg}
               backgroundColor="lightblue"

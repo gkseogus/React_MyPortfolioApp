@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import CareerPage from "./components/CareerPage";
 import MainHome from "./components/MainHome";
 import ProjectPage from "./components/ProjectPage";
@@ -10,7 +11,7 @@ const AllRoutesApp = () => (
       {["/Home", "/"].map((path) => {
         return (
           <Route
-            key={path}
+            key={uuidv4()}
             path={path}
             element={
               <div>
