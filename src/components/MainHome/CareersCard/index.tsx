@@ -24,7 +24,7 @@ const CareerBtn = styled.button`
   @media screen and (max-width: 500px) {
     font-size: 20px;
     padding-left: 8%;
-    padding-right: 10%;
+    padding-right: 11%;
     display: inline-block;
     color: red;
   }
