@@ -4,12 +4,26 @@ import styled from "styled-components";
 const Contain = styled.div`
   margin: 20px;
   padding: 20px;
+  @media screen and (max-width: 500px) {
+    padding: 10px;
+  }
 `;
 
 const ProgressLabel = styled.div`
   display: flex;
   position: absolute;
   font-family: "Kanit", sans-serif;
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
+`;
+
+const LabelImgBox = styled.img`
+  width: 20px;
+  height: 15px;
+  margin: auto;
+  padding-bottom: 1%;
+  position: flex;
 `;
 
 const ProgressVisualFull = styled.div`
@@ -27,10 +41,15 @@ const ProgressPercent = styled.p`
   padding-top: 1%;
   color: black;
   font-family: "Kanit", sans-serif;
+  @media screen and (max-width: 500px) {
+    padding-top: 10%;
+    font-size: 12px;
+  }
 `;
 
 const ProgressLine = ({
   label,
+  logoImg,
   backgroundColor = "#e5e5e5",
   visualParts = [
     {
@@ -40,6 +59,7 @@ const ProgressLine = ({
   ],
 }: {
   label: string;
+  logoImg: any;
   backgroundColor: string;
   visualParts: any;
 }) => {
@@ -61,7 +81,10 @@ const ProgressLine = ({
 
   return (
     <Contain>
-      <ProgressLabel>{label}</ProgressLabel>
+      <ProgressLabel>
+        <LabelImgBox src={logoImg} alt="Logo Img" />
+        {label}
+      </ProgressLabel>
       <ProgressVisualFull
         style={{
           backgroundColor,
