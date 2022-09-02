@@ -1,7 +1,3 @@
-import JavaScriptLogo from "../IMG/JavaScriptLogo.png";
-import TypeScriptLogo from "../IMG/TypeScriptLogo.png";
-import ReactLogo from "../IMG/ReactLogo.png";
-import ReduxLogo from "../IMG/ReduxLogo.png";
 import moJavaScriptLogo from "../MoIMG/moJavaScriptLogo.svg";
 import moTypeScriptLogo from "../MoIMG/moTypeScriptLogo.svg";
 import moReactLogo from "../MoIMG/moReactLogo.png";
@@ -13,7 +9,6 @@ const frontData = [
     description: "#a8edea → #fed6e3",
     css: "white",
     height: 200,
-    langthImg: JavaScriptLogo,
     moLangthImg: moJavaScriptLogo,
   },
   {
@@ -21,7 +16,6 @@ const frontData = [
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: TypeScriptLogo,
     moLangthImg: moTypeScriptLogo,
   },
   {
@@ -29,7 +23,6 @@ const frontData = [
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: ReactLogo,
     moLangthImg: moReactLogo,
   },
   {
@@ -37,7 +30,6 @@ const frontData = [
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: ReduxLogo,
     moLangthImg: moReduxLogo,
   },
 ];

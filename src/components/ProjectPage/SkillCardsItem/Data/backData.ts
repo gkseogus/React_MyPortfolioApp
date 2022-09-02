@@ -1,6 +1,3 @@
-import PythonLogo from "../IMG/PythonLogo.png";
-import AwsLogo from "../IMG/AwsLogo.png";
-import GoogleApiLogo from "../IMG/GoogleApiLogo.png";
 import moPythonLogo from "../MoIMG/moPythonLogo.png";
 import moAwsLogo from "../MoIMG/moAwsLogo.png";
 import moGoogleApiLogo from "../MoIMG/moGoogleApiLogo.png";
@@ -11,7 +8,6 @@ const backData = [
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: PythonLogo,
     moLangthImg: moPythonLogo,
   },
   {
@@ -19,7 +15,6 @@ const backData = [
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: AwsLogo,
     moLangthImg: moAwsLogo,
   },
   {
@@ -27,7 +22,6 @@ const backData = [
     description: "#f5f7fa → #c3cfe2",
     css: "white",
     height: 400,
-    langthImg: GoogleApiLogo,
     moLangthImg: moGoogleApiLogo,
   },
 ];
