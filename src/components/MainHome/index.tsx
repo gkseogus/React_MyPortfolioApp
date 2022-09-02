@@ -174,7 +174,7 @@ const ReverseContentsText = styled.h2`
   margin-inline-end: 10%;
   @media screen and (max-width: 500px) {
     padding-top: 20%;
-    padding-left: 36.5%;
+    padding-left: 37.5%;
     text-align: center;
     font-size: 20px;
     top: 0;
@@ -208,6 +208,7 @@ const ReverseContentsBtn = styled(Link)`
     top: 0;
     margin-inline-start: 0%;
     margin-inline-end: 0%;
+    color: red;
   }
 `;
 
