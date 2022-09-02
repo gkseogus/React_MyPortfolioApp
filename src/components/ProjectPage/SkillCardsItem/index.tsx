@@ -1,29 +1,16 @@
 import React from "react";
-import { useState } from "react";
-import {
-  useTransition,
-  useSpring,
-  useChain,
-  config,
-  animated,
-  useSpringRef,
-} from "@react-spring/web";
-import styles from "./styles.module.css";
 import styled, { keyframes } from "styled-components";
-import { Box } from "@chakra-ui/react";
+import ProgressLine from "./ProgressBar";
 import frontData from "./Data/frontData";
 import backData from "./Data/backData";
 import verData from "./Data/verData";
+import frontLabelData from "./ProgressData/frontLabelData";
+import backLabelData from "./ProgressData/backLabelData";
+import verLabelData from "./ProgressData/verLabelData";
 
 const TextClip = keyframes`
   to {
     background-position: 200% center;
-  }
-`;
-
-const Contain = styled.div`
-  @media screen and (max-width: 500px) {
-    display: none;
   }
 `;
 
@@ -93,25 +80,15 @@ const SubAnimatContentsText = styled.h4`
   }
 `;
 
-const AnimateBoxText = styled.h2`
-  position: relative;
-  padding: 20%;
-  text-align: center;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 53px;
-  font-weight: 900;
-  font-family: "Kanit", sans-serif;
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: black;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+const ProgressContain = styled.div`
+  width: 60%;
+  margin: auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border: 2px solid #e5e5e5;
+  border-radius: 6px;
   @media screen and (max-width: 500px) {
-    font-size: 25px;
+    display: none;
   }
 `;
 
@@ -128,54 +105,8 @@ const MoImgBox = styled.img`
     display: none;
   }
 `;
+
 const SkillCardsItem = () => {
-  const [open, setOpen] = useState(false);
-
-  const onclickBox = () => {
-    setOpen((open) => !open);
-  };
-
-  const springApi = useSpringRef();
-  const { size, ...rest } = useSpring({
-    ref: springApi,
-    config: config.stiff,
-    from: { size: "20%", background: "black" },
-    to: {
-      size: open ? "100%" : "20%",
-      background: "black",
-    },
-  });
-
-  const transApi = useSpringRef();
-  const frontTransition = useTransition(open ? frontData : [], {
-    ref: transApi,
-    trail: 400 / frontData.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
-
-  const backTransition = useTransition(open ? backData : [], {
-    ref: transApi,
-    trail: 400 / frontData.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
-
-  const verTransition = useTransition(open ? verData : [], {
-    ref: transApi,
-    trail: 400 / verData.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
-
-  useChain(open ? [springApi, transApi] : [transApi, springApi], [
-    0,
-    open ? 0.1 : 0.6,
-  ]);
-
   return (
     <div>
       <div style={{ textAlign: "center" }}>
@@ -183,31 +114,22 @@ const SkillCardsItem = () => {
       </div>
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Front</SubAnimatContentsText>
-      </div>
-      <Contain className={styles.wrapper}>
-        <animated.div
-          style={{ ...rest, width: size, height: size }}
-          className={styles.container}
-          onClick={onclickBox}
-        >
-          {frontTransition((style, item) => (
-            <animated.div
-              className={styles.item}
-              style={{ ...style, background: item.css }}
-            >
-              <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
-            </animated.div>
+        <ProgressContain>
+          {frontLabelData.map((item, index) => (
+            <ProgressLine
+              key={index}
+              label={item.title}
+              backgroundColor="lightblue"
+              visualParts={[
+                {
+                  percentage: item.persent,
+                  color: "red",
+                },
+              ]}
+            />
           ))}
-        </animated.div>
-      </Contain>
+        </ProgressContain>
+      </div>
       <div style={{ textAlign: "center" }}>
         {frontData.map((item, index) => (
           <MoContain key={index}>
@@ -216,34 +138,25 @@ const SkillCardsItem = () => {
           </MoContain>
         ))}
       </div>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", paddingTop: "6%" }}>
         <SubAnimatContentsText>Back</SubAnimatContentsText>
       </div>
-      <Contain className={styles.wrapper}>
-        <animated.div
-          style={{ ...rest, width: size, height: size }}
-          className={styles.container}
-          onClick={onclickBox}
-        >
-          {backTransition((style, item) => (
-            <animated.div
-              className={styles.item}
-              style={{ ...style, background: item.css }}
-            >
-              <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
-            </animated.div>
-          ))}
-        </animated.div>
-      </Contain>
-      <div style={{ textAlign: "center" }}>
+      <ProgressContain>
+        {backLabelData.map((item, index) => (
+          <ProgressLine
+            key={index}
+            label={item.title}
+            backgroundColor="lightblue"
+            visualParts={[
+              {
+                percentage: item.persent,
+                color: "red",
+              },
+            ]}
+          />
+        ))}
+      </ProgressContain>
+      <div style={{ textAlign: "center", paddingTop: "6%" }}>
         {backData.map((item, index) => (
           <MoContain key={index}>
             <MoImgBox src={item.moLangthImg} alt="moimg" />
@@ -254,30 +167,21 @@ const SkillCardsItem = () => {
       <div style={{ textAlign: "center" }}>
         <SubAnimatContentsText>Version Control</SubAnimatContentsText>
       </div>
-      <Contain className={styles.wrapper}>
-        <animated.div
-          style={{ ...rest, width: size, height: size }}
-          className={styles.container}
-          onClick={onclickBox}
-        >
-          {verTransition((style, item) => (
-            <animated.div
-              className={styles.item}
-              style={{ ...style, background: item.css }}
-            >
-              <AnimateBoxText>{item.name}</AnimateBoxText>
-              <Box
-                style={{
-                  width: "300px",
-                  height: "50%",
-                  margin: "auto",
-                }}
-                backgroundImage={`url(${item.langthImg})`}
-              ></Box>
-            </animated.div>
-          ))}
-        </animated.div>
-      </Contain>
+      <ProgressContain>
+        {verLabelData.map((item, index) => (
+          <ProgressLine
+            key={index}
+            label={item.title}
+            backgroundColor="lightblue"
+            visualParts={[
+              {
+                percentage: item.persent,
+                color: "red",
+              },
+            ]}
+          />
+        ))}
+      </ProgressContain>
       <div style={{ textAlign: "center" }}>
         {verData.map((item, index) => (
           <MoContain key={index}>
