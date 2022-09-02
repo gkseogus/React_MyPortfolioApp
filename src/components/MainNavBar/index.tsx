@@ -26,6 +26,8 @@ import AvatarImg from "../MainNavBar/IMG/AvatarLogo.png";
 import InstartgramLogo from "../MainNavBar/IMG/InstargramLogo.png";
 import CareerlyLogo from "../MainNavBar/IMG/CareerlyLogo.png";
 import GithubLogo from "../MainNavBar/IMG/GithubLogo.png";
+import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.png";
+import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.png";
 
 const NavBarLogo = styled.img`
   width: 200px;
@@ -200,7 +202,7 @@ const MainNavBar = (_children: any) => {
                     as="a"
                     href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
                   >
-                    <AvatarMenuListLogo src={CareerlyLogo} />
+                    <AvatarMenuListLogo src={moCareerlyLogo} />
                     Careerly
                   </MenuItem>
                   <MenuDivider />
@@ -212,7 +214,7 @@ const MainNavBar = (_children: any) => {
                     as="a"
                     href="https://github.com/gkseogus"
                   >
-                    <AvatarMenuListLogo src={GithubLogo} />
+                    <AvatarMenuListLogo src={moGithubLogo} />
                     Github
                   </MenuItem>
                 </MenuList>
