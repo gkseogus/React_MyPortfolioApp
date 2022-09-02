@@ -240,4 +240,4 @@ const ProjectPage = () => {
   );
 };
 
-export default ProjectPage;
+export default React.memo(ProjectPage);

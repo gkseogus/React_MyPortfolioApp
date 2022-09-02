@@ -233,4 +233,4 @@ const ProjectCarousel = () => {
   );
 };
 
-export default ProjectCarousel;
+export default React.memo(ProjectCarousel);

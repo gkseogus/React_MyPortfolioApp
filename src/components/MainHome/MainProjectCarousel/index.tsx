@@ -191,4 +191,4 @@ const ProjectCaptionCarousel = (props: any) => {
   );
 };
 
-export default ProjectCaptionCarousel;
+export default React.memo(ProjectCaptionCarousel);

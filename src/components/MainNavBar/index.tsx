@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactNode } from "react";
 import {
   Box,
@@ -239,4 +240,4 @@ const MainNavBar = (_children: any) => {
   );
 };
 
-export default MainNavBar;
+export default React.memo(MainNavBar);

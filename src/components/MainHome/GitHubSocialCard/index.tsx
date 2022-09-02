@@ -1,3 +1,5 @@
+import React from "react";
+import { useEffect, useState } from "react";
 import {
   Heading,
   Avatar,
@@ -12,7 +14,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import GithubCardbackGround from "../GitHubSocialCard/GithubCardbackGround.png";
 
 const GitHubSocialCard = () => {
@@ -137,4 +138,4 @@ const GitHubSocialCard = () => {
   );
 };
 
-export default GitHubSocialCard;
+export default React.memo(GitHubSocialCard);

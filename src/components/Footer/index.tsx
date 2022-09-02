@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Container,
@@ -193,4 +194,4 @@ const Footer = () => {
     </footer>
   );
 };
-export default Footer;
+export default React.memo(Footer);

@@ -160,4 +160,4 @@ const IntroCareers = () => {
   );
 };
 
-export default IntroCareers;
+export default React.memo(IntroCareers);

@@ -1,6 +1,7 @@
-import TimeLine from "./TimeLine";
+import React from "react";
 import styled from "styled-components";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
+import TimeLine from "./TimeLine";
 
 const BreadcrumbContain = styled.div`
   float: right;
@@ -56,4 +57,4 @@ const CareerPage = () => {
   );
 };
 
-export default CareerPage;
+export default React.memo(CareerPage);

@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Collapse, useDisclosure } from "@chakra-ui/react";
 import { BsFillPersonFill } from "react-icons/bs";
 import styled from "styled-components";
@@ -43,4 +44,4 @@ const MainAboutMo = () => {
   );
 };
 
-export default MainAboutMo;
+export default React.memo(MainAboutMo);

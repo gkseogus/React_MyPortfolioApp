@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { VscChevronUp } from "react-icons/vsc";
 import styled from "styled-components";
@@ -48,4 +49,4 @@ const ScrollToTopButton = () => {
   );
 };
 
-export default ScrollToTopButton;
+export default React.memo(ScrollToTopButton);
