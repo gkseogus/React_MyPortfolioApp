@@ -54,11 +54,11 @@ const Footer = () => {
           >
             <Stack align={"flex-start"}>
               <ListHeader>Product</ListHeader>
-              <Link href={"Home"} color={"gray"}>
+              <Link href={"Home"} color={"#573b3b"}>
                 Home
               </Link>
               <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Project"} color={"gray"}>
+                <Link href={"Project"} color={"#573b3b"}>
                   Project
                 </Link>
                 <Tag
@@ -71,7 +71,7 @@ const Footer = () => {
                 </Tag>
               </Stack>
               <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Career"} color={"gray"}>
+                <Link href={"Career"} color={"#573b3b"}>
                   Career
                 </Link>
                 <Tag
@@ -87,7 +87,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Company</ListHeader>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.hnine.com/");
                 }}
@@ -95,7 +95,7 @@ const Footer = () => {
                 Hnine
               </Link>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://jinjin.co.kr/main.do");
                 }}
@@ -106,7 +106,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Job</ListHeader>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.jobkorea.co.kr/");
                 }}
@@ -114,7 +114,7 @@ const Footer = () => {
                 Jop Korea
               </Link>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.saramin.co.kr/zf_user/");
                 }}
@@ -122,7 +122,7 @@ const Footer = () => {
                 Saramin
               </Link>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.wanted.co.kr/");
                 }}
@@ -133,7 +133,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Follow Us</ListHeader>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain(
                     "https://www.linkedin.com/in/dae-hyeon-han-468005249/"
@@ -143,7 +143,7 @@ const Footer = () => {
                 LinkedIn
               </Link>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain(
                     "https://careerly.co.kr/profiles/496283?from=%2Fmessenger&location=gnb/"
@@ -156,7 +156,7 @@ const Footer = () => {
             <Stack align={"flex-start"}>
               <ListHeader>Univ</ListHeader>
               <Link
-                color={"gray"}
+                color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.hallym.ac.kr/hallym_univ/");
                 }}
