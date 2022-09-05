@@ -86,53 +86,53 @@ const Footer = () => {
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader>Company</ListHeader>
-              <Link
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.hnine.com/");
                 }}
               >
                 Hnine
-              </Link>
-              <Link
+              </button>
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://jinjin.co.kr/main.do");
                 }}
               >
                 JinJin System
-              </Link>
+              </button>
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader>Job</ListHeader>
-              <Link
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.jobkorea.co.kr/");
                 }}
               >
                 Jop Korea
-              </Link>
-              <Link
+              </button>
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.saramin.co.kr/zf_user/");
                 }}
               >
                 Saramin
-              </Link>
-              <Link
+              </button>
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.wanted.co.kr/");
                 }}
               >
                 Wanted
-              </Link>
+              </button>
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader>Follow Us</ListHeader>
-              <Link
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain(
@@ -141,8 +141,8 @@ const Footer = () => {
                 }}
               >
                 LinkedIn
-              </Link>
-              <Link
+              </button>
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain(
@@ -151,18 +151,18 @@ const Footer = () => {
                 }}
               >
                 Careerly
-              </Link>
+              </button>
             </Stack>
             <Stack align={"flex-start"}>
               <ListHeader>Univ</ListHeader>
-              <Link
+              <button
                 color={"#573b3b"}
                 onClick={() => {
                   getDomain("https://www.hallym.ac.kr/hallym_univ/");
                 }}
               >
                 Hallym University
-              </Link>
+              </button>
             </Stack>
           </SimpleGrid>
         </Container>
