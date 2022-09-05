@@ -16,6 +16,7 @@ import FooterLogo from "../Footer/footerLogo.png";
 
 const LogoContain = styled.div`
   width: 130px;
+  height: auto;
   text-align: center;
 `;
 
