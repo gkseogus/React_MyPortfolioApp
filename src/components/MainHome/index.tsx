@@ -53,6 +53,7 @@ const IntroText = styled.h2`
   font-size: 64px;
   font-weight: 600px;
   font-family: "Kanit", sans-serif;
+  font-display: swap;
   line-height: 1.27;
   letter-spacing: 0px;
   margin-block-start: 2.5em;
@@ -86,6 +87,7 @@ const CenterContentsText = styled.h2`
   font-size: 64px;
   font-weight: 600px;
   font-family: "Kanit", sans-serif;
+  font-display: swap;
   line-height: 1.27;
   letter-spacing: 0px;
   @media screen and (max-width: 500px) {
@@ -113,6 +115,7 @@ const ContentsText = styled.h2`
   font-size: 64px;
   font-weight: 600px;
   font-family: "Kanit", sans-serif;
+  font-display: swap;
   line-height: 1.27;
   letter-spacing: 0px;
   top: 250px;
@@ -140,6 +143,7 @@ const SecondIntroText = styled.h2`
   padding: 15%;
   text-align: center;
   font-family: sans-serif;
+  font-display: swap;
   text-transform: uppercase;
   font-size: 54px;
   font-weight: 900;
@@ -166,6 +170,7 @@ const ReverseContentsText = styled.h2`
   font-size: 64px;
   font-weight: 600px;
   font-family: "Kanit", sans-serif;
+  font-display: swap;
   line-height: 1.27;
   letter-spacing: 0px;
   top: 250px;
@@ -190,6 +195,7 @@ const ReverseContentsBtn = styled(Link)`
   font-size: 32px;
   font-weight: 600;
   font-family: "Kanit", sans-serif;
+  font-display: swap;
   line-height: 1.27;
   letter-spacing: 0px;
   top: 300px;
