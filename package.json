@@ -63,5 +63,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://gkseogus.github.io/"
+  "homepage": "https://gkseogus.github.io/",
+  "devDependencies": {
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.5.4"
+  }
 }
