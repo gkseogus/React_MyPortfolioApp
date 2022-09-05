@@ -77,6 +77,7 @@ const GitHubSocialCard = () => {
           h={"120px"}
           w={"full"}
           src={GithubCardbackGround}
+          alt={"GithubCardbackGround"}
           objectFit={"cover"}
         />
         <Flex justify={"center"} mt={-12}>
