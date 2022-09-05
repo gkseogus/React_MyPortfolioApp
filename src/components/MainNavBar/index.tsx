@@ -32,7 +32,7 @@ import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.png";
 import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.png";
 
 const NavBarLogo = styled.img`
-  width: 200px;
+  width: 150px;
   height: 150px;
   margin-top: 20px;
   margin-left: 20px;
