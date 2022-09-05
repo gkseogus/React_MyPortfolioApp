@@ -122,7 +122,7 @@ const MainNavBar = (_children: any) => {
             color="red"
           />
           <HStack spacing={8} alignItems={"center"}>
-            <NavBarLogo src={HdhLogo} />
+            <NavBarLogo src={HdhLogo} alt={"NavBarLogo"} />
             <HStack
               as={"nav"}
               spacing={4}
@@ -141,6 +141,7 @@ const MainNavBar = (_children: any) => {
             <IconContain>
               <AvatarMenuListLogo
                 src={InstartgramLogo}
+                alt={"InstargramLogo"}
                 style={{
                   cursor: "pointer",
                 }}
@@ -152,6 +153,7 @@ const MainNavBar = (_children: any) => {
             <IconContain>
               <AvatarMenuListLogo
                 src={CareerlyLogo}
+                alt={"CareerlyLogo"}
                 style={{
                   cursor: "pointer",
                 }}
@@ -165,6 +167,7 @@ const MainNavBar = (_children: any) => {
             <IconContain>
               <AvatarMenuListLogo
                 src={GithubLogo}
+                alt={"GithubLogo"}
                 style={{
                   cursor: "pointer",
                 }}
