@@ -11,6 +11,7 @@ const SettingImgContain = styled.div`
 `;
 
 const SettingImg = styled.img`
+  width: 20px;
   height: 20px;
 `;
 
