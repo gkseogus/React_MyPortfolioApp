@@ -24,7 +24,33 @@ const ModalBtn = styled.button`
   }
 `;
 
-const CarouselModal = ({ moreText }: { moreText: string }) => {
+const ModalTitle = styled.p`
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
+`;
+
+const ModalText = styled.p`
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  @media screen and (max-width: 500px) {
+    font-size: 13px;
+  }
+`;
+
+const CarouselModal = ({
+  moreText,
+  moreTitle,
+}: {
+  moreText: string;
+  moreTitle: string;
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -35,7 +61,12 @@ const CarouselModal = ({ moreText }: { moreText: string }) => {
         <ModalContent>
           <ModalHeader style={{ textAlign: "center" }}>상세내용</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{moreText}</ModalBody>
+          <ModalBody>
+            <ModalTitle>{moreTitle}</ModalTitle>
+          </ModalBody>
+          <ModalBody>
+            <ModalText>{moreText}</ModalText>
+          </ModalBody>
           <ModalFooter>
             <Button
               style={{ textAlign: "center" }}
