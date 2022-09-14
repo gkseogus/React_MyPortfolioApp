@@ -31,9 +31,11 @@
 
 # Web Deployment
 * AWS - Amplify 사용
+
 도메인 구축 및 테스트 서버, 개발 서버 분리
 
 * Google 애널리틱스 사용
+
 사용자 성향 분석
 
 # Site
