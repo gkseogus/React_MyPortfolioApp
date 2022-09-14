@@ -9,31 +9,44 @@ const TimeLine = () => {
     <VerticalTimeline lineColor="red">
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "#fff", color: "black" }}
-        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        contentStyle={{ background: "#fff", color: "red" }}
+        contentArrowStyle={{ borderRight: "7px solid  red" }}
         date="2014 - 2016"
         iconStyle={{ background: "black", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">학교명: 장안중학교</h3>
-        <p>
+        <h3
+          className="vertical-timeline-element-title"
+          style={{ color: "black" }}
+        >
+          학교명: 장안중학교
+        </h3>
+        <p style={{ color: "black" }}>
           프로그래밍에 대해 잘 알지 못했던 시절.
           <br /> 프로게이머를 존경했다.
         </p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "#fff", color: "black" }}
-        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        contentStyle={{ background: "#fff", color: "red" }}
+        contentArrowStyle={{ borderRight: "7px solid  red" }}
         date="2017 - 2019"
         iconStyle={{ background: "black", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">
+        <h3
+          className="vertical-timeline-element-title"
+          style={{ color: "black" }}
+        >
           학교명: 중화고등학교
         </h3>
-        <h4 className="vertical-timeline-element-subtitle">전공: 이과</h4>
-        <p>
+        <h4
+          className="vertical-timeline-element-subtitle"
+          style={{ color: "black" }}
+        >
+          전공: 이과
+        </h4>
+        <p style={{ color: "black" }}>
           외삼촌이 프로게이머 이셨다가 프로그래머로 전향하셨는데 이 이유 때문에
           프로그래밍에 흥미를 느끼게 되었다.
           <br />
@@ -46,18 +59,26 @@ const TimeLine = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "#fff", color: "black" }}
-        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        contentStyle={{ background: "#fff", color: "red" }}
+        contentArrowStyle={{ borderRight: "7px solid  red" }}
         date="2019 - 2022"
         iconStyle={{ background: "black", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">학교명: 한림대학교</h3>
-        <h4 className="vertical-timeline-element-subtitle">
+        <h3
+          className="vertical-timeline-element-title"
+          style={{ color: "black" }}
+        >
+          학교명: 한림대학교
+        </h3>
+        <h4
+          className="vertical-timeline-element-subtitle"
+          style={{ color: "black" }}
+        >
           주전공: 빅데이터 <br />
           부전공: 스마트iot
         </h4>
-        <p>
+        <p style={{ color: "black" }}>
           <br /> 1학년 : 본격적으로 프로그래밍에 대해 이론을 배우기 시작한
           단계였으며 이론을 중점으로 간단한 코드를 작성하였다.
           <br />
@@ -76,17 +97,25 @@ const TimeLine = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "#fff", color: "black" }}
-        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        contentStyle={{ background: "#fff", color: "red" }}
+        contentArrowStyle={{ borderRight: "7px solid  red" }}
         date="2022.01.03 - 2022.06.31"
         iconStyle={{ background: "red", color: "#fff" }}
         // icon={<WorkIcon />}
       >
-        <h3 className="vertical-timeline-element-title">회사: 에이치나인</h3>
-        <h4 className="vertical-timeline-element-subtitle">
+        <h3
+          className="vertical-timeline-element-title"
+          style={{ color: "black" }}
+        >
+          회사: 에이치나인
+        </h3>
+        <h4
+          className="vertical-timeline-element-subtitle"
+          style={{ color: "black" }}
+        >
           부서명: R & D (인턴쉽)
         </h4>
-        <p>
+        <p style={{ color: "black" }}>
           학교를 다니면서 한 학기 동안 인턴쉽을 진행하였다.
           <br />
           <br />
@@ -105,17 +134,25 @@ const TimeLine = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        contentStyle={{ background: "#fff", color: "black" }}
-        contentArrowStyle={{ borderRight: "7px solid  black" }}
+        contentStyle={{ background: "#fff", color: "red" }}
+        contentArrowStyle={{ borderRight: "7px solid  red" }}
         date="2022.08.07 ~"
         iconStyle={{ background: "red", color: "#fff" }}
         // icon={<SchoolIcon />}
       >
-        <h3 className="vertical-timeline-element-title">회사명: 진진시스템</h3>
-        <h4 className="vertical-timeline-element-subtitle">
+        <h3
+          className="vertical-timeline-element-title"
+          style={{ color: "black" }}
+        >
+          회사명: 진진시스템
+        </h3>
+        <h4
+          className="vertical-timeline-element-subtitle"
+          style={{ color: "black" }}
+        >
           부서명: 시스템개발부 (정직원)
         </h4>
-        <p>현재진행형</p>
+        <p style={{ color: "black" }}>현재진행형</p>
       </VerticalTimelineElement>
     </VerticalTimeline>
   );
