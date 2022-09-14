@@ -115,7 +115,7 @@ const ProjectCarousel = () => {
     },
     {
       title: "Shop app",
-      text: "쇼핑몰 웹",
+      text: "쇼핑몰 앱",
       text2:
         "사용자가 물건을 추가 또는 삭제, 장바구나 추가 또는 삭제 하는 기능이 있는 쇼핑몰 웹 입니다. 로그인 한 유저는 관리자에게 시트 권한을 요청하게 되며 요청이 승인되면 물건 데이터가 화면에 노출되도록 하였습니다.",
       Frontend: "TypeScript & React & Redux",
