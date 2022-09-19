@@ -3,7 +3,7 @@ import { useState } from "react";
 import { VscChevronUp } from "react-icons/vsc";
 import styled from "styled-components";
 
-const ScrollToTop = styled.button`
+const ScrollToTop = styled.div`
   position: fixed;
   width: 100%;
   left: 45%;
