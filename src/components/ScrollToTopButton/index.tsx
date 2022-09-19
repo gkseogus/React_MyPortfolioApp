@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const ScrollToTop = styled.div`
   position: fixed;
-  width: 100%;
-  left: 45%;
+  width: 70%;
+  left: 83%;
   bottom: 70px;
   height: 20px;
   font-size: 3rem;
