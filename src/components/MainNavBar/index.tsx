@@ -5,7 +5,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   ButtonProps,
@@ -30,6 +29,17 @@ import CareerlyLogo from "../MainNavBar/IMG/CareerlyLogo.png";
 import GithubLogo from "../MainNavBar/IMG/GithubLogo.png";
 import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.png";
 import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.png";
+import { Link } from "react-router-dom";
+
+const NavBarLink = styled(Link)`
+  :hover {
+    background-color: black;
+    text-decoration: none;
+    color: red;
+  }
+`;
+
+const MoLink = styled.a``;
 
 const NavBarLogo = styled.img`
   width: 150px;
@@ -56,22 +66,10 @@ const AvatarMenuListLogo = styled.img`
   margin: 20px;
 `;
 
-const Links = ["Home", "Project", "Career"];
+const Links = ["Home", "Project", "Career", "E-mail"];
 
 const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      background: "black",
-      color: "red",
-    }}
-    href={href}
-  >
-    {children}
-  </Link>
+  <MoLink href={href}>{children}</MoLink>
 );
 
 const ColorModeToggle = (props: ButtonProps) => {
@@ -97,6 +95,10 @@ const ColorModeToggle = (props: ButtonProps) => {
 
 const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const resetScroll = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <header>
@@ -129,11 +131,18 @@ const MainNavBar = (_children: any) => {
               display={{ base: "none", md: "flex" }}
               color="white"
             >
-              {Links.map((link) => (
-                <NavLink key={uuidv4()} href={link}>
-                  {link}
-                </NavLink>
-              ))}
+              <NavBarLink to="/Home" onClick={resetScroll}>
+                Home
+              </NavBarLink>
+              <NavBarLink to="/Project" onClick={resetScroll}>
+                Project
+              </NavBarLink>
+              <NavBarLink to="/Career" onClick={resetScroll}>
+                Career
+              </NavBarLink>
+              <NavBarLink to="/Email" onClick={resetScroll}>
+                E-mail
+              </NavBarLink>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>

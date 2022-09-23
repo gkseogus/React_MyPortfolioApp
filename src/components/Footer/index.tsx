@@ -62,18 +62,15 @@ const Footer = () => {
                 <Link href={"Project"} color={"#573b3b"}>
                   Project
                 </Link>
-                <Tag
-                  size={"sm"}
-                  bg={useColorModeValue("black", "black")}
-                  ml={2}
-                  color={"white"}
-                >
-                  New
-                </Tag>
               </Stack>
               <Stack direction={"row"} align={"center"} spacing={2}>
                 <Link href={"Career"} color={"#573b3b"}>
                   Career
+                </Link>
+              </Stack>
+              <Stack direction={"row"} align={"center"} spacing={2}>
+                <Link href={"Email"} color={"#573b3b"}>
+                  E-mail
                 </Link>
                 <Tag
                   size={"sm"}
