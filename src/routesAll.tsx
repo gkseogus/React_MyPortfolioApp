@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import CareerPage from "./components/CareerPage";
+import EmailPage from "./components/EmailPage";
 import MainHome from "./components/MainHome";
+import MainNavBar from "./components/MainNavBar";
 import ProjectPage from "./components/ProjectPage";
 
 const AllRoutesApp = () => (
@@ -15,6 +17,7 @@ const AllRoutesApp = () => (
             path={path}
             element={
               <div>
+                <MainNavBar />
                 <MainHome />
               </div>
             }
@@ -26,6 +29,7 @@ const AllRoutesApp = () => (
         path="/Project"
         element={
           <div>
+            <MainNavBar />
             <ProjectPage />
           </div>
         }
@@ -34,10 +38,25 @@ const AllRoutesApp = () => (
         path="/Career"
         element={
           <div>
+            <MainNavBar />
             <CareerPage />
           </div>
         }
       />
+      {["/Email", "/E-mail"].map((path) => {
+        return (
+          <Route
+            key={uuidv4()}
+            path={path}
+            element={
+              <div>
+                <MainNavBar />
+                <EmailPage />
+              </div>
+            }
+          />
+        );
+      })}
     </Routes>
   </Router>
 );
