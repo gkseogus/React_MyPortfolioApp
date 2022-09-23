@@ -11,6 +11,9 @@ const Wrap = styled.div`
   left: 50%;
   margin-left: -597px;
   background: none;
+  @media screen and (max-width: 500px) {
+    width: 500px;
+  }
 `;
 
 const PeopleWrap = styled.div`
@@ -24,6 +27,10 @@ const People = styled.div`
   height: 315px;
   margin-left: 39.5%;
   top: 300px;
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    margin-left: 93%;
+  }
 `;
 
 const Position = styled.p`
