@@ -184,7 +184,7 @@ const FormMyEmail = styled.input`
   width: 210px;
   height: 29px;
   left: 492px;
-  top: 1030px;
+  top: 990px;
   text-align: center;
   background-color: none;
   border: none;
@@ -204,7 +204,7 @@ const FormDevEmail = styled.select`
   width: 280px;
   height: 35px;
   left: 457px;
-  top: 1100px;
+  top: 1030px;
   text-align: center;
   background-color: none;
   border: none;
@@ -216,6 +216,31 @@ const FormDevEmail = styled.select`
   font-size: 18px;
   line-height: 21px;
   padding-bottom: 10px;
+`;
+
+const FormEmailTitle = styled.input`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 6px;
+  position: absolute;
+  width: 300px;
+  height: 29px;
+  left: 447px;
+  top: 1120px;
+  text-align: center;
+  background-color: none;
+  border: none;
+  border-bottom: 3px solid black;
+  ::placeholder {
+    color: #999999;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
 `;
 
 const FormContent = styled.textarea`
@@ -284,14 +309,14 @@ const FormBtnContent = styled.p`
 
 const EmailPage = () => {
   const [Selected, setSelected] = useState("");
-  var docUrl =
-    "https://script.google.com/macros/s/AKfycbwpltk28-v2733NJZRhQzRzffTM5H-tbW1ZXbllMw3G5yyzChKEjUHwlLGZE79tExiiVg/exec";
+  let docUrl =
+    "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
 
+  const titleRef = useRef(null);
   const textRef = useRef(null);
-
   const selectList = "fbznffldj998@naver.com";
   const docsList =
-    "https://script.google.com/macros/s/AKfycbwpltk28-v2733NJZRhQzRzffTM5H-tbW1ZXbllMw3G5yyzChKEjUHwlLGZE79tExiiVg/exec";
+    "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
 
   const handleSelect = (e: {
     target: { value: React.SetStateAction<string> };
@@ -355,7 +380,14 @@ const EmailPage = () => {
             </FormDevEmail>
           </div>
         </div>
-
+        <div>
+          <FormEmailTitle
+            id="title"
+            name="title"
+            placeholder="Write a message title"
+            ref={titleRef}
+          />
+        </div>
         <div>
           <FormContent
             id="comment"
