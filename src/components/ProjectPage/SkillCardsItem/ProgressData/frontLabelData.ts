@@ -1,7 +1,7 @@
-import javaScriptLogo from "../LogoImg/javaScriptLogo.svg";
-import typeScriptLogo from "../LogoImg/typeScriptLogo.svg";
-import reactLogo from "../LogoImg/reactLogo.png";
-import reduxLogo from "../LogoImg/reduxLogo.png";
+import javaScriptLogo from "../LogoImg/javaScriptLogo.avif";
+import typeScriptLogo from "../LogoImg/typeScriptLogo.avif";
+import reactLogo from "../LogoImg/reactLogo.avif";
+import reduxLogo from "../LogoImg/reduxLogo.avif";
 
 const frontLabelData = [
   {

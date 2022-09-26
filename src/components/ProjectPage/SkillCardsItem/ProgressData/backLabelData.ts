@@ -1,9 +1,9 @@
-import pythonLogo from "../LogoImg/pythonLogo.png";
-import awsLogo from "../LogoImg/awsLogo.png";
-import googleApiLogo from "../LogoImg/googleApiLogo.png";
-import nodeJsLogo from "../LogoImg/nodeJsLogo.png";
-import javaLogo from "../LogoImg/javaLogo.png";
-import mySqlLogo from "../LogoImg/mySqlLogo.png";
+import pythonLogo from "../LogoImg/pythonLogo.avif";
+import awsLogo from "../LogoImg/awsLogo.avif";
+import googleApiLogo from "../LogoImg/googleApiLogo.avif";
+import nodeJsLogo from "../LogoImg/nodeJsLogo.avif";
+import javaLogo from "../LogoImg/javaLogo.avif";
+import mySqlLogo from "../LogoImg/mySqlLogo.avif";
 
 const backLabelData = [
   {
