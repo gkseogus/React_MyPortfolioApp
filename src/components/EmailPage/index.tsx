@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import myIcon from "./IMG/myIcon.png";
+import myIcon from "./IMG/myIcon.svg";
 import githubLogo from "./IMG/githubLogo.svg";
 import mailLogo from "./IMG/mailLogo.svg";
 
@@ -36,7 +36,7 @@ const People = styled.div`
 const Position = styled.p`
   display: flex;
   flex-direction: row;
-  font-family: "Pretendard";
+  font-family: "Kanit", sans-serif;
   align-items: flex-start;
   padding: 8px 16px;
   gap: 10px;
@@ -46,7 +46,7 @@ const Position = styled.p`
   top: 5.71%;
   bottom: 82.54%;
   z-index: 1;
-  background: #444444;
+  background: #000000;
   border-radius: 30px;
 `;
 
@@ -116,6 +116,11 @@ const EmailWrap = styled.div`
   top: 39px;
 `;
 
+const EmialLogoContain = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
 const Email = styled.p`
   width: 360px;
   height: 17px;
@@ -126,7 +131,7 @@ const Email = styled.p`
   font-size: 14.3158px;
   line-height: 17px;
   text-align: center;
-  color: #999999;
+  color: #000000;
 `;
 
 const GithubWrap = styled.div`
@@ -144,6 +149,11 @@ const GithubWrap = styled.div`
   top: 64.05px;
 `;
 
+const GitHubLogoContain = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
 const Github = styled.button`
   width: 170px;
   height: 17px;
@@ -154,7 +164,7 @@ const Github = styled.button`
   line-height: 17px;
   margin: 0;
   text-align: center;
-  color: #999999;
+  color: #000000;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -197,7 +207,7 @@ const FormMyEmail = styled.input`
   border: none;
   border-bottom: 3px solid black;
   ::placeholder {
-    color: #999999;
+    color: #000000;
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 500;
@@ -216,7 +226,7 @@ const FormDevEmail = styled.select`
   background-color: none;
   border: none;
   border-bottom: 3px solid black;
-  color: #999999;
+  color: #000000;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -241,7 +251,7 @@ const FormEmailTitle = styled.input`
   border: none;
   border-bottom: 3px solid black;
   ::placeholder {
-    color: #999999;
+    color: #000000;
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 500;
@@ -274,7 +284,7 @@ const FormContent = styled.textarea`
   border-bottom: 3px solid black;
   max-height: 66px;
   ::placeholder {
-    color: #999999;
+    color: #000000;
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 500;
@@ -346,11 +356,11 @@ const EmailPage = () => {
           <NameWrap>
             <Name>Daehyeon Han</Name>
             <EmailWrap>
-              <img src={mailLogo} alt="gmailLogo" />
+              <EmialLogoContain src={mailLogo} alt="gmailLogo" />
               <Email>fbznffldj998@naver.com</Email>
             </EmailWrap>
             <GithubWrap>
-              <img src={githubLogo} alt="githubLogo" />
+              <GitHubLogoContain src={githubLogo} alt="githubLogo" />
               <Github
                 onClick={() => {
                   getDomain("https://github.com/gkseogus");
