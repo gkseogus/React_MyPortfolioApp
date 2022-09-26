@@ -14,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import GithubCardbackGround from "../GitHubSocialCard/GithubCardbackGround.png";
+import githubCardbackGround from "../GitHubSocialCard/GithubCardbackGround.avif";
 
 const GitHubSocialCard = () => {
   const toast = useToast();
@@ -76,8 +76,8 @@ const GitHubSocialCard = () => {
         <Image
           h={"120px"}
           w={"full"}
-          src={GithubCardbackGround}
-          alt={"GithubCardbackGround"}
+          src={githubCardbackGround}
+          alt={"githubCardbackGround"}
           objectFit={"cover"}
         />
         <Flex justify={"center"} mt={-12}>
@@ -87,6 +87,7 @@ const GitHubSocialCard = () => {
             css={{
               border: "2px solid white",
             }}
+            name={"avaterImg"}
           />
         </Flex>
         <Box p={6}>
