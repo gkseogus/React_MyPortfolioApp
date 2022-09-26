@@ -21,7 +21,7 @@ const LogoContain = styled.img`
 `;
 
 const Logo = (props: any) => {
-  return <LogoContain alt="footer logo" src={footerLogo} />;
+  return <LogoContain alt="footer logo" src={footerLogo} loading="lazy" />;
 };
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
