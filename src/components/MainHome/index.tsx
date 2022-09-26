@@ -2,11 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Hide, Box, useToast } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
-<<<<<<< HEAD
 import introImg from "../MainHome/IMG/introImg.svg";
-=======
-import introImg from "../MainHome/IMG/introImg.webp";
->>>>>>> 45084996016a9ef3ad72e5930d9172ff710a2112
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
 import IntroCareers from "./CareersCard";
