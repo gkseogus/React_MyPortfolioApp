@@ -11,16 +11,16 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import Slider from "react-slick";
-import commuteImg from "../ProjectCarousel/IMG/commuteImg.png";
-import exerciseImg from "../ProjectCarousel/IMG/exerciseImg.png";
-import deepLearningImg from "../ProjectCarousel/IMG/deepLearningImg.png";
-import exerciseBlogImg from "../ProjectCarousel/IMG/exerciseBlogImg.png";
-import commuteResultImg from "../ProjectCarousel/IMG/commuteResultImg.png";
-import crackResultImg from "../ProjectCarousel/IMG/crackResultImg.png";
-import casLeakImg from "../ProjectCarousel/IMG/casLeakImg.png";
-import casLeakResultImg from "../ProjectCarousel/IMG/casLeakResultImg.png";
-import shopImg from "../ProjectCarousel/IMG/shopImg.png";
-import shopesultImg from "../ProjectCarousel/IMG/shopesultImg.png";
+import commuteImg from "../ProjectCarousel/IMG/commuteImg.avif";
+import exerciseImg from "../ProjectCarousel/IMG/exerciseImg.avif";
+import deepLearningImg from "../ProjectCarousel/IMG/deepLearningImg.avif";
+import exerciseBlogImg from "../ProjectCarousel/IMG/exerciseBlogImg.avif";
+import commuteResultImg from "../ProjectCarousel/IMG/commuteResultImg.avif";
+import crackResultImg from "../ProjectCarousel/IMG/crackResultImg.avif";
+import casLeakImg from "../ProjectCarousel/IMG/casLeakImg.avif";
+import casLeakResultImg from "../ProjectCarousel/IMG/casLeakResultImg.avif";
+import shopImg from "../ProjectCarousel/IMG/shopImg.avif";
+import shopesultImg from "../ProjectCarousel/IMG/shopesultImg.avif";
 
 const BtnContain = styled.div`
   @media screen and (max-width: 500px) {
