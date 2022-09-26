@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Hide, Box, useToast } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
-import FirstIntroImg from "../MainHome/IMG/FirstIntroImg.png";
+import firstIntroImg from "../MainHome/IMG/firstIntroImg.avif";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
 import IntroCareers from "./CareersCard";
@@ -72,12 +72,12 @@ const IntroText = styled.h2`
 
 const IntroImg = styled.img`
   position: absolute;
-  right: 25%;
+  right: 10%;
   transform: translate(-50%, -50%);
-  width: 20%;
-  height: 35%;
-  min-height: 500px;
-  min-width: 700px;
+  width: 580px;
+  height: 348px;
+  min-width: 290px;
+  min-width: 174px;
   opacity: 0.4;
   animation: ${circleAni} 10s linear infinite;
 `;
@@ -269,7 +269,7 @@ const MainHome = () => {
           of front engineer Han Dae-hyeon
           <Hide below="md">
             <Box boxSize="sm">
-              <IntroImg src={FirstIntroImg} alt="FirstIntroImg Img" />
+              <IntroImg src={firstIntroImg} alt="firstIntroImg" />
             </Box>
           </Hide>
         </IntroText>
