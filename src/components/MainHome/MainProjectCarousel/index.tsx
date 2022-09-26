@@ -12,9 +12,9 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
-import commuteImg from "../MainProjectCarousel/IMG/commuteImg.avif";
-import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.avif";
-import deepLearningImg from "../MainProjectCarousel/IMG/deepLearningImg.avif";
+import commuteImg from "../MainProjectCarousel/IMG/commuteImg.svg";
+import exerciseImg from "../MainProjectCarousel/IMG/exerciseImg.svg";
+import deepLearningImg from "../MainProjectCarousel/IMG/deepLearningImg.svg";
 import CarouselModal from "./CarouselModal";
 
 const Contain = styled.div`
