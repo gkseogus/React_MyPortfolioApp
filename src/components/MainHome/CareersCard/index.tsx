@@ -48,7 +48,7 @@ const CareerItemsTitle = styled.h2`
 const CareerItemsAward = styled.img`
   width: 300px;
   height: 200px;
-  margin-left: 20%;
+  margin-left: 17%;
   @media screen and (max-width: 500px) {
     display: none;
   }
