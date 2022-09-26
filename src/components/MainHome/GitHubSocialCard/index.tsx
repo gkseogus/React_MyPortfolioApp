@@ -88,6 +88,7 @@ const GitHubSocialCard = () => {
               border: "2px solid white",
             }}
             name={"avaterImg"}
+            loading="lazy"
           />
         </Flex>
         <Box p={6}>

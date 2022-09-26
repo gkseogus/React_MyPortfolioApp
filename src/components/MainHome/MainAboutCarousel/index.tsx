@@ -76,7 +76,7 @@ export default class MainAboutCarousel extends Component {
       <Contain>
         <Slider {...settings}>
           <div>
-            <ImgContain>
+            <ImgContain aria-label="ImgContain">
               <KoTextContain>
                 안녕하세요. <br /> 프론트 엔지니어 한대현입니다. <br />
               </KoTextContain>
