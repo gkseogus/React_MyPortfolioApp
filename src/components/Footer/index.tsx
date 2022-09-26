@@ -12,20 +12,16 @@ import {
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import styled from "styled-components";
-import FooterLogo from "../Footer/footerLogo.png";
+import FooterLogo from "../Footer/IMG/footerLogo.svg";
 
-const LogoContain = styled.div`
+const LogoContain = styled.img`
   width: 130px;
-  height: auto;
+  height: 130px;
   text-align: center;
 `;
 
 const Logo = (props: any) => {
-  return (
-    <LogoContain>
-      <img alt="footer logo" src={FooterLogo} />
-    </LogoContain>
-  );
+  return <LogoContain alt="footer logo" src={FooterLogo} />;
 };
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
