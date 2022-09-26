@@ -1,9 +1,9 @@
 import { Component } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import MyImg from "../MainAboutCarousel/IMG/MyImg.png";
-import moMyImg from "../MainAboutCarousel/IMG/moMyImg.png";
-import SetBackGroundImg from "../MainAboutCarousel/IMG/SetBackGroundImg.png";
+import myImg from "../MainAboutCarousel/IMG/myImg.avif";
+import moMyImg from "../MainAboutCarousel/IMG/moMyImg.avif";
+import setBackGroundImg from "../MainAboutCarousel/IMG/setBackGroundImg.avif";
 
 const SettingImgContain = styled.div`
   padding-left: auto;
@@ -25,7 +25,7 @@ const ImgContain = styled.div`
   height: 500px;
   margin: auto;
   text-align: center;
-  background-image: url(${MyImg});
+  background-image: url(${myImg});
   @media screen and (max-width: 500px) {
     width: 100vw;
     height: 300px;
@@ -60,7 +60,7 @@ export default class MainAboutCarousel extends Component {
         return (
           <div>
             <SettingImgContain>
-              <SettingImg alt="set" src={SetBackGroundImg} />
+              <SettingImg alt="setBackGroundImg" src={setBackGroundImg} />
             </SettingImgContain>
           </div>
         );
