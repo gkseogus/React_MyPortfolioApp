@@ -296,7 +296,7 @@ const MainHome = () => {
         </SecondIntroText>
         <ReverseContentsText>My Project</ReverseContentsText>
         <ReverseContentsBtn to={"/Project"} onClick={resetScroll}>
-          More
+          Link
         </ReverseContentsBtn>
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
