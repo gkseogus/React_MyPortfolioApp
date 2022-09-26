@@ -22,13 +22,13 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
-import HdhLogo from "../MainNavBar/IMG/mainLogo.png";
-import AvatarImg from "../MainNavBar/IMG/AvatarLogo.png";
-import InstartgramLogo from "../MainNavBar/IMG/InstargramLogo.png";
-import CareerlyLogo from "../MainNavBar/IMG/CareerlyLogo.png";
-import GithubLogo from "../MainNavBar/IMG/GithubLogo.png";
-import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.png";
-import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.png";
+import mainLogo from "../MainNavBar/IMG/mainLogo.svg";
+import AvatarImg from "../MainNavBar/IMG/AvatarLogo.svg";
+import InstartgramLogo from "../MainNavBar/IMG/InstargramLogo.svg";
+import CareerlyLogo from "../MainNavBar/IMG/CareerlyLogo.svg";
+import GithubLogo from "../MainNavBar/IMG/GithubLogo.svg";
+import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.svg";
+import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.svg";
 import { Link } from "react-router-dom";
 
 const NavBarLink = styled(Link)`
@@ -124,7 +124,7 @@ const MainNavBar = (_children: any) => {
             color="red"
           />
           <HStack spacing={8} alignItems={"center"}>
-            <NavBarLogo src={HdhLogo} alt={"NavBarLogo"} />
+            <NavBarLogo src={mainLogo} alt={"mainLogo"} />
             <HStack
               as={"nav"}
               spacing={4}
@@ -194,7 +194,12 @@ const MainNavBar = (_children: any) => {
                   cursor={"pointer"}
                   minW={0}
                 >
-                  <Avatar size={"md"} src={AvatarImg} bg="black" />
+                  <Avatar
+                    size={"md"}
+                    src={AvatarImg}
+                    bg="black"
+                    name="AvatarImg"
+                  />
                 </MenuButton>
                 <MenuList color="black">
                   <MenuItem
@@ -205,7 +210,10 @@ const MainNavBar = (_children: any) => {
                     as="a"
                     href="https://www.instagram.com/dae_hyeon00/"
                   >
-                    <AvatarMenuListLogo src={InstartgramLogo} />
+                    <AvatarMenuListLogo
+                      src={InstartgramLogo}
+                      alt={"InstartgramLogo"}
+                    />
                     Instargram
                   </MenuItem>
                   <MenuItem
@@ -216,7 +224,10 @@ const MainNavBar = (_children: any) => {
                     as="a"
                     href="https://careerly.co.kr/profiles/496283?from=newsfeed&location=gnb"
                   >
-                    <AvatarMenuListLogo src={moCareerlyLogo} />
+                    <AvatarMenuListLogo
+                      src={moCareerlyLogo}
+                      alt={"moCareerlyLogo"}
+                    />
                     Careerly
                   </MenuItem>
                   <MenuDivider />
@@ -228,7 +239,10 @@ const MainNavBar = (_children: any) => {
                     as="a"
                     href="https://github.com/gkseogus"
                   >
-                    <AvatarMenuListLogo src={moGithubLogo} />
+                    <AvatarMenuListLogo
+                      src={moGithubLogo}
+                      alt={"moGithubLogo"}
+                    />
                     Github
                   </MenuItem>
                 </MenuList>
