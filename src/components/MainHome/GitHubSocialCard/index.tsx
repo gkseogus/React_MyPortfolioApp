@@ -14,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import githubCardbackGround from "../GitHubSocialCard/GithubCardbackGround.avif";
+import githubCardbackGround from "../GitHubSocialCard/IMG/githubCardbackGround.svg";
 
 const GitHubSocialCard = () => {
   const toast = useToast();

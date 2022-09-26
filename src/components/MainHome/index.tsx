@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Hide, Box, useToast } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
-import firstIntroImg from "../MainHome/IMG/firstIntroImg.avif";
+import introImg from "../MainHome/IMG/introImg.svg";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
 import IntroCareers from "./CareersCard";
@@ -269,7 +269,7 @@ const MainHome = () => {
           of front engineer Han Dae-hyeon
           <Hide below="md">
             <Box boxSize="sm">
-              <IntroImg src={firstIntroImg} alt="firstIntroImg" />
+              <IntroImg src={introImg} alt="introImg" />
             </Box>
           </Hide>
         </IntroText>
