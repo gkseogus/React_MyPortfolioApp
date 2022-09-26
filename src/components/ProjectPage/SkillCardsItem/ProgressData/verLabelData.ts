@@ -1,7 +1,7 @@
-import gitLogo from "../LogoImg/gitLogo.png";
-import gitHubLogo from "../LogoImg/gitHubLogo.png";
-import forkLogo from "../LogoImg/forkLogo.png";
-import jiraLogo from "../LogoImg/jiraLogo.png";
+import gitLogo from "../LogoImg/gitLogo.avif";
+import gitHubLogo from "../LogoImg/gitHubLogo.avif";
+import forkLogo from "../LogoImg/forkLogo.avif";
+import jiraLogo from "../LogoImg/jiraLogo.avif";
 
 const verLabelData = [
   {
