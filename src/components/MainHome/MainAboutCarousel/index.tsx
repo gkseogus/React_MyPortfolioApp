@@ -1,9 +1,9 @@
 import { Component } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import myImg from "../MainAboutCarousel/IMG/myImg.avif";
-import moMyImg from "../MainAboutCarousel/IMG/moMyImg.avif";
-import setBackGroundImg from "../MainAboutCarousel/IMG/setBackGroundImg.avif";
+import myImg from "../MainAboutCarousel/IMG/myImg.webp";
+import moMyImg from "../MainAboutCarousel/IMG/moMyImg.webp";
+import setBackGroundImg from "../MainAboutCarousel/IMG/setBackGroundImg.webp";
 
 const SettingImgContain = styled.div`
   padding-left: auto;
