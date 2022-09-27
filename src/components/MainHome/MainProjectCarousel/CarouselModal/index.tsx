@@ -9,6 +9,7 @@ import {
   ModalBody,
   ModalFooter,
 } from "@chakra-ui/react";
+import React from "react";
 import styled from "styled-components";
 
 const ModalBtn = styled.button`
@@ -83,4 +84,4 @@ const CarouselModal = ({
   );
 };
 
-export default CarouselModal;
+export default React.memo(CarouselModal);

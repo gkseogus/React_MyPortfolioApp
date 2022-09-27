@@ -1,3 +1,4 @@
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -158,4 +159,4 @@ const TimeLine = () => {
   );
 };
 
-export default TimeLine;
+export default React.memo(TimeLine);

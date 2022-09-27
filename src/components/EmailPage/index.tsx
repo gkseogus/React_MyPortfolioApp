@@ -447,4 +447,4 @@ const EmailPage = () => {
   );
 };
 
-export default EmailPage;
+export default React.memo(EmailPage);
