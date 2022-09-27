@@ -1,8 +1,22 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
+import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 import myIcon from "./IMG/myIcon.svg";
 import githubLogo from "./IMG/githubLogo.svg";
 import mailLogo from "./IMG/mailLogo.svg";
+
+const BreadcrumbContain = styled.div`
+  float: right;
+  padding-right: 3%;
+  padding-top: 10%;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const BreadcrumbItemText = styled.h2`
+  font-family: "Kanit", sans-serif;
+`;
 
 const Wrap = styled.div`
   position: relative;
@@ -346,78 +360,90 @@ const EmailPage = () => {
   };
 
   return (
-    <Wrap>
-      <PeopleWrap>
-        <People>
-          <PositionContain>
-            <Position>FE</Position>
-          </PositionContain>
-          <ImgContain src={myIcon} alt="myIcon" />
-          <NameWrap>
-            <Name>Daehyeon Han</Name>
-            <EmailWrap>
-              <EmialLogoContain src={mailLogo} alt="gmailLogo" />
-              <Email>fbznffldj998@naver.com</Email>
-            </EmailWrap>
-            <GithubWrap>
-              <GitHubLogoContain src={githubLogo} alt="githubLogo" />
-              <Github
-                onClick={() => {
-                  getDomain("https://github.com/gkseogus");
-                }}
-              >
-                github.com/gkseogus
-              </Github>
-            </GithubWrap>
-          </NameWrap>
-        </People>
-      </PeopleWrap>
-      {Selected === "fbznffldj998@naver.com" ? (docUrl = docsList) : null}
-      <Form method="post" action={docUrl}>
-        <FormTitle>Send a Message</FormTitle>
-        <div>
+    <div>
+      <BreadcrumbContain>
+        <Breadcrumb separator="/">
+          <BreadcrumbItem>
+            <BreadcrumbItemText>Home</BreadcrumbItemText>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbItemText>E-mail</BreadcrumbItemText>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </BreadcrumbContain>
+      <Wrap>
+        <PeopleWrap>
+          <People>
+            <PositionContain>
+              <Position>FE</Position>
+            </PositionContain>
+            <ImgContain src={myIcon} alt="myIcon" />
+            <NameWrap>
+              <Name>Daehyeon Han</Name>
+              <EmailWrap>
+                <EmialLogoContain src={mailLogo} alt="gmailLogo" />
+                <Email>fbznffldj998@naver.com</Email>
+              </EmailWrap>
+              <GithubWrap>
+                <GitHubLogoContain src={githubLogo} alt="githubLogo" />
+                <Github
+                  onClick={() => {
+                    getDomain("https://github.com/gkseogus");
+                  }}
+                >
+                  github.com/gkseogus
+                </Github>
+              </GithubWrap>
+            </NameWrap>
+          </People>
+        </PeopleWrap>
+        {Selected === "fbznffldj998@naver.com" ? (docUrl = docsList) : null}
+        <Form method="post" action={docUrl}>
+          <FormTitle>Send a Message</FormTitle>
           <div>
-            <FormMyEmail
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your e-mail address"
+            <div>
+              <FormMyEmail
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your e-mail address"
+              />
+            </div>
+            <div>
+              <FormDevEmail
+                id="usr"
+                name="username"
+                placeholder="Select an address to send to"
+                onChange={handleSelect}
+                value={Selected}
+              >
+                <option>Select an address to send to</option>
+                <option value={selectList}>{selectList}</option>
+              </FormDevEmail>
+            </div>
+          </div>
+          <div>
+            <FormEmailTitle
+              id="title"
+              name="title"
+              placeholder="Write a message title"
+              ref={titleRef}
             />
           </div>
           <div>
-            <FormDevEmail
-              id="usr"
-              name="username"
-              placeholder="Select an address to send to"
-              onChange={handleSelect}
-              value={Selected}
-            >
-              <option>Select an address to send to</option>
-              <option value={selectList}>{selectList}</option>
-            </FormDevEmail>
+            <FormContent
+              id="comment"
+              name="message"
+              placeholder="Write a message what you want"
+              ref={textRef}
+            ></FormContent>
           </div>
-        </div>
-        <div>
-          <FormEmailTitle
-            id="title"
-            name="title"
-            placeholder="Write a message title"
-            ref={titleRef}
-          />
-        </div>
-        <div>
-          <FormContent
-            id="comment"
-            name="message"
-            placeholder="Write a message what you want"
-            ref={textRef}
-          ></FormContent>
-        </div>
-        <FormBtn type="submit">
-          <FormBtnContent>Send</FormBtnContent>
-        </FormBtn>
-      </Form>
-    </Wrap>
+          <FormBtn type="submit">
+            <FormBtnContent>Send</FormBtnContent>
+          </FormBtn>
+        </Form>
+      </Wrap>
+    </div>
   );
 };
 
