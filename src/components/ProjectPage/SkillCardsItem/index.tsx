@@ -149,7 +149,7 @@ const SkillCardsItem = () => {
         <AnimateTitleText>My Skill</AnimateTitleText>
       </TextAlignContain>
       {dataArray.map((data: any) => (
-        <TextAlignContain>
+        <TextAlignContain key={uuidv4()}>
           <SubAnimatContentsText>{data.title}</SubAnimatContentsText>
           <ProgressContain>
             <ToolTipContain>
