@@ -6,12 +6,22 @@ import styled, { keyframes } from "styled-components";
 import ProgressLine from "./ProgressBar";
 import frontLabelData from "./ProgressData/frontLabelData";
 import backLabelData from "./ProgressData/backLabelData";
+import dbLabelData from "./ProgressData/dbLabelData";
+import deployLabelData from "./ProgressData/deployLabelData";
 import verLabelData from "./ProgressData/verLabelData";
 
 const TextClip = keyframes`
   to {
     background-position: 200% center;
   }
+`;
+
+const Contain = styled.div`
+  margin-bottom: 200px;
+`;
+
+const TextAlignContain = styled.div`
+  text-align: center;
 `;
 
 const AnimateTitleText = styled.h3`
@@ -44,7 +54,6 @@ const AnimateTitleText = styled.h3`
 
 const SubAnimatContentsText = styled.h4`
   padding-top: 5%;
-  text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
     #120907 0%,
@@ -105,87 +114,69 @@ const verTooltipLabel = [
   "전문: 75% ~ 100% 프로젝트 리더가 가능하다.",
 ];
 
+const dataArray = [
+  {
+    title: "Front end",
+    dataFile: frontLabelData,
+    tooltip: tooltipLabel,
+  },
+  {
+    title: "BACK",
+    dataFile: backLabelData,
+    tooltip: tooltipLabel,
+  },
+  {
+    title: "Data Base",
+    dataFile: dbLabelData,
+    tooltip: tooltipLabel,
+  },
+  {
+    title: "Deployment",
+    dataFile: deployLabelData,
+    tooltip: tooltipLabel,
+  },
+  {
+    title: "Version Control",
+    dataFile: verLabelData,
+    tooltip: verTooltipLabel,
+  },
+];
+
 const SkillCardsItem = () => {
   return (
-    <div>
-      <div style={{ textAlign: "center" }}>
+    <Contain>
+      <TextAlignContain>
         <AnimateTitleText>My Skill</AnimateTitleText>
-      </div>
-      <div style={{ textAlign: "center" }}>
-        <SubAnimatContentsText>Front</SubAnimatContentsText>
-        <ProgressContain>
-          <ToolTipContain>
-            <Tooltip label={tooltipLabel} placement="top">
-              <QuestionOutlineIcon w={4} h={4} />
-            </Tooltip>
-          </ToolTipContain>
-          {frontLabelData.map((item) => (
-            <ProgressLine
-              key={uuidv4()}
-              label={item.title}
-              logoImg={item.logoImg}
-              backgroundColor="lightblue"
-              visualParts={[
-                {
-                  percentage: item.persent,
-                  color: "red",
-                },
-              ]}
-            />
-          ))}
-        </ProgressContain>
-      </div>
-      <div style={{ textAlign: "center" }}>
-        <SubAnimatContentsText>Back</SubAnimatContentsText>
-      </div>
-      <ProgressContain>
-        <ToolTipContain>
-          <Tooltip label={tooltipLabel} placement="top">
-            <QuestionOutlineIcon w={4} h={4} />
-          </Tooltip>
-        </ToolTipContain>
-        {backLabelData.map((item) => (
-          <ProgressLine
-            key={uuidv4()}
-            label={item.title}
-            logoImg={item.logoImg}
-            backgroundColor="lightblue"
-            visualParts={[
-              {
-                percentage: item.persent,
-                color: "red",
-              },
-            ]}
-          />
-        ))}
-      </ProgressContain>
-      <div style={{ textAlign: "center" }}>
-        <SubAnimatContentsText>Version Control</SubAnimatContentsText>
-      </div>
-      <div style={{ paddingBottom: "10%" }}>
-        <ProgressContain>
-          <ToolTipContain>
-            <Tooltip label={verTooltipLabel} placement="top">
-              <QuestionOutlineIcon w={4} h={4} />
-            </Tooltip>
-          </ToolTipContain>
-          {verLabelData.map((item) => (
-            <ProgressLine
-              key={uuidv4()}
-              label={item.title}
-              logoImg={item.logoImg}
-              backgroundColor="lightblue"
-              visualParts={[
-                {
-                  percentage: item.persent,
-                  color: "red",
-                },
-              ]}
-            />
-          ))}
-        </ProgressContain>
-      </div>
-    </div>
+      </TextAlignContain>
+      {dataArray.map((data: any) => (
+        <TextAlignContain>
+          <SubAnimatContentsText>{data.title}</SubAnimatContentsText>
+          <ProgressContain>
+            <ToolTipContain>
+              <Tooltip label={data.tooltip} placement="top">
+                <QuestionOutlineIcon w={4} h={4} />
+              </Tooltip>
+            </ToolTipContain>
+            {data.dataFile.map(
+              (item: { title: string; logoImg: any; persent: any }) => (
+                <ProgressLine
+                  key={uuidv4()}
+                  label={item.title}
+                  logoImg={item.logoImg}
+                  backgroundColor="lightblue"
+                  visualParts={[
+                    {
+                      percentage: item.persent,
+                      color: "red",
+                    },
+                  ]}
+                />
+              )
+            )}
+          </ProgressContain>
+        </TextAlignContain>
+      ))}
+    </Contain>
   );
 };
 
