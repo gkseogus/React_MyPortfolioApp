@@ -39,6 +39,14 @@ const NavBarLink = styled(Link)`
   }
 `;
 
+const HomeNavBarLink = styled.a`
+  :hover {
+    background-color: black;
+    text-decoration: none;
+    color: red;
+  }
+`;
+
 const MoLink = styled.a``;
 
 const NavBarLogo = styled.img`
@@ -131,9 +139,9 @@ const MainNavBar = (_children: any) => {
               display={{ base: "none", md: "flex" }}
               color="white"
             >
-              <NavBarLink to="/Home" onClick={resetScroll}>
+              <HomeNavBarLink href="/Home" onClick={resetScroll}>
                 Home
-              </NavBarLink>
+              </HomeNavBarLink>
               <NavBarLink to="/Project" onClick={resetScroll}>
                 Project
               </NavBarLink>
