@@ -143,6 +143,9 @@ const MainNavBar = (_children: any) => {
               <NavBarLink to="/Email" onClick={resetScroll}>
                 E-mail
               </NavBarLink>
+              <NavBarLink to="/Bbs" onClick={resetScroll}>
+                BBS
+              </NavBarLink>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
