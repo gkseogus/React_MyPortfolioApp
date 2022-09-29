@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import BbsPage from "./components/BbsPage";
 import CareerPage from "./components/CareerPage";
 import EmailPage from "./components/EmailPage";
 import MainHome from "./components/MainHome";
@@ -57,6 +58,15 @@ const AllRoutesApp = () => (
           />
         );
       })}
+      <Route
+        path="/Bbs"
+        element={
+          <div>
+            <MainNavBar />
+            <BbsPage />
+          </div>
+        }
+      />
     </Routes>
   </Router>
 );
