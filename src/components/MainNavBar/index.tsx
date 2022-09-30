@@ -152,7 +152,7 @@ const MainNavBar = (_children: any) => {
                 E-mail
               </NavBarLink>
               <NavBarLink to="/Bbs" onClick={resetScroll}>
-                BBS
+                Board
               </NavBarLink>
             </HStack>
           </HStack>
