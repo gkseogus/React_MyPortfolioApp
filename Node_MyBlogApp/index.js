@@ -26,12 +26,14 @@ app.get("/api/list", (req, res) => {
 
 app.post("/api/insert", (req, res) => {
   var title = req.body.title;
-  var content = req.body.content;
   var register = req.body.register;
+  var content = req.body.content;
   const sqlQuery =
-    "INSERT INTO BOARD (BOARD_TITLE, BOARD_CONTENT, REGISTER_ID) VALUES (?,?,?);";
-  db.query(sqlQuery, [title, content, register], (err, result) => {
+    "INSERT INTO BOARD (BOARD_TITLE, REGISTER_ID, BOARD_CONTENT) VALUES (?,?,?);";
+  db.query(sqlQuery, [title, register, content], (err, result) => {
     res.send(result);
+    console.log(result);
+    console.log("title:", title, "register:", register, "content:", content);
   });
 });
 
