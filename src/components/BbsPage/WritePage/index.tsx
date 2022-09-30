@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Button, Input, Textarea } from "@chakra-ui/react";
-import BbsPage from "..";
+import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
 import axios from "axios";
+import BbsPage from "..";
 
 const Contain = styled.div`
   display: flex;
@@ -37,32 +37,52 @@ const WritePage = () => {
   const [write, setWrite] = useState(false);
   const [writeData, setWriteData] = useState({
     title: "",
-    content: "",
     register: "",
+    content: "",
   });
+  const toast = useToast();
 
+  // 글 작성 페이지로 이동
   const changeWritePage = () => {
     setWrite(!write);
+    window.scrollTo(0, 0);
   };
-
+  const writeErrorToast = (toastTitle: string) => {
+    toast({
+      title: `${toastTitle} 입력해주세요.`,
+      position: "top-right",
+      status: "error",
+      duration: 2000,
+      isClosable: true,
+    });
+  };
   const writePost = async () => {
-    try {
-      //Successful response
-      await axios.post("http://localhost:8000/api/insert", {
-        title: writeData.title,
-        content: writeData.content,
-        register: writeData.register,
-      });
-      setWrite(!write);
-    } catch (error) {
-      //Failed to respond
-      console.log("write error", error);
+    if (!writeData.title) {
+      writeErrorToast("제목을");
+    } else if (!writeData.register) {
+      writeErrorToast("작성자를");
+    } else if (!writeData.content) {
+      writeErrorToast("내용을");
+    } else {
+      try {
+        //Successful response
+        await axios.post("http://localhost:8000/api/insert", {
+          title: writeData.title,
+          register: writeData.register,
+          content: writeData.content,
+        });
+        setWrite(!write);
+        window.scrollTo(0, 0);
+      } catch (error) {
+        //Failed to respond
+        console.log("write error", error);
+      }
     }
   };
 
   //input에 입력될 때마다 writeData state값 변경되게 하는 함수
   const handleChange = (e: any) => {
-    setWriteData({ ...writeData, [e.target.name]: e.target.value });
+    setWriteData({ ...writeData, [e.target.name]: e.target.value.trim() });
   };
 
   return (
