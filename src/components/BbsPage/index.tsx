@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import {
   Table,
@@ -45,26 +46,19 @@ const BbsPage = () => {
     };
     try {
       //Successful response
-      const response = await axios.get("http://localhost:8000/list", config);
+      const response = await axios.get(
+        "http://localhost:8000/api/list",
+        config
+      );
       const data = response.data;
-      for (let i = 0; i < data.length; i++) {
-        console.log("test1", data[i].BOARD_ID);
-        const id = data[i].BOARD_ID;
-        const title = data[i].BOARD_TITLE;
-        const register = data[i].REGISTER_ID;
-        const date = moment(data[i].REGISTER_DATE).format(
-          "YYYY MM DD, H:mm:ss a"
-        );
-        setBbsData([
-          {
-            ...bbsData,
-            id: id,
-            title: title,
-            register: register,
-            date: date,
-          },
-        ]);
-      }
+      setBbsData(
+        data.map((item: any) => ({
+          id: item.BOARD_ID,
+          title: item.BOARD_TITLE,
+          register: item.REGISTER_ID,
+          date: moment(item.REGISTER_DATE).format("YYYY MM DD, H:mm:ss a"),
+        }))
+      );
     } catch (error) {
       //Failed to respond
       console.log(error);
@@ -102,7 +96,7 @@ const BbsPage = () => {
               </Thead>
               <Tbody>
                 {bbsData.map((item: any) => (
-                  <Tr>
+                  <Tr key={uuidv4()}>
                     <Td>
                       <input type="checkbox" />
                     </Td>
