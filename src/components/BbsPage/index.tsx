@@ -46,7 +46,10 @@ const BbsPage = () => {
     };
     try {
       //Successful response
-      const response = await axios.get("http://localhost:8000/list", config);
+      const response = await axios.get(
+        "http://localhost:8000/api/list",
+        config
+      );
       const data = response.data;
       setBbsData(
         data.map((item: any) => ({
