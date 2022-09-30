@@ -60,7 +60,6 @@ const WritePage = () => {
     });
   };
 
-  // 작성한 글을 db에 저장하는 함수
   const writePost = async () => {
     if (!writeData.title) {
       writeErrorToast("제목을");
