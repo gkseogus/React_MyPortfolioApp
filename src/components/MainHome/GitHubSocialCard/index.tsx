@@ -17,13 +17,13 @@ import axios from "axios";
 import githubCardbackGround from "../GitHubSocialCard/IMG/githubCardbackGround.svg";
 
 const GitHubSocialCard = () => {
-  const toast = useToast();
   const [user, setUser] = useState({
     name: "",
     bio: "",
     followers: "",
     following: "",
   });
+  const toast = useToast();
 
   const { name, bio, followers, following } = user;
 
@@ -48,8 +48,9 @@ const GitHubSocialCard = () => {
       //Failed to respond
       toast({
         title: "깃허브 데이터를 가져오지 못 했습니다!",
-        position: "top",
+        position: "top-right",
         status: "error",
+        duration: 3000,
         isClosable: true,
       });
     }
@@ -61,6 +62,13 @@ const GitHubSocialCard = () => {
 
   useEffect(() => {
     getData();
+    toast({
+      title: "블로그에 오신 것을 환영합니다!",
+      position: "top-right",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
   }, []);
 
   return (
