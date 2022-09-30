@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Hide, Box, useToast } from "@chakra-ui/react";
+import { Hide, Box } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
 import introImg from "../MainHome/IMG/introImg.svg";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
@@ -244,21 +244,9 @@ const IntroCareersContain = styled.div`
 `;
 
 const MainHome = () => {
-  const toast = useToast();
-
   const resetScroll = () => {
     window.scrollTo(0, 0);
   };
-
-  useEffect(() => {
-    toast({
-      title: "환영합니다.",
-      position: "top",
-      status: "success",
-      duration: 1500,
-      isClosable: true,
-    });
-  }, [toast]);
 
   return (
     <IntroContain>
