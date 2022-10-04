@@ -41,12 +41,15 @@ const WritePage = () => {
     content: "",
   });
   const toast = useToast();
+  let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 
   // 글 작성 페이지로 이동
   const changeWritePage = () => {
     setWrite(!write);
     window.scrollTo(0, 0);
   };
+
+  // 에러 토스트 함수
   const writeErrorToast = (toastTitle: string) => {
     toast({
       title: `${toastTitle} 입력해주세요.`,
@@ -56,6 +59,8 @@ const WritePage = () => {
       isClosable: true,
     });
   };
+
+  // 작성한 글을 db에 저장하는 함수
   const writePost = async () => {
     if (!writeData.title) {
       writeErrorToast("제목을");
@@ -80,9 +85,12 @@ const WritePage = () => {
     }
   };
 
-  //input에 입력될 때마다 writeData state값 변경되게 하는 함수
+  //input에 입력되고 0.5초 마다 writeData state값 변경되게 하는 함수
   const handleChange = (e: any) => {
-    setWriteData({ ...writeData, [e.target.name]: e.target.value.trim() });
+    if (writeInterval) clearTimeout(writeInterval);
+    writeInterval = setTimeout(() => {
+      setWriteData({ ...writeData, [e.target.name]: e.target.value.trim() });
+    }, 500);
   };
 
   return (
