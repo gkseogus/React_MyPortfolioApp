@@ -66,10 +66,10 @@ const WritePage = () => {
 
   // 작성한 글을 db에 저장하는 함수
   const writePost = async () => {
-    if (!writeData.title) {
-      writeErrorToast("제목을");
-    } else if (!writeData.register) {
+    if (!writeData.register) {
       writeErrorToast("작성자를");
+    } else if (!writeData.title) {
+      writeErrorToast("제목을");
     } else if (!writeData.content) {
       writeErrorToast("내용을");
     } else {
