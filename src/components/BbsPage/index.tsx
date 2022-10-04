@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import type { PaginationProps } from "antd";
+import { Pagination } from "antd";
+import "antd/dist/antd.css";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import {
@@ -51,7 +54,12 @@ const BbsPage = () => {
       date: "",
     },
   ]);
+  const [current, setCurrent] = useState(3);
 
+  const onChange: PaginationProps["onChange"] = (page) => {
+    console.log(page);
+    setCurrent(page);
+  };
   // 게시물 불러오는 함수
   const getList = async () => {
     axios.defaults.withCredentials = true;
@@ -159,6 +167,12 @@ const BbsPage = () => {
                 삭제
               </Button> */}
               </BtnContain>
+              <Pagination
+                current={current}
+                onChange={onChange}
+                total={50}
+                style={{ paddingTop: "1%" }}
+              />
             </TableContainer>
           </Contain>
         </div>
