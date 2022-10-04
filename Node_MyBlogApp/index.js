@@ -8,9 +8,6 @@ const ROOT_ID = process.env.root_id;
 const ROOT_PASSWORD = process.env.root_password;
 const bodyParser = require("body-parser");
 
-console.log(ROOT_ID);
-
-console.log(ROOT_PASSWORD);
 const db = mysql.createPool({
   host: "localhost",
   user: ROOT_ID,
