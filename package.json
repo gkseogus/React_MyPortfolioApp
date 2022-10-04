@@ -20,6 +20,7 @@
     "@types/react-vertical-timeline-component": "^3.3.3",
     "@types/styled-components": "^5.1.26",
     "@types/uuid": "^8.3.4",
+    "antd": "^4.23.4",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.0",
     "gsap": "^3.11.0",

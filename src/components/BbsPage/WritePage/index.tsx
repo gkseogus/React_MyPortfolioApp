@@ -18,8 +18,12 @@ const SubContentsContain = styled.div`
   padding: 3%;
 `;
 
-const TRtextContain = styled.div`
-  width: 25%;
+const RegisterContain = styled.div`
+  width: 23%;
+`;
+
+const TitleContain = styled.div`
+  width: 42%;
 `;
 
 const ContentText = styled.p`
@@ -34,7 +38,7 @@ const BtnContain = styled.div`
 `;
 
 const WritePage = () => {
-  const [write, setWrite] = useState(false);
+  const [bbsPage, setBbsPage] = useState(false);
   const [writeData, setWriteData] = useState({
     title: "",
     register: "",
@@ -43,9 +47,9 @@ const WritePage = () => {
   const toast = useToast();
   let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 
-  // 글 작성 페이지로 이동
+  // 글 목록 페이지로 이동
   const changeWritePage = () => {
-    setWrite(!write);
+    setBbsPage(!bbsPage);
     window.scrollTo(0, 0);
   };
 
@@ -76,7 +80,7 @@ const WritePage = () => {
           register: writeData.register,
           content: writeData.content,
         });
-        setWrite(!write);
+        setBbsPage(!bbsPage);
         window.scrollTo(0, 0);
       } catch (error) {
         //Failed to respond
@@ -85,32 +89,23 @@ const WritePage = () => {
     }
   };
 
-  //input에 입력되고 0.5초 마다 writeData state값 변경되게 하는 함수
+  //input에 입력되고 0.1초 마다 writeData state값 변경되게 하는 함수
   const handleChange = (e: any) => {
     if (writeInterval) clearTimeout(writeInterval);
     writeInterval = setTimeout(() => {
       setWriteData({ ...writeData, [e.target.name]: e.target.value.trim() });
-    }, 500);
+    }, 100);
   };
 
   return (
     <div>
-      {write ? (
+      {bbsPage ? (
         <BbsPage />
       ) : (
         <Contain>
           <ContentsContain>
             <SubContentsContain>
-              <TRtextContain>
-                <ContentText>제목</ContentText>
-                <Input
-                  type={"text"}
-                  name="title"
-                  placeholder="title"
-                  maxLength={10}
-                  marginBottom={5}
-                  onChange={handleChange}
-                />
+              <RegisterContain>
                 <ContentText>작성자</ContentText>
                 <Input
                   type={"text"}
@@ -120,7 +115,19 @@ const WritePage = () => {
                   marginBottom={5}
                   onChange={handleChange}
                 />
-              </TRtextContain>
+              </RegisterContain>
+              <TitleContain>
+                <ContentText>제목</ContentText>
+                <Input
+                  type={"text"}
+                  name="title"
+                  placeholder="title"
+                  maxLength={20}
+                  marginBottom={5}
+                  onChange={handleChange}
+                />
+              </TitleContain>
+
               <ContentText>내용</ContentText>
               <Textarea
                 as={"textarea"}

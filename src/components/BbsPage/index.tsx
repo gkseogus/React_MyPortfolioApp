@@ -20,6 +20,7 @@ import {
   BreadcrumbItem,
 } from "@chakra-ui/react";
 import WritePage from "./WritePage";
+import ContentsPage from "./ContentsPage";
 
 const BreadcrumbContain = styled.div`
   position: absolute;
@@ -44,12 +45,14 @@ const BtnContain = styled.div`
   float: right;
 `;
 
-const BbsPage = () => {
+const BbsPage = (props: any) => {
   const [write, setWrite] = useState(false);
+  const [contents, setContents] = useState(false);
   const [bbsData, setBbsData] = useState([
     {
       id: "",
       title: "",
+      contents: "",
       register: "",
       date: "",
     },
@@ -76,9 +79,10 @@ const BbsPage = () => {
       );
       const data = response.data;
       setBbsData(
-        data.map((item: any) => ({
+        data.map((item: any, index: string) => ({
           id: item.BOARD_ID,
           title: item.BOARD_TITLE,
+          contents: item.BOARD_CONTENT,
           register: item.REGISTER_ID,
           date: moment(item.REGISTER_DATE).format("YYYY MM DD, H:mm:ss a"),
         }))
@@ -95,14 +99,22 @@ const BbsPage = () => {
     window.scrollTo(0, 0);
   };
 
+  // 제목 클릭 시 보여지는 글 내용 페이지
+  const showContentsPage = () => {
+    window.scrollTo(0, 0);
+    setContents(!contents);
+  };
+
   useEffect(() => {
     getList();
   }, []);
 
   return (
     <div>
-      {write ? (
+      {write && !contents ? (
         <WritePage />
+      ) : !write && contents ? (
+        <ContentsPage bbsData={bbsData} />
       ) : (
         <div>
           <BreadcrumbContain>
@@ -137,7 +149,9 @@ const BbsPage = () => {
                       <input type="checkbox" />
                     </Td> */}
                       <Td>{item.id}</Td>
-                      <Td>{item.title}</Td>
+                      <Td>
+                        <button onClick={showContentsPage}>{item.title}</button>
+                      </Td>
                       <Td>{item.register}</Td>
                       <Td>{item.date}</Td>
                     </Tr>
