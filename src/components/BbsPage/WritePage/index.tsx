@@ -18,8 +18,12 @@ const SubContentsContain = styled.div`
   padding: 3%;
 `;
 
-const TRtextContain = styled.div`
-  width: 25%;
+const RegisterContain = styled.div`
+  width: 23%;
+`;
+
+const TitleContain = styled.div`
+  width: 42%;
 `;
 
 const ContentText = styled.p`
@@ -85,7 +89,7 @@ const WritePage = () => {
     }
   };
 
-  //input에 입력되고 0.5초 마다 writeData state값 변경되게 하는 함수
+  //input에 입력되고 0.1초 마다 writeData state값 변경되게 하는 함수
   const handleChange = (e: any) => {
     if (writeInterval) clearTimeout(writeInterval);
     writeInterval = setTimeout(() => {
@@ -101,16 +105,7 @@ const WritePage = () => {
         <Contain>
           <ContentsContain>
             <SubContentsContain>
-              <TRtextContain>
-                <ContentText>제목</ContentText>
-                <Input
-                  type={"text"}
-                  name="title"
-                  placeholder="title"
-                  maxLength={10}
-                  marginBottom={5}
-                  onChange={handleChange}
-                />
+              <RegisterContain>
                 <ContentText>작성자</ContentText>
                 <Input
                   type={"text"}
@@ -120,7 +115,19 @@ const WritePage = () => {
                   marginBottom={5}
                   onChange={handleChange}
                 />
-              </TRtextContain>
+              </RegisterContain>
+              <TitleContain>
+                <ContentText>제목</ContentText>
+                <Input
+                  type={"text"}
+                  name="title"
+                  placeholder="title"
+                  maxLength={20}
+                  marginBottom={5}
+                  onChange={handleChange}
+                />
+              </TitleContain>
+
               <ContentText>내용</ContentText>
               <Textarea
                 as={"textarea"}
