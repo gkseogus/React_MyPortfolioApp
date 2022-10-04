@@ -34,7 +34,7 @@ const BtnContain = styled.div`
 `;
 
 const WritePage = () => {
-  const [write, setWrite] = useState(false);
+  const [bbsPage, setBbsPage] = useState(false);
   const [writeData, setWriteData] = useState({
     title: "",
     register: "",
@@ -43,9 +43,9 @@ const WritePage = () => {
   const toast = useToast();
   let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 
-  // 글 작성 페이지로 이동
+  // 글 목록 페이지로 이동
   const changeWritePage = () => {
-    setWrite(!write);
+    setBbsPage(!bbsPage);
     window.scrollTo(0, 0);
   };
 
@@ -76,7 +76,7 @@ const WritePage = () => {
           register: writeData.register,
           content: writeData.content,
         });
-        setWrite(!write);
+        setBbsPage(!bbsPage);
         window.scrollTo(0, 0);
       } catch (error) {
         //Failed to respond
@@ -95,7 +95,7 @@ const WritePage = () => {
 
   return (
     <div>
-      {write ? (
+      {bbsPage ? (
         <BbsPage />
       ) : (
         <Contain>
