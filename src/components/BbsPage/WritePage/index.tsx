@@ -94,7 +94,7 @@ const WritePage = () => {
     if (writeInterval) clearTimeout(writeInterval);
     writeInterval = setTimeout(() => {
       setWriteData({ ...writeData, [e.target.name]: e.target.value.trim() });
-    }, 500);
+    }, 100);
   };
 
   return (
