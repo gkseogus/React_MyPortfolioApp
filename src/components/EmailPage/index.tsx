@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
+import { Breadcrumb, BreadcrumbItem, useToast } from "@chakra-ui/react";
 import myIcon from "./IMG/myIcon.svg";
 import githubLogo from "./IMG/githubLogo.svg";
 import mailLogo from "./IMG/mailLogo.svg";
@@ -344,6 +344,10 @@ const Iframe = styled.iframe`
 
 const EmailPage = () => {
   const [Selected, setSelected] = useState("");
+  const toast = useToast();
+  const [toastTitle, setToastTitle] = useState("");
+  const [toastStatus, setToastStatus] = useState("");
+
   let docUrl =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
 
@@ -361,6 +365,26 @@ const EmailPage = () => {
 
   const getDomain = (domain: string) => {
     window.open(domain);
+  };
+
+  const sendMessage = () => {
+    if (Selected === undefined) {
+      return toast({
+        title: "이메일을 선택해 주세요.",
+        position: "top-right",
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      return toast({
+        title: "메시지가 전송되었습니다.",
+        position: "top-right",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -443,7 +467,7 @@ const EmailPage = () => {
             ></FormContent>
           </div>
           <FormBtn type="submit">
-            <FormBtnContent>Send</FormBtnContent>
+            <FormBtnContent onClick={sendMessage}>Send</FormBtnContent>
           </FormBtn>
         </Form>
       </Wrap>
