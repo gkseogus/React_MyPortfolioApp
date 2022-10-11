@@ -338,6 +338,10 @@ const FormBtnContent = styled.p`
   font-family: "Kanit", sans-serif;
 `;
 
+const Iframe = styled.iframe`
+  display: "none";
+`;
+
 const EmailPage = () => {
   const [Selected, setSelected] = useState("");
   let docUrl =
@@ -398,7 +402,7 @@ const EmailPage = () => {
           </People>
         </PeopleWrap>
         {Selected === "fbznffldj998@naver.com" ? (docUrl = docsList) : null}
-        <Form method="post" action={docUrl}>
+        <Form method="post" action={docUrl} target="iframe1">
           <FormTitle>Send a Message</FormTitle>
           <div>
             <div>
@@ -443,6 +447,7 @@ const EmailPage = () => {
           </FormBtn>
         </Form>
       </Wrap>
+      <Iframe id="iframe1" name="iframe1" style={{ display: "none" }} />
     </div>
   );
 };
