@@ -170,10 +170,11 @@ const BbsPage = (props: any) => {
                 total={bbsData.length}
                 onChange={handleChange}
                 style={{ marginTop: "10px", float: "left" }}
+                size="small"
               />
               <BtnContain>
                 <Button
-                  colorScheme="teal"
+                  colorScheme="messenger"
                   variant="ghost"
                   onClick={changeWritePage}
                 >
