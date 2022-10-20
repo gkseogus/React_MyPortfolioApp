@@ -345,8 +345,6 @@ const Iframe = styled.iframe`
 const EmailPage = () => {
   const [Selected, setSelected] = useState("");
   const toast = useToast();
-  const [toastTitle, setToastTitle] = useState("");
-  const [toastStatus, setToastStatus] = useState("");
 
   let docUrl =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
