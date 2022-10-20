@@ -130,7 +130,8 @@ const BbsPage = (props: any) => {
       {write && !contents ? (
         <WritePage />
       ) : !write && contents ? (
-        <ContentsPage bbsData={bbsData} />
+        // 추후에 id 값을 타이틀 클릭 시 해당 타이틀의 id 값으로 변경해야 됨
+        <ContentsPage bbsData={bbsData} id={14} />
       ) : (
         <div>
           <Contain>

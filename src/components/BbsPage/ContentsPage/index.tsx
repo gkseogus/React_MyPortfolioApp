@@ -60,16 +60,22 @@ const ContentsPage = (props: any) => {
         <Contain>
           <ContentsContain>
             <SubContentsContain>
-              <TitleText>{props.bbsData[0].title}</TitleText>
-              <RegisterText>
-                {props.bbsData[0].register} | {props.bbsData[0].date}
-              </RegisterText>
-              <ContentText>내용</ContentText>
-              <Container maxW="2xl" centerContent>
-                <Box padding="4" maxW="md">
-                  <p>{props.bbsData[0].contents}</p>
-                </Box>
-              </Container>
+              {props.bbsData.map((item: any) =>
+                props.id === item.id ? (
+                  <div>
+                    <TitleText>{item.title}</TitleText>
+                    <RegisterText>
+                      {item.register} | {item.date}
+                    </RegisterText>
+                    <ContentText>내용</ContentText>
+                    <Container maxW="2xl" centerContent>
+                      <Box padding="4" maxW="md">
+                        <p>{item.contents}</p>
+                      </Box>
+                    </Container>
+                  </div>
+                ) : null
+              )}
             </SubContentsContain>
             <BtnContain>
               <Button
