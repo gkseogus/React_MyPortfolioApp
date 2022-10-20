@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-import type { PaginationProps } from "antd";
-import { Pagination } from "antd";
-import "antd/dist/antd.css";
-import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
+import { v4 as uuidv4 } from "uuid";
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  TableContainer,
+  Button,
   Table,
   Thead,
   Tbody,
@@ -14,13 +15,21 @@ import {
   Th,
   Td,
   TableCaption,
-  TableContainer,
-  Button,
-  Breadcrumb,
-  BreadcrumbItem,
 } from "@chakra-ui/react";
+import { Pagination } from "antd";
+import "antd/dist/antd.css";
 import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
+
+const Contain = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+`;
+
+const BtnContain = styled.div`
+  float: right;
+`;
 
 const BreadcrumbContain = styled.div`
   position: absolute;
@@ -35,19 +44,13 @@ const BreadcrumbItemText = styled.h2`
   font-family: "Kanit", sans-serif;
 `;
 
-const Contain = styled.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-`;
-
-const BtnContain = styled.div`
-  float: right;
-`;
-
 const BbsPage = (props: any) => {
+  const pageSize = 5;
   const [write, setWrite] = useState(false);
   const [contents, setContents] = useState(false);
+  const [minIndex, setMinIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
   const [bbsData, setBbsData] = useState([
     {
       id: "",
@@ -57,12 +60,7 @@ const BbsPage = (props: any) => {
       date: "",
     },
   ]);
-  const [current, setCurrent] = useState(3);
 
-  const onChange: PaginationProps["onChange"] = (page) => {
-    console.log(page);
-    setCurrent(page);
-  };
   // 게시물 불러오는 함수
   const getList = async () => {
     axios.defaults.withCredentials = true;
@@ -78,6 +76,7 @@ const BbsPage = (props: any) => {
         config
       );
       const data = response.data;
+      setMaxIndex(pageSize);
       setBbsData(
         data.map((item: any, index: string) => ({
           id: item.BOARD_ID,
@@ -93,16 +92,23 @@ const BbsPage = (props: any) => {
     }
   };
 
+  // 제목 클릭 시 보여지는 글 내용 페이지
+  const showContentsPage = () => {
+    window.scrollTo(0, 0);
+    setContents(!contents);
+  };
+
   // 글 작성 페이지로 이동
   const changeWritePage = () => {
     setWrite(!write);
     window.scrollTo(0, 0);
   };
 
-  // 제목 클릭 시 보여지는 글 내용 페이지
-  const showContentsPage = () => {
-    window.scrollTo(0, 0);
-    setContents(!contents);
+  // 페이지 네이션 이벤트 핸들러
+  const handleChange = (page: number) => {
+    setCurrent(page);
+    setMinIndex((page - 1) * pageSize);
+    setMaxIndex(page * pageSize);
   };
 
   useEffect(() => {
@@ -111,31 +117,28 @@ const BbsPage = (props: any) => {
 
   return (
     <div>
+      <BreadcrumbContain>
+        <Breadcrumb separator="/">
+          <BreadcrumbItem>
+            <BreadcrumbItemText>Home</BreadcrumbItemText>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbItemText>BBS</BreadcrumbItemText>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </BreadcrumbContain>
       {write && !contents ? (
         <WritePage />
       ) : !write && contents ? (
         <ContentsPage bbsData={bbsData} />
       ) : (
         <div>
-          <BreadcrumbContain>
-            <Breadcrumb separator="/">
-              <BreadcrumbItem>
-                <BreadcrumbItemText>Home</BreadcrumbItemText>
-              </BreadcrumbItem>
-              <BreadcrumbItem>
-                <BreadcrumbItemText>BBS</BreadcrumbItemText>
-              </BreadcrumbItem>
-            </Breadcrumb>
-          </BreadcrumbContain>
           <Contain>
             <TableContainer padding={"20%"}>
               <Table variant="striped" colorScheme="gray" size="lg">
                 <TableCaption placement="top">익명 게시판</TableCaption>
                 <Thead>
                   <Tr>
-                    {/* <Th>
-                    <input type="checkbox" />
-                  </Th> */}
                     <Th>No.</Th>
                     <Th>Title</Th>
                     <Th>Name</Th>
@@ -143,21 +146,31 @@ const BbsPage = (props: any) => {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {bbsData.map((item: any) => (
-                    <Tr key={uuidv4()}>
-                      {/* <Td>
-                      <input type="checkbox" />
-                    </Td> */}
-                      <Td>{item.id}</Td>
-                      <Td>
-                        <button onClick={showContentsPage}>{item.title}</button>
-                      </Td>
-                      <Td>{item.register}</Td>
-                      <Td>{item.date}</Td>
-                    </Tr>
-                  ))}
+                  {bbsData.map(
+                    (item: any, index: number) =>
+                      index >= minIndex &&
+                      index < maxIndex && (
+                        <Tr key={uuidv4()}>
+                          <Td>{item.id}</Td>
+                          <Td>
+                            <button onClick={showContentsPage}>
+                              {item.title}
+                            </button>
+                          </Td>
+                          <Td>{item.register}</Td>
+                          <Td>{item.date}</Td>
+                        </Tr>
+                      )
+                  )}
                 </Tbody>
               </Table>
+              <Pagination
+                pageSize={pageSize}
+                current={current}
+                total={bbsData.length}
+                onChange={handleChange}
+                style={{ marginTop: "10px", float: "left" }}
+              />
               <BtnContain>
                 <Button
                   colorScheme="teal"
@@ -166,27 +179,7 @@ const BbsPage = (props: any) => {
                 >
                   글쓰기
                 </Button>
-                {/* <Button
-                colorScheme="teal"
-                variant="ghost"
-                onClick={changeWritePage}
-              >
-                수정
-              </Button>
-              <Button
-                colorScheme="teal"
-                variant="ghost"
-                onClick={changeWritePage}
-              >
-                삭제
-              </Button> */}
               </BtnContain>
-              <Pagination
-                current={current}
-                onChange={onChange}
-                total={50}
-                style={{ paddingTop: "1%" }}
-              />
             </TableContainer>
           </Contain>
         </div>
