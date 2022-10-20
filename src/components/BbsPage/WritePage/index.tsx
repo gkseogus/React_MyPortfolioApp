@@ -139,11 +139,11 @@ const WritePage = () => {
               />
             </SubContentsContain>
             <BtnContain>
-              <Button colorScheme="teal" variant="ghost" onClick={writePost}>
+              <Button colorScheme="blue" variant="ghost" onClick={writePost}>
                 작성완료
               </Button>
               <Button
-                colorScheme="teal"
+                colorScheme="blue"
                 variant="ghost"
                 onClick={changeWritePage}
               >
