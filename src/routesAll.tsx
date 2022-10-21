@@ -6,6 +6,7 @@ import CareerPage from "./components/CareerPage";
 import EmailPage from "./components/EmailPage";
 import MainHome from "./components/MainHome";
 import MainNavBar from "./components/MainNavBar";
+import NoticePage from "./components/NoticePage";
 import ProjectPage from "./components/ProjectPage";
 
 const AllRoutesApp = () => (
@@ -64,6 +65,15 @@ const AllRoutesApp = () => (
           <div>
             <MainNavBar />
             <BbsPage />
+          </div>
+        }
+      />
+      <Route
+        path="/Notice"
+        element={
+          <div>
+            <MainNavBar />
+            <NoticePage />
           </div>
         }
       />
