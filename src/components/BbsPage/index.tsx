@@ -137,7 +137,9 @@ const BbsPage = (props: any) => {
           <Contain>
             <TableContainer padding={"20%"}>
               <Table variant="striped" colorScheme="gray" size="lg">
-                <TableCaption placement="top">익명 게시판</TableCaption>
+                <TableCaption placement="top" fontSize={30}>
+                  Anonymous board
+                </TableCaption>
                 <Thead>
                   <Tr>
                     <Th>No.</Th>
