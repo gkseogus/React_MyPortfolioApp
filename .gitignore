@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/Node_MyBlogApp/node_modules
+/Node_MyPortfolioApp/node_modules
 /.pnp
 .pnp.js
 .env
