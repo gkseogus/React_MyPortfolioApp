@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import { Collapse } from "antd";
+import { Collapse, Pagination } from "antd";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 import styled from "styled-components";
 
@@ -45,6 +45,10 @@ const DateText = styled.p`
 const { Panel } = Collapse;
 
 const NoticePage = () => {
+  const pageSize = 10;
+  const [minIndex, setMinIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
   const [noticeData, setNoticeData] = useState([
     {
       id: "",
@@ -69,6 +73,7 @@ const NoticePage = () => {
         config
       );
       const data = response.data;
+      setMaxIndex(pageSize);
       setNoticeData(
         data.map((item: any, index: string) => ({
           id: item.NOTICE_ID,
@@ -81,6 +86,13 @@ const NoticePage = () => {
       //Failed to respond
       console.log(error);
     }
+  };
+
+  // 페이지 네이션 이벤트 핸들러
+  const handleChange = (page: number) => {
+    setCurrent(page);
+    setMinIndex((page - 1) * pageSize);
+    setMaxIndex(page * pageSize);
   };
 
   useEffect(() => {
@@ -102,16 +114,28 @@ const NoticePage = () => {
       <Contain>
         <CenterContentsText>Release Notice</CenterContentsText>
         <Collapse bordered={false} defaultActiveKey={["1"]}>
-          {noticeData.map((item: any) => (
-            <Panel
-              header={item.title}
-              key={item.id}
-              extra={<DateText>{item.date}</DateText>}
-            >
-              {item.contents}
-            </Panel>
-          ))}
+          {noticeData.map(
+            (item: any, index: number) =>
+              index >= minIndex &&
+              index < maxIndex && (
+                <Panel
+                  header={item.title}
+                  key={item.id}
+                  extra={<DateText>{item.date}</DateText>}
+                >
+                  {item.contents}
+                </Panel>
+              )
+          )}
         </Collapse>
+        <Pagination
+          pageSize={pageSize}
+          current={current}
+          total={noticeData.length}
+          onChange={handleChange}
+          style={{ marginTop: "10px", textAlign: "center" }}
+          size="small"
+        />
       </Contain>
     </div>
   );
