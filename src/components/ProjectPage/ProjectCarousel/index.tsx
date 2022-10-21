@@ -107,7 +107,7 @@ const ProjectCarousel = () => {
       title: "GasLeak Detector",
       text: "적외선 센서를 사용한 가스 누출 탐지 시스템",
       text2:
-        "LCD 모듈, PIR 센서, LED 센서를 탑재한 가스 누출 탐지 시스템입니다. 라즈베리파이르를 사용했으며 0.5초 주기로 센서 값을 요청하도록 하였습니다. Java와 Coap을 연동 해 데이터 값을 웹에서 확인할 수 있도록 하였습니다.",
+        "LCD 모듈, PIR 센서, LED 센서를 탑재한 가스 누출 탐지 시스템입니다. 라즈베리파이를 사용했으며 0.5초 주기로 센서 값을 요청하도록 하였습니다. Java와 Coap을 연동 해 데이터 값을 웹에서 확인할 수 있도록 하였습니다.",
       Frontend: "Raspberry Pi Module",
       Backend: "Java & Coap",
       image: casLeakImg,
