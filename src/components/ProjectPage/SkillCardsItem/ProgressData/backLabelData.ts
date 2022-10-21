@@ -10,7 +10,7 @@ const backLabelData = [
   },
   {
     title: "Node js",
-    persent: "20%",
+    persent: "25%",
     logoImg: nodeJsLogo,
   },
   {
