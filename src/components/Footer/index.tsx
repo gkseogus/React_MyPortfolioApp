@@ -20,6 +20,10 @@ const LogoContain = styled.img`
   text-align: center;
 `;
 
+const LineText = styled.p`
+  color: red;
+`;
+
 const Logo = (props: any) => {
   return <LogoContain alt="footer logo" src={footerLogo} loading="lazy" />;
 };
@@ -51,10 +55,11 @@ const Footer = () => {
           >
             <Stack align={"flex-start"}>
               <ListHeader>Product</ListHeader>
-              <Link href={"Home"} color={"#black"}>
-                Home
-              </Link>
               <Stack direction={"row"} align={"center"} spacing={2}>
+                <Link href={"Home"} color={"#black"}>
+                  Home
+                </Link>
+                <LineText>|</LineText>
                 <Link href={"Project"} color={"#black"}>
                   Project
                 </Link>
@@ -63,10 +68,18 @@ const Footer = () => {
                 <Link href={"Career"} color={"#black"}>
                   Career
                 </Link>
-              </Stack>
-              <Stack direction={"row"} align={"center"} spacing={2}>
+                <LineText>|</LineText>
                 <Link href={"Email"} color={"#black"}>
                   E-mail
+                </Link>
+              </Stack>
+              <Stack direction={"row"} align={"center"} spacing={2}>
+                <Link href={"Bbs"} color={"#black"}>
+                  Board
+                </Link>
+                <LineText>|</LineText>
+                <Link href={"Notice"} color={"#black"}>
+                  Notice
                 </Link>
                 <Tag
                   size={"sm"}
