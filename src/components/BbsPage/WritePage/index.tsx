@@ -75,7 +75,7 @@ const WritePage = () => {
     } else {
       try {
         //Successful response
-        await axios.post("http://localhost:8000/api/insert", {
+        await axios.post("http://localhost:8000/api/boardInsert", {
           title: writeData.title,
           register: writeData.register,
           content: writeData.content,

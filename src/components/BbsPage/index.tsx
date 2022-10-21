@@ -72,7 +72,7 @@ const BbsPage = (props: any) => {
     try {
       //Successful response
       const response = await axios.get(
-        "http://localhost:8000/api/list",
+        "http://localhost:8000/api/boardList",
         config
       );
       const data = response.data;
