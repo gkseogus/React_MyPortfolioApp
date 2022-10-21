@@ -33,7 +33,7 @@ const BtnContain = styled.div`
 
 const BreadcrumbContain = styled.div`
   position: absolute;
-  padding-left: 90.5%;
+  padding-left: 91.73%;
   padding-top: 10%;
   @media screen and (max-width: 500px) {
     display: none;

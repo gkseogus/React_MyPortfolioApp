@@ -7,7 +7,7 @@ import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 const ProjectPageContain = styled.section``;
 
 const BreadcrumbContain = styled.div`
-  padding-left: 90.5%;
+  padding-left: 91.73%;
   padding-top: 10%;
   @media screen and (max-width: 500px) {
     display: none;
