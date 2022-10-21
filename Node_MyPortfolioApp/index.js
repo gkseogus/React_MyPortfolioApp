@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ credentials: true, origin: true }));
 
-// api
-app.get("/api/list", (req, res) => {
+// board api
+app.get("/api/boardList", (req, res) => {
   const sqlQuery = "SELECT *FROM BOARD;";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
@@ -28,7 +28,7 @@ app.get("/api/list", (req, res) => {
   console.log(res);
 });
 
-app.post("/api/insert", (req, res) => {
+app.post("/api/boardInsert", (req, res) => {
   var title = req.body.title;
   var register = req.body.register;
   var content = req.body.content;
@@ -39,6 +39,15 @@ app.post("/api/insert", (req, res) => {
     console.log(result);
     console.log("title:", title, "register:", register, "content:", content);
   });
+});
+
+// notice api
+app.get("/api/noticeList", (req, res) => {
+  const sqlQuery = "SELECT *FROM NOTICE;";
+  db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+  console.log(res);
 });
 
 app.listen(PORT, () => {
