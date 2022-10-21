@@ -39,6 +39,19 @@ const NavBarLink = styled(Link)`
   }
 `;
 
+const NoticeNavBarLink = styled(Link)`
+  color: white;
+  padding-right: 10%;
+  :hover {
+    background-color: black;
+    text-decoration: none;
+    color: red;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
 const HomeNavBarLink = styled.a`
   :hover {
     background-color: black;
@@ -157,6 +170,9 @@ const MainNavBar = (_children: any) => {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
+            <NoticeNavBarLink to="/Notice" onClick={resetScroll}>
+              Notice
+            </NoticeNavBarLink>
             <ColorModeToggle />
             <IconContain>
               <AvatarMenuListLogo
