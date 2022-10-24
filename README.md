@@ -47,13 +47,13 @@
 
 - mail data
 
-![mailDB](https://user-images.githubusercontent.com/76561461/191895021-99f87fdd-bd53-4d60-b28b-5af01909388c.PNG)
-
 <br />
 
 - bbs data
 
-![bbsDB](https://user-images.githubusercontent.com/76561461/193234693-7db0a200-0b2f-47d2-be59-2f93c54cceaf.PNG)
+<br />
+
+- notice data
 
 # Web Deployment
 
@@ -61,7 +61,7 @@
 
 도메인 구축 및 테스트 서버, 운영 서버 분리
 
-- Google 애널리틱스
+- Google 애널리틱스 & naver 애널리틱스
 
 사용자 성향 분석
 
@@ -74,6 +74,10 @@
 - MySQL
 
 게시판의 정보(게시물번호, 제목, 작성자, 내용, 작성된 날짜) 저장
+
+- MariaDB
+
+공지사항의 정보(제목, 내용, 날짜) 저장
 
 # Site
 
