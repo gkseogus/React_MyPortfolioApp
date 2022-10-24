@@ -16,8 +16,8 @@ import {
   Td,
   TableCaption,
 } from "@chakra-ui/react";
-import { Pagination } from "antd";
 import "antd/dist/antd.css";
+import { Pagination, Input } from "antd";
 import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
 
@@ -51,6 +51,7 @@ const BbsPage = (props: any) => {
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
   const [current, setCurrent] = useState(0);
+  const [searchKeyword, setSearchKeyword] = useState("");
   const [bbsData, setBbsData] = useState([
     {
       id: "",
@@ -91,6 +92,11 @@ const BbsPage = (props: any) => {
       console.log(error);
     }
   };
+
+  // 검색 핸들러
+  const searchHandler = bbsData.filter(
+    (i) => !searchKeyword || i.title.includes(searchKeyword)
+  );
 
   // 제목 클릭 시 보여지는 글 내용 페이지
   const showContentsPage = () => {
@@ -137,8 +143,20 @@ const BbsPage = (props: any) => {
           <Contain>
             <TableContainer padding={"20%"}>
               <Table variant="striped" colorScheme="gray" size="lg">
-                <TableCaption placement="top" fontSize={30}>
+                <TableCaption
+                  placement="top"
+                  fontSize={30}
+                  paddingBottom={"5%"}
+                >
                   Anonymous board
+                  <Input.Group compact>
+                    <Input.Search
+                      allowClear
+                      style={{ width: "40%", paddingTop: "5%", float: "right" }}
+                      placeholder="제목을 입력하세요."
+                      onChange={(e) => setSearchKeyword(e.target.value)}
+                    />
+                  </Input.Group>
                 </TableCaption>
                 <Thead>
                   <Tr>
@@ -149,7 +167,7 @@ const BbsPage = (props: any) => {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {bbsData.map(
+                  {searchHandler.map(
                     (item: any, index: number) =>
                       index >= minIndex &&
                       index < maxIndex && (
