@@ -114,19 +114,22 @@ const NoticePage = () => {
       <Contain>
         <CenterContentsText>Release Notice</CenterContentsText>
         <Collapse bordered={false} defaultActiveKey={["1"]}>
-          {noticeData.map(
-            (item: any, index: number) =>
-              index >= minIndex &&
-              index < maxIndex && (
-                <Panel
-                  header={item.title}
-                  key={item.id}
-                  extra={<DateText>{item.date}</DateText>}
-                >
-                  {item.contents}
-                </Panel>
-              )
-          )}
+          {noticeData
+            .slice(0)
+            .reverse()
+            .map(
+              (item: any, index: number) =>
+                index >= minIndex &&
+                index < maxIndex && (
+                  <Panel
+                    header={item.title}
+                    key={item.id}
+                    extra={<DateText>{item.date}</DateText>}
+                  >
+                    {item.contents}
+                  </Panel>
+                )
+            )}
         </Collapse>
         <Pagination
           pageSize={pageSize}
