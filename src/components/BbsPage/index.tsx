@@ -93,9 +93,11 @@ const BbsPage = (props: any) => {
     }
   };
 
-  // 검색 핸들러
+  // 검색 결과값
   const searchHandler = bbsData.filter(
-    (i) => !searchKeyword || i.title.includes(searchKeyword)
+    (i) =>
+      !searchKeyword ||
+      i.title.toUpperCase().includes(searchKeyword.toUpperCase())
   );
 
   // 제목 클릭 시 보여지는 글 내용 페이지
