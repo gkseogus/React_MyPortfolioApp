@@ -58,7 +58,7 @@ const NoticePage = () => {
     },
   ]);
 
-  // 공지사항 불러오는 함수
+  /** Function to load announcement data */
   const getList = async () => {
     axios.defaults.withCredentials = true;
     const config = {
@@ -88,7 +88,7 @@ const NoticePage = () => {
     }
   };
 
-  // 페이지 네이션 이벤트 핸들러
+  /** Page Nation Event Handler */
   const handleChange = (page: number) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);

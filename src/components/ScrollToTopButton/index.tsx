@@ -19,6 +19,7 @@ const ScrollToTop = styled.div`
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
+  /** Condition event function that results in scroll buttons  */
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
@@ -28,6 +29,7 @@ const ScrollToTopButton = () => {
     }
   };
 
+  /** Scroll Options */
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

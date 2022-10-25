@@ -24,10 +24,12 @@ const LineText = styled.p`
   color: red;
 `;
 
+/** Function that returns the logo component */
 const Logo = (props: any) => {
   return <LogoContain alt="footer logo" src={footerLogo} loading="lazy" />;
 };
 
+/** Function that returns the footer list component */
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
@@ -37,6 +39,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 const Footer = () => {
+  /** Site Load Function */
   const getDomain = (domain: string) => {
     window.open(domain);
   };

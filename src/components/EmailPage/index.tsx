@@ -355,16 +355,19 @@ const EmailPage = () => {
   const docsList =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
 
+  /** Drop-down Select Event Handler Function */
   const handleSelect = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setSelected(e.target.value);
   };
 
+  /** Site Load Function */
   const getDomain = (domain: string) => {
     window.open(domain);
   };
 
+  /** Toast component return function according to message */
   const sendMessage = () => {
     if (Selected === undefined) {
       return toast({

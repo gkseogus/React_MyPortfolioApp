@@ -89,10 +89,12 @@ const AvatarMenuListLogo = styled.img`
 
 const Links = ["Home", "Project", "Career", "E-mail"];
 
+/** Function that returns the Link component of the mobile environment */
 const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
   <MoLink href={href}>{children}</MoLink>
 );
 
+/** Button function that changes to dark mode and white mode */
 const ColorModeToggle = (props: ButtonProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -117,6 +119,7 @@ const ColorModeToggle = (props: ButtonProps) => {
 const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  /** Scroll Reset Function */
   const resetScroll = () => {
     window.scrollTo(0, 0);
   };

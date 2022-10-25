@@ -19,8 +19,8 @@ const BreadcrumbItemText = styled.h2`
 `;
 
 /**
- * top: 숫자가 낮을 수록 텍스트는 올라간다
- * width:폭의 길이
+ * top: The lower the number, the higher the text
+ * width: width length
  */
 const Openclose = keyframes`
   0% {

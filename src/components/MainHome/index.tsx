@@ -244,6 +244,7 @@ const IntroCareersContain = styled.div`
 `;
 
 const MainHome = () => {
+  /** Scroll Reset Function */
   const resetScroll = () => {
     window.scrollTo(0, 0);
   };

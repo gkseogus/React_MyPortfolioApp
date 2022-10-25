@@ -27,6 +27,7 @@ const GitHubSocialCard = () => {
 
   const { name, bio, followers, following } = user;
 
+  /** Function that brings up GitHub api */
   const getData = async () => {
     const token = process.env.REACT_APP_TOKEN_VALUE;
     const config = {
@@ -56,6 +57,7 @@ const GitHubSocialCard = () => {
     }
   };
 
+  /** Function that brings up GitHub site address */
   const githubAddress = () => {
     window.open("https://github.com/gkseogus");
   };

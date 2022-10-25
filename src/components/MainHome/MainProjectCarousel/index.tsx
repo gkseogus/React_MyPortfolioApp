@@ -70,7 +70,7 @@ const cards = [
   },
 ];
 
-// Settings for the slider
+/** Settings for the slider */
 const settings = {
   dots: true,
   arrows: false,

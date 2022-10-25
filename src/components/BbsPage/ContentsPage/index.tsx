@@ -46,7 +46,7 @@ const BtnContain = styled.div`
 const ContentsPage = (props: any) => {
   const [bbsPage, setBbsPage] = useState(false);
 
-  // 글 목록 페이지로 이동
+  /** Functions that go to the list of articles page */
   const changeWritePage = () => {
     setBbsPage(!bbsPage);
     window.scrollTo(0, 0);

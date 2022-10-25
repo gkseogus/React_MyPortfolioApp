@@ -47,13 +47,13 @@ const WritePage = () => {
   const toast = useToast();
   let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 
-  // 글 목록 페이지로 이동
+  /** Functions that go to the list of articles page */
   const changeWritePage = () => {
     setBbsPage(!bbsPage);
     window.scrollTo(0, 0);
   };
 
-  // 에러 토스트 함수
+  /** Error toast function */
   const writeErrorToast = (toastTitle: string) => {
     toast({
       title: `${toastTitle} 입력해주세요.`,
@@ -64,7 +64,7 @@ const WritePage = () => {
     });
   };
 
-  // 작성한 글을 db에 저장하는 함수
+  /** A function that stores the created text in db */
   const writePost = async () => {
     if (!writeData.register) {
       writeErrorToast("작성자를");
@@ -89,7 +89,7 @@ const WritePage = () => {
     }
   };
 
-  //input에 입력되고 0.1초 마다 writeData state값 변경되게 하는 함수
+  /** A function that is entered in "input" and causes the state value of writeData to change every 0.1 seconds */
   const handleChange = (e: any) => {
     if (writeInterval) clearTimeout(writeInterval);
     writeInterval = setTimeout(() => {

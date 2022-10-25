@@ -115,13 +115,13 @@ const BbsPage = (props: any) => {
       !debounceVal || i.title.toUpperCase().includes(debounceVal.toUpperCase())
   );
 
-  // 제목 클릭 시 보여지는 글 내용 페이지
+  /** Function that takes you to the content page of the article when you click on the title */
   const showContentsPage = () => {
     window.scrollTo(0, 0);
     setContents(!contents);
   };
 
-  // 글 작성 페이지로 이동
+  /** Functions that go to the writing page */
   const changeWritePage = () => {
     setWrite(!write);
     window.scrollTo(0, 0);
