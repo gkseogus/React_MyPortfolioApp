@@ -44,14 +44,23 @@ const BreadcrumbItemText = styled.h2`
   font-family: "Kanit", sans-serif;
 `;
 
+// Debounce hook
+const useDebounce = (value: string, delay: number) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+  return debouncedValue;
+};
+
 const BbsPage = (props: any) => {
   const pageSize = 5;
-  const [write, setWrite] = useState(false);
-  const [contents, setContents] = useState(false);
-  const [minIndex, setMinIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
-  const [current, setCurrent] = useState(0);
-  const [searchKeyword, setSearchKeyword] = useState("");
   const [bbsData, setBbsData] = useState([
     {
       id: "",
@@ -61,8 +70,15 @@ const BbsPage = (props: any) => {
       date: "",
     },
   ]);
+  const [write, setWrite] = useState(false);
+  const [contents, setContents] = useState(false);
+  const [minIndex, setMinIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const debounceVal = useDebounce(searchKeyword, 400);
 
-  // 게시물 불러오는 함수
+  // Get board data function
   const getList = async () => {
     axios.defaults.withCredentials = true;
     const config = {
@@ -93,11 +109,10 @@ const BbsPage = (props: any) => {
     }
   };
 
-  // 검색 결과값
-  const searchHandler = bbsData.filter(
+  // Search value
+  const searchVal = bbsData.filter(
     (i) =>
-      !searchKeyword ||
-      i.title.toUpperCase().includes(searchKeyword.toUpperCase())
+      !debounceVal || i.title.toUpperCase().includes(debounceVal.toUpperCase())
   );
 
   // 제목 클릭 시 보여지는 글 내용 페이지
@@ -112,7 +127,7 @@ const BbsPage = (props: any) => {
     window.scrollTo(0, 0);
   };
 
-  // 페이지 네이션 이벤트 핸들러
+  // pagination event handler
   const handleChange = (page: number) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);
@@ -155,7 +170,7 @@ const BbsPage = (props: any) => {
                     <Input.Search
                       allowClear
                       style={{ width: "40%", paddingTop: "5%", float: "right" }}
-                      placeholder="제목을 입력하세요."
+                      placeholder="Search for title"
                       onChange={(e) => setSearchKeyword(e.target.value)}
                     />
                   </Input.Group>
@@ -169,7 +184,7 @@ const BbsPage = (props: any) => {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {searchHandler.map(
+                  {searchVal.map(
                     (item: any, index: number) =>
                       index >= minIndex &&
                       index < maxIndex && (
@@ -201,7 +216,7 @@ const BbsPage = (props: any) => {
                   variant="ghost"
                   onClick={changeWritePage}
                 >
-                  글쓰기
+                  Write
                 </Button>
               </BtnContain>
             </TableContainer>
