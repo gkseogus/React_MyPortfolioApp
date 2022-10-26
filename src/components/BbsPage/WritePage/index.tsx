@@ -81,6 +81,13 @@ const WritePage = () => {
           content: writeData.content,
         });
         setBbsPage(!bbsPage);
+        toast({
+          title: "성공적으로 작성 완료 했습니다.",
+          position: "top-right",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
         window.scrollTo(0, 0);
       } catch (error) {
         //Failed to respond
