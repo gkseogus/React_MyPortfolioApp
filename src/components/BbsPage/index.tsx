@@ -15,6 +15,7 @@ import {
   Th,
   Td,
   TableCaption,
+  useToast,
 } from "@chakra-ui/react";
 import "antd/dist/antd.css";
 import { Pagination, Input } from "antd";
@@ -70,13 +71,14 @@ const BbsPage = (props: any) => {
       date: "",
     },
   ]);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [contents, setContents] = useState(false);
   const [checkedList, setCheckedList] = useState([{}]);
   const [write, setWrite] = useState(false);
-  const [contents, setContents] = useState(false);
+  const toast = useToast();
+  const [current, setCurrent] = useState(0);
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
-  const [current, setCurrent] = useState(0);
-  const [searchKeyword, setSearchKeyword] = useState("");
   const debounceVal = useDebounce(searchKeyword, 400);
 
   // Get board data function
@@ -110,6 +112,18 @@ const BbsPage = (props: any) => {
     }
   };
 
+  // Search value
+  const searchVal = bbsData.filter(
+    (i) =>
+      !debounceVal || i.title.toUpperCase().includes(debounceVal.toUpperCase())
+  );
+
+  /** Function that takes you to the content page of the article when you click on the title */
+  const showContentsPage = () => {
+    window.scrollTo(0, 0);
+    setContents(!contents);
+  };
+
   /** Check box full selection function */
   const handleAllCheck = (checked: boolean) => {
     if (checked) {
@@ -133,22 +147,48 @@ const BbsPage = (props: any) => {
     }
   };
 
-  // Search value
-  const searchVal = bbsData.filter(
-    (i) =>
-      !debounceVal || i.title.toUpperCase().includes(debounceVal.toUpperCase())
-  );
-
-  /** Function that takes you to the content page of the article when you click on the title */
-  const showContentsPage = () => {
-    window.scrollTo(0, 0);
-    setContents(!contents);
-  };
-
   /** Functions that go to the writing page */
-  const changeWritePage = () => {
+  const handleWrite = () => {
     setWrite(!write);
     window.scrollTo(0, 0);
+  };
+
+  /** List delete function */
+  const handleDelete = async () => {
+    if (checkedList.length === 1) {
+      toast({
+        title: "삭제할 게시물을 선택해 주세요.",
+        position: "top-right",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    let boardIdList = "";
+    checkedList.forEach((v: any) => {
+      boardIdList += `'${v}',`;
+    });
+    try {
+      //Successful response
+      await axios.post("http://localhost:8000/api/boardDelete", {
+        boardIdList: boardIdList.substring(0, boardIdList.length - 1),
+      });
+      toast({
+        title: "성공적으로 게시물을 삭제했습니다.",
+        position: "top-right",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+      });
+      console.log(checkedList);
+      setCheckedList([{}]);
+      getBbsList();
+    } catch (error) {
+      //Failed to respond
+      console.log("write error", error);
+    }
   };
 
   // pagination event handler
@@ -260,9 +300,16 @@ const BbsPage = (props: any) => {
                 <Button
                   colorScheme="messenger"
                   variant="ghost"
-                  onClick={changeWritePage}
+                  onClick={handleWrite}
                 >
                   Write
+                </Button>
+                <Button
+                  colorScheme="messenger"
+                  variant="ghost"
+                  onClick={handleDelete}
+                >
+                  Delete
                 </Button>
               </BtnContain>
             </TableContainer>
