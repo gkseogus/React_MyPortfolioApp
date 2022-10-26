@@ -70,6 +70,7 @@ const BbsPage = (props: any) => {
       date: "",
     },
   ]);
+  const [checkedList, setCheckedList] = useState([{}]);
   const [write, setWrite] = useState(false);
   const [contents, setContents] = useState(false);
   const [minIndex, setMinIndex] = useState(0);
@@ -79,7 +80,7 @@ const BbsPage = (props: any) => {
   const debounceVal = useDebounce(searchKeyword, 400);
 
   // Get board data function
-  const getList = async () => {
+  const getBbsList = async () => {
     axios.defaults.withCredentials = true;
     const config = {
       headers: {
@@ -109,6 +110,29 @@ const BbsPage = (props: any) => {
     }
   };
 
+  /** Check box full selection function */
+  const handleAllCheck = (checked: boolean) => {
+    if (checked) {
+      // 전체 선택 클릭 시 데이터의 모든 아이템(id)를 담은 배열로 checkItems 상태 업데이트
+      const idArray: any[] = [];
+      searchVal.forEach((el: { id: any }) => idArray.push(el.id));
+      setCheckedList(idArray);
+    } else {
+      setCheckedList([]);
+    }
+  };
+
+  /** Checkbox Single Select Function */
+  const handleSingleCheck = (checked: boolean, id: {}) => {
+    if (checked) {
+      // 단일 선택 시 체크된 아이템을 배열에 추가
+      setCheckedList((prev) => [...prev, id]);
+    } else {
+      // 단일 선택 해제 시 체크된 아이템을 제외한 배열 (필터)
+      setCheckedList(checkedList.filter((el) => el !== id));
+    }
+  };
+
   // Search value
   const searchVal = bbsData.filter(
     (i) =>
@@ -128,14 +152,14 @@ const BbsPage = (props: any) => {
   };
 
   // pagination event handler
-  const handleChange = (page: number) => {
+  const handlePageNation = (page: number) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);
     setMaxIndex(page * pageSize);
   };
 
   useEffect(() => {
-    getList();
+    getBbsList();
   }, []);
 
   return (
@@ -177,10 +201,21 @@ const BbsPage = (props: any) => {
                 </TableCaption>
                 <Thead>
                   <Tr>
-                    <Th>No.</Th>
-                    <Th>Title</Th>
-                    <Th>Name</Th>
-                    <Th>Date</Th>
+                    <Th textAlign={"center"}>
+                      <input
+                        type="checkbox"
+                        name="select-all"
+                        onChange={(e) => handleAllCheck(e.target.checked)}
+                        // 데이터 개수와 체크된 아이템의 개수가 다를 경우 선택 해제 (하나라도 해제 시 선택 해제)
+                        checked={
+                          checkedList.length === searchVal.length ? true : false
+                        }
+                      />
+                    </Th>
+                    <Th textAlign={"center"}>No.</Th>
+                    <Th textAlign={"center"}>Title</Th>
+                    <Th textAlign={"center"}>Name</Th>
+                    <Th textAlign={"center"}>Date</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -189,14 +224,25 @@ const BbsPage = (props: any) => {
                       index >= minIndex &&
                       index < maxIndex && (
                         <Tr key={uuidv4()}>
-                          <Td>{item.id}</Td>
-                          <Td>
+                          <Td textAlign={"center"}>
+                            <input
+                              type="checkbox"
+                              onChange={(e) =>
+                                handleSingleCheck(e.target.checked, item.id)
+                              }
+                              checked={
+                                checkedList.includes(item.id) ? true : false
+                              }
+                            ></input>
+                          </Td>
+                          <Td textAlign={"center"}>{item.id}</Td>
+                          <Td textAlign={"left"}>
                             <button onClick={showContentsPage}>
                               {item.title}
                             </button>
                           </Td>
-                          <Td>{item.register}</Td>
-                          <Td>{item.date}</Td>
+                          <Td textAlign={"left"}>{item.register}</Td>
+                          <Td textAlign={"left"}>{item.date}</Td>
                         </Tr>
                       )
                   )}
@@ -206,7 +252,7 @@ const BbsPage = (props: any) => {
                 pageSize={pageSize}
                 current={current}
                 total={bbsData.length}
-                onChange={handleChange}
+                onChange={handlePageNation}
                 style={{ marginTop: "10px", float: "left" }}
                 size="small"
               />
