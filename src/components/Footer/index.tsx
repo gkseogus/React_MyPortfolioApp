@@ -197,7 +197,7 @@ const Footer = () => {
             <Logo />
           </Flex>
           <Text pt={0} fontSize={"sm"} textAlign={"center"}>
-            © 2022.8.11 부터 구축된 블로그입니다.
+            © 2022.HDH(gkseogus) All rights reserved.
           </Text>
         </Box>
       </Box>
