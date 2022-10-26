@@ -168,28 +168,37 @@ const BbsPage = (props: any) => {
       return;
     }
 
-    let boardIdList = "";
-    checkedList.forEach((v: any) => {
-      boardIdList += `'${v}',`;
-    });
-    try {
-      //Successful response
-      await axios.post("http://localhost:8000/api/boardDelete", {
-        boardIdList: boardIdList.substring(0, boardIdList.length - 1),
+    if (window.confirm("해당 게시물을 삭제하시겠습니까?") === true) {
+      let boardIdList = "";
+      checkedList.forEach((v: any) => {
+        boardIdList += `'${v}',`;
       });
+      try {
+        //Successful response
+        await axios.post("http://localhost:8000/api/boardDelete", {
+          boardIdList: boardIdList.substring(0, boardIdList.length - 1),
+        });
+        toast({
+          title: "성공적으로 게시물을 삭제했습니다.",
+          position: "top-right",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
+        setCheckedList([{}]);
+        getBbsList();
+      } catch (error) {
+        //Failed to respond
+        console.log("write error", error);
+      }
+    } else {
       toast({
-        title: "성공적으로 게시물을 삭제했습니다.",
+        title: "게시물 삭제를 취소하였습니다.",
         position: "top-right",
-        status: "success",
+        status: "info",
         duration: 2000,
         isClosable: true,
       });
-      console.log(checkedList);
-      setCheckedList([{}]);
-      getBbsList();
-    } catch (error) {
-      //Failed to respond
-      console.log("write error", error);
     }
   };
 
