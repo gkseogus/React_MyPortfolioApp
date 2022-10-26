@@ -72,6 +72,7 @@ const BbsPage = (props: any) => {
     },
   ]);
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [contentsId, setContentsId] = useState("");
   const [contents, setContents] = useState(false);
   const [checkedList, setCheckedList] = useState([{}]);
   const [write, setWrite] = useState(false);
@@ -119,7 +120,8 @@ const BbsPage = (props: any) => {
   );
 
   /** Function that takes you to the content page of the article when you click on the title */
-  const showContentsPage = () => {
+  const showContentsPage = (id: any) => {
+    setContentsId(id);
     window.scrollTo(0, 0);
     setContents(!contents);
   };
@@ -191,7 +193,7 @@ const BbsPage = (props: any) => {
     }
   };
 
-  // pagination event handler
+  /** pagination event handler */
   const handlePageNation = (page: number) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);
@@ -217,8 +219,8 @@ const BbsPage = (props: any) => {
       {write && !contents ? (
         <WritePage />
       ) : !write && contents ? (
-        // 추후에 id 값을 타이틀 클릭 시 해당 타이틀의 id 값으로 변경해야 됨
-        <ContentsPage bbsData={bbsData} id={38} />
+        // 해당 title의 id를 조회해 해당 id를 가진 리스트를 컴포넌트에 저장
+        <ContentsPage bbsData={bbsData} id={contentsId} />
       ) : (
         <div>
           <Contain>
@@ -276,7 +278,7 @@ const BbsPage = (props: any) => {
                           </Td>
                           <Td textAlign={"center"}>{item.id}</Td>
                           <Td textAlign={"left"}>
-                            <button onClick={showContentsPage}>
+                            <button onClick={(e) => showContentsPage(item.id)}>
                               {item.title}
                             </button>
                           </Td>
