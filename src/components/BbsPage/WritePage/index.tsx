@@ -150,7 +150,7 @@ const WritePage = () => {
                 작성완료
               </Button>
               <Button
-                colorScheme="blue"
+                colorScheme="messenger"
                 variant="ghost"
                 onClick={changeWritePage}
               >
