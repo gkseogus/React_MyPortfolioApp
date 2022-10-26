@@ -82,7 +82,7 @@ const WritePage = () => {
         });
         setBbsPage(!bbsPage);
         toast({
-          title: "성공적으로 작성 완료 했습니다.",
+          title: "성공적으로 작성 완료했습니다.",
           position: "top-right",
           status: "success",
           duration: 2000,
