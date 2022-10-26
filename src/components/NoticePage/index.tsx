@@ -144,4 +144,4 @@ const NoticePage = () => {
   );
 };
 
-export default NoticePage;
+export default React.memo(NoticePage);

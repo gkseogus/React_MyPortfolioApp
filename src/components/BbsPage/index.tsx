@@ -218,7 +218,7 @@ const BbsPage = (props: any) => {
         <WritePage />
       ) : !write && contents ? (
         // 추후에 id 값을 타이틀 클릭 시 해당 타이틀의 id 값으로 변경해야 됨
-        <ContentsPage bbsData={bbsData} id={14} />
+        <ContentsPage bbsData={bbsData} id={38} />
       ) : (
         <div>
           <Contain>
@@ -244,7 +244,6 @@ const BbsPage = (props: any) => {
                     <Th textAlign={"center"}>
                       <input
                         type="checkbox"
-                        name="select-all"
                         onChange={(e) => handleAllCheck(e.target.checked)}
                         // 데이터 개수와 체크된 아이템의 개수가 다를 경우 선택 해제 (하나라도 해제 시 선택 해제)
                         checked={
@@ -320,4 +319,4 @@ const BbsPage = (props: any) => {
   );
 };
 
-export default BbsPage;
+export default React.memo(BbsPage);

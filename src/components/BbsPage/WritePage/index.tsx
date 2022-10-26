@@ -164,4 +164,4 @@ const WritePage = () => {
   );
 };
 
-export default WritePage;
+export default React.memo(WritePage);

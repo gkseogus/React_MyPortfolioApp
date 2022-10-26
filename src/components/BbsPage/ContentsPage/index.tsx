@@ -93,4 +93,4 @@ const ContentsPage = (props: any) => {
   );
 };
 
-export default ContentsPage;
+export default React.memo(ContentsPage);
