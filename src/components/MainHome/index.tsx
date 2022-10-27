@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import introImg from "../MainHome/IMG/introImg.svg";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
-import IntroCareers from "./CareersCard";
+import MainCarouselModal from "./MainCarouselModal";
 import MainAboutCarousel from "./MainAboutCarousel";
 import MainAboutMo from "./MainAboutMo";
 
@@ -229,7 +229,7 @@ const MainProjectCarouselsContain = styled.div`
   }
 `;
 
-const IntroCareersContain = styled.div`
+const MainCarouselModalContain = styled.div`
   text-align: center;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
@@ -293,9 +293,9 @@ const MainHome = () => {
       </article>
       <article>
         <CenterContentsText>My Career</CenterContentsText>
-        <IntroCareersContain>
-          <IntroCareers />
-        </IntroCareersContain>
+        <MainCarouselModalContain>
+          <MainCarouselModal />
+        </MainCarouselModalContain>
       </article>
     </IntroContain>
   );

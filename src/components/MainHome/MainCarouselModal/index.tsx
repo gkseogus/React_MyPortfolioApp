@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Collapse, useDisclosure, Grid, GridItem } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
-import awardsIcon from "../CareersCard/IMG/awardsIcon.svg";
-import awardsIcon2 from "../CareersCard/IMG/awardsIcon2.svg";
-import companyIcon from "../CareersCard/IMG/companyIcon.svg";
+import awardsIcon from "../MainCarouselModal/IMG/awardsIcon.svg";
+import awardsIcon2 from "../MainCarouselModal/IMG/awardsIcon2.svg";
+import companyIcon from "../MainCarouselModal/IMG/companyIcon.svg";
 
 const Contain = styled.div`
   @media screen and (max-width: 500px) {
