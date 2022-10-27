@@ -107,6 +107,7 @@ const BbsPage = (props: any) => {
           date: moment(item.REGISTER_DATE).format("YYYY MM DD, H:mm:ss a"),
         }))
       );
+      setCheckedList([]);
     } catch (error) {
       //Failed to respond
       console.log(error);
