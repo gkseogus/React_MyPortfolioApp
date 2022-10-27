@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Collapse, useDisclosure, Grid, GridItem } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
-import awardsIcon from "../MainCarouselModal/IMG/awardsIcon.svg";
-import awardsIcon2 from "../MainCarouselModal/IMG/awardsIcon2.svg";
-import companyIcon from "../MainCarouselModal/IMG/companyIcon.svg";
+import awardsIcon from "../MainCareerCard/IMG/awardsIcon.svg";
+import awardsIcon2 from "../MainCareerCard/IMG/awardsIcon2.svg";
+import companyIcon from "../MainCareerCard/IMG/companyIcon.svg";
 
 const Contain = styled.div`
   @media screen and (max-width: 500px) {
@@ -121,7 +121,7 @@ const careerItemsContents = [
   },
 ];
 
-const IntroCareers = () => {
+const MainCareerCard = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -160,4 +160,4 @@ const IntroCareers = () => {
   );
 };
 
-export default React.memo(IntroCareers);
+export default React.memo(MainCareerCard);
