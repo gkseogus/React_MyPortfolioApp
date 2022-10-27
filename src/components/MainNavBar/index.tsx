@@ -120,7 +120,7 @@ const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   /** Scroll Reset Function */
-  const resetScroll = () => {
+  const handleResetScroll = () => {
     window.scrollTo(0, 0);
   };
 
@@ -155,25 +155,25 @@ const MainNavBar = (_children: any) => {
               display={{ base: "none", md: "flex" }}
               color="white"
             >
-              <HomeNavBarLink href="/Home" onClick={resetScroll}>
+              <HomeNavBarLink href="/Home" onClick={handleResetScroll}>
                 Home
               </HomeNavBarLink>
-              <NavBarLink to="/Project" onClick={resetScroll}>
+              <NavBarLink to="/Project" onClick={handleResetScroll}>
                 Project
               </NavBarLink>
-              <NavBarLink to="/Career" onClick={resetScroll}>
+              <NavBarLink to="/Career" onClick={handleResetScroll}>
                 Career
               </NavBarLink>
-              <NavBarLink to="/Email" onClick={resetScroll}>
+              <NavBarLink to="/Email" onClick={handleResetScroll}>
                 E-mail
               </NavBarLink>
-              <NavBarLink to="/Bbs" onClick={resetScroll}>
+              <NavBarLink to="/Bbs" onClick={handleResetScroll}>
                 Board
               </NavBarLink>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <NoticeNavBarLink to="/Notice" onClick={resetScroll}>
+            <NoticeNavBarLink to="/Notice" onClick={handleResetScroll}>
               Notice
             </NoticeNavBarLink>
             <ColorModeToggle />

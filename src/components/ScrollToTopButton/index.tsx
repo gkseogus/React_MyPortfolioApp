@@ -20,7 +20,7 @@ const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
   /** Condition event function that results in scroll buttons  */
-  const toggleVisible = () => {
+  const handleToggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
       setVisible(true);
@@ -30,20 +30,20 @@ const ScrollToTopButton = () => {
   };
 
   /** Scroll Options */
-  const scrollToTop = () => {
+  const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
+  window.addEventListener("scroll", handleToggleVisible);
 
   return (
     <aside>
       <ScrollToTop>
         <VscChevronUp
-          onClick={scrollToTop}
+          onClick={handleScrollToTop}
           style={{ display: visible ? "inline" : "none" }}
         ></VscChevronUp>
       </ScrollToTop>

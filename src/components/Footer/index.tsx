@@ -40,7 +40,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Footer = () => {
   /** Site Load Function */
-  const getDomain = (domain: string) => {
+  const handleGetDomain = (domain: string) => {
     window.open(domain);
   };
 
@@ -99,7 +99,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain("https://www.hnine.com/");
+                  handleGetDomain("https://www.hnine.com/");
                 }}
               >
                 Hnine
@@ -107,7 +107,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain("https://jinjin.co.kr/main.do");
+                  handleGetDomain("https://jinjin.co.kr/main.do");
                 }}
               >
                 JinJin System
@@ -118,7 +118,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain("https://www.jobkorea.co.kr/");
+                  handleGetDomain("https://www.jobkorea.co.kr/");
                 }}
               >
                 Jop Korea
@@ -126,7 +126,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain("https://www.saramin.co.kr/zf_user/");
+                  handleGetDomain("https://www.saramin.co.kr/zf_user/");
                 }}
               >
                 Saramin
@@ -134,7 +134,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain("https://www.wanted.co.kr/");
+                  handleGetDomain("https://www.wanted.co.kr/");
                 }}
               >
                 Wanted
@@ -145,7 +145,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain(
+                  handleGetDomain(
                     "https://www.linkedin.com/in/dae-hyeon-han-468005249/"
                   );
                 }}
@@ -155,7 +155,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain(
+                  handleGetDomain(
                     "https://careerly.co.kr/profiles/496283?from=%2Fmessenger&location=gnb/"
                   );
                 }}
@@ -168,7 +168,7 @@ const Footer = () => {
               <button
                 color={"#2D3748"}
                 onClick={() => {
-                  getDomain("https://www.hallym.ac.kr/hallym_univ/");
+                  handleGetDomain("https://www.hallym.ac.kr/hallym_univ/");
                 }}
               >
                 Hallym University

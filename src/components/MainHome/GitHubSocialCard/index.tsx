@@ -58,7 +58,7 @@ const GitHubSocialCard = () => {
   };
 
   /** Function that brings up GitHub site address */
-  const githubAddress = () => {
+  const handleGithubAddress = () => {
     window.open("https://github.com/gkseogus");
   };
 
@@ -141,7 +141,7 @@ const GitHubSocialCard = () => {
               transform: "translateY(-2px)",
               boxShadow: "lg",
             }}
-            onClick={githubAddress}
+            onClick={handleGithubAddress}
           >
             Link
           </Button>

@@ -245,7 +245,7 @@ const IntroCareersContain = styled.div`
 
 const MainHome = () => {
   /** Scroll Reset Function */
-  const resetScroll = () => {
+  const handleResetScroll = () => {
     window.scrollTo(0, 0);
   };
 
@@ -284,7 +284,7 @@ const MainHome = () => {
           궁금하지 않으시나요?
         </SecondIntroText>
         <ReverseContentsText>My Project</ReverseContentsText>
-        <ReverseContentsBtn to={"/Project"} onClick={resetScroll}>
+        <ReverseContentsBtn to={"/Project"} onClick={handleResetScroll}>
           Link
         </ReverseContentsBtn>
         <MainProjectCarouselsContain>
