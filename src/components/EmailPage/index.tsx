@@ -343,17 +343,15 @@ const Iframe = styled.iframe`
 `;
 
 const EmailPage = () => {
-  const [Selected, setSelected] = useState("");
-  const toast = useToast();
-
   let docUrl =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
-
-  const titleRef = useRef(null);
-  const textRef = useRef(null);
-  const selectList = "fbznffldj998@naver.com";
   const docsList =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
+  const selectList = "fbznffldj998@naver.com";
+  const [Selected, setSelected] = useState("");
+  const toast = useToast();
+  const titleRef = useRef(null);
+  const textRef = useRef(null);
 
   /** Drop-down Select Event Handler Function */
   const handleSelect = (e: {
@@ -363,12 +361,12 @@ const EmailPage = () => {
   };
 
   /** Site Load Function */
-  const getDomain = (domain: string) => {
+  const handleGetDomain = (domain: string) => {
     window.open(domain);
   };
 
   /** Toast component return function according to message */
-  const sendMessage = () => {
+  const handleSendMessage = () => {
     if (Selected === undefined) {
       return toast({
         title: "이메일을 선택해 주세요.",
@@ -417,7 +415,7 @@ const EmailPage = () => {
                 <GitHubLogoContain src={githubLogo} alt="githubLogo" />
                 <Github
                   onClick={() => {
-                    getDomain("https://github.com/gkseogus");
+                    handleGetDomain("https://github.com/gkseogus");
                   }}
                 >
                   github.com/gkseogus
@@ -468,7 +466,7 @@ const EmailPage = () => {
             ></FormContent>
           </div>
           <FormBtn type="submit">
-            <FormBtnContent onClick={sendMessage}>Send</FormBtnContent>
+            <FormBtnContent onClick={handleSendMessage}>Send</FormBtnContent>
           </FormBtn>
         </Form>
       </Wrap>
