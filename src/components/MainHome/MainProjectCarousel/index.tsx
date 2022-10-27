@@ -42,7 +42,7 @@ const ModalContain = styled.div`
 // This list contains all the data for carousels
 const cards = [
   {
-    key: 1,
+    id: 1,
     title: "Commute App",
     text: "재택 출퇴근을 위한 출퇴근 앱",
     text2:
@@ -51,7 +51,7 @@ const cards = [
     image: commuteImg,
   },
   {
-    key: 2,
+    id: 2,
     title: "Exercise App",
     text: "나만의 운동 사이트 앱",
     text2:
@@ -60,7 +60,7 @@ const cards = [
     image: exerciseImg,
   },
   {
-    key: 3,
+    id: 3,
     title: "Creack Detection",
     text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템",
     text2:
@@ -142,7 +142,7 @@ const ProjectCaptionCarousel = (props: any) => {
       </BtnContain>
       {/* Slider */}
       <Slider {...settings} ref={(slider: any) => setSlider(slider)}>
-        {cards.map((card) => (
+        {cards.map((item) => (
           <Box
             key={uuidv4()}
             height={"6xl"}
@@ -150,7 +150,7 @@ const ProjectCaptionCarousel = (props: any) => {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}
+            backgroundImage={`url(${item.image})`}
           >
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
@@ -166,7 +166,7 @@ const ProjectCaptionCarousel = (props: any) => {
                   fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                   color="white"
                 >
-                  <Contain>{card.title}</Contain>
+                  <Contain>{item.title}</Contain>
                 </Heading>
                 <Contain>
                   <Text
@@ -174,14 +174,14 @@ const ProjectCaptionCarousel = (props: any) => {
                     color="white"
                     fontWeight="bolder"
                   >
-                    {card.text}
+                    {item.text}
                     <br />
-                    {card.TechnologyStackText}
+                    {item.TechnologyStackText}
                     <br />
                   </Text>
                 </Contain>
                 <ModalContain>
-                  <CarouselModal moreText={card.text2} moreTitle={card.text} />
+                  <CarouselModal moreText={item.text2} moreTitle={item.text} />
                 </ModalContain>
               </Stack>
             </Container>
