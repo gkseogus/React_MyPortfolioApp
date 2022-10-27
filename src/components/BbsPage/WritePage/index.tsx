@@ -129,7 +129,7 @@ const WritePage = () => {
                   type={"text"}
                   name="title"
                   placeholder="title"
-                  maxLength={20}
+                  maxLength={50}
                   marginBottom={5}
                   onChange={handleChange}
                 />
