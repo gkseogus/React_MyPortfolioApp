@@ -142,6 +142,7 @@ const WritePage = () => {
                 placeholder="content"
                 size={"lg"}
                 variant="outline"
+                maxLength={1000}
                 onChange={handleChange}
               />
             </SubContentsContain>
