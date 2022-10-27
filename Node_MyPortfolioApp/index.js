@@ -50,6 +50,15 @@ app.post("/api/boardDelete", (req, res) => {
   });
 });
 
+app.post("/api/contentsDelete", (req, res) => {
+  const id = req.body.boardId;
+  const sqlQuery = `DELETE FROM BOARD WHERE BOARD_ID IN (${id})`;
+  db.query(sqlQuery, (err, result) => {
+    console.log(err);
+    res.send(result);
+  });
+});
+
 // notice api
 app.get("/api/noticeList", (req, res) => {
   const sqlQuery = "SELECT *FROM NOTICE;";
