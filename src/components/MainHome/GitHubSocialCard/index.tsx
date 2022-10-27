@@ -24,7 +24,6 @@ const GitHubSocialCard = () => {
     following: "",
   });
   const toast = useToast();
-
   const { name, bio, followers, following } = user;
 
   /** Function that brings up GitHub api */
@@ -64,13 +63,6 @@ const GitHubSocialCard = () => {
 
   useEffect(() => {
     getData();
-    toast({
-      title: "블로그에 오신 것을 환영합니다!",
-      position: "top-right",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
   }, []);
 
   return (
