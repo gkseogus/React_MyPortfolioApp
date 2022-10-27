@@ -150,7 +150,7 @@ const BbsPage = (props: any) => {
   };
 
   /** Functions that go to the writing page */
-  const handleWrite = () => {
+  const handleWritePage = () => {
     setWrite(!write);
     window.scrollTo(0, 0);
   };
@@ -310,7 +310,7 @@ const BbsPage = (props: any) => {
                 <Button
                   colorScheme="messenger"
                   variant="ghost"
-                  onClick={handleWrite}
+                  onClick={handleWritePage}
                 >
                   Write
                 </Button>
