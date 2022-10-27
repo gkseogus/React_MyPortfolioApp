@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
-import { Container, Box, Button } from "@chakra-ui/react";
+import { Container, Box, Button, useToast } from "@chakra-ui/react";
 import BbsPage from "..";
 
 const Contain = styled.div`
@@ -45,13 +46,37 @@ const BtnContain = styled.div`
 
 const ContentsPage = (props: any) => {
   const [bbsPage, setBbsPage] = useState(false);
-
+  const toast = useToast();
   /** Functions that go to the list of articles page */
-  const changeWritePage = () => {
+  const handleWritePage = () => {
     setBbsPage(!bbsPage);
     window.scrollTo(0, 0);
   };
 
+  /** List delete function */
+  const handleDelete = async () => {
+    if (window.confirm("해당 게시물을 삭제하시겠습니까?") === true) {
+      let boardId = props.id;
+      try {
+        //Successful response
+        await axios.post("http://localhost:8000/api/contentsDelete", {
+          boardId,
+        });
+        setBbsPage(!bbsPage);
+      } catch (error) {
+        //Failed to respond
+        console.log("write error", error);
+      }
+    } else {
+      toast({
+        title: "게시물 삭제를 취소하였습니다.",
+        position: "top-right",
+        status: "info",
+        duration: 2000,
+        isClosable: true,
+      });
+    }
+  };
   return (
     <div>
       {bbsPage ? (
@@ -79,11 +104,18 @@ const ContentsPage = (props: any) => {
             </SubContentsContain>
             <BtnContain>
               <Button
-                colorScheme="teal"
+                colorScheme="messenger"
                 variant="ghost"
-                onClick={changeWritePage}
+                onClick={handleWritePage}
               >
                 목록
+              </Button>
+              <Button
+                colorScheme="messenger"
+                variant="ghost"
+                onClick={handleDelete}
+              >
+                삭제
               </Button>
             </BtnContain>
           </ContentsContain>
