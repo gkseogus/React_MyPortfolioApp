@@ -120,7 +120,7 @@ const BbsPage = (props: any) => {
   );
 
   /** Function that takes you to the content page of the article when you click on the title */
-  const showContentsPage = (id: any) => {
+  const handleContentsPage = (id: any) => {
     setContentsId(id);
     window.scrollTo(0, 0);
     setContents(!contents);
@@ -287,7 +287,9 @@ const BbsPage = (props: any) => {
                           </Td>
                           <Td textAlign={"center"}>{item.id}</Td>
                           <Td textAlign={"left"}>
-                            <button onClick={(e) => showContentsPage(item.id)}>
+                            <button
+                              onClick={(e) => handleContentsPage(item.id)}
+                            >
                               {item.title}
                             </button>
                           </Td>
