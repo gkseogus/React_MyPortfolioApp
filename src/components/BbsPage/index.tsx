@@ -258,7 +258,11 @@ const BbsPage = (props: any) => {
                         onChange={(e) => handleAllCheck(e.target.checked)}
                         // 데이터 개수와 체크된 아이템의 개수가 다를 경우 선택 해제 (하나라도 해제 시 선택 해제)
                         checked={
-                          checkedList.length === searchVal.length ? true : false
+                          checkedList.length === searchVal.length
+                            ? true
+                            : checkedList.length === 0
+                            ? false
+                            : false
                         }
                       />
                     </Th>
