@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   useDisclosure,
   Button,
@@ -9,11 +10,10 @@ import {
   ModalBody,
   ModalFooter,
 } from "@chakra-ui/react";
-import React from "react";
 import styled from "styled-components";
 
 const ModalBtn = styled.button`
-  color: black;
+  color: white;
   font-size: 20px;
   font-family: "Kanit", sans-serif;
   background-color: none;
@@ -45,40 +45,54 @@ const ModalText = styled.p`
   }
 `;
 
-const CarouselModal = ({
-  moreText,
-  moreTitle,
-}: {
-  moreText: string;
-  moreTitle: string;
-}) => {
+const CarouselModal = (props: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [modalId, setModalId] = useState("");
 
+  /** Function that takes you to the content page of the article when you click on the title */
+  const handleContentsPage = (id: any) => {
+    setModalId(id);
+  };
+  console.log(modalId);
+  console.log(props.modalData);
   return (
     <div>
-      <ModalBtn onClick={onOpen}>More</ModalBtn>
+      <ModalBtn
+        onClick={() => {
+          onOpen();
+          handleContentsPage(props.modalId);
+        }}
+      >
+        More
+      </ModalBtn>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader style={{ textAlign: "center" }}>상세내용</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <ModalTitle>{moreTitle}</ModalTitle>
-          </ModalBody>
-          <ModalBody>
-            <ModalText>{moreText}</ModalText>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              style={{ textAlign: "center" }}
-              colorScheme="gray"
-              mr={3}
-              onClick={onClose}
-            >
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
+        {props.modalData.map((item: any) =>
+          modalId === item.id ? (
+            <ModalContent>
+              <ModalHeader style={{ textAlign: "center" }}>
+                상세내용
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <ModalTitle>{item.title}</ModalTitle>
+              </ModalBody>
+              <ModalBody>
+                <ModalText>{item.modalText}</ModalText>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  style={{ textAlign: "center" }}
+                  colorScheme="gray"
+                  mr={3}
+                  onClick={onClose}
+                >
+                  Close
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          ) : null
+        )}
       </Modal>
     </div>
   );
