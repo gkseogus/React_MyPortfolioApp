@@ -48,7 +48,7 @@ const WritePage = () => {
   let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 
   /** Functions that go to the list of articles page */
-  const changeWritePage = () => {
+  const handleWritePage = () => {
     setBbsPage(!bbsPage);
     window.scrollTo(0, 0);
   };
@@ -152,7 +152,7 @@ const WritePage = () => {
               <Button
                 colorScheme="messenger"
                 variant="ghost"
-                onClick={changeWritePage}
+                onClick={handleWritePage}
               >
                 목록
               </Button>
