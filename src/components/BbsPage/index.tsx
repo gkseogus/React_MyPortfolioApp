@@ -290,10 +290,16 @@ const BbsPage = (props: any) => {
                             <button
                               onClick={(e) => handleContentsPage(item.id)}
                             >
-                              {item.title}
+                              {item.title.length < 10
+                                ? item.title
+                                : item.title.slice(0, 9) + "..."}
                             </button>
                           </Td>
-                          <Td textAlign={"left"}>{item.register}</Td>
+                          <Td textAlign={"left"}>
+                            {item.register.length < 4
+                              ? item.register
+                              : item.register.slice(0, 3) + "..."}
+                          </Td>
                           <Td textAlign={"left"}>{item.date}</Td>
                         </Tr>
                       )
