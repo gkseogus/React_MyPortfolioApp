@@ -292,9 +292,7 @@ const BbsPage = (props: any) => {
                           </Td>
                           <Td textAlign={"center"}>{item.id}</Td>
                           <Td textAlign={"left"}>
-                            <button
-                              onClick={(e) => handleContentsPage(item.id)}
-                            >
+                            <button onClick={() => handleContentsPage(item.id)}>
                               {item.title.length < 10
                                 ? item.title
                                 : item.title.slice(0, 9) + "..."}
