@@ -31,7 +31,7 @@ import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.svg";
 import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.svg";
 import { Link } from "react-router-dom";
 
-const NavBarLink = styled(Link)`
+const LeftNavBarLink = styled(Link)`
   :hover {
     background-color: black;
     text-decoration: none;
@@ -39,9 +39,9 @@ const NavBarLink = styled(Link)`
   }
 `;
 
-const NoticeNavBarLink = styled(Link)`
+const RightNavBarLink = styled(Link)`
   color: white;
-  padding-right: 10%;
+  padding-right: 6%;
   :hover {
     background-color: black;
     text-decoration: none;
@@ -158,24 +158,24 @@ const MainNavBar = (_children: any) => {
               <HomeNavBarLink href="/Home" onClick={handleResetScroll}>
                 Home
               </HomeNavBarLink>
-              <NavBarLink to="/Project" onClick={handleResetScroll}>
+              <LeftNavBarLink to="/Project" onClick={handleResetScroll}>
                 Project
-              </NavBarLink>
-              <NavBarLink to="/Career" onClick={handleResetScroll}>
+              </LeftNavBarLink>
+              <LeftNavBarLink to="/Career" onClick={handleResetScroll}>
                 Career
-              </NavBarLink>
-              <NavBarLink to="/Email" onClick={handleResetScroll}>
+              </LeftNavBarLink>
+              <LeftNavBarLink to="/Email" onClick={handleResetScroll}>
                 E-mail
-              </NavBarLink>
-              <NavBarLink to="/Bbs" onClick={handleResetScroll}>
-                Board
-              </NavBarLink>
+              </LeftNavBarLink>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <NoticeNavBarLink to="/Notice" onClick={handleResetScroll}>
+            <RightNavBarLink to="/Bbs" onClick={handleResetScroll}>
+              Board
+            </RightNavBarLink>
+            <RightNavBarLink to="/Notice" onClick={handleResetScroll}>
               Notice
-            </NoticeNavBarLink>
+            </RightNavBarLink>
             <ColorModeToggle />
             <IconContain>
               <AvatarMenuListLogo
