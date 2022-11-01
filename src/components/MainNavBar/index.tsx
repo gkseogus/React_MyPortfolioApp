@@ -339,7 +339,11 @@ const MainNavBar = (_children: any) => {
           <Box pb={4} display={{ md: "none" }} color="white">
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <MoLink key={uuidv4()} to={link.href}>
+                <MoLink
+                  key={uuidv4()}
+                  to={link.href}
+                  onClick={handleResetScroll}
+                >
                   {link.key}
                 </MoLink>
               ))}
