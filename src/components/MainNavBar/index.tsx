@@ -17,11 +17,16 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Select,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
+import i18n from "../../i18n";
+import dropDownState from "../../Recoil/Atom";
 import mainLogo from "../MainNavBar/IMG/mainLogo.svg";
 import AvatarImg from "../MainNavBar/IMG/AvatarLogo.svg";
 import InstartgramLogo from "../MainNavBar/IMG/InstargramLogo.svg";
@@ -41,7 +46,6 @@ const LeftNavBarLink = styled(Link)`
 
 const RightNavBarLink = styled(Link)`
   color: white;
-  padding-right: 6%;
   :hover {
     background-color: black;
     text-decoration: none;
@@ -50,6 +54,10 @@ const RightNavBarLink = styled(Link)`
   @media screen and (max-width: 500px) {
     display: none;
   }
+`;
+
+const DropDownText = styled.option`
+  color: black;
 `;
 
 const HomeNavBarLink = styled.a`
@@ -118,10 +126,18 @@ const ColorModeToggle = (props: ButtonProps) => {
 
 const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [dropState, setDropState] = useRecoilState(dropDownState);
+  const { t } = useTranslation("");
 
   /** Scroll Reset Function */
   const handleResetScroll = () => {
     window.scrollTo(0, 0);
+  };
+
+  /** 다국어 처리 기능 함수 */
+  const handleSelect = (e: any) => {
+    i18n.changeLanguage(e.target.value);
+    setDropState(e.target.value);
   };
 
   return (
@@ -156,26 +172,43 @@ const MainNavBar = (_children: any) => {
               color="white"
             >
               <HomeNavBarLink href="/Home" onClick={handleResetScroll}>
-                Home
+                {t("homeMenu")}
               </HomeNavBarLink>
               <LeftNavBarLink to="/Project" onClick={handleResetScroll}>
-                Project
+                {t("projectMenu")}
               </LeftNavBarLink>
               <LeftNavBarLink to="/Career" onClick={handleResetScroll}>
-                Career
+                {t("careerMenu")}
               </LeftNavBarLink>
               <LeftNavBarLink to="/Email" onClick={handleResetScroll}>
-                E-mail
+                {t("emailMenu")}
               </LeftNavBarLink>
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
+          <HStack
+            as={"nav"}
+            spacing={4}
+            display={{ base: "none", md: "flex" }}
+            color="white"
+            paddingLeft={"47%"}
+          >
             <RightNavBarLink to="/Bbs" onClick={handleResetScroll}>
-              Board
+              {t("boardMenu")}
             </RightNavBarLink>
             <RightNavBarLink to="/Notice" onClick={handleResetScroll}>
-              Notice
+              {t("noticeMenu")}
             </RightNavBarLink>
+          </HStack>
+          <Flex alignItems={"center"}>
+            <Select
+              variant=""
+              background={"none"}
+              color="white"
+              onChange={handleSelect}
+            >
+              <DropDownText value="en">EN</DropDownText>
+              <DropDownText value="ko">KO</DropDownText>
+            </Select>
             <ColorModeToggle />
             <IconContain>
               <AvatarMenuListLogo
