@@ -167,7 +167,7 @@ const MainNavBar = (_children: any) => {
             <NavBarLogo src={mainLogo} alt={"mainLogo"} />
             <HStack
               as={"nav"}
-              spacing={4}
+              spacing={3}
               display={{ base: "none", md: "flex" }}
               color="white"
             >
@@ -187,7 +187,7 @@ const MainNavBar = (_children: any) => {
           </HStack>
           <HStack
             as={"nav"}
-            spacing={4}
+            spacing={3}
             display={{ base: "none", md: "flex" }}
             color="white"
             paddingLeft={"47%"}
