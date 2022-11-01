@@ -11,6 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import footerLogo from "../Footer/IMG/footerLogo.svg";
 
@@ -39,6 +40,8 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 const Footer = () => {
+  const { t } = useTranslation("");
+
   /** Site Load Function */
   const handleGetDomain = (domain: string) => {
     window.open(domain);
@@ -57,7 +60,7 @@ const Footer = () => {
             style={{ textAlign: "center" }}
           >
             <Stack align={"flex-start"}>
-              <ListHeader>Product</ListHeader>
+              <ListHeader>{t("footerTitle1")}</ListHeader>
               <Stack direction={"row"} align={"center"} spacing={2}>
                 <Link href={"Home"} color={"#black"}>
                   Home
@@ -95,7 +98,7 @@ const Footer = () => {
               </Stack>
             </Stack>
             <Stack align={"flex-start"}>
-              <ListHeader>Company</ListHeader>
+              <ListHeader>{t("footerTitle2")}</ListHeader>
               <button
                 color={"#2D3748"}
                 onClick={() => {
@@ -114,7 +117,7 @@ const Footer = () => {
               </button>
             </Stack>
             <Stack align={"flex-start"}>
-              <ListHeader>Job</ListHeader>
+              <ListHeader>{t("footerTitle3")}</ListHeader>
               <button
                 color={"#2D3748"}
                 onClick={() => {
@@ -141,7 +144,7 @@ const Footer = () => {
               </button>
             </Stack>
             <Stack align={"flex-start"}>
-              <ListHeader>Follow Us</ListHeader>
+              <ListHeader>{t("footerTitle4")}</ListHeader>
               <button
                 color={"#2D3748"}
                 onClick={() => {
@@ -164,7 +167,7 @@ const Footer = () => {
               </button>
             </Stack>
             <Stack align={"flex-start"}>
-              <ListHeader>Univ</ListHeader>
+              <ListHeader>{t("footerTitle5")}</ListHeader>
               <button
                 color={"#2D3748"}
                 onClick={() => {
