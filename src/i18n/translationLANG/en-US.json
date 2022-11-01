@@ -4,5 +4,11 @@
   "careerMenu": "Career",
   "emailMenu": "E-mail",
   "boardMenu": "Board",
-  "noticeMenu": "Notice"
+  "noticeMenu": "Notice",
+
+  "footerTitle1": "Product",
+  "footerTitle2": "Company",
+  "footerTitle3": "Job",
+  "footerTitle4": "Follow Us",
+  "footerTitle5": "Univ"
 }
