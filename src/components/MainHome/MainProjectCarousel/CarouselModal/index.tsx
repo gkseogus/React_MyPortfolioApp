@@ -53,8 +53,7 @@ const CarouselModal = (props: any) => {
   const handleContentsPage = (id: any) => {
     setModalId(id);
   };
-  console.log(modalId);
-  console.log(props.modalData);
+
   return (
     <div>
       <ModalBtn
