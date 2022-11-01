@@ -1,9 +1,10 @@
 import ReactGA from "react-ga4";
+import { useEffect } from "react";
+import { RecoilRoot } from "recoil";
 import { ChakraProvider } from "@chakra-ui/react";
 import Footer from "./components/Footer";
 import AllRoutesApp from "./routesAll";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import { useEffect } from "react";
 
 console.log(
   `%c
@@ -31,11 +32,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <ChakraProvider>
-        <ScrollToTopButton />
-        <AllRoutesApp />
-        <Footer />
-      </ChakraProvider>
+      <RecoilRoot>
+        <ChakraProvider>
+          <ScrollToTopButton />
+          <AllRoutesApp />
+          <Footer />
+        </ChakraProvider>
+      </RecoilRoot>
     </div>
   );
 };
