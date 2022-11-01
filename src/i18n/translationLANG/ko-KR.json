@@ -4,5 +4,11 @@
   "careerMenu": "경력",
   "emailMenu": "이메일",
   "boardMenu": "게시물",
-  "noticeMenu": "공지사항"
+  "noticeMenu": "공지사항",
+
+  "footerTitle1": "소개",
+  "footerTitle2": "회사",
+  "footerTitle3": "회사찾기",
+  "footerTitle4": "우리들",
+  "footerTitle5": "대학교"
 }
