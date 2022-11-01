@@ -68,7 +68,13 @@ const HomeNavBarLink = styled.a`
   }
 `;
 
-const MoLink = styled.a``;
+const MoLink = styled(Link)`
+  :hover {
+    background-color: black;
+    text-decoration: none;
+    color: red;
+  }
+`;
 
 const NavBarLogo = styled.img`
   width: 150px;
@@ -94,13 +100,6 @@ const AvatarMenuListLogo = styled.img`
   height: 20px;
   margin: 20px;
 `;
-
-const Links = ["Home", "Project", "Career", "E-mail"];
-
-/** Function that returns the Link component of the mobile environment */
-const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
-  <MoLink href={href}>{children}</MoLink>
-);
 
 /** Button function that changes to dark mode and white mode */
 const ColorModeToggle = (props: ButtonProps) => {
@@ -128,6 +127,29 @@ const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [dropState, setDropState] = useRecoilState(dropDownState);
   const { t } = useTranslation("");
+
+  const Links = [
+    {
+      key: t("homeMenu"),
+      href: "/home",
+    },
+    {
+      key: t("projectMenu"),
+      href: "/Project",
+    },
+    {
+      key: t("careerMenu"),
+      href: "/Career",
+    },
+    {
+      key: t("emailMenu"),
+      href: "/Email",
+    },
+    {
+      key: t("noticeMenu"),
+      href: "/Notice",
+    },
+  ];
 
   /** Scroll Reset Function */
   const handleResetScroll = () => {
@@ -317,9 +339,9 @@ const MainNavBar = (_children: any) => {
           <Box pb={4} display={{ md: "none" }} color="white">
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={uuidv4()} href={link}>
-                  {link}
-                </NavLink>
+                <MoLink key={uuidv4()} to={link.href}>
+                  {link.key}
+                </MoLink>
               ))}
             </Stack>
           </Box>
