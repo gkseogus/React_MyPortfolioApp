@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import moment from "moment";
 import styled from "styled-components";
@@ -21,6 +22,7 @@ import "antd/dist/antd.css";
 import { Pagination, Input } from "antd";
 import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
+import dropDownState from "../../Recoil/Atom";
 
 const Contain = styled.div`
   display: flex;
@@ -48,6 +50,7 @@ const BreadcrumbItemText = styled.h2`
 // Debounce hook
 const useDebounce = (value: string, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
+
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedValue(value);
@@ -81,8 +84,9 @@ const BbsPage = (props: any) => {
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
   const debounceVal = useDebounce(searchKeyword, 400);
+  const { t } = useTranslation("");
 
-  // Get board data function
+  /** Get board data function */
   const getBbsList = async () => {
     axios.defaults.withCredentials = true;
     const config = {
@@ -158,9 +162,9 @@ const BbsPage = (props: any) => {
 
   /** List delete function */
   const handleDelete = async () => {
-    if (checkedList.length === 1) {
+    if (checkedList.length === 0) {
       toast({
-        title: "삭제할 게시물을 선택해 주세요.",
+        title: t("boardDeleteCheckToast1"),
         position: "top-right",
         status: "warning",
         duration: 2000,
@@ -169,7 +173,7 @@ const BbsPage = (props: any) => {
       return;
     }
 
-    if (window.confirm("해당 게시물을 삭제하시겠습니까?") === true) {
+    if (window.confirm(t("boardDeleteConfirm")) === true) {
       let boardIdList = "";
       checkedList.forEach((v: any) => {
         boardIdList += `'${v}',`;
@@ -180,7 +184,7 @@ const BbsPage = (props: any) => {
           boardIdList: boardIdList.substring(0, boardIdList.length - 1),
         });
         toast({
-          title: "성공적으로 게시물을 삭제했습니다.",
+          title: t("boardDeleteCheckToast2"),
           position: "top-right",
           status: "success",
           duration: 2000,
@@ -194,7 +198,7 @@ const BbsPage = (props: any) => {
       }
     } else {
       toast({
-        title: "게시물 삭제를 취소하였습니다.",
+        title: t("boardDeleteCheckToast3"),
         position: "top-right",
         status: "info",
         duration: 2000,
@@ -219,10 +223,10 @@ const BbsPage = (props: any) => {
       <BreadcrumbContain>
         <Breadcrumb separator="/">
           <BreadcrumbItem>
-            <BreadcrumbItemText>Home</BreadcrumbItemText>
+            <BreadcrumbItemText>{t("boardBreadcrumbItem1")}</BreadcrumbItemText>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbItemText>BBS</BreadcrumbItemText>
+            <BreadcrumbItemText>{t("boardBreadcrumbItem2")}</BreadcrumbItemText>
           </BreadcrumbItem>
         </Breadcrumb>
       </BreadcrumbContain>
@@ -241,12 +245,12 @@ const BbsPage = (props: any) => {
                   fontSize={30}
                   paddingBottom={"5%"}
                 >
-                  Anonymous board
+                  {t("boardTitle")}
                   <Input.Group compact>
                     <Input.Search
                       allowClear
                       style={{ width: "40%", paddingTop: "5%", float: "right" }}
-                      placeholder="Search for title"
+                      placeholder={t("boardSerchPlaceholder")}
                       onChange={(e) => setSearchKeyword(e.target.value)}
                     />
                   </Input.Group>
@@ -267,10 +271,10 @@ const BbsPage = (props: any) => {
                         }
                       />
                     </Th>
-                    <Th textAlign={"center"}>No.</Th>
-                    <Th textAlign={"center"}>Title</Th>
-                    <Th textAlign={"center"}>Name</Th>
-                    <Th textAlign={"center"}>Date</Th>
+                    <Th textAlign={"center"}>{t("boardColNo")}</Th>
+                    <Th textAlign={"center"}>{t("boardColTitle")}</Th>
+                    <Th textAlign={"center"}>{t("boardColName")}</Th>
+                    <Th textAlign={"center"}>{t("boardColDate")}</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -323,14 +327,14 @@ const BbsPage = (props: any) => {
                   variant="ghost"
                   onClick={handleWritePage}
                 >
-                  Write
+                  {t("boardWriteBtn")}
                 </Button>
                 <Button
                   colorScheme="messenger"
                   variant="ghost"
                   onClick={handleDelete}
                 >
-                  Delete
+                  {t("boardDeleteBtn")}
                 </Button>
               </BtnContain>
             </TableContainer>
