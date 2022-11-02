@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { Breadcrumb, BreadcrumbItem, useToast } from "@chakra-ui/react";
 import myIcon from "./IMG/myIcon.svg";
@@ -352,6 +353,7 @@ const EmailPage = () => {
   const toast = useToast();
   const titleRef = useRef(null);
   const textRef = useRef(null);
+  const { t } = useTranslation("");
 
   /** Drop-down Select Event Handler Function */
   const handleSelect = (e: {
@@ -391,10 +393,10 @@ const EmailPage = () => {
       <BreadcrumbContain>
         <Breadcrumb separator="/">
           <BreadcrumbItem>
-            <BreadcrumbItemText>Home</BreadcrumbItemText>
+            <BreadcrumbItemText>{t("emailBreadcrumbItem1")}</BreadcrumbItemText>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbItemText>E-mail</BreadcrumbItemText>
+            <BreadcrumbItemText>{t("emailBreadcrumbItem2")}</BreadcrumbItemText>
           </BreadcrumbItem>
         </Breadcrumb>
       </BreadcrumbContain>
@@ -406,7 +408,7 @@ const EmailPage = () => {
             </PositionContain>
             <ImgContain src={myIcon} alt="myIcon" />
             <NameWrap>
-              <Name>Daehyeon Han</Name>
+              <Name>{t("emailMyName")}</Name>
               <EmailWrap>
                 <EmialLogoContain src={mailLogo} alt="gmailLogo" />
                 <Email>fbznffldj998@naver.com</Email>
@@ -426,14 +428,14 @@ const EmailPage = () => {
         </PeopleWrap>
         {Selected === "fbznffldj998@naver.com" ? (docUrl = docsList) : null}
         <Form method="post" action={docUrl} target="iframe1">
-          <FormTitle>Send a Message</FormTitle>
+          <FormTitle>{t("emailSend")}</FormTitle>
           <div>
             <div>
               <FormMyEmail
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Your e-mail address"
+                placeholder={t("emailAddress")}
               />
             </div>
             <div>
@@ -444,7 +446,7 @@ const EmailPage = () => {
                 onChange={handleSelect}
                 value={Selected}
               >
-                <option>Select an address to send to</option>
+                <option>{t("emailSelect")}</option>
                 <option value={selectList}>{selectList}</option>
               </FormDevEmail>
             </div>
@@ -453,7 +455,7 @@ const EmailPage = () => {
             <FormEmailTitle
               id="title"
               name="title"
-              placeholder="Write a message title"
+              placeholder={t("emailWriteTitle")}
               ref={titleRef}
             />
           </div>
@@ -461,12 +463,14 @@ const EmailPage = () => {
             <FormContent
               id="comment"
               name="message"
-              placeholder="Write a message what you want"
+              placeholder={t("emailWriteContent")}
               ref={textRef}
             ></FormContent>
           </div>
           <FormBtn type="submit">
-            <FormBtnContent onClick={handleSendMessage}>Send</FormBtnContent>
+            <FormBtnContent onClick={handleSendMessage}>
+              {t("emailSendBtn")}
+            </FormBtnContent>
           </FormBtn>
         </Form>
       </Wrap>
