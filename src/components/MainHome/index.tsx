@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Hide, Box } from "@chakra-ui/react";
 import styled, { keyframes } from "styled-components";
+import { useTranslation } from "react-i18next";
 import introImg from "../MainHome/IMG/introImg.svg";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
@@ -48,6 +49,7 @@ const IntroContain = styled.div`
 const IntroText = styled.h2`
   padding-top: 8%;
   z-index: 7;
+  white-space: pre-wrap;
   position: relative;
   text-align: left;
   font-size: 64px;
@@ -140,6 +142,7 @@ const GitHubLinkContain = styled.div`
 
 const SecondIntroText = styled.h2`
   position: relative;
+  white-space: pre-wrap;
   padding: 15%;
   text-align: center;
   font-family: sans-serif;
@@ -244,6 +247,8 @@ const MainCareerCardContain = styled.div`
 `;
 
 const MainHome = () => {
+  const { t } = useTranslation("");
+
   /** Scroll Reset Function */
   const handleResetScroll = () => {
     window.scrollTo(0, 0);
@@ -253,9 +258,7 @@ const MainHome = () => {
     <IntroContain>
       <article>
         <IntroText>
-          Welcome to the portfolio blog
-          <br />
-          of front engineer Han Dae-hyeon
+          {t("homeIntro")}
           <Hide below="md">
             <Box boxSize="sm">
               <IntroImg src={introImg} alt="introImg" />
@@ -264,7 +267,7 @@ const MainHome = () => {
         </IntroText>
       </article>
       <article>
-        <CenterContentsText>About Me</CenterContentsText>
+        <CenterContentsText>{t("homeAboutMeTitle")}</CenterContentsText>
         <AboutContain>
           <MainAboutCarousel />
         </AboutContain>
@@ -273,26 +276,23 @@ const MainHome = () => {
         </AboutMoContain>
       </article>
       <article>
-        <ContentsText>My Git Hub</ContentsText>
+        <ContentsText>{t("homeMyGitHubTitle")}</ContentsText>
         <GitHubLinkContain>
           <GitHubSocialCard />
         </GitHubLinkContain>
       </article>
       <article>
-        <SecondIntroText>
-          저의 프로젝트와 기술 스택이 <br />
-          궁금하지 않으시나요?
-        </SecondIntroText>
-        <ReverseContentsText>My Project</ReverseContentsText>
+        <SecondIntroText>{t("homeSecondIntro")}</SecondIntroText>
+        <ReverseContentsText>{t("homeMyProjectTitle")}</ReverseContentsText>
         <ReverseContentsBtn to={"/Project"} onClick={handleResetScroll}>
-          Link
+          {t("homeLinkBtn")}
         </ReverseContentsBtn>
         <MainProjectCarouselsContain>
           <MainProjectCarousel />
         </MainProjectCarouselsContain>
       </article>
       <article>
-        <CenterContentsText>My Career</CenterContentsText>
+        <CenterContentsText>{t("homeMyCareerTitle")}</CenterContentsText>
         <MainCareerCardContain>
           <MainCareerCard />
         </MainCareerCardContain>

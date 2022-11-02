@@ -180,9 +180,9 @@ const ProjectCaptionCarousel = (props: any) => {
                     <br />
                   </Text>
                 </Contain>
-                <ModalContain>
+                {/* <ModalContain>
                   <CarouselModal modalData={cards} modalId={item.id} />
-                </ModalContain>
+                </ModalContain> */}
               </Stack>
             </Container>
           </Box>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Heading,
   Avatar,
@@ -25,6 +26,7 @@ const GitHubSocialCard = () => {
   });
   const toast = useToast();
   const { name, bio, followers, following } = user;
+  const { t } = useTranslation("");
 
   /** Function that brings up GitHub api */
   const getData = async () => {
@@ -111,7 +113,7 @@ const GitHubSocialCard = () => {
                 {followers}
               </Text>
               <Text fontSize={"sm"} color={"white"}>
-                Followers
+                {t("homeGitHubCardFollowrsTitle")}
               </Text>
             </Stack>
             <Stack spacing={0} align={"center"}>
@@ -119,7 +121,7 @@ const GitHubSocialCard = () => {
                 {following}
               </Text>
               <Text fontSize={"sm"} color={"white"}>
-                Following
+                {t("homeGitHubCardFollowingTitle")}
               </Text>
             </Stack>
           </Stack>
@@ -135,7 +137,7 @@ const GitHubSocialCard = () => {
             }}
             onClick={handleGithubAddress}
           >
-            Link
+            {t("homeLinkBtn")}
           </Button>
         </Box>
       </Box>

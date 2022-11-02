@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Box, Collapse, useDisclosure, Grid, GridItem } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
@@ -113,10 +114,10 @@ const careerItemsContents = [
 
 const MainCareerCard = () => {
   const { isOpen, onToggle } = useDisclosure();
-
+  const { t } = useTranslation("");
   return (
     <div>
-      <CareerBtn onClick={onToggle}>More</CareerBtn>
+      <CareerBtn onClick={onToggle}>{t("homeMoreBtn")}</CareerBtn>
       <Collapse in={isOpen} animateOpacity>
         <Box p="10px" color="black" mt="1" rounded="md">
           <Contain>
