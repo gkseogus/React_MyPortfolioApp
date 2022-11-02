@@ -46,7 +46,7 @@ const IntroContain = styled.div`
   }
 `;
 
-const IntroText = styled.h2`
+const IntroText = styled.article`
   padding-top: 8%;
   z-index: 7;
   white-space: pre-line;
@@ -84,7 +84,7 @@ const IntroImg = styled.img`
   animation: ${circleAni} 10s linear infinite;
 `;
 
-const CenterContentsText = styled.h2`
+const CenterContentsText = styled.article`
   text-align: center;
   font-size: 64px;
   font-weight: 600px;
@@ -111,7 +111,7 @@ const AboutMoContain = styled.div`
   }
 `;
 
-const ContentsText = styled.h2`
+const ContentsText = styled.article`
   position: relative;
   text-align: left;
   font-size: 64px;
@@ -140,7 +140,7 @@ const GitHubLinkContain = styled.div`
   }
 `;
 
-const SecondIntroText = styled.h2`
+const SecondIntroText = styled.article`
   position: relative;
   white-space: pre-line;
   padding: 15%;
@@ -167,7 +167,7 @@ const SecondIntroText = styled.h2`
   }
 `;
 
-const ReverseContentsText = styled.h2`
+const ReverseContentsText = styled.article`
   position: relative;
   text-align: left;
   font-size: 64px;

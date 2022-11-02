@@ -15,7 +15,7 @@ const BreadcrumbContain = styled.div`
   }
 `;
 
-const BreadcrumbItemText = styled.h2`
+const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 
@@ -102,7 +102,7 @@ const NameWrap = styled.div`
   bottom: 0%;
 `;
 
-const Name = styled.p`
+const Name = styled.article`
   position: absolute;
   width: 155px;
   height: 24px;
@@ -115,7 +115,6 @@ const Name = styled.p`
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-  color: #000000;
 `;
 
 const EmailWrap = styled.div`
@@ -136,7 +135,7 @@ const EmialLogoContain = styled.img`
   height: 20px;
 `;
 
-const Email = styled.p`
+const Email = styled.article`
   width: 360px;
   height: 17px;
   margin-left: 10px;
@@ -146,7 +145,6 @@ const Email = styled.p`
   font-size: 14.3158px;
   line-height: 17px;
   text-align: center;
-  color: #000000;
 `;
 
 const GithubWrap = styled.div`
@@ -179,7 +177,6 @@ const Github = styled.button`
   line-height: 17px;
   margin: 0;
   text-align: center;
-  color: #000000;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -191,7 +188,7 @@ const Form = styled.form`
   margin-top: 600px;
 `;
 
-const FormTitle = styled.p`
+const FormTitle = styled.article`
   position: absolute;
   width: 311px;
   height: 48px;
@@ -203,7 +200,6 @@ const FormTitle = styled.p`
   font-size: 40px;
   line-height: 48px;
   text-align: center;
-  color: #000000;
 `;
 
 const FormMyEmail = styled.input`
@@ -218,7 +214,7 @@ const FormMyEmail = styled.input`
   left: 492px;
   top: 990px;
   text-align: center;
-  background-color: none;
+  background-color: white;
   border: none;
   border-bottom: 3px solid black;
   ::placeholder {
@@ -238,7 +234,7 @@ const FormDevEmail = styled.select`
   left: 457px;
   top: 1030px;
   text-align: center;
-  background-color: none;
+  background-color: white;
   border: none;
   border-bottom: 3px solid black;
   color: #000000;
@@ -262,7 +258,7 @@ const FormEmailTitle = styled.input`
   left: 447px;
   top: 1120px;
   text-align: center;
-  background-color: none;
+  background-color: white;
   border: none;
   border-bottom: 3px solid black;
   ::placeholder {
@@ -294,7 +290,7 @@ const FormContent = styled.textarea`
   text-align: center;
   overflow-y: hidden;
   resize: none;
-  background-color: none;
+  background-color: white;
   border: none;
   border-bottom: 3px solid black;
   max-height: 66px;

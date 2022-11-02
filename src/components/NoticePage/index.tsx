@@ -15,7 +15,7 @@ const BreadcrumbContain = styled.div`
   }
 `;
 
-const BreadcrumbItemText = styled.h2`
+const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 
@@ -142,7 +142,11 @@ const NoticePage = () => {
           current={current}
           total={noticeData.length}
           onChange={handleChange}
-          style={{ marginTop: "10px", textAlign: "center" }}
+          style={{
+            marginTop: "10px",
+            textAlign: "center",
+            background: "white",
+          }}
           size="small"
         />
       </Contain>

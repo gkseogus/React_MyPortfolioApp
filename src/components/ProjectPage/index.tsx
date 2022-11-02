@@ -15,7 +15,7 @@ const BreadcrumbContain = styled.div`
   }
 `;
 
-const BreadcrumbItemText = styled.h2`
+const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 

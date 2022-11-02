@@ -42,7 +42,7 @@ const BreadcrumbContain = styled.div`
   }
 `;
 
-const BreadcrumbItemText = styled.h2`
+const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 
@@ -311,15 +311,21 @@ const BbsPage = (props: any) => {
                       )
                   )}
                 </Tbody>
-              </Table>
-              <Pagination
-                pageSize={pageSize}
-                current={current}
-                total={bbsData.length}
-                onChange={handlePageNation}
-                style={{ marginTop: "10px", float: "left" }}
-                size="small"
-              />
+              </Table>{" "}
+              <div style={{ paddingLeft: "45%", paddingRight: "45%" }}>
+                <Pagination
+                  pageSize={pageSize}
+                  current={current}
+                  total={bbsData.length}
+                  onChange={handlePageNation}
+                  style={{
+                    marginTop: "10px",
+                    float: "left",
+                    background: "white",
+                  }}
+                  size="small"
+                />
+              </div>
               <BtnContain>
                 <Button
                   colorScheme="messenger"
