@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import styled, { keyframes } from "styled-components";
 import SkillCardsItem from "./SkillCardsItem";
 import ProjectCarousel from "./ProjectCarousel";
@@ -210,25 +211,31 @@ const FirstContentsItem = styled.div`
 `;
 
 const ProjectPage = () => {
+  const { t } = useTranslation("");
+
   return (
     <ProjectPageContain>
       <BreadcrumbContain>
         <Breadcrumb separator="/">
           <BreadcrumbItem>
-            <BreadcrumbItemText>Home</BreadcrumbItemText>
+            <BreadcrumbItemText>
+              {t("projectBreadcrumbItem1")}
+            </BreadcrumbItemText>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbItemText>Project</BreadcrumbItemText>
+            <BreadcrumbItemText>
+              {t("projectBreadcrumbItem2")}
+            </BreadcrumbItemText>
           </BreadcrumbItem>
         </Breadcrumb>
       </BreadcrumbContain>
       <Contain>
         <FristContentsText>
-          <span>My own</span>
+          <span>{t("projectTitle")}</span>
           <Message>
-            <div>thinking</div>
-            <div>planning</div>
-            <div>creating</div>
+            <div>{t("projectSubTitle1")}</div>
+            <div>{t("projectSubTitle2")}</div>
+            <div>{t("projectSubTitle3")}</div>
           </Message>
         </FristContentsText>
       </Contain>

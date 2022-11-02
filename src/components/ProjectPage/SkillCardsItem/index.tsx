@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Tooltip } from "@chakra-ui/react";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import { v4 as uuidv4 } from "uuid";
@@ -143,10 +144,12 @@ const dataArray = [
 ];
 
 const SkillCardsItem = () => {
+  const { t } = useTranslation("");
+
   return (
     <Contain>
       <TextAlignContain>
-        <AnimateTitleText>My Skill</AnimateTitleText>
+        <AnimateTitleText>{t("projectSkillTitle")}</AnimateTitleText>
       </TextAlignContain>
       {dataArray.map((data: any) => (
         <TextAlignContain key={uuidv4()}>
