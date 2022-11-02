@@ -46,7 +46,7 @@ const TimeLine = () => {
         >
           {t("careerContentTitle2Sub")}
         </h4>
-        <p style={{ color: "black", whiteSpace: "pre-wrap" }}>
+        <p style={{ color: "black", whiteSpace: "pre-line" }}>
           {t("careerContent2")}
         </p>
       </VerticalTimelineElement>
@@ -66,11 +66,11 @@ const TimeLine = () => {
         </h3>
         <h4
           className="vertical-timeline-element-subtitle"
-          style={{ color: "black", whiteSpace: "pre-wrap" }}
+          style={{ color: "black", whiteSpace: "pre-line" }}
         >
           {t("careerContentTitle3Sub")}
         </h4>
-        <p style={{ color: "black", whiteSpace: "pre-wrap" }}>
+        <p style={{ color: "black", whiteSpace: "pre-line" }}>
           {t("careerContent3")}
         </p>
       </VerticalTimelineElement>
@@ -94,7 +94,7 @@ const TimeLine = () => {
         >
           {t("careerContentTitle4Sub")}
         </h4>
-        <p style={{ color: "black", whiteSpace: "pre-wrap" }}>
+        <p style={{ color: "black", whiteSpace: "pre-line" }}>
           {t("careerContent4")}
         </p>
       </VerticalTimelineElement>
@@ -118,7 +118,7 @@ const TimeLine = () => {
         >
           {t("careerContentTitle5Sub")}
         </h4>
-        <p style={{ color: "black", whiteSpace: "pre-wrap" }}>
+        <p style={{ color: "black", whiteSpace: "pre-line" }}>
           {t("careerContent5")}
         </p>
       </VerticalTimelineElement>

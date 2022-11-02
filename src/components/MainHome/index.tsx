@@ -49,7 +49,7 @@ const IntroContain = styled.div`
 const IntroText = styled.h2`
   padding-top: 8%;
   z-index: 7;
-  white-space: pre-wrap;
+  white-space: pre-line;
   position: relative;
   text-align: left;
   font-size: 64px;
@@ -142,7 +142,7 @@ const GitHubLinkContain = styled.div`
 
 const SecondIntroText = styled.h2`
   position: relative;
-  white-space: pre-wrap;
+  white-space: pre-line;
   padding: 15%;
   text-align: center;
   font-family: sans-serif;

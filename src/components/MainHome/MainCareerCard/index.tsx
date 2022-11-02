@@ -33,7 +33,7 @@ const CareerItemsTitle = styled.h2`
   font-size: 20px;
   font-weight: 600;
   font-family: "Kanit", sans-serif;
-  white-space: pre-wrap;
+  white-space: pre-line;
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
