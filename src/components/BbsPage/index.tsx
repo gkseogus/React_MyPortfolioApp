@@ -22,7 +22,6 @@ import "antd/dist/antd.css";
 import { Pagination, Input } from "antd";
 import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
-import dropDownState from "../../Recoil/Atom";
 
 const Contain = styled.div`
   display: flex;
