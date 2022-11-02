@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import moment from "moment";
 import { Collapse, Pagination } from "antd";
@@ -57,6 +58,7 @@ const NoticePage = () => {
       date: "",
     },
   ]);
+  const { t } = useTranslation("");
 
   /** Function to load announcement data */
   const getList = async () => {
@@ -104,15 +106,19 @@ const NoticePage = () => {
       <BreadcrumbContain>
         <Breadcrumb separator="/">
           <BreadcrumbItem>
-            <BreadcrumbItemText>Home</BreadcrumbItemText>
+            <BreadcrumbItemText>
+              {t("noticeBreadcrumbItem1")}
+            </BreadcrumbItemText>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbItemText>Notice</BreadcrumbItemText>
+            <BreadcrumbItemText>
+              {t("noticeBreadcrumbItem2")}
+            </BreadcrumbItemText>
           </BreadcrumbItem>
         </Breadcrumb>
       </BreadcrumbContain>
       <Contain>
-        <CenterContentsText>Release Notice</CenterContentsText>
+        <CenterContentsText>{t("noticeTitle")}</CenterContentsText>
         <Collapse bordered={false} defaultActiveKey={["1"]}>
           {noticeData
             .slice(0)
