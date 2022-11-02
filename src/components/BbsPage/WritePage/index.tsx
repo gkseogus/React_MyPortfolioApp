@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
 import axios from "axios";
@@ -44,6 +45,7 @@ const WritePage = () => {
     register: "",
     content: "",
   });
+  const { t } = useTranslation("");
   const toast = useToast();
   let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 
@@ -56,7 +58,7 @@ const WritePage = () => {
   /** Error toast function */
   const writeErrorToast = (toastTitle: string) => {
     toast({
-      title: `${toastTitle} 입력해주세요.`,
+      title: `${toastTitle} ${t("boardWritePageErrorToast4")}`,
       position: "top-right",
       status: "error",
       duration: 2000,
@@ -67,11 +69,11 @@ const WritePage = () => {
   /** A function that stores the created text in db */
   const writePost = async () => {
     if (!writeData.register) {
-      writeErrorToast("작성자를");
+      writeErrorToast(t("boardWritePageErrorToast1"));
     } else if (!writeData.title) {
-      writeErrorToast("제목을");
+      writeErrorToast(t("boardWritePageErrorToast2"));
     } else if (!writeData.content) {
-      writeErrorToast("내용을");
+      writeErrorToast(t("boardWritePageErrorToast3"));
     } else {
       try {
         //Successful response
@@ -82,7 +84,7 @@ const WritePage = () => {
         });
         setBbsPage(!bbsPage);
         toast({
-          title: "성공적으로 작성 완료했습니다.",
+          title: t("boardWritePageSuccessToast"),
           position: "top-right",
           status: "success",
           duration: 2000,
@@ -113,33 +115,33 @@ const WritePage = () => {
           <ContentsContain>
             <SubContentsContain>
               <RegisterContain>
-                <ContentText>작성자</ContentText>
+                <ContentText>{t("boardWriteRegister")}</ContentText>
                 <Input
                   type={"text"}
                   name="register"
-                  placeholder="register"
+                  placeholder={t("boardWriteRegisterPH")}
                   maxLength={10}
                   marginBottom={5}
                   onChange={handleChange}
                 />
               </RegisterContain>
               <TitleContain>
-                <ContentText>제목</ContentText>
+                <ContentText>{t("boardWriteTitle")}</ContentText>
                 <Input
                   type={"text"}
                   name="title"
-                  placeholder="title"
+                  placeholder={t("boardWriteTitlePH")}
                   maxLength={50}
                   marginBottom={5}
                   onChange={handleChange}
                 />
               </TitleContain>
 
-              <ContentText>내용</ContentText>
+              <ContentText>{t("boardWriteContent")}</ContentText>
               <Textarea
                 as={"textarea"}
                 name="content"
-                placeholder="content"
+                placeholder={t("boardWriteContentPH")}
                 size={"lg"}
                 variant="outline"
                 maxLength={1000}
@@ -148,14 +150,14 @@ const WritePage = () => {
             </SubContentsContain>
             <BtnContain>
               <Button colorScheme="blue" variant="ghost" onClick={writePost}>
-                작성완료
+                {t("boardWriteCreateBtn")}
               </Button>
               <Button
                 colorScheme="messenger"
                 variant="ghost"
                 onClick={handleWritePage}
               >
-                목록
+                {t("boardWriteListBtn")}
               </Button>
             </BtnContain>
           </ContentsContain>
