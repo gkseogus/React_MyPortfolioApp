@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 import TimeLine from "./TimeLine";
@@ -37,20 +38,26 @@ const CenterContentsText = styled.article`
 `;
 
 const CareerPage = () => {
+  const { t } = useTranslation("");
+
   return (
     <div>
       <BreadcrumbContain>
         <Breadcrumb separator="/">
           <BreadcrumbItem>
-            <BreadcrumbItemText>Home</BreadcrumbItemText>
+            <BreadcrumbItemText>
+              {t("careerBreadcrumbItem1")}
+            </BreadcrumbItemText>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbItemText>Career</BreadcrumbItemText>
+            <BreadcrumbItemText>
+              {t("careerBreadcrumbItem2")}
+            </BreadcrumbItemText>
           </BreadcrumbItem>
         </Breadcrumb>
       </BreadcrumbContain>
       <Contain>
-        <CenterContentsText>My Career Time Line</CenterContentsText>
+        <CenterContentsText>{t("careerTitle")}</CenterContentsText>
         <TimeLine />
       </Contain>
     </div>
