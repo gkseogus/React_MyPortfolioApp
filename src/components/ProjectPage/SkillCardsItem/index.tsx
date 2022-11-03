@@ -19,6 +19,9 @@ const TextClip = keyframes`
 
 const Contain = styled.div`
   margin-bottom: 200px;
+  @media screen and (max-width: 500px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const TextAlignContain = styled.div`
