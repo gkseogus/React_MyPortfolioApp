@@ -277,41 +277,46 @@ const BbsPage = (props: any) => {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {searchVal.map(
-                    (item: any, index: number) =>
-                      index >= minIndex &&
-                      index < maxIndex && (
-                        <Tr key={uuidv4()}>
-                          <Td textAlign={"center"}>
-                            <input
-                              type="checkbox"
-                              onChange={(e) =>
-                                handleSingleCheck(e.target.checked, item.id)
-                              }
-                              checked={
-                                checkedList.includes(item.id) ? true : false
-                              }
-                            ></input>
-                          </Td>
-                          <Td textAlign={"center"}>{item.id}</Td>
-                          <Td textAlign={"left"}>
-                            <button onClick={() => handleContentsPage(item.id)}>
-                              {item.title.length < 10
-                                ? item.title
-                                : item.title.slice(0, 9) + "..."}
-                            </button>
-                          </Td>
-                          <Td textAlign={"left"}>
-                            {item.register.length < 4
-                              ? item.register
-                              : item.register.slice(0, 3) + "..."}
-                          </Td>
-                          <Td textAlign={"left"}>{item.date}</Td>
-                        </Tr>
-                      )
-                  )}
+                  {searchVal
+                    .slice(0)
+                    .reverse()
+                    .map(
+                      (item: any, index: number) =>
+                        index >= minIndex &&
+                        index < maxIndex && (
+                          <Tr key={uuidv4()}>
+                            <Td textAlign={"center"}>
+                              <input
+                                type="checkbox"
+                                onChange={(e) =>
+                                  handleSingleCheck(e.target.checked, item.id)
+                                }
+                                checked={
+                                  checkedList.includes(item.id) ? true : false
+                                }
+                              ></input>
+                            </Td>
+                            <Td textAlign={"center"}>{item.id}</Td>
+                            <Td textAlign={"left"}>
+                              <button
+                                onClick={() => handleContentsPage(item.id)}
+                              >
+                                {item.title.length < 10
+                                  ? item.title
+                                  : item.title.slice(0, 9) + "..."}
+                              </button>
+                            </Td>
+                            <Td textAlign={"left"}>
+                              {item.register.length < 4
+                                ? item.register
+                                : item.register.slice(0, 3) + "..."}
+                            </Td>
+                            <Td textAlign={"left"}>{item.date}</Td>
+                          </Tr>
+                        )
+                    )}
                 </Tbody>
-              </Table>{" "}
+              </Table>
               <div style={{ paddingLeft: "45%", paddingRight: "45%" }}>
                 <Pagination
                   pageSize={pageSize}
