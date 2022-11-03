@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
-import moment from "moment";
 import { Collapse, Pagination } from "antd";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 import styled from "styled-components";
+import noticeData from "./noticeData.json";
 
 const BreadcrumbContain = styled.div`
   float: right;
@@ -48,47 +47,40 @@ const { Panel } = Collapse;
 const NoticePage = () => {
   const pageSize = 10;
   const [minIndex, setMinIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(10);
   const [current, setCurrent] = useState(0);
-  const [noticeData, setNoticeData] = useState([
-    {
-      id: "",
-      title: "",
-      contents: "",
-      date: "",
-    },
-  ]);
+  const noticeList = noticeData[0].notice;
   const { t } = useTranslation("");
 
   /** Function to load announcement data */
-  const getList = async () => {
-    axios.defaults.withCredentials = true;
-    const config = {
-      headers: {
-        withCredentials: true,
-      },
-    };
-    try {
-      //Successful response
-      const response = await axios.get(
-        "http://localhost:8000/api/noticeList",
-        config
-      );
-      const data = response.data;
-      setMaxIndex(pageSize);
-      setNoticeData(
-        data.map((item: any, index: string) => ({
-          id: item.NOTICE_ID,
-          title: item.NOTICE_TITLE,
-          contents: item.NOTICE_CONTENT,
-          date: moment(item.NOTICE_DATE).format("YYYY-MM-DD"),
-        }))
-      );
-    } catch (error) {
-      //Failed to respond
-      console.log(error);
-    }
-  };
+  // const getList = async () => {
+  //   axios.defaults.withCredentials = true;
+  //   const config = {
+  //     headers: {
+  //       withCredentials: true,
+  //     },
+  //   };
+  //   try {
+  //     //Successful response
+  //     const response = await axios.get(
+  //       "http://localhost:8000/api/noticeList",
+  //       config
+  //     );
+  //     const data = response.data;
+  //     setMaxIndex(pageSize);
+  //     setNoticeData(
+  //       data.map((item: any, index: string) => ({
+  //         id: item.NOTICE_ID,
+  //         title: item.NOTICE_TITLE,
+  //         contents: item.NOTICE_CONTENT,
+  //         date: moment(item.NOTICE_DATE).format("YYYY-MM-DD"),
+  //       }))
+  //     );
+  //   } catch (error) {
+  //     //Failed to respond
+  //     console.log(error);
+  //   }
+  // };
 
   /** Page Nation Event Handler */
   const handleChange = (page: number) => {
@@ -96,10 +88,6 @@ const NoticePage = () => {
     setMinIndex((page - 1) * pageSize);
     setMaxIndex(page * pageSize);
   };
-
-  useEffect(() => {
-    getList();
-  }, []);
 
   return (
     <div>
@@ -120,7 +108,7 @@ const NoticePage = () => {
       <Contain>
         <CenterContentsText>{t("noticeTitle")}</CenterContentsText>
         <Collapse bordered={false} defaultActiveKey={["1"]}>
-          {noticeData
+          {noticeList
             .slice(0)
             .reverse()
             .map(
@@ -128,11 +116,11 @@ const NoticePage = () => {
                 index >= minIndex &&
                 index < maxIndex && (
                   <Panel
-                    header={item.title}
-                    key={item.id}
-                    extra={<DateText>{item.date}</DateText>}
+                    header={item.NOTICE_TITLE}
+                    key={item.NOTICE_ID}
+                    extra={<DateText>{item.NOTICE_DATE}</DateText>}
                   >
-                    {item.contents}
+                    {item.NOTICE_CONTENT}
                   </Panel>
                 )
             )}
@@ -140,7 +128,7 @@ const NoticePage = () => {
         <Pagination
           pageSize={pageSize}
           current={current}
-          total={noticeData.length}
+          total={noticeList.length}
           onChange={handleChange}
           style={{
             marginTop: "10px",
