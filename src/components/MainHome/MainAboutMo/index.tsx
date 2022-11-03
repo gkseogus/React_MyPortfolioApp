@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Box, Collapse, useDisclosure } from "@chakra-ui/react";
 import { BsFillPersonFill } from "react-icons/bs";
 import styled from "styled-components";
@@ -22,6 +23,7 @@ const InputText = styled.article`
 
 const MainAboutMo = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const { t } = useTranslation("");
 
   return (
     <div>
@@ -31,8 +33,8 @@ const MainAboutMo = () => {
       <Collapse in={isOpen} animateOpacity>
         <Box p="40px" color="white" mt="4" bg="black" rounded="md" shadow="md">
           <InputText>
-            <InputTitle>Name:</InputTitle> Han Dae Hyeon <br />
-            <InputTitle>Jop:</InputTitle> Front Dev <br />
+            <InputTitle>Name:</InputTitle> {t("homeMoAboutMeName")} <br />
+            <InputTitle>Jop:</InputTitle> {t("homeMoAboutMeJop")} <br />
             <InputTitle>Skill:</InputTitle> React & Redux ...
             <br />
             <InputTitle>Call:</InputTitle> 010-2246-6787 <br />

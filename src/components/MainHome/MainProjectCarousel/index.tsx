@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   Box,
   IconButton,
@@ -39,37 +40,6 @@ const ModalContain = styled.div`
   }
 `;
 
-// This list contains all the data for carousels
-const cards = [
-  {
-    id: 1,
-    title: "Commute App",
-    text: "재택 출퇴근을 위한 출퇴근 앱",
-    modalText:
-      "에이치 나인 회사에서 진행한 프로젝트 입니다. 코로나로 인한 출퇴근 시스템을 클론 코딩 하였으며 구글 스프레드 시트에 출퇴근 데이터를 보관하도록 되어 있으며 하루마다 데이터가 갱신 됩니다.",
-    TechnologyStackText: "기술 스택: TypeScript & React & Redux",
-    image: commuteImg,
-  },
-  {
-    id: 2,
-    title: "Exercise App",
-    text: "나만의 운동 사이트 앱",
-    modalText:
-      "운동을 즐기게 되어 나만의 운동 정보를 담고 출력하는 사이트를 만들게 되었습니다. 제가 즐겨 마시던 프로틴 종류와 구매처 등을 알 수 있으며 인바디 정보를 그래프로 나타내고 있으며 운동 루틴도 알 수 있습니다.",
-    TechnologyStackText: "기술 스택: TypeScript & React & Redux",
-    image: exerciseImg,
-  },
-  {
-    id: 3,
-    title: "Creack Detection",
-    text: "딥러닝 기반 실시간 이동수단 주행 보조 시스템",
-    modalText:
-      "동아리에서 팀원들을 모아 1년동안 진행한 프로젝트 입니다. 휠체어 이용자들이 장애물을 넘어갈때 속도 조절을 못 해 휘청거리는 모습을 보완하고자 자동화 시스템을 구축하였습니다. 딥러닝 모델을 통해 실시간으로 바닥의 균열을 파악 해 속도를 줄이는 알고리즘을 적용하였습니다.",
-    TechnologyStackText: "기술 스택: Pyhton & Tensorflow & Keras",
-    image: deepLearningImg,
-  },
-];
-
 /** Settings for the slider */
 const settings = {
   dots: true,
@@ -85,6 +55,44 @@ const settings = {
 
 const ProjectCaptionCarousel = (props: any) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
+  const { t } = useTranslation("");
+
+  // This list contains all the data for carousels
+  const cards = [
+    {
+      id: 1,
+      title: "Commute App",
+      text: t("homeProjectCarousel1"),
+      modalText:
+        "에이치 나인 회사에서 진행한 프로젝트 입니다. 코로나로 인한 출퇴근 시스템을 클론 코딩 하였으며 구글 스프레드 시트에 출퇴근 데이터를 보관하도록 되어 있으며 하루마다 데이터가 갱신 됩니다.",
+      TechnologyStackText: `${t(
+        "homeProjectCarouselSkillTitle"
+      )}: TypeScript & React & Redux`,
+      image: commuteImg,
+    },
+    {
+      id: 2,
+      title: "Exercise App",
+      text: t("homeProjectCarousel2"),
+      modalText:
+        "운동을 즐기게 되어 나만의 운동 정보를 담고 출력하는 사이트를 만들게 되었습니다. 제가 즐겨 마시던 프로틴 종류와 구매처 등을 알 수 있으며 인바디 정보를 그래프로 나타내고 있으며 운동 루틴도 알 수 있습니다.",
+      TechnologyStackText: `${t(
+        "homeProjectCarouselSkillTitle"
+      )}: TypeScript & React & Redux`,
+      image: exerciseImg,
+    },
+    {
+      id: 3,
+      title: "Creack Detection",
+      text: t("homeProjectCarousel3"),
+      modalText:
+        "동아리에서 팀원들을 모아 1년동안 진행한 프로젝트 입니다. 휠체어 이용자들이 장애물을 넘어갈때 속도 조절을 못 해 휘청거리는 모습을 보완하고자 자동화 시스템을 구축하였습니다. 딥러닝 모델을 통해 실시간으로 바닥의 균열을 파악 해 속도를 줄이는 알고리즘을 적용하였습니다.",
+      TechnologyStackText: `${t(
+        "homeProjectCarouselSkillTitle"
+      )}: Pyhton & Tensorflow & Keras`,
+      image: deepLearningImg,
+    },
+  ];
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
