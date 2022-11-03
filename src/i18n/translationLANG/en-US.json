@@ -15,7 +15,14 @@
   "homeMyProjectTitle": "My Project",
   "homeLinkBtn": "Link",
   "homeMoreBtn": "More",
+  "homeProjectCarousel1": "commuting app for commuting from home",
+  "homeProjectCarousel2": "My own exercise site app",
+  "homeProjectCarousel3": "Deep Learning-Based Real-Time Transportation Assistance System",
+  "homeProjectCarouselSkillTitle": "Technical stack",
   "homeMyCareerTitle": "My Career",
+
+  "homeMoAboutMeName": "Dae Hyeon Han",
+  "homeMoAboutMeJop": "Front Dev",
 
   "projectBreadcrumbItem1": "Home",
   "projectBreadcrumbItem2": "Project",
