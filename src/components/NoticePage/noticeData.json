@@ -132,6 +132,24 @@
         "NOTICE_TITLE": "Blog Version 2.4.1",
         "NOTICE_CONTENT": "Board Page의 Pagination 추가 & Board Page 디자인 수정",
         "NOTICE_DATE": "2022-10-20"
+      },
+      {
+        "NOTICE_ID": 23,
+        "NOTICE_TITLE": "Blog Version 2.5.1",
+        "NOTICE_CONTENT": "Notice Page 추가",
+        "NOTICE_DATE": "2022-10-21"
+      },
+      {
+        "NOTICE_ID": 24,
+        "NOTICE_TITLE": "Blog Version 2.6.2",
+        "NOTICE_CONTENT": "Notice Page 안내창 추가, 디자인 수정, 체크박스 이슈 수정",
+        "NOTICE_DATE": "2022-10-27"
+      },
+      {
+        "NOTICE_ID": 25,
+        "NOTICE_TITLE": "Blog Version 2.7.3",
+        "NOTICE_CONTENT": "각 페이지의 번역 기능 추가, 다크모드 디자인 수정",
+        "NOTICE_DATE": "2022-11-02"
       }
     ]
   }
