@@ -25,6 +25,12 @@ const LineText = styled.p`
   color: red;
 `;
 
+const MoFooter = styled.div`
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
 /** Function that returns the logo component */
 const Logo = (props: any) => {
   return <LogoContain alt="footer logo" src={footerLogo} loading="lazy" />;
@@ -59,44 +65,47 @@ const Footer = () => {
             spacing={5}
             style={{ textAlign: "center" }}
           >
-            <Stack align={"flex-start"}>
-              <ListHeader>{t("footerTitle1")}</ListHeader>
-              <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Home"} color={"#black"}>
-                  Home
-                </Link>
-                <LineText>|</LineText>
-                <Link href={"Project"} color={"#black"}>
-                  Project
-                </Link>
+            <MoFooter>
+              <Stack align={"flex-start"}>
+                <ListHeader>{t("footerTitle1")}</ListHeader>
+                <Stack direction={"row"} align={"center"} spacing={2}>
+                  <Link href={"Home"} color={"#black"}>
+                    Home
+                  </Link>
+                  <LineText>|</LineText>
+                  <Link href={"Project"} color={"#black"}>
+                    Project
+                  </Link>
+                </Stack>
+                <Stack direction={"row"} align={"center"} spacing={2}>
+                  <Link href={"Career"} color={"#black"}>
+                    Career
+                  </Link>
+                  <LineText>|</LineText>
+                  <Link href={"Email"} color={"#black"}>
+                    E-mail
+                  </Link>
+                </Stack>
+                <Stack direction={"row"} align={"center"} spacing={2}>
+                  <Link href={"Bbs"} color={"#black"}>
+                    Board
+                  </Link>
+                  <LineText>|</LineText>
+
+                  <Link href={"Notice"} color={"#black"}>
+                    Notice
+                  </Link>
+                  <Tag
+                    size={"sm"}
+                    bg={useColorModeValue("black", "black")}
+                    ml={2}
+                    color={"white"}
+                  >
+                    New
+                  </Tag>
+                </Stack>
               </Stack>
-              <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Career"} color={"#black"}>
-                  Career
-                </Link>
-                <LineText>|</LineText>
-                <Link href={"Email"} color={"#black"}>
-                  E-mail
-                </Link>
-              </Stack>
-              <Stack direction={"row"} align={"center"} spacing={2}>
-                <Link href={"Bbs"} color={"#black"}>
-                  Board
-                </Link>
-                <LineText>|</LineText>
-                <Link href={"Notice"} color={"#black"}>
-                  Notice
-                </Link>
-                <Tag
-                  size={"sm"}
-                  bg={useColorModeValue("black", "black")}
-                  ml={2}
-                  color={"white"}
-                >
-                  New
-                </Tag>
-              </Stack>
-            </Stack>
+            </MoFooter>
             <Stack align={"flex-start"}>
               <ListHeader>{t("footerTitle2")}</ListHeader>
               <button
