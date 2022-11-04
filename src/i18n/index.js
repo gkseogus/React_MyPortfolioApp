@@ -17,8 +17,8 @@ i18n.use(initReactI18next).init({
 
   // 초기 설정 언어
   lng: "en",
-  fallbackLng: "en",
-  debug: true,
+  fallbackLng: "ko",
+  debug: false,
   defaultNS: "translations",
   ns: "translations",
   keySeparator: false,
