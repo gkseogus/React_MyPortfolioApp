@@ -21,11 +21,9 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
-import { useRecoilState } from "recoil";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import i18n from "../../i18n";
-import dropDownState from "../../Recoil/Atom";
 import mainLogo from "../MainNavBar/IMG/mainLogo.svg";
 import AvatarImg from "../MainNavBar/IMG/AvatarLogo.svg";
 import InstartgramLogo from "../MainNavBar/IMG/InstargramLogo.svg";
@@ -124,7 +122,6 @@ const ColorModeToggle = (props: ButtonProps) => {
 
 const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [dropState, setDropState] = useRecoilState(dropDownState);
   const { t } = useTranslation("");
 
   const Links = [
@@ -158,7 +155,6 @@ const MainNavBar = (_children: any) => {
   /** 다국어 처리 기능 함수 */
   const handleSelect = (e: any) => {
     i18n.changeLanguage(e.target.value);
-    setDropState(e.target.value);
   };
 
   return (
