@@ -42,13 +42,12 @@ const DateText = styled.p`
   color: red;
 `;
 
-const { Panel } = Collapse;
-
 const NoticePage = () => {
-  const pageSize = 10;
-  const [minIndex, setMinIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(10);
-  const [current, setCurrent] = useState(0);
+  const { Panel } = Collapse;
+  const pageSize: number = 10;
+  const [minIndex, setMinIndex] = useState<number>(0);
+  const [maxIndex, setMaxIndex] = useState<number>(10);
+  const [current, setCurrent] = useState<number>(0);
   const noticeList = noticeData[0].notice;
   const { t } = useTranslation<string>("");
 
