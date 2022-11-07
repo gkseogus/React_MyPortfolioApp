@@ -46,7 +46,15 @@ const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 
-interface BoardDataInterface {
+interface bbsDataFace {
+  id: number;
+  title: string;
+  contents: string;
+  register: string;
+  date: string;
+}
+
+interface responseDataFace {
   BOARD_ID: number;
   BOARD_TITLE: string;
   BOARD_CONTENT: string;
@@ -70,26 +78,26 @@ const useDebounce = (value: string, delay: number) => {
   return debouncedValue;
 };
 
-const BbsPage = (props: any) => {
-  const pageSize = 5;
-  const [bbsData, setBbsData] = useState([
+const BbsPage = () => {
+  const pageSize: number = 5;
+  const [bbsData, setBbsData] = useState<bbsDataFace[]>([
     {
-      id: "",
+      id: 0,
       title: "",
       contents: "",
       register: "",
       date: "",
     },
   ]);
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const [contentsId, setContentsId] = useState("");
-  const [contents, setContents] = useState(false);
-  const [checkedList, setCheckedList] = useState([{}]);
-  const [write, setWrite] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState<string>("");
+  const [contentsId, setContentsId] = useState<number>(0);
+  const [contents, setContents] = useState<boolean>(false);
+  const [checkedList, setCheckedList] = useState<any[]>([{}]);
+  const [write, setWrite] = useState<boolean>(false);
   const toast = useToast();
-  const [current, setCurrent] = useState(0);
-  const [minIndex, setMinIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
+  const [current, setCurrent] = useState<number>(0);
+  const [minIndex, setMinIndex] = useState<number>(0);
+  const [maxIndex, setMaxIndex] = useState<number>(0);
   const debounceVal = useDebounce(searchKeyword, 400);
   const { t } = useTranslation<string>("");
 
@@ -110,7 +118,7 @@ const BbsPage = (props: any) => {
       const data = response.data;
       setMaxIndex(pageSize);
       setBbsData(
-        data.map((item: BoardDataInterface, index: string) => ({
+        data.map((item: responseDataFace, index: number) => ({
           id: item.BOARD_ID,
           title: item.BOARD_TITLE,
           contents: item.BOARD_CONTENT,
@@ -132,7 +140,7 @@ const BbsPage = (props: any) => {
   );
 
   /** Function that takes you to the content page of the article when you click on the title */
-  const handleContentsPage = (id: any) => {
+  const handleContentsPage = (id: number) => {
     setContentsId(id);
     window.scrollTo(0, 0);
     setContents(!contents);
@@ -289,7 +297,7 @@ const BbsPage = (props: any) => {
                     .slice(0)
                     .reverse()
                     .map(
-                      (item: any, index: number) =>
+                      (item: bbsDataFace, index: number) =>
                         index >= minIndex &&
                         index < maxIndex && (
                           <Tr key={uuidv4()}>
