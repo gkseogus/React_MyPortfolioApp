@@ -114,7 +114,7 @@ const careerItemsContents = [
 
 const MainCareerCard = () => {
   const { isOpen, onToggle } = useDisclosure();
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
   return (
     <div>
       <CareerBtn onClick={onToggle}>{t("homeMoreBtn")}</CareerBtn>

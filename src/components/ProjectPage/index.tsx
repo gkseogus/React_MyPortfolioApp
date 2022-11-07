@@ -211,7 +211,7 @@ const FirstContentsItem = styled.div`
 `;
 
 const ProjectPage = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   return (
     <ProjectPageContain>

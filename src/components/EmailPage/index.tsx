@@ -349,7 +349,7 @@ const EmailPage = () => {
   const toast = useToast();
   const titleRef = useRef(null);
   const textRef = useRef(null);
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   /** Drop-down Select Event Handler Function */
   const handleSelect = (e: {

@@ -7,7 +7,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 const TimeLine = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
   return (
     <VerticalTimeline lineColor="red">
       <VerticalTimelineElement

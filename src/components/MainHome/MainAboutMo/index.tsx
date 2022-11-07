@@ -23,7 +23,7 @@ const InputText = styled.article`
 
 const MainAboutMo = () => {
   const { isOpen, onToggle } = useDisclosure();
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   return (
     <div>

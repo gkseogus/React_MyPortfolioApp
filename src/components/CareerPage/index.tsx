@@ -38,7 +38,7 @@ const CenterContentsText = styled.article`
 `;
 
 const CareerPage = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   return (
     <div>

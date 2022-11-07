@@ -91,7 +91,7 @@ const BbsPage = (props: any) => {
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
   const debounceVal = useDebounce(searchKeyword, 400);
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   /** Get board data function */
   const getBbsList = async () => {

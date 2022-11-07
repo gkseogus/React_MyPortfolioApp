@@ -45,7 +45,7 @@ const WritePage = () => {
     register: "",
     content: "",
   });
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
   const toast = useToast();
   let writeInterval: string | number | NodeJS.Timeout | null | undefined = null;
 

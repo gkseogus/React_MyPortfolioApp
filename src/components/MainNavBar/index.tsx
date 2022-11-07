@@ -122,7 +122,7 @@ const ColorModeToggle = (props: ButtonProps) => {
 
 const MainNavBar = (_children: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   const Links = [
     {

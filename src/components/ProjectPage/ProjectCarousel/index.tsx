@@ -71,7 +71,7 @@ const ProjectCarousel = () => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   const projectCards = [
     {

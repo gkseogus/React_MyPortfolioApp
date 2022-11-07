@@ -49,7 +49,7 @@ const ModalText = styled.p`
 const CarouselModal = (props: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalId, setModalId] = useState("");
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   /** Function that takes you to the content page of the article when you click on the title */
   const handleContentsPage = (id: any) => {

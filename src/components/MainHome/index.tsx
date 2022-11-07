@@ -247,7 +247,7 @@ const MainCareerCardContain = styled.div`
 `;
 
 const MainHome = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   /** Scroll Reset Function */
   const handleResetScroll = () => {

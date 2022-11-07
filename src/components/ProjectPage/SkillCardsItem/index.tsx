@@ -10,6 +10,8 @@ import backLabelData from "./ProgressData/backLabelData";
 import dbLabelData from "./ProgressData/dbLabelData";
 import deployLabelData from "./ProgressData/deployLabelData";
 import verLabelData from "./ProgressData/verLabelData";
+import { TypeElement } from "typescript";
+import { Image } from "react-bootstrap";
 
 const TextClip = keyframes`
   to {
@@ -118,7 +120,18 @@ const verTooltipLabel = [
   "전문: 75% ~ 100% 프로젝트 리더가 가능하다.",
 ];
 
-const dataArray = [
+interface dataFileFace {
+  title: string;
+  persent: string;
+  logoImg: string;
+}
+interface dataArrayFace {
+  title: string;
+  dataFile: Array<dataFileFace>;
+  tooltip: Array<any>;
+}
+
+const dataArray: Array<dataArrayFace> = [
   {
     title: "Front end",
     dataFile: frontLabelData,
@@ -147,7 +160,7 @@ const dataArray = [
 ];
 
 const SkillCardsItem = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   return (
     <Contain>

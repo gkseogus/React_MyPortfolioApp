@@ -46,7 +46,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 const Footer = () => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   /** Site Load Function */
   const handleGetDomain = (domain: string) => {

@@ -17,7 +17,7 @@ const ScrollToTop = styled.div`
 `;
 
 const ScrollToTopButton = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   /** Condition event function that results in scroll buttons  */
   const handleToggleVisible = () => {

@@ -55,8 +55,7 @@ const settings = {
 
 const ProjectCaptionCarousel = (props: any) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
-  const { t } = useTranslation("");
-
+  const { t } = useTranslation<string>("");
   // This list contains all the data for carousels
   const cards = [
     {

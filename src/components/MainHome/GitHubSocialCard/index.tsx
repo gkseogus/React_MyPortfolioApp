@@ -26,8 +26,7 @@ const GitHubSocialCard = () => {
   });
   const toast = useToast();
   const { name, bio, followers, following } = user;
-  const { t } = useTranslation("");
-
+  const { t } = useTranslation<string>("");
   /** Function that brings up GitHub api */
   const getData = async () => {
     const token = process.env.REACT_APP_TOKEN_VALUE;

@@ -50,7 +50,7 @@ const NoticePage = () => {
   const [maxIndex, setMaxIndex] = useState(10);
   const [current, setCurrent] = useState(0);
   const noticeList = noticeData[0].notice;
-  const { t } = useTranslation("");
+  const { t } = useTranslation<string>("");
 
   /** Function to load announcement data */
   // const getList = async () => {
