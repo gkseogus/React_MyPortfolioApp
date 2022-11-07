@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import styled from "styled-components";
 import { Container, Box, Button, useToast } from "@chakra-ui/react";
@@ -44,9 +45,18 @@ const BtnContain = styled.div`
   float: right;
 `;
 
+interface propsBbsData {
+  id: number;
+  title: string;
+  register: string;
+  date: string;
+  contents: string;
+}
+
 const ContentsPage = (props: any) => {
-  const [bbsPage, setBbsPage] = useState(false);
+  const [bbsPage, setBbsPage] = useState<boolean>(false);
   const toast = useToast();
+
   /** Functions that go to the list of articles page */
   const handleWritePage = () => {
     setBbsPage(!bbsPage);
@@ -85,9 +95,9 @@ const ContentsPage = (props: any) => {
         <Contain>
           <ContentsContain>
             <SubContentsContain>
-              {props.bbsData.map((item: any) =>
+              {props.bbsData.map((item: propsBbsData) =>
                 props.id === item.id ? (
-                  <div>
+                  <div key={uuidv4()}>
                     <TitleText>{item.title}</TitleText>
                     <RegisterText>
                       {item.register} | {item.date}
