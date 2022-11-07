@@ -46,6 +46,14 @@ const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 
+interface BoardDataInterface {
+  BOARD_ID: number;
+  BOARD_TITLE: string;
+  BOARD_CONTENT: string;
+  REGISTER_ID: string;
+  REGISTER_DATE: string;
+}
+
 // Debounce hook
 const useDebounce = (value: string, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -102,7 +110,7 @@ const BbsPage = (props: any) => {
       const data = response.data;
       setMaxIndex(pageSize);
       setBbsData(
-        data.map((item: any, index: string) => ({
+        data.map((item: BoardDataInterface, index: string) => ({
           id: item.BOARD_ID,
           title: item.BOARD_TITLE,
           contents: item.BOARD_CONTENT,
@@ -134,7 +142,7 @@ const BbsPage = (props: any) => {
   const handleAllCheck = (checked: boolean) => {
     if (checked) {
       // 전체 선택 클릭 시 데이터의 모든 아이템(id)를 담은 배열로 checkItems 상태 업데이트
-      const idArray: any[] = [];
+      const idArray: number[] = [];
       searchVal.forEach((el: { id: any }) => idArray.push(el.id));
       setCheckedList(idArray);
     } else {

@@ -56,7 +56,7 @@ const ContentsPage = (props: any) => {
   /** List delete function */
   const handleDelete = async () => {
     if (window.confirm("해당 게시물을 삭제하시겠습니까?") === true) {
-      let boardId = props.id;
+      let boardId: number = props.id;
       try {
         //Successful response
         await axios.post("http://localhost:8000/api/contentsDelete", {
