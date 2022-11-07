@@ -67,6 +67,16 @@ const settings = {
   slidesToScroll: 1,
 };
 
+interface projectCardsFace {
+  title: string;
+  text: string;
+  subText: string;
+  Frontend: string;
+  Backend: string;
+  image: string;
+  resultImage: string;
+}
+
 const ProjectCarousel = () => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const top = useBreakpointValue({ base: "90%", md: "50%" });
@@ -168,7 +178,7 @@ const ProjectCarousel = () => {
         </IconButton>
       </BtnContain>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {projectCards.map((card) => (
+        {projectCards.map((card: projectCardsFace) => (
           <Box
             key={uuidv4()}
             height={"6xl"}
