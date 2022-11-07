@@ -32,7 +32,7 @@ const MoFooter = styled.div`
 `;
 
 /** Function that returns the logo component */
-const Logo = (props: any) => {
+const Logo = () => {
   return <LogoContain alt="footer logo" src={footerLogo} loading="lazy" />;
 };
 
