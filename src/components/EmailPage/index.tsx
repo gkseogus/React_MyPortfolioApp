@@ -340,15 +340,15 @@ const Iframe = styled.iframe`
 `;
 
 const EmailPage = () => {
-  let docUrl =
+  let docUrl: string =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
-  const docsList =
+  const docsList: string =
     "https://script.google.com/macros/s/AKfycbwFfVb-8MSnYz44Ex7OS_rGqvtwNQM_qhy_wdwlB0JpvTkegUwWeZeXSXkwI9-RfEdf5Q/exec";
-  const selectList = "fbznffldj998@naver.com";
-  const [Selected, setSelected] = useState("");
+  const selectList: string = "fbznffldj998@naver.com";
+  const [Selected, setSelected] = useState<string>("");
   const toast = useToast();
-  const titleRef = useRef(null);
-  const textRef = useRef(null);
+  const titleRef = useRef<null>(null);
+  const textRef = useRef<null>(null);
   const { t } = useTranslation<string>("");
 
   /** Drop-down Select Event Handler Function */
