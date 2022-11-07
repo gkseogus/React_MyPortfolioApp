@@ -10,8 +10,6 @@ import backLabelData from "./ProgressData/backLabelData";
 import dbLabelData from "./ProgressData/dbLabelData";
 import deployLabelData from "./ProgressData/deployLabelData";
 import verLabelData from "./ProgressData/verLabelData";
-import { TypeElement } from "typescript";
-import { Image } from "react-bootstrap";
 
 const TextClip = keyframes`
   to {
@@ -167,7 +165,7 @@ const SkillCardsItem = () => {
       <TextAlignContain>
         <AnimateTitleText>{t("projectSkillTitle")}</AnimateTitleText>
       </TextAlignContain>
-      {dataArray.map((data: any) => (
+      {dataArray.map((data: dataArrayFace) => (
         <TextAlignContain key={uuidv4()}>
           <SubAnimatContentsText>{data.title}</SubAnimatContentsText>
           <ProgressContain>
@@ -177,7 +175,7 @@ const SkillCardsItem = () => {
               </Tooltip>
             </ToolTipContain>
             {data.dataFile.map(
-              (item: { title: string; logoImg: any; persent: any }) => (
+              (item: { title: string; logoImg: string; persent: string }) => (
                 <ProgressLine
                   key={uuidv4()}
                   label={item.title}
