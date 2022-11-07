@@ -38,9 +38,15 @@ const BtnContain = styled.div`
   float: right;
 `;
 
+interface writeDataFace {
+  title: string;
+  register: string;
+  content: string;
+}
+
 const WritePage = () => {
-  const [bbsPage, setBbsPage] = useState(false);
-  const [writeData, setWriteData] = useState({
+  const [bbsPage, setBbsPage] = useState<boolean>(false);
+  const [writeData, setWriteData] = useState<writeDataFace>({
     title: "",
     register: "",
     content: "",
@@ -99,7 +105,11 @@ const WritePage = () => {
   };
 
   /** A function that is entered in "input" and causes the state value of writeData to change every 0.1 seconds */
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     if (writeInterval) clearTimeout(writeInterval);
     writeInterval = setTimeout(() => {
       setWriteData({ ...writeData, [e.target.name]: e.target.value.trim() });
