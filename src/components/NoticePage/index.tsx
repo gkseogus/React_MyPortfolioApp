@@ -42,13 +42,20 @@ const DateText = styled.p`
   color: red;
 `;
 
+interface Notice {
+  NOTICE_ID: number;
+  NOTICE_TITLE: string;
+  NOTICE_CONTENT: string;
+  NOTICE_DATE: string;
+}
+
 const NoticePage = () => {
   const { Panel } = Collapse;
   const pageSize: number = 10;
   const [minIndex, setMinIndex] = useState<number>(0);
   const [maxIndex, setMaxIndex] = useState<number>(10);
   const [current, setCurrent] = useState<number>(0);
-  const noticeList = noticeData[0].notice;
+  const noticeList: Array<Notice> = noticeData[0].notice;
   const { t } = useTranslation<string>("");
 
   /** Function to load announcement data */
