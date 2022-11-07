@@ -120,11 +120,16 @@ const ColorModeToggle = (props: ButtonProps) => {
   );
 };
 
-const MainNavBar = (_children: any) => {
+interface LinksFace {
+  key: string;
+  href: string;
+}
+
+const MainNavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { t } = useTranslation<string>("");
 
-  const Links = [
+  const Links: Array<LinksFace> = [
     {
       key: t("homeMenu"),
       href: "/home",
@@ -153,7 +158,7 @@ const MainNavBar = (_children: any) => {
   };
 
   /** 다국어 처리 기능 함수 */
-  const handleSelect = (e: any) => {
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     i18n.changeLanguage(e.target.value);
   };
 
@@ -333,7 +338,7 @@ const MainNavBar = (_children: any) => {
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }} color="white">
             <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
+              {Links.map((link: LinksFace) => (
                 <MoLink
                   key={uuidv4()}
                   to={link.href}
