@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -36,7 +36,7 @@ const GitHubSocialCard = () => {
   const { t } = useTranslation<string>("");
 
   /** Function that brings up GitHub api */
-  const getData = async () => {
+  const getData = useCallback(async () => {
     const token = process.env.REACT_APP_TOKEN_VALUE;
     const config = {
       headers: {
@@ -63,7 +63,7 @@ const GitHubSocialCard = () => {
         isClosable: true,
       });
     }
-  };
+  }, [toast, user]);
 
   /** Function that brings up GitHub site address */
   const handleGithubAddress = () => {
@@ -72,7 +72,7 @@ const GitHubSocialCard = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   return (
     <Center py={6}>
