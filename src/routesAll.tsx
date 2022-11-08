@@ -9,7 +9,7 @@ import MainNavBar from "./components/MainNavBar";
 import NoticePage from "./components/NoticePage";
 import ProjectPage from "./components/ProjectPage";
 
-const AllRoutesApp = () => (
+const routesAll = () => (
   <Router>
     <Routes>
       {["/Home", "/"].map((path: string) => {
@@ -81,4 +81,4 @@ const AllRoutesApp = () => (
   </Router>
 );
 
-export default React.memo(AllRoutesApp);
+export default React.memo(routesAll);
