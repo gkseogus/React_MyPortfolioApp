@@ -46,7 +46,7 @@ const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
 `;
 
-interface bbsDataFace {
+interface BbsDataFace {
   id: number;
   title: string;
   contents: string;
@@ -54,7 +54,7 @@ interface bbsDataFace {
   date: string;
 }
 
-interface responseDataFace {
+interface ResponseDataFace {
   BOARD_ID: number;
   BOARD_TITLE: string;
   BOARD_CONTENT: string;
@@ -64,7 +64,7 @@ interface responseDataFace {
 
 // Debounce hook
 const useDebounce = (value: string, delay: number) => {
-  const [debouncedValue, setDebouncedValue] = useState<string>(value);
+  const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -80,7 +80,7 @@ const useDebounce = (value: string, delay: number) => {
 
 const BbsPage = () => {
   const pageSize: number = 5;
-  const [bbsData, setBbsData] = useState<bbsDataFace[]>([
+  const [bbsData, setBbsData] = useState<BbsDataFace[]>([
     {
       id: 0,
       title: "",
@@ -118,7 +118,7 @@ const BbsPage = () => {
       const data = response.data;
       setMaxIndex(pageSize);
       setBbsData(
-        data.map((item: responseDataFace, index: number) => ({
+        data.map((item: ResponseDataFace, index: number) => ({
           id: item.BOARD_ID,
           title: item.BOARD_TITLE,
           contents: item.BOARD_CONTENT,
@@ -151,7 +151,7 @@ const BbsPage = () => {
     if (checked) {
       // 전체 선택 클릭 시 데이터의 모든 아이템(id)를 담은 배열로 checkItems 상태 업데이트
       const idArray: number[] = [];
-      searchVal.forEach((el: { id: number }) => idArray.push(el.id));
+      searchVal.forEach((el: { id: any }) => idArray.push(el.id));
       setCheckedList(idArray);
     } else {
       setCheckedList([]);
@@ -190,7 +190,7 @@ const BbsPage = () => {
 
     if (window.confirm(t("boardDeleteConfirm")) === true) {
       let boardIdList = "";
-      checkedList.forEach((v: string) => {
+      checkedList.forEach((v: any) => {
         boardIdList += `'${v}',`;
       });
       try {
@@ -297,7 +297,7 @@ const BbsPage = () => {
                     .slice(0)
                     .reverse()
                     .map(
-                      (item: bbsDataFace, index: number) =>
+                      (item: BbsDataFace, index: number) =>
                         index >= minIndex &&
                         index < maxIndex && (
                           <Tr key={uuidv4()}>

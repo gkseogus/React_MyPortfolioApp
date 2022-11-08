@@ -45,7 +45,7 @@ const BtnContain = styled.div`
   float: right;
 `;
 
-interface propsBbsData {
+interface PropsBbsData {
   id: number;
   title: string;
   register: string;
@@ -95,7 +95,7 @@ const ContentsPage = (props: any) => {
         <Contain>
           <ContentsContain>
             <SubContentsContain>
-              {props.bbsData.map((item: propsBbsData) =>
+              {props.bbsData.map((item: PropsBbsData) =>
                 props.id === item.id ? (
                   <div key={uuidv4()}>
                     <TitleText>{item.title}</TitleText>

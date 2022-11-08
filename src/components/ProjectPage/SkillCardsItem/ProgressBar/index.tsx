@@ -48,7 +48,7 @@ const ProgressPercent = styled.p`
   }
 `;
 
-interface visualParts {
+interface VisualParts {
   percentage: string;
   color: string;
 }
@@ -67,7 +67,7 @@ const ProgressLine = ({
   label: string;
   logoImg: string;
   backgroundColor: string;
-  visualParts: Array<visualParts>;
+  visualParts: Array<VisualParts>;
 }) => {
   const [widths, setWidths] = useState(
     visualParts.map(() => {
@@ -96,7 +96,7 @@ const ProgressLine = ({
           backgroundColor,
         }}
       >
-        {visualParts.map((item: visualParts, index: number) => {
+        {visualParts.map((item: VisualParts, index: number) => {
           return (
             <ProgressVisulaPart
               key={uuidv4()}

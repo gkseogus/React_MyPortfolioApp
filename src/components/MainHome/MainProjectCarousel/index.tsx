@@ -40,7 +40,7 @@ const ModalContain = styled.div`
   }
 `;
 
-interface cardsFace {
+interface CardsFace {
   id: number;
   title: string;
   text: string;
@@ -66,7 +66,7 @@ const ProjectCaptionCarousel = (props: any) => {
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const { t } = useTranslation<string>("");
   // This list contains all the data for carousels
-  const cards: Array<cardsFace> = [
+  const cards: Array<CardsFace> = [
     {
       id: 1,
       title: "Commute App",
@@ -158,7 +158,7 @@ const ProjectCaptionCarousel = (props: any) => {
       </BtnContain>
       {/* Slider */}
       <Slider {...settings} ref={(slider: any) => setSlider(slider)}>
-        {cards.map((item: cardsFace) => (
+        {cards.map((item: CardsFace) => (
           <Box
             key={uuidv4()}
             height={"6xl"}

@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import githubCardbackGround from "../GitHubSocialCard/IMG/githubCardbackGround.svg";
 
-interface userFace {
+interface UserFace {
   name: string;
   bio: string;
   followers: string;
@@ -25,7 +25,7 @@ interface userFace {
 }
 
 const GitHubSocialCard = () => {
-  const [user, setUser] = useState<userFace>({
+  const [user, setUser] = useState<UserFace>({
     name: "",
     bio: "",
     followers: "",

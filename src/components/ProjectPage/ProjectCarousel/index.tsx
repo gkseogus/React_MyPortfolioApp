@@ -67,7 +67,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-interface projectCardsFace {
+interface ProjectCardsFace {
   title: string;
   text: string;
   subText: string;
@@ -178,7 +178,7 @@ const ProjectCarousel = () => {
         </IconButton>
       </BtnContain>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {projectCards.map((card: projectCardsFace) => (
+        {projectCards.map((card: ProjectCardsFace) => (
           <Box
             key={uuidv4()}
             height={"6xl"}

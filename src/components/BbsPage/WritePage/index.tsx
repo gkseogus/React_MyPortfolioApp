@@ -38,7 +38,7 @@ const BtnContain = styled.div`
   float: right;
 `;
 
-interface writeDataFace {
+interface WriteDataFace {
   title: string;
   register: string;
   content: string;
@@ -46,7 +46,7 @@ interface writeDataFace {
 
 const WritePage = () => {
   const [bbsPage, setBbsPage] = useState<boolean>(false);
-  const [writeData, setWriteData] = useState<writeDataFace>({
+  const [writeData, setWriteData] = useState<WriteDataFace>({
     title: "",
     register: "",
     content: "",

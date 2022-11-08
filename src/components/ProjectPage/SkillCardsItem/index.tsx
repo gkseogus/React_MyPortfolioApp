@@ -118,18 +118,18 @@ const verTooltipLabel = [
   "전문: 75% ~ 100% 프로젝트 리더가 가능하다.",
 ];
 
-interface dataFileFace {
+interface DataFileFace {
   title: string;
   persent: string;
   logoImg: string;
 }
-interface dataArrayFace {
+interface DataArrayFace {
   title: string;
-  dataFile: Array<dataFileFace>;
+  dataFile: Array<DataFileFace>;
   tooltip: Array<any>;
 }
 
-const dataArray: Array<dataArrayFace> = [
+const dataArray: Array<DataArrayFace> = [
   {
     title: "Front end",
     dataFile: frontLabelData,
@@ -165,7 +165,7 @@ const SkillCardsItem = () => {
       <TextAlignContain>
         <AnimateTitleText>{t("projectSkillTitle")}</AnimateTitleText>
       </TextAlignContain>
-      {dataArray.map((data: dataArrayFace) => (
+      {dataArray.map((data: DataArrayFace) => (
         <TextAlignContain key={uuidv4()}>
           <SubAnimatContentsText>{data.title}</SubAnimatContentsText>
           <ProgressContain>

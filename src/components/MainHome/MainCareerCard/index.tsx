@@ -78,14 +78,14 @@ const CareerItemsText = styled.h3`
   }
 `;
 
-interface careerItemsContentsFace {
+interface CareerItemsFace {
   title: string;
   data: string;
   text: string;
 }
 
 const MainCareerCard = () => {
-  const careerItemsContents: Array<careerItemsContentsFace> = [
+  const careerItems: Array<CareerItemsFace> = [
     {
       title: "Hallym AI+X R&D Challenge(상반기) \n - Track03 1st 대상 -",
       data: "2021.05.31 ~ 2021.06.21",
@@ -128,7 +128,7 @@ const MainCareerCard = () => {
         <Box p="10px" color="black" mt="1" rounded="md">
           <Contain>
             <Grid templateColumns="repeat(3, 1fr)" gap="100px">
-              {careerItemsContents.map((item: careerItemsContentsFace) => (
+              {careerItems.map((item: CareerItemsFace) => (
                 <GridItem
                   w="100%"
                   h="100%"
