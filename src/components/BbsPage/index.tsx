@@ -64,7 +64,7 @@ interface responseDataFace {
 
 // Debounce hook
 const useDebounce = (value: string, delay: number) => {
-  const [debouncedValue, setDebouncedValue] = useState(value);
+  const [debouncedValue, setDebouncedValue] = useState<string>(value);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -151,7 +151,7 @@ const BbsPage = () => {
     if (checked) {
       // 전체 선택 클릭 시 데이터의 모든 아이템(id)를 담은 배열로 checkItems 상태 업데이트
       const idArray: number[] = [];
-      searchVal.forEach((el: { id: any }) => idArray.push(el.id));
+      searchVal.forEach((el: { id: number }) => idArray.push(el.id));
       setCheckedList(idArray);
     } else {
       setCheckedList([]);
@@ -190,7 +190,7 @@ const BbsPage = () => {
 
     if (window.confirm(t("boardDeleteConfirm")) === true) {
       let boardIdList = "";
-      checkedList.forEach((v: any) => {
+      checkedList.forEach((v: string) => {
         boardIdList += `'${v}',`;
       });
       try {
