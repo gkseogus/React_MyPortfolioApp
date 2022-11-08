@@ -12,7 +12,7 @@ import ProjectPage from "./components/ProjectPage";
 const AllRoutesApp = () => (
   <Router>
     <Routes>
-      {["/Home", "/"].map((path) => {
+      {["/Home", "/"].map((path: string) => {
         return (
           <Route
             key={uuidv4()}
@@ -45,7 +45,7 @@ const AllRoutesApp = () => (
           </div>
         }
       />
-      {["/Email", "/E-mail"].map((path) => {
+      {["/Email", "/E-mail"].map((path: string) => {
         return (
           <Route
             key={uuidv4()}
