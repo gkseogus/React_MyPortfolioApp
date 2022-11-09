@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Tooltip } from "@chakra-ui/react";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
-import { v4 as uuidv4 } from "uuid";
 import styled, { keyframes } from "styled-components";
 import ProgressLine from "./ProgressBar";
 import frontLabelData from "./ProgressData/frontLabelData";
@@ -165,8 +164,8 @@ const SkillCardsItem = () => {
       <TextAlignContain>
         <AnimateTitleText>{t("projectSkillTitle")}</AnimateTitleText>
       </TextAlignContain>
-      {dataArray.map((data: DataArrayFace) => (
-        <TextAlignContain key={uuidv4()}>
+      {dataArray.map((data: DataArrayFace, index: number) => (
+        <TextAlignContain key={index.toString()}>
           <SubAnimatContentsText>{data.title}</SubAnimatContentsText>
           <ProgressContain>
             <ToolTipContain>
@@ -175,9 +174,12 @@ const SkillCardsItem = () => {
               </Tooltip>
             </ToolTipContain>
             {data.dataFile.map(
-              (item: { title: string; logoImg: string; persent: string }) => (
+              (
+                item: { title: string; logoImg: string; persent: string },
+                index: number
+              ) => (
                 <ProgressLine
-                  key={uuidv4()}
+                  key={index.toString()}
                   label={item.title}
                   logoImg={item.logoImg}
                   backgroundColor="lightblue"
