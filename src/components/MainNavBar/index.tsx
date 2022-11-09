@@ -41,15 +41,24 @@ const LeftNavBarLink = styled(Link)`
   }
 `;
 
-const RightNavBarLink = styled(Link)`
-  color: white;
+const MenuContain = styled.div`
+  margin: 0;
+  font-weight: 600px;
+  font-family: "Kanit", sans-serif;
   :hover {
     background-color: black;
     text-decoration: none;
     color: red;
   }
-  @media screen and (max-width: 500px) {
-    display: none;
+`;
+
+const MenuItemsLink = styled(Link)`
+  font-weight: 600px;
+  font-family: "Kanit", sans-serif;
+  color: black;
+  :hover {
+    background-color: none;
+    color: red;
   }
 `;
 
@@ -202,24 +211,30 @@ const MainNavBar = () => {
               <LeftNavBarLink to="/Career" onClick={handleResetScroll}>
                 {t("careerMenu")}
               </LeftNavBarLink>
-              <LeftNavBarLink to="/Email" onClick={handleResetScroll}>
-                {t("emailMenu")}
-              </LeftNavBarLink>
+              <p> ||</p>
+              <MenuContain>
+                <Menu isLazy>
+                  <MenuButton marginTop={"1"}> {t("subMenu")}</MenuButton>
+                  <MenuList>
+                    <MenuItem>
+                      <MenuItemsLink to="/Notice" onClick={handleResetScroll}>
+                        {t("noticeMenu")}
+                      </MenuItemsLink>
+                    </MenuItem>
+                    <MenuItem>
+                      <MenuItemsLink to="/Email" onClick={handleResetScroll}>
+                        {t("emailMenu")}
+                      </MenuItemsLink>
+                    </MenuItem>
+                    <MenuItem>
+                      <MenuItemsLink to="/Bbs" onClick={handleResetScroll}>
+                        {t("boardMenu")}
+                      </MenuItemsLink>
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
+              </MenuContain>
             </HStack>
-          </HStack>
-          <HStack
-            as={"nav"}
-            spacing={3}
-            display={{ base: "none", md: "flex" }}
-            color="white"
-            paddingLeft={"47%"}
-          >
-            <RightNavBarLink to="/Bbs" onClick={handleResetScroll}>
-              {t("boardMenu")}
-            </RightNavBarLink>
-            <RightNavBarLink to="/Notice" onClick={handleResetScroll}>
-              {t("noticeMenu")}
-            </RightNavBarLink>
           </HStack>
           <Flex alignItems={"center"}>
             <Select
