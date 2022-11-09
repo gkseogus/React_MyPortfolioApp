@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import moment from "moment";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -118,7 +117,7 @@ const BbsPage = () => {
       const data = response.data;
       setMaxIndex(pageSize);
       setBbsData(
-        data.map((item: ResponseDataFace, index: number) => ({
+        data.map((item: ResponseDataFace) => ({
           id: item.BOARD_ID,
           title: item.BOARD_TITLE,
           contents: item.BOARD_CONTENT,
@@ -300,7 +299,7 @@ const BbsPage = () => {
                       (item: BbsDataFace, index: number) =>
                         index >= minIndex &&
                         index < maxIndex && (
-                          <Tr key={uuidv4()}>
+                          <Tr key={item.id}>
                             <Td textAlign={"center"}>
                               <input
                                 type="checkbox"

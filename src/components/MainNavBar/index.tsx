@@ -21,7 +21,6 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
-import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import i18n from "../../i18n";
 import mainLogo from "../MainNavBar/IMG/mainLogo.svg";
@@ -355,7 +354,7 @@ const MainNavBar = () => {
             <Stack as={"nav"} spacing={4}>
               {Links.map((link: LinksFace) => (
                 <MoLink
-                  key={uuidv4()}
+                  key={link.key}
                   to={link.href}
                   onClick={handleResetScroll}
                 >

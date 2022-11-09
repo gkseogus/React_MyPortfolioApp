@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import BbsPage from "./components/BbsPage";
 import CareerPage from "./components/CareerPage";
 import EmailPage from "./components/EmailPage";
@@ -12,10 +11,10 @@ import ProjectPage from "./components/ProjectPage";
 const routesAll = () => (
   <Router>
     <Routes>
-      {["/Home", "/"].map((path: string) => {
+      {["/Home", "/"].map((path: string, index: number) => {
         return (
           <Route
-            key={uuidv4()}
+            key={index}
             path={path}
             element={
               <div>
@@ -45,10 +44,10 @@ const routesAll = () => (
           </div>
         }
       />
-      {["/Email", "/E-mail"].map((path: string) => {
+      {["/Email", "/E-mail"].map((path: string, index: number) => {
         return (
           <Route
-            key={uuidv4()}
+            key={index}
             path={path}
             element={
               <div>

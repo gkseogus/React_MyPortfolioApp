@@ -9,7 +9,6 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
-import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import Slider from "react-slick";
 import commuteImg from "../ProjectCarousel/IMG/commuteImg.svg";
@@ -68,6 +67,7 @@ const settings = {
 };
 
 interface ProjectCardsFace {
+  id: number;
   title: string;
   text: string;
   subText: string;
@@ -85,6 +85,7 @@ const ProjectCarousel = () => {
 
   const projectCards = [
     {
+      id: 0,
       title: "Commute App",
       text: t("projectCarouseltext1"),
       subText: t("projectCarouselsubtext1"),
@@ -94,6 +95,7 @@ const ProjectCarousel = () => {
       resultImage: commuteResultImg,
     },
     {
+      id: 1,
       title: "Exercise App",
       text: t("projectCarouseltext2"),
       subText: t("projectCarouselsubtext2"),
@@ -103,6 +105,7 @@ const ProjectCarousel = () => {
       resultImage: exerciseBlogImg,
     },
     {
+      id: 2,
       title: "Creack Detection",
       text: t("projectCarouseltext3"),
       subText: t("projectCarouselsubtext3"),
@@ -112,6 +115,7 @@ const ProjectCarousel = () => {
       resultImage: crackResultImg,
     },
     {
+      id: 3,
       title: "GasLeak Detector",
       text: t("projectCarouseltext4"),
       subText: t("projectCarouselsubtext4"),
@@ -121,6 +125,7 @@ const ProjectCarousel = () => {
       resultImage: casLeakResultImg,
     },
     {
+      id: 4,
       title: "Shop app",
       text: t("projectCarouseltext5"),
       subText: t("projectCarouselsubtext5"),
@@ -180,7 +185,7 @@ const ProjectCarousel = () => {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {projectCards.map((card: ProjectCardsFace) => (
           <Box
-            key={uuidv4()}
+            key={card.id}
             height={"6xl"}
             position="relative"
             backgroundPosition="center"

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import styled from "styled-components";
 import { Container, Box, Button, useToast } from "@chakra-ui/react";
@@ -97,7 +96,7 @@ const ContentsPage = (props: any) => {
             <SubContentsContain>
               {props.bbsData.map((item: PropsBbsData) =>
                 props.id === item.id ? (
-                  <div key={uuidv4()}>
+                  <div key={item.id}>
                     <TitleText>{item.title}</TitleText>
                     <RegisterText>
                       {item.register} | {item.date}

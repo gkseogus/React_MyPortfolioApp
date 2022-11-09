@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 
 const Contain = styled.div`
@@ -99,7 +98,7 @@ const ProgressLine = ({
         {visualParts.map((item: VisualParts, index: number) => {
           return (
             <ProgressVisulaPart
-              key={uuidv4()}
+              key={index}
               style={{
                 width: widths[index],
                 backgroundColor: item.color,
