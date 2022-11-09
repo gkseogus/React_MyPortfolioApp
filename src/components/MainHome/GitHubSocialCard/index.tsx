@@ -72,7 +72,8 @@ const GitHubSocialCard = () => {
 
   useEffect(() => {
     getData();
-  }, [getData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Center py={6}>
