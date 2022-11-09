@@ -96,7 +96,7 @@ const ContentsPage = (props: any) => {
             <SubContentsContain>
               {props.bbsData.map((item: PropsBbsData) =>
                 props.id === item.id ? (
-                  <div key={item.id.toString()}>
+                  <div key={item.id}>
                     <TitleText>{item.title}</TitleText>
                     <RegisterText>
                       {item.register} | {item.date}

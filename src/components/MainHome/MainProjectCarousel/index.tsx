@@ -40,7 +40,7 @@ const ModalContain = styled.div`
 `;
 
 interface CardsFace {
-  id: number;
+  id: string;
   title: string;
   text: string;
   modalText: string;
@@ -67,7 +67,7 @@ const ProjectCaptionCarousel = (props: any) => {
   // This list contains all the data for carousels
   const cards: Array<CardsFace> = [
     {
-      id: 1,
+      id: "1",
       title: "Commute App",
       text: t("homeProjectCarousel1"),
       modalText:
@@ -78,7 +78,7 @@ const ProjectCaptionCarousel = (props: any) => {
       image: commuteImg,
     },
     {
-      id: 2,
+      id: "2",
       title: "Exercise App",
       text: t("homeProjectCarousel2"),
       modalText:
@@ -89,7 +89,7 @@ const ProjectCaptionCarousel = (props: any) => {
       image: exerciseImg,
     },
     {
-      id: 3,
+      id: "3",
       title: "Creack Detection",
       text: t("homeProjectCarousel3"),
       modalText:
@@ -159,7 +159,7 @@ const ProjectCaptionCarousel = (props: any) => {
       <Slider {...settings} ref={(slider: any) => setSlider(slider)}>
         {cards.map((item: CardsFace) => (
           <Box
-            key={item.id.toString()}
+            key={item.id}
             height={"6xl"}
             position="relative"
             backgroundPosition="center"

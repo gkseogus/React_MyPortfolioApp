@@ -299,7 +299,7 @@ const BbsPage = () => {
                       (item: BbsDataFace, index: number) =>
                         index >= minIndex &&
                         index < maxIndex && (
-                          <Tr key={item.id.toString()}>
+                          <Tr key={item.id}>
                             <Td textAlign={"center"}>
                               <input
                                 type="checkbox"

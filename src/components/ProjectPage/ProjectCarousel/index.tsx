@@ -68,6 +68,7 @@ const settings = {
 
 interface ProjectCardsFace {
   id: string;
+
   title: string;
   text: string;
   subText: string;
@@ -86,6 +87,7 @@ const ProjectCarousel = () => {
   const projectCards = [
     {
       id: " 0",
+
       title: "Commute App",
       text: t("projectCarouseltext1"),
       subText: t("projectCarouselsubtext1"),
@@ -96,6 +98,7 @@ const ProjectCarousel = () => {
     },
     {
       id: " 1",
+
       title: "Exercise App",
       text: t("projectCarouseltext2"),
       subText: t("projectCarouselsubtext2"),
@@ -106,6 +109,7 @@ const ProjectCarousel = () => {
     },
     {
       id: " 2",
+
       title: "Creack Detection",
       text: t("projectCarouseltext3"),
       subText: t("projectCarouselsubtext3"),
@@ -116,6 +120,7 @@ const ProjectCarousel = () => {
     },
     {
       id: " 3",
+
       title: "GasLeak Detector",
       text: t("projectCarouseltext4"),
       subText: t("projectCarouselsubtext4"),
@@ -126,6 +131,7 @@ const ProjectCarousel = () => {
     },
     {
       id: " 4",
+
       title: "Shop app",
       text: t("projectCarouseltext5"),
       subText: t("projectCarouselsubtext5"),

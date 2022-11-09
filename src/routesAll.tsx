@@ -14,7 +14,7 @@ const routesAll = () => (
       {["/Home", "/"].map((path: string, index: number) => {
         return (
           <Route
-            key={index.toString()}
+            key={index}
             path={path}
             element={
               <div>
@@ -47,7 +47,7 @@ const routesAll = () => (
       {["/Email", "/E-mail"].map((path: string, index: number) => {
         return (
           <Route
-            key={index.toString()}
+            key={index}
             path={path}
             element={
               <div>
