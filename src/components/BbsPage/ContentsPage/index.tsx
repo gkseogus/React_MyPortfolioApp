@@ -5,6 +5,7 @@ import { Container, Box, Button, useToast } from "@chakra-ui/react";
 import BbsPage from "..";
 
 const Contain = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 20%;

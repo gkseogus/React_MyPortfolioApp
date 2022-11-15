@@ -7,6 +7,7 @@ import githubLogo from "./IMG/githubLogo.svg";
 import mailLogo from "./IMG/mailLogo.svg";
 
 const BreadcrumbContain = styled.div`
+  position: relative;
   float: right;
   padding-right: 3%;
   padding-top: 10%;

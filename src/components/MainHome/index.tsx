@@ -41,6 +41,7 @@ const animate = keyframes`
 `;
 
 const IntroContain = styled.div`
+  position: relative;
   @media screen and (max-width: 500px) {
     text-align: center;
   }

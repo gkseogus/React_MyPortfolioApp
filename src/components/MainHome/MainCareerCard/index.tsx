@@ -3,6 +3,10 @@ import { useTranslation } from "react-i18next";
 import { Box, Collapse, useDisclosure, Grid, GridItem } from "@chakra-ui/react";
 import styled from "styled-components";
 
+const MainCareerContain = styled.div`
+  position: relative;
+`;
+
 const Contain = styled.div`
   @media screen and (max-width: 500px) {
     font-size: 20px;
@@ -133,7 +137,7 @@ const MainCareerCard = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { t } = useTranslation<string>("");
   return (
-    <div>
+    <MainCareerContain>
       <CareerBtn onClick={onToggle}>{t("homeMoreBtn")}</CareerBtn>
       <Collapse in={isOpen} animateOpacity>
         <Box p="10px" color="black" mt="1" rounded="md">
@@ -163,7 +167,7 @@ const MainCareerCard = () => {
           </Contain>
         </Box>
       </Collapse>
-    </div>
+    </MainCareerContain>
   );
 };
 

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import noticeData from "./noticeData.json";
 
 const BreadcrumbContain = styled.div`
+  position: relative;
   float: right;
   padding-right: 3.1%;
   padding-top: 10%;
@@ -36,6 +37,7 @@ const CenterContentsText = styled.article`
 
 const Contain = styled.div`
   padding: 15%;
+  position: relative;
 `;
 
 const DateText = styled.p`

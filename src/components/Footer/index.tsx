@@ -15,6 +15,10 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import footerLogo from "../Footer/IMG/footerLogo.svg";
 
+const FooterContain = styled.footer`
+  position: relative;
+`;
+
 const LogoContain = styled.img`
   width: 130px;
   height: 130px;
@@ -26,6 +30,7 @@ const LineText = styled.p`
 `;
 
 const MoFooter = styled.div`
+  position: relative;
   @media screen and (max-width: 500px) {
     display: none;
   }
@@ -54,7 +59,7 @@ const Footer = () => {
   };
 
   return (
-    <footer>
+    <FooterContain>
       <Box
         bg={useColorModeValue("gray.50", "gray.900")}
         color={useColorModeValue("gray.700", "gray.200")}
@@ -213,7 +218,7 @@ const Footer = () => {
           </Text>
         </Box>
       </Box>
-    </footer>
+    </FooterContain>
   );
 };
 export default React.memo(Footer);

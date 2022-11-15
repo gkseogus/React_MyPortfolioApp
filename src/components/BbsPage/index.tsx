@@ -23,6 +23,7 @@ import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
 
 const Contain = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   position: relative;

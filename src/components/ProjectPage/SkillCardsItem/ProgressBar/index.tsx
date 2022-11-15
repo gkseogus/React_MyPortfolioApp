@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Contain = styled.div`
+  position: relative;
   margin: 20px;
   padding: 20px;
   @media screen and (max-width: 500px) {

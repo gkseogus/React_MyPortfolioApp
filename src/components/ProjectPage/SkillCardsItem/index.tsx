@@ -17,6 +17,7 @@ const TextClip = keyframes`
 `;
 
 const Contain = styled.div`
+  position: relative;
   margin-bottom: 200px;
   @media screen and (max-width: 500px) {
     margin-bottom: 50px;

@@ -5,6 +5,7 @@ import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 import TimeLine from "./TimeLine";
 
 const BreadcrumbContain = styled.div`
+  position: relative;
   float: right;
   padding-right: 3%;
   padding-top: 10%;
@@ -19,6 +20,7 @@ const BreadcrumbItemText = styled.article`
 
 const Contain = styled.section`
   padding: 15%;
+  position: relative;
 `;
 
 const CenterContentsText = styled.article`

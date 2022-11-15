@@ -4,6 +4,10 @@ import { Box, Collapse, useDisclosure } from "@chakra-ui/react";
 import { BsFillPersonFill } from "react-icons/bs";
 import styled from "styled-components";
 
+const MoAboutContain = styled.div`
+  position: relative;
+`;
+
 const TransitionsButton = styled.button`
   background-color: none;
 `;
@@ -26,7 +30,7 @@ const MainAboutMo = () => {
   const { t } = useTranslation<string>("");
 
   return (
-    <div>
+    <MoAboutContain>
       <TransitionsButton onClick={onToggle}>
         <BsFillPersonFill />
       </TransitionsButton>
@@ -42,7 +46,7 @@ const MainAboutMo = () => {
           </InputText>
         </Box>
       </Collapse>
-    </div>
+    </MoAboutContain>
   );
 };
 

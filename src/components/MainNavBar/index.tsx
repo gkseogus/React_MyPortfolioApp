@@ -32,6 +32,10 @@ import moCareerlyLogo from "../MainNavBar/IMG/moCareerlyLogo.svg";
 import moGithubLogo from "../MainNavBar/IMG/moGithubLogo.svg";
 import { Link } from "react-router-dom";
 
+const NavBarContain = styled.header`
+  position: relative;
+`;
+
 const LeftNavBarLink = styled(Link)`
   :hover {
     background-color: black;
@@ -171,7 +175,7 @@ const MainNavBar = () => {
   };
 
   return (
-    <header>
+    <NavBarContain>
       <Box
         bg={useColorModeValue("black", "black")}
         px={4}
@@ -365,7 +369,7 @@ const MainNavBar = () => {
           </Box>
         ) : null}
       </Box>
-    </header>
+    </NavBarContain>
   );
 };
 

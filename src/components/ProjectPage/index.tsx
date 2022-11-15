@@ -5,7 +5,9 @@ import SkillCardsItem from "./SkillCardsItem";
 import ProjectCarousel from "./ProjectCarousel";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 
-const ProjectPageContain = styled.section``;
+const ProjectPageContain = styled.section`
+  position: relative;
+`;
 
 const BreadcrumbContain = styled.div`
   padding-left: 91.73%;

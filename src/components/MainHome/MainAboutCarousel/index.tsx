@@ -16,6 +16,7 @@ const SettingImg = styled.img`
 `;
 
 const Contain = styled.div`
+  position: relative;
   padding-top: auto;
   padding-bottom: 10%;
 `;
