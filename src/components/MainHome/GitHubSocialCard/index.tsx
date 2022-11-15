@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -25,6 +25,7 @@ interface UserFace {
 }
 
 const GitHubSocialCard = () => {
+  const token = process.env.REACT_APP_TOKEN_VALUE;
   const [user, setUser] = useState<UserFace>({
     name: "",
     bio: "",
@@ -36,13 +37,13 @@ const GitHubSocialCard = () => {
   const { t } = useTranslation<string>("");
 
   /** Function that brings up GitHub api */
-  const getData = useCallback(async () => {
-    const token = process.env.REACT_APP_TOKEN_VALUE;
+  const getData = async () => {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     };
+    console.log(token);
     try {
       //Successful response
       const response = await axios.get("https://api.github.com/user", config);
@@ -63,7 +64,7 @@ const GitHubSocialCard = () => {
         isClosable: true,
       });
     }
-  }, [toast, user]);
+  };
 
   /** Function that brings up GitHub site address */
   const handleGithubAddress = () => {
