@@ -21,6 +21,7 @@ import "antd/dist/antd.css";
 import { Pagination, Input } from "antd";
 import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
+import GoogleLogin from "../GoogleLogin";
 
 const Contain = styled.div`
   display: flex;
@@ -252,6 +253,7 @@ const BbsPage = () => {
       ) : (
         <div>
           <Contain>
+            <GoogleLogin />
             <TableContainer padding={"20%"}>
               <Table variant="striped" colorScheme="gray" size="lg">
                 <TableCaption
