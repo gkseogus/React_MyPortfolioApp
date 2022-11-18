@@ -100,6 +100,20 @@
   "boardWritePageErrorToast4": "is not find",
   "boardWritePageSuccessToast": "You have successfully completed your creation.",
 
+  "boardLoginModalButton": "Login",
+  "boardLoginModalHeader": "Login",
+  "boardLoginModalLabel1": "E-mail",
+  "boardLoginModalLabel2": "PW",
+  "boardLoginModalLoginBtn": "Login",
+  "boardLoginModalCloseBtn": "Close",
+
+  "boardJoinModalButton": "Join",
+  "boardJoinModalHeader": "Join",
+  "boardJoinModalLabel1": "E-mail",
+  "boardJoinModalLabel2": "PW",
+  "boardJoinModalBtn": "Join",
+  "boardJoinModalCloseBtn": "Close",
+
   "noticeTitle": "Release Notice",
   "noticeBreadcrumbItem1": "Home",
   "noticeBreadcrumbItem2": "Notice",

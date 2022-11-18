@@ -99,6 +99,20 @@
   "boardWritePageErrorToast4": "입력해주세요.",
   "boardWritePageSuccessToast": "성공적으로 작성 완료했습니다.",
 
+  "boardLoginModalButton": "로그인",
+  "boardLoginModalHeader": "로그인 창",
+  "boardLoginModalLabel1": "이메일",
+  "boardLoginModalLabel2": "비밀번호",
+  "boardLoginModalLoginBtn": "로그인",
+  "boardLoginModalCloseBtn": "닫기",
+
+  "boardJoinModalButton": "회원가입",
+  "boardJoinModalHeader": "회원가입 창",
+  "boardJoinModalLabel1": "E-mail",
+  "boardJoinModalLabel2": "PW",
+  "boardJoinModalBtn": "회원가입",
+  "boardJoinModalCloseBtn": "닫기",
+
   "noticeTitle": "버전 공지사항",
   "noticeBreadcrumbItem1": "홈페이지",
   "noticeBreadcrumbItem2": "공지사항",
