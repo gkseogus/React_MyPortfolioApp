@@ -21,7 +21,8 @@ import "antd/dist/antd.css";
 import { Pagination, Input } from "antd";
 import WritePage from "./WritePage";
 import ContentsPage from "./ContentsPage";
-import GoogleLogin from "../GoogleLogin";
+import LoginComponent from "./Login";
+import JoinComponent from "./Join";
 
 const Contain = styled.div`
   position: relative;
@@ -254,15 +255,17 @@ const BbsPage = () => {
       ) : (
         <div>
           <Contain>
-            <GoogleLogin />
             <TableContainer padding={"20%"}>
               <Table variant="striped" colorScheme="gray" size="lg">
                 <TableCaption
                   placement="top"
                   fontSize={30}
                   paddingBottom={"5%"}
+                  zIndex="1"
                 >
                   {t("boardTitle")}
+                  <LoginComponent />
+                  <JoinComponent />
                   <Input.Group compact>
                     <Input.Search
                       allowClear
