@@ -184,7 +184,6 @@ const Github = styled.button`
 `;
 
 const Form = styled.form`
-  position: relatvie;
   bottom: 0;
   margin-top: 600px;
 `;
