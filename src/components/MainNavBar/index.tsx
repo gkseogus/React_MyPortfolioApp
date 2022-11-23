@@ -229,11 +229,11 @@ const MainNavBar = () => {
                         {t("emailMenu")}
                       </MenuItemsLink>
                     </MenuItem>
-                    <MenuItem>
+                    {/* <MenuItem>
                       <MenuItemsLink to="/Bbs" onClick={handleResetScroll}>
                         {t("boardMenu")}
                       </MenuItemsLink>
-                    </MenuItem>
+                    </MenuItem> */}
                   </MenuList>
                 </Menu>
               </MenuContain>
