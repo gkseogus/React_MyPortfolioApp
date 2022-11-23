@@ -39,6 +39,26 @@
       content="개발자 한대현의 포트폴리오 사이트 입니다."
     />
 
+    <!-- google Login -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id:
+            "723295196164-3g68mao92drg6ddmfb56lt95n5avr505.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("googleLoginBtn"),
+          { theme: "outline", size: "large" } // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      };
+    </script>
+
     <!-- google optimize -->
     <script
       async
