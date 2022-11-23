@@ -43,7 +43,6 @@ const GitHubSocialCard = () => {
         Authorization: `Bearer ${token}`,
       },
     };
-    console.log(token);
     try {
       //Successful response
       const response = await axios.get("https://api.github.com/user", config);
