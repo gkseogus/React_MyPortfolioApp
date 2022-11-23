@@ -240,6 +240,7 @@ const MainNavBar = () => {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
+            <div id="googleLoginBtn">google</div>
             <Select
               variant=""
               background={"none"}
