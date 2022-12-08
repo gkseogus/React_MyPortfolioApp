@@ -65,6 +65,12 @@ const MenuItemsLink = styled(Link)`
   }
 `;
 
+const GoogleBtnContain = styled.div`
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+`;
+
 const DropDownText = styled.option`
   color: black;
 `;
@@ -240,7 +246,7 @@ const MainNavBar = () => {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <div id="googleLoginBtn">google</div>
+            <GoogleBtnContain id="googleLoginBtn">google</GoogleBtnContain>
             <Select
               variant=""
               background={"none"}
