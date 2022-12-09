@@ -19,6 +19,7 @@ const Contain = styled.div`
   position: relative;
   padding-top: auto;
   padding-bottom: 10%;
+  padding-right: 2%;
 `;
 
 const ImgContain = styled.div`
@@ -59,11 +60,9 @@ export default class MainAboutCarousel extends Component {
     const settings = {
       customPaging: function () {
         return (
-          <div>
-            <SettingImgContain>
-              <SettingImg alt="setBackGroundImg" src={setBackGroundImg} />
-            </SettingImgContain>
-          </div>
+          <SettingImgContain>
+            <SettingImg alt="setBackGroundImg" src={setBackGroundImg} />
+          </SettingImgContain>
         );
       },
       dots: true,
