@@ -28,7 +28,7 @@ const ImgContain = styled.div`
   margin: auto;
   text-align: center;
   background-image: url(${myImg});
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     width: 100vw;
     height: 300px;
     background-image: url(${moMyImg});
@@ -40,7 +40,7 @@ const KoTextContain = styled.h2`
   font-size: 46px;
   font-weight: 600px;
   font-family: "Do Hyeon", sans-serif;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     padding-top: 15%;
     font-size: 25px;
   }
@@ -50,7 +50,7 @@ const EnTextContain = styled.h2`
   font-size: 32px;
   font-weight: 600px;
   font-family: "Kanit", sans-serif;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 25px;
   }
 `;

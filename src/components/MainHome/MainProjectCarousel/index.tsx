@@ -19,14 +19,14 @@ import CarouselModal from "./CarouselModal";
 
 const Contain = styled.div`
   color: red;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 32px;
     padding-right: 9.5%;
   }
 `;
 
 const BtnContain = styled.div`
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     color: red;
   }
 `;
@@ -34,7 +34,7 @@ const BtnContain = styled.div`
 const ModalContain = styled.div`
   padding-top: 15%;
   text-align: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     padding-right: 8%;
   }
 `;

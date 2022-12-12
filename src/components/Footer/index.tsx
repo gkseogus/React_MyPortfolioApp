@@ -31,7 +31,7 @@ const LineText = styled.p`
 
 const MoFooter = styled.div`
   position: relative;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     display: none;
   }
 `;

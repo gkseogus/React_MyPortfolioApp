@@ -5,7 +5,7 @@ const Contain = styled.div`
   position: relative;
   margin: 20px;
   padding: 20px;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     padding: 10px;
   }
 `;
@@ -14,7 +14,7 @@ const ProgressLabel = styled.div`
   display: flex;
   position: absolute;
   font-family: "Kanit", sans-serif;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 15px;
   }
 `;
@@ -42,7 +42,7 @@ const ProgressPercent = styled.p`
   padding-top: 1%;
   color: black;
   font-family: "Kanit", sans-serif;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     padding-top: 10%;
     font-size: 12px;
   }

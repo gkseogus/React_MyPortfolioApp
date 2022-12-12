@@ -19,7 +19,7 @@ const TextClip = keyframes`
 const Contain = styled.div`
   position: relative;
   margin-bottom: 200px;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     margin-bottom: 50px;
   }
 `;
@@ -50,7 +50,7 @@ const AnimateTitleText = styled.h3`
   display: inline-block;
   font-size: 100px;
   font-family: "Kanit", sans-serif;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 40px;
     padding-bottom: 10%;
   }
@@ -77,7 +77,7 @@ const SubAnimatContentsText = styled.h4`
   display: inline-block;
   font-size: 50px;
   font-family: "Kanit", sans-serif;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 25px;
     padding-top: 15%;
     padding-bottom: 3%;

@@ -21,7 +21,7 @@ const ModalBtn = styled.button`
   :hover {
     color: red;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     color: white;
   }
 `;
@@ -31,7 +31,7 @@ const ModalTitle = styled.p`
   font-weight: 600;
   font-size: 32px;
   text-align: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 16px;
   }
 `;
@@ -41,7 +41,7 @@ const ModalText = styled.p`
   font-weight: 300;
   font-size: 20px;
   text-align: center;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     font-size: 13px;
   }
 `;

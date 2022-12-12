@@ -39,7 +39,7 @@ const BreadcrumbContain = styled.div`
   position: absolute;
   padding-left: 91.75%;
   padding-top: 10%;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 360px) {
     display: none;
   }
 `;
