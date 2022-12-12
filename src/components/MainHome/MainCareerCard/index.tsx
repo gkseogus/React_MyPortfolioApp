@@ -8,7 +8,7 @@ const MainCareerContain = styled.div`
 `;
 
 const Contain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 20px;
   }
 `;
@@ -23,7 +23,7 @@ const CareerBtn = styled.button`
   :hover {
     color: red;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 20px;
     padding-left: 8%;
     padding-right: 11%;
@@ -40,7 +40,7 @@ const CareerItemsTitle = styled.h2`
   line-height: 1.27;
   letter-spacing: 0px;
   padding: 5%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 15px;
     font-weight: 600;
     margin: auto;
@@ -57,7 +57,7 @@ const CareerItemsData = styled.h3`
     background-color: white;
     color: red;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 15px;
     font-weight: 500;
     width: 250px;
@@ -73,7 +73,7 @@ const CareerItemsText = styled.h3`
   line-height: 1.45;
   letter-spacing: 2px;
   padding: 5%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 15px;
     font-weight: 600;
     margin: auto;

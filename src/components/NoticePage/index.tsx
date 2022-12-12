@@ -10,7 +10,7 @@ const BreadcrumbContain = styled.div`
   float: right;
   padding-right: 3.1%;
   padding-top: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;
@@ -27,7 +27,7 @@ const CenterContentsText = styled.article`
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 50%;
     padding-bottom: 20%;
     font-size: 20px;

@@ -99,7 +99,7 @@ const NavBarLogo = styled.img`
 `;
 
 const IconContain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;

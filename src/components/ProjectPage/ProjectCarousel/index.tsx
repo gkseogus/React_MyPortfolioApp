@@ -23,13 +23,13 @@ import shopImg from "../ProjectCarousel/IMG/shopImg.svg";
 import shopesultImg from "../ProjectCarousel/IMG/shopesultImg.svg";
 
 const BtnContain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     color: red;
   }
 `;
 
 const TextContain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     text-align: center;
     font-size: 15px;
     padding-right: 10%;
@@ -37,7 +37,7 @@ const TextContain = styled.div`
 `;
 
 const ImaContain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;

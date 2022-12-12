@@ -12,7 +12,7 @@ const ProjectPageContain = styled.section`
 const BreadcrumbContain = styled.div`
   padding-left: 91.73%;
   padding-top: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;
@@ -159,7 +159,7 @@ const MediaOpenclose = keyframes`
 `;
 
 const Contain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 40%;
   }
 `;
@@ -177,7 +177,7 @@ const FristContentsText = styled.article`
   width: 550px;
   left: 10%;
   margin: 25%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 20px;
     font-weight: 600;
     width: 250px;
@@ -197,7 +197,7 @@ const Message = styled.div`
   top: 0.2rem;
   left: 200px;
   animation: ${Openclose} 5s ease-in-out infinite;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     animation: ${MediaOpenclose} 5s ease-in-out infinite;
     left: 100px;
   }
@@ -205,7 +205,7 @@ const Message = styled.div`
 
 const FirstContentsItem = styled.div`
   padding-bottom: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     height: auto;

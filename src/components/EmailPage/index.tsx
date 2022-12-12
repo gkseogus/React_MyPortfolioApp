@@ -11,7 +11,7 @@ const BreadcrumbContain = styled.div`
   float: right;
   padding-right: 3%;
   padding-top: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;
@@ -27,7 +27,7 @@ const Wrap = styled.div`
   left: 50%;
   margin-left: -597px;
   background: none;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     width: 500px;
   }
 `;
@@ -43,7 +43,7 @@ const People = styled.div`
   height: 315px;
   margin-left: 39.5%;
   top: 300px;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     margin-left: 93%;
   }

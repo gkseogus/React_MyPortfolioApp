@@ -42,7 +42,7 @@ const animate = keyframes`
 
 const IntroContain = styled.div`
   position: relative;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     text-align: center;
   }
 `;
@@ -65,7 +65,7 @@ const IntroText = styled.article`
   margin-inline-end: 10%;
   display: flex;
   animation: ${gradientIntro} 3.5s ease-in-out none;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 35%;
     font-size: 20px;
     display: inline-block;
@@ -93,14 +93,14 @@ const CenterContentsText = styled.article`
   font-display: swap;
   line-height: 1.27;
   letter-spacing: 0px;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 10%;
     font-size: 20px;
   }
 `;
 
 const AboutContain = styled.div`
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 `;
@@ -125,7 +125,7 @@ const ContentsText = styled.article`
   margin-inline-start: 20%;
   margin-inline-end: 20%;
   display: flex;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 10%;
     font-size: 20px;
     margin-inline-start: 10%;
@@ -135,7 +135,7 @@ const ContentsText = styled.article`
 
 const GitHubLinkContain = styled.div`
   margin-inline-start: 35%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     margin-inline-start: 45%;
     padding-right: 5%;
   }
@@ -161,7 +161,7 @@ const SecondIntroText = styled.article`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     font-size: 15px;
     padding-top: 50%;
     padding-bottom: 10%;
@@ -181,7 +181,7 @@ const ReverseContentsText = styled.article`
   display: flex;
   margin-inline-start: 60%;
   margin-inline-end: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 20%;
     padding-left: 37.5%;
     text-align: center;
@@ -210,7 +210,7 @@ const ReverseContentsBtn = styled(Link)`
   :hover {
     color: red;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-top: 5%;
     padding-bottom: 10%;
     padding-left: 44%;
@@ -226,7 +226,7 @@ const MainProjectCarouselsContain = styled.div`
   margin-right: 50%;
   margin-bottom: 10%;
   margin-inline-start: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     height: auto;
@@ -241,7 +241,7 @@ const MainCareerCardContain = styled.div`
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 10%;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 500px) {
     padding-left: 16%;
     padding-right: 14%;
   }
