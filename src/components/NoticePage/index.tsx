@@ -60,36 +60,6 @@ const NoticePage = () => {
   const noticeList: Array<NoticeDataFace> = noticeData[0].notice;
   const { t } = useTranslation<string>("");
 
-  /** Function to load announcement data */
-  // const getList = async () => {
-  //   axios.defaults.withCredentials = true;
-  //   const config = {
-  //     headers: {
-  //       withCredentials: true,
-  //     },
-  //   };
-  //   try {
-  //     //Successful response
-  //     const response = await axios.get(
-  //       "http://localhost:8000/api/noticeList",
-  //       config
-  //     );
-  //     const data = response.data;
-  //     setMaxIndex(pageSize);
-  //     setNoticeData(
-  //       data.map((item: any, index: string) => ({
-  //         id: item.NOTICE_ID,
-  //         title: item.NOTICE_TITLE,
-  //         contents: item.NOTICE_CONTENT,
-  //         date: moment(item.NOTICE_DATE).format("YYYY-MM-DD"),
-  //       }))
-  //     );
-  //   } catch (error) {
-  //     //Failed to respond
-  //     console.log(error);
-  //   }
-  // };
-
   /** Page Nation Event Handler */
   const handleChange = (page: number) => {
     setCurrent(page);
