@@ -83,20 +83,10 @@ const Footer = () => {
                   </Link>
                 </Stack>
                 <Stack direction={"row"} align={"center"} spacing={2}>
-                  <Link href={"Career"} color={"#black"}>
-                    Career
-                  </Link>
-                  <LineText>|</LineText>
                   <Link href={"Email"} color={"#black"}>
                     E-mail
                   </Link>
-                </Stack>
-                <Stack direction={"row"} align={"center"} spacing={2}>
-                  <Link href={"Bbs"} color={"#black"}>
-                    Board
-                  </Link>
                   <LineText>|</LineText>
-
                   <Link href={"Notice"} color={"#black"}>
                     Notice
                   </Link>
