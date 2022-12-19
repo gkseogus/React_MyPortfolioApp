@@ -147,7 +147,6 @@ const SecondIntroText = styled.article`
   white-space: pre-line;
   padding: 15%;
   text-align: center;
-  font-family: sans-serif;
   font-display: swap;
   text-transform: uppercase;
   font-size: 54px;

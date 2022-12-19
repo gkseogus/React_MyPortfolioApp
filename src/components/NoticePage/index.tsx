@@ -17,6 +17,7 @@ const BreadcrumbContain = styled.div`
 
 const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
+  font-display: swap;
 `;
 
 const CenterContentsText = styled.article`
@@ -24,6 +25,7 @@ const CenterContentsText = styled.article`
   text-align: center;
   font-size: 64px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;

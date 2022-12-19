@@ -13,6 +13,7 @@ const CenterContentsText = styled.article`
   text-align: center;
   font-size: 64px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   line-height: 1.27;
   letter-spacing: 0px;

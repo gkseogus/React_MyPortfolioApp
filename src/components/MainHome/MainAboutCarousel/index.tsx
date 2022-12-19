@@ -39,6 +39,7 @@ const KoTextContain = styled.h2`
   padding-top: 12%;
   font-size: 46px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Do Hyeon", sans-serif;
   @media screen and (max-width: 500px) {
     padding-top: 15%;
@@ -49,6 +50,7 @@ const KoTextContain = styled.h2`
 const EnTextContain = styled.h2`
   font-size: 32px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 25px;

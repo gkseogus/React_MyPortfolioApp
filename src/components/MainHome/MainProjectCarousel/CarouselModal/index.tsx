@@ -16,6 +16,7 @@ import styled from "styled-components";
 const ModalBtn = styled.button`
   color: white;
   font-size: 20px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   background-color: none;
   :hover {
@@ -28,6 +29,7 @@ const ModalBtn = styled.button`
 
 const ModalTitle = styled.p`
   font-family: "Do Hyeon", sans-serif;
+  font-display: swap;
   font-weight: 600;
   font-size: 32px;
   text-align: center;
@@ -38,6 +40,7 @@ const ModalTitle = styled.p`
 
 const ModalText = styled.p`
   font-family: "Do Hyeon", sans-serif;
+  font-display: swap;
   font-weight: 300;
   font-size: 20px;
   text-align: center;

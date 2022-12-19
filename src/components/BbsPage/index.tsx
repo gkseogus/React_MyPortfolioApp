@@ -45,6 +45,7 @@ const BreadcrumbContain = styled.div`
 `;
 
 const BreadcrumbItemText = styled.article`
+  font-display: swap;
   font-family: "Kanit", sans-serif;
 `;
 

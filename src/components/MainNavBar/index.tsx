@@ -47,6 +47,7 @@ const LeftNavBarLink = styled(Link)`
 const MenuContain = styled.div`
   margin: 0;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   :hover {
     background-color: black;
@@ -57,6 +58,7 @@ const MenuContain = styled.div`
 
 const MenuItemsLink = styled(Link)`
   font-weight: 600px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   color: black;
   :hover {

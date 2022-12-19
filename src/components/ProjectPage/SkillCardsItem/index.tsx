@@ -49,6 +49,7 @@ const AnimateTitleText = styled.h3`
   animation: ${TextClip} 2s linear infinite;
   display: inline-block;
   font-size: 100px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 40px;
@@ -76,6 +77,7 @@ const SubAnimatContentsText = styled.h4`
   animation: ${TextClip} 2s linear infinite;
   display: inline-block;
   font-size: 50px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 25px;

@@ -19,6 +19,7 @@ const BreadcrumbContain = styled.div`
 
 const BreadcrumbItemText = styled.article`
   font-family: "Kanit", sans-serif;
+  font-display: swap;
 `;
 
 /**
@@ -167,6 +168,7 @@ const Contain = styled.div`
 const FristContentsText = styled.article`
   color: black;
   font-family: tahoma;
+  font-display: swap;
   font-size: 3rem;
   font-weight: 100;
   line-height: 1.5;
@@ -190,6 +192,7 @@ const Message = styled.div`
   color: white;
   display: block;
   font-weight: 900;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   overflow: hidden;
   position: absolute;

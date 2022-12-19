@@ -13,6 +13,7 @@ const Contain = styled.div`
 const ProgressLabel = styled.div`
   display: flex;
   position: absolute;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 15px;
@@ -41,6 +42,7 @@ const ProgressPercent = styled.p`
   float: right;
   padding-top: 1%;
   color: black;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   @media screen and (max-width: 500px) {
     padding-top: 10%;

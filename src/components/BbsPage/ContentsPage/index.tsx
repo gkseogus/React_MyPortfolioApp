@@ -22,6 +22,7 @@ const SubContentsContain = styled.div`
 const TitleText = styled.p`
   font-size: 36px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Do Hyeon", sans-serif;
   text-align: left;
 `;
@@ -29,6 +30,7 @@ const TitleText = styled.p`
 const RegisterText = styled.p`
   font-size: 16px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Do Hyeon", sans-serif;
   text-align: left;
 `;
@@ -36,6 +38,7 @@ const RegisterText = styled.p`
 const ContentText = styled.p`
   font-size: 24px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Do Hyeon", sans-serif;
   text-align: center;
   padding-top: 10%;

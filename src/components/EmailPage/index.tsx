@@ -17,6 +17,7 @@ const BreadcrumbContain = styled.div`
 `;
 
 const BreadcrumbItemText = styled.article`
+  font-display: swap;
   font-family: "Kanit", sans-serif;
 `;
 
@@ -52,6 +53,7 @@ const People = styled.div`
 const Position = styled.p`
   display: flex;
   flex-direction: row;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   align-items: flex-start;
   padding: 8px 16px;
@@ -70,6 +72,7 @@ const PositionContain = styled.div`
   width: 72px;
   height: 21px;
   margin: 0;
+  font-display: swap;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -110,6 +113,7 @@ const Name = styled.article`
   left: 18px;
   bottom: 71px;
   margin: 0;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -140,6 +144,7 @@ const Email = styled.article`
   width: 360px;
   height: 17px;
   margin-left: 10px;
+  font-display: swap;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -171,6 +176,7 @@ const GitHubLogoContain = styled.img`
 const Github = styled.button`
   width: 170px;
   height: 17px;
+  font-display: swap;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -194,6 +200,7 @@ const FormTitle = styled.article`
   height: 48px;
   left: 445px;
   top: 890px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -219,6 +226,7 @@ const FormMyEmail = styled.input`
   border-bottom: 3px solid black;
   ::placeholder {
     color: #000000;
+    font-display: swap;
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 500;
@@ -238,6 +246,7 @@ const FormDevEmail = styled.select`
   border: none;
   border-bottom: 3px solid black;
   color: #000000;
+  font-display: swap;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -263,6 +272,7 @@ const FormEmailTitle = styled.input`
   border-bottom: 3px solid black;
   ::placeholder {
     color: #000000;
+    font-display: swap;
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 500;
@@ -277,6 +287,7 @@ const FormContent = styled.textarea`
   align-items: center;
   padding: 0px;
   gap: 6px;
+  font-display: swap;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
@@ -296,6 +307,7 @@ const FormContent = styled.textarea`
   max-height: 66px;
   ::placeholder {
     color: #000000;
+    font-display: swap;
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 500;
@@ -315,6 +327,7 @@ const FormBtn = styled.button`
   height: 48px;
   left: 543px;
   top: 1265px;
+  font-display: swap;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
@@ -332,6 +345,7 @@ const FormBtn = styled.button`
 
 const FormBtnContent = styled.p`
   margin-top: -1px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
 `;
 

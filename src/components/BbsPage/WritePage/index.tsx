@@ -31,6 +31,7 @@ const TitleContain = styled.div`
 const ContentText = styled.p`
   font-size: 24px;
   font-weight: 600px;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   text-align: left;
 `;

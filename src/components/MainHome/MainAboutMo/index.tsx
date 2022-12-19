@@ -15,12 +15,14 @@ const TransitionsButton = styled.button`
 const InputTitle = styled.div`
   color: red;
   position: absolute;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   font-size: 15px;
 `;
 
 const InputText = styled.article`
   text-align: center;
+  font-display: swap;
   font-family: "Kanit", sans-serif;
   font-size: 15px;
 `;
