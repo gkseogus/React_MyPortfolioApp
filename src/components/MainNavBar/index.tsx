@@ -157,10 +157,6 @@ const MainNavBar = () => {
       href: "/Project",
     },
     {
-      key: t("careerMenu"),
-      href: "/Career",
-    },
-    {
       key: t("emailMenu"),
       href: "/Email",
     },
@@ -217,22 +213,19 @@ const MainNavBar = () => {
               <LeftNavBarLink to="/Project" onClick={handleResetScroll}>
                 {t("projectMenu")}
               </LeftNavBarLink>
-              <LeftNavBarLink to="/Career" onClick={handleResetScroll}>
-                {t("careerMenu")}
-              </LeftNavBarLink>
               <p> ||</p>
               <MenuContain>
                 <Menu isLazy>
                   <MenuButton marginTop={"1"}> {t("subMenu")}</MenuButton>
                   <MenuList>
                     <MenuItem>
-                      <MenuItemsLink to="/Notice" onClick={handleResetScroll}>
-                        {t("noticeMenu")}
+                      <MenuItemsLink to="/Email" onClick={handleResetScroll}>
+                        {t("emailMenu")}
                       </MenuItemsLink>
                     </MenuItem>
                     <MenuItem>
-                      <MenuItemsLink to="/Email" onClick={handleResetScroll}>
-                        {t("emailMenu")}
+                      <MenuItemsLink to="/Notice" onClick={handleResetScroll}>
+                        {t("noticeMenu")}
                       </MenuItemsLink>
                     </MenuItem>
                     {/* <MenuItem>
