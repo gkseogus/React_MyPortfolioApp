@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import introImg from "../MainHome/IMG/introImg.svg";
 import GitHubSocialCard from "../MainHome/GitHubSocialCard/index";
 import MainProjectCarousel from "./MainProjectCarousel";
-import MainCareerCard from "./MainCareerCard";
+import CareerPage from "../CareerLine";
 import MainAboutCarousel from "./MainAboutCarousel";
 import MainAboutMo from "./MainAboutMo";
 
@@ -100,14 +100,15 @@ const CenterContentsText = styled.article`
 `;
 
 const AboutContain = styled.div`
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
 
 const AboutMoContain = styled.div`
+  position: absolute;
   color: red;
-  @media screen and (min-width: 360px) {
+  @media screen and (min-width: 500px) {
     display: none;
   }
 `;
@@ -233,20 +234,6 @@ const MainProjectCarouselsContain = styled.div`
   }
 `;
 
-const MainCareerCardContain = styled.div`
-  text-align: center;
-  font-family: "Kanit", sans-serif;
-  line-height: 1.27;
-  letter-spacing: 0px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 10%;
-  @media screen and (max-width: 500px) {
-    padding-left: 16%;
-    padding-right: 14%;
-  }
-`;
-
 const MainHome = () => {
   const { t } = useTranslation<string>("");
 
@@ -293,10 +280,7 @@ const MainHome = () => {
         </MainProjectCarouselsContain>
       </article>
       <article>
-        <CenterContentsText>{t("homeMyCareerTitle")}</CenterContentsText>
-        <MainCareerCardContain>
-          <MainCareerCard />
-        </MainCareerCardContain>
+        <CareerPage />
       </article>
     </IntroContain>
   );
