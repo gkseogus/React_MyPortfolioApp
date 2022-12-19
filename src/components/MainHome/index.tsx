@@ -106,7 +106,7 @@ const AboutContain = styled.div`
 `;
 
 const AboutMoContain = styled.div`
-  position: absolute;
+  position: relative;
   color: red;
   @media screen and (min-width: 500px) {
     display: none;
