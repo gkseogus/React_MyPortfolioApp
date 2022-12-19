@@ -1,7 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BbsPage from "./components/BbsPage";
-import CareerPage from "./components/CareerPage";
 import EmailPage from "./components/EmailPage";
 import MainHome from "./components/MainHome";
 import MainNavBar from "./components/MainNavBar";
@@ -35,15 +33,6 @@ const routesAll = () => (
           </div>
         }
       />
-      <Route
-        path="/Career"
-        element={
-          <div>
-            <MainNavBar />
-            <CareerPage />
-          </div>
-        }
-      />
       {["/Email", "/E-mail"].map((path: string, index: number) => {
         return (
           <Route
@@ -58,15 +47,6 @@ const routesAll = () => (
           />
         );
       })}
-      <Route
-        path="/Bbs"
-        element={
-          <div>
-            <MainNavBar />
-            <BbsPage />
-          </div>
-        }
-      />
       <Route
         path="/Notice"
         element={
