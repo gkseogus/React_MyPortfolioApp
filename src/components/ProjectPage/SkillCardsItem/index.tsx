@@ -103,9 +103,9 @@ const tooltipLabel = [
   <br />,
   "중급: 25% ~ 50% 에러메세지가 친숙하다.",
   <br />,
-  "고급: 50% ~ 75% 에러를 능숙하게 대처한다.",
+  "고급: 50% ~ 75% 에러를 능숙하게 처리한다.",
   <br />,
-  "전문: 75% ~ 100% 에러메세지가 그립다.",
+  "전문: 75% ~ 100% 에러를 사전에 예방한다.",
 ];
 
 const verTooltipLabel = [
@@ -136,7 +136,7 @@ const dataArray: Array<DataArrayFace> = [
     tooltip: tooltipLabel,
   },
   {
-    title: "BACK",
+    title: "Back end",
     dataFile: backLabelData,
     tooltip: tooltipLabel,
   },
