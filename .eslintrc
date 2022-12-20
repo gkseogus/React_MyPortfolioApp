@@ -6,9 +6,9 @@
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:tsx-ally/recommended"
+    "plugin:jsx-ally/recommended"
   ],
-  "plugins": ["tsx-ally"],
+  "plugins": ["jsx-ally"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
