@@ -31,6 +31,8 @@
   "projectSubTitle1": "thinking",
   "projectSubTitle2": "planning",
   "projectSubTitle3": "creating",
+  "projectCarouseltext0": "My Portfolio app",
+  "projectCarouselsubtext0": "This is a portfolio website built with React. Most developers know that they build their own portfolio sites, and they look cool, so I built them.",
   "projectCarouseltext1": "Commuting app for commuting from home.",
   "projectCarouselsubtext1": "This is a project carried out by H9 Company. It is required to establish a commuting system due to COVID-19, keep commuting data in Google spreadsheets, and the data is updated every day.",
   "projectCarouseltext2": "My own exercise site app.",
