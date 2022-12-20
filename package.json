@@ -31,6 +31,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^7.2.0",
     "gsap": "^3.11.0",
     "i18next": "^22.0.4",
