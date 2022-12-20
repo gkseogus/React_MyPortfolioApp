@@ -5,8 +5,7 @@
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:jsx-ally/recommended"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "plugins": ["jsx-ally"],
   "parserOptions": {
