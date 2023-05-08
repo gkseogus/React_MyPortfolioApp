@@ -14,17 +14,17 @@
     <link rel="manifest.json" href="manifest.json" />
 
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
     </style>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
     </style>
 
     <!-- Use Font Face Observer  -->
     <script src="fontfaceobserver.js" type="text/javascript"></script>
     <script type="text/javascript">
-      const pacificoObserver = new FontFaceObserver("Kanit");
-      const robotoObserver = new FontFaceObserver("Do Hyeon");
+      const pacificoObserver = new FontFaceObserver('Kanit');
+      const robotoObserver = new FontFaceObserver('Do Hyeon');
     </script>
 
     <!-- LCP 이미지 우선순위 설정 -->
@@ -52,21 +52,15 @@
       window.onload = function () {
         google.accounts.id.initialize({
           client_id:
-            "723295196164-3g68mao92drg6ddmfb56lt95n5avr505.apps.googleusercontent.com",
+            '723295196164-3g68mao92drg6ddmfb56lt95n5avr505.apps.googleusercontent.com',
         });
         google.accounts.id.renderButton(
-          document.getElementById("googleLoginBtn"),
-          { theme: "outline", size: "large" } // customization attributes
+          document.getElementById('googleLoginBtn'),
+          { theme: 'outline', size: 'large' }, // customization attributes
         );
         google.accounts.id.prompt(); // also display the One Tap dialog
       };
     </script>
-
-    <!-- google optimize -->
-    <script
-      async
-      src="https://www.googleoptimize.com/optimize.js?id=OPT-5KS4LF9"
-    ></script>
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -79,9 +73,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-YMEQKDPG6J");
+      gtag('config', 'G-YMEQKDPG6J');
     </script>
 
     <!-- Google AdSense -->
@@ -91,16 +85,6 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5675861554143312"
       crossorigin="anonymous"
     ></script>
-
-    <!-- Naver Analytics -->
-    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-    <script type="text/javascript">
-      if (!wcs_add) var wcs_add = {};
-      wcs_add["wa"] = "154e2a69d72a14";
-      if (window.wcs) {
-        wcs_do();
-      }
-    </script>
 
     <title>HDH's Portfolio</title>
   </head>
